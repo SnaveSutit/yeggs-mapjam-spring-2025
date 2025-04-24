@@ -7,11 +7,11 @@
 		"setup": "ts-node ./.tools/setup.ts",
 		"create_datapack": "ts-node ./.tools/create_datapack.ts",
 		"scan_datapacks": "ts-node ./.tools/scan_datapacks.ts",
-		"dev": "echo Try running 'dev:datapack-id' instead! Or run 'scan_datapacks' if you've added a new datapack and it's not registered.",
-		"dev:test": "cd \"datapacks\\TEST\" && mcb build"
+		"dev": "cd \"datapacks\\Map\" && mcb build"
 	},
 	"datapacks": {
-		"test": "TEST"
+		"test": "TEST",
+		"map": "Map"
 	},
 	"devDependencies": {
 		"@types/node": "^18.11.18",
