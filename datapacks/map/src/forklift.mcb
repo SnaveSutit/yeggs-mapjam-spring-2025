@@ -1,5 +1,11 @@
 function on_load minecraft:load {
 	scoreboard objectives add forklift_forwards_momentum dummy
+	scoreboard objectives add forklift_turn_momentum dummy
+}
+
+function debug {
+	function animated_java:forklift/remove/all
+	execute rotated 0 0 run function forklift:summon
 }
 
 function summon {
@@ -17,40 +23,119 @@ function on_tick minecraft:tick {
 
 		function animated_java:forklift/as_own_locator_entities {command:'function forklift:get_player_inputs'}
 
-		execute if score #left i matches 1 at @s run {
-			tp @s ~ ~ ~ ~-5 ~
+		execute if score #left i matches 1 at @s run \
+			scoreboard players add @s forklift_turn_momentum 500
+		execute if score #right i matches 1 at @s run \
+			scoreboard players remove @s forklift_turn_momentum 500
+
+		scoreboard players operation #turn_momentum i = @s forklift_turn_momentum
+		scoreboard players operation #turn_momentum i /= 100 i
+		execute if score #turn_momentum i matches 1.. at @s run {
+			tp @s ^ ^ ^ ~-0.5 ~
+			scoreboard players remove #turn_momentum i 1
+			execute if score #turn_momentum i matches 1.. at @s run function ^0
 		}
-		execute if score #right i matches 1 at @s run {
-			tp @s ~ ~ ~ ~5 ~
+		execute if score #turn_momentum i matches ..-1 at @s run {
+			tp @s ^ ^ ^ ~0.5 ~
+			scoreboard players add #turn_momentum i 1
+			execute if score #turn_momentum i matches ..-1 at @s run function ^0
 		}
 
-		execute if score #forward i matches 1 run {
-			scoreboard players add @s forklift_forwards_momentum 1000
-		}
-		execute if score #backward i matches 1 at @s run {
-			scoreboard players remove @s forklift_forwards_momentum 1000
-		}
+		scoreboard players operation #turn_momentum i = @s forklift_turn_momentum
+		scoreboard players operation #turn_momentum i /= 10 i
+		scoreboard players operation #turn_momentum i *= 7 i
+		execute if score #turn_momentum i matches -100..100 run scoreboard players set #turn_momentum i 0
+		scoreboard players operation @s forklift_turn_momentum = #turn_momentum i
+
+
+		execute if score #forward i matches 1 run \
+			scoreboard players add @s forklift_forwards_momentum 500
+		execute if score #backward i matches 1 at @s run \
+			scoreboard players remove @s forklift_forwards_momentum 500
 
 		scoreboard players operation #momentum i = @s forklift_forwards_momentum
 		scoreboard players operation #momentum i /= 100 i
 		execute if score #momentum i matches 1.. at @s run {
+			scoreboard players set #check i 0
+			execute \
+				if block ^1.5 ^ ^1.5 #forklift:drive_through \
+				if block ^-1.5 ^ ^1.5 #forklift:drive_through \
+				if block ^ ^ ^1.5 #forklift:drive_through \
+				if block ^1.5 ^1 ^1.5 #forklift:drive_through \
+				if block ^-1.5 ^1 ^1.5 #forklift:drive_through \
+				if block ^ ^1 ^1.5 #forklift:drive_through \
+				if block ^1.5 ^2 ^1.5 #forklift:drive_through \
+				if block ^-1.5 ^2 ^1.5 #forklift:drive_through \
+				if block ^ ^2 ^1.5 #forklift:drive_through \
+			run scoreboard players set #check i 1
+			execute if score #check i matches 0 run return run \
+				scoreboard players set #momentum i 0
+
 			tp @s ^ ^ ^0.025
 			scoreboard players remove #momentum i 1
 			execute if score #momentum i matches 1.. at @s run function ^0
 		}
 		execute if score #momentum i matches ..-1 at @s run {
+			scoreboard players set #check i 0
+			execute \
+				if block ^1.5 ^ ^-1.5 #forklift:drive_through \
+				if block ^-1.5 ^ ^-1.5 #forklift:drive_through \
+				if block ^ ^ ^-1.5 #forklift:drive_through \
+				if block ^1.5 ^1 ^-1.5 #forklift:drive_through \
+				if block ^-1.5 ^1 ^-1.5 #forklift:drive_through \
+				if block ^ ^1 ^-1.5 #forklift:drive_through \
+				if block ^1.5 ^2 ^-1.5 #forklift:drive_through \
+				if block ^-1.5 ^2 ^-1.5 #forklift:drive_through \
+				if block ^ ^2 ^-1.5 #forklift:drive_through \
+			run scoreboard players set #check i 1
+			execute if score #check i matches 0 run return run \
+				scoreboard players set #momentum i 0
+
 			tp @s ^ ^ ^-0.025
 			scoreboard players add #momentum i 1
 			execute if score #momentum i matches ..-1 at @s run function ^0
 		}
 
 		scoreboard players operation #momentum i = @s forklift_forwards_momentum
-		scoreboard players operation #momentum i /= 2 i
-		execute if score #momentum i matches -1 run scoreboard players set #momentum i 0
+		scoreboard players operation #momentum i /= 10 i
+		scoreboard players operation #momentum i *= 8 i
+		execute if score #momentum i matches -100..100 run scoreboard players set #momentum i 0
 		scoreboard players operation @s forklift_forwards_momentum = #momentum i
 
 	}
 }
+
+tag blocks drive_through {
+	minecraft:air
+	minecraft:cave_air
+	minecraft:void_air
+}
+
+function activate_forks {
+	# Needs to be executed as the root entity
+	function animated_java:forklift/as_own_locator_entities {command:'function forklift:activate_forks/as_locators'}
+}
+
+dir activate_forks {
+	function as_locators {
+		execute unless entity @s[tag=cake_mount] run return fail
+		scoreboard players set #has_item i 0
+		execute on passengers run scoreboard players set #has_item i 1
+		execute if score #has_item i matches 1 at @s run {
+			execute on passengers run ride @s dismount
+		}
+		execute if score #has_item i matches 0 at @s run {
+			execute as @n[tag=liftable_item,distance=..6] run {
+				tp @s ~ ~ ~ ~ ~
+				ride @s mount @n[tag=cake_mount,distance=..2]
+			}
+		}
+	}
+}
+
+	# attribute @s minecraft:scale base set 6
+	# data merge entity @s {NoAI:true,Silent:true}
+
 
 function get_player_inputs {
 	execute unless entity @s[tag=forklift_seat] run return fail
@@ -77,7 +162,7 @@ function on_interaction_as_player {
 	execute if score #check i matches 1 run {
 		execute on vehicle if entity @s[tag=forklift_seat] run scoreboard players set #check i 2
 		execute if score #check i matches 2 run {
-			say You are in the seat
+			execute as @n[tag=forklift] at @s run function forklift:activate_forks
 		}
 		execute if score #check i matches 1 run {
 			say Someone else is in the seat

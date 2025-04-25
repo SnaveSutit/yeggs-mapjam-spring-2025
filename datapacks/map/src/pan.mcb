@@ -1,0 +1,46 @@
+function summon {
+	execute positioned ~ ~1000 ~ summon minecraft:armor_stand run {
+		tag @s add pan
+		tag @s add liftable_item
+		tag @s add new
+		data merge entity @s {Invisible:true,Silent:true}
+		execute summon minecraft:interaction run {
+			tag @s add pan_offset
+			tag @s add new
+			data merge entity @s {width:0, height:-2}
+			ride @s mount @n[type=minecraft:armor_stand,tag=new,distance=..0.01]
+
+			execute summon minecraft:pig run {
+				tag @s add pan_hitbox
+				data merge entity @s {NoAI:true,Silent:true}
+				attribute @s minecraft:scale base set 6
+				attribute @s minecraft:movement_speed base set 0
+				attribute @s minecraft:max_health base set 4
+				effect give @s minecraft:invisibility infinite 1 true
+				ride @s mount @n[type=minecraft:interaction,tag=new,distance=..0.01]
+			}
+			tag @s remove new
+		}
+		tag @s remove new
+		tp @s ~ ~-1000 ~
+	}
+}
+
+
+function on_tick minecraft:tick {
+	execute as @e[type=minecraft:armor_stand,tag=pan] run {
+		scoreboard players set #check i 0
+		execute on passengers on passengers run scoreboard players set #check i 1
+		execute if score #check i matches 0 run {
+			execute on passengers run kill @s
+			kill @s
+		}
+	}
+}
+
+
+function kill_all {
+	kill @e[type=minecraft:pig,tag=pan_hitbox]
+	kill @e[type=minecraft:interaction,tag=pan_offset]
+	kill @e[type=minecraft:armor_stand,tag=pan]
+}

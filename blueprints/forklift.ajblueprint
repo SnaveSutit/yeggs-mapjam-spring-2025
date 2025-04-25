@@ -455,6 +455,23 @@
 			},
 			"uuid": "05ef00e3-7c0d-7cc7-51cb-132f37ef8538",
 			"type": "locator"
+		},
+		{
+			"name": "cake_mount",
+			"position": [0.5, 33, -82],
+			"rotation": [0, 0, 0],
+			"ignore_inherited_scale": false,
+			"visibility": true,
+			"locked": false,
+			"config": {
+				"use_entity": true,
+				"entity_type": "minecraft:item_display",
+				"sync_passenger_rotation": false,
+				"summon_commands": "tag @s add cake_mount",
+				"ticking_commands": ""
+			},
+			"uuid": "1c64fc5a-f4c4-27e6-e99d-f0af5446656a",
+			"type": "locator"
 		}
 	],
 	"outliner": [
@@ -581,6 +598,23 @@
 							"children": ["a92d3ae1-d46b-8862-6890-4749d903de2b", "6d107ca3-224a-dc30-a613-49439d7317f1"]
 						}
 					]
+				},
+				{
+					"name": "cake",
+					"origin": [0.5, 33, -82],
+					"color": 0,
+					"configs": {
+						"variants": {}
+					},
+					"uuid": "a221a324-fdf5-1c46-d6a2-49f32ef029d2",
+					"export": true,
+					"mirror_uv": false,
+					"isOpen": true,
+					"locked": false,
+					"visibility": true,
+					"autouv": 0,
+					"selected": false,
+					"children": ["1c64fc5a-f4c4-27e6-e99d-f0af5446656a"]
 				}
 			]
 		}

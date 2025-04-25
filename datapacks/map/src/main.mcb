@@ -5,9 +5,13 @@ function on_load minecraft:load {
 
 	scoreboard players set 2 i 2
 	scoreboard players set 4 i 4
-	scoreboard players set 9 i 9
+	scoreboard players set 7 i 7
+	scoreboard players set 8 i 8
 	scoreboard players set 10 i 10
 	scoreboard players set 100 i 100
+	scoreboard players set 360 i 360
+
+	function nexus:setup/main
 
 	tellraw @a {"text":"Map reloaded!","color":"green"}
 }

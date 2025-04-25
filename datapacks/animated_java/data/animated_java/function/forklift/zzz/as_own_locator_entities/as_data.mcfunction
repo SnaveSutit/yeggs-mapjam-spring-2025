@@ -3,3 +3,5 @@ data modify storage aj:temp uuid set from entity @s item.components."minecraft:c
 function animated_java:forklift/zzz/as_own_locator_entities/execute_as_uuid with storage aj:temp
 data modify storage aj:temp uuid set from entity @s item.components."minecraft:custom_data".locators.seat_interaction.uuid
 function animated_java:forklift/zzz/as_own_locator_entities/execute_as_uuid with storage aj:temp
+data modify storage aj:temp uuid set from entity @s item.components."minecraft:custom_data".locators.cake_mount.uuid
+function animated_java:forklift/zzz/as_own_locator_entities/execute_as_uuid with storage aj:temp
