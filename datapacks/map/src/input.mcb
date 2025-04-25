@@ -1,0 +1,55 @@
+predicate key_forward {
+	"condition": "minecraft:entity_properties",
+	"entity": "this",
+	"predicate": {
+		"type": "minecraft:player",
+		"type_specific": {
+			"type": "minecraft:player",
+			"input": {
+				"forward": true
+			}
+		}
+	}
+}
+
+predicate key_backward {
+	"condition": "minecraft:entity_properties",
+	"entity": "this",
+	"predicate": {
+		"type": "minecraft:player",
+		"type_specific": {
+			"type": "minecraft:player",
+			"input": {
+				"backward": true
+			}
+		}
+	}
+}
+
+predicate key_left {
+	"condition": "minecraft:entity_properties",
+	"entity": "this",
+	"predicate": {
+		"type": "minecraft:player",
+		"type_specific": {
+			"type": "minecraft:player",
+			"input": {
+				"left": true
+			}
+		}
+	}
+}
+
+predicate key_right {
+	"condition": "minecraft:entity_properties",
+	"entity": "this",
+	"predicate": {
+		"type": "minecraft:player",
+		"type_specific": {
+			"type": "minecraft:player",
+			"input": {
+				"right": true
+			}
+		}
+	}
+}

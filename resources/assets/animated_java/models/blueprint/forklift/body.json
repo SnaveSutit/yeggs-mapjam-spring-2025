@@ -1,0 +1,48 @@
+{
+	"textures": {
+		"0": "animated_java:blueprint/forklift/texture",
+		"particle": "minecraft:item/pufferfish"
+	},
+	"display": {
+		"head": {
+			"rotation": [0, 180, 0]
+		}
+	},
+	"elements": [
+		{
+			"from": [-1.5, 6.5, -4],
+			"to": [17.5, 8, 20],
+			"rotation": {
+				"angle": 0,
+				"axis": "y",
+				"origin": [8, 7.25, 8]
+			},
+			"faces": {
+				"north": {
+					"uv": [3, 3, 5.375, 3.1875],
+					"texture": "#0"
+				},
+				"east": {
+					"uv": [0, 3, 3, 3.1875],
+					"texture": "#0"
+				},
+				"south": {
+					"uv": [8.375, 3, 10.75, 3.1875],
+					"texture": "#0"
+				},
+				"west": {
+					"uv": [5.375, 3, 8.375, 3.1875],
+					"texture": "#0"
+				},
+				"up": {
+					"uv": [5.375, 3, 3, 0],
+					"texture": "#0"
+				},
+				"down": {
+					"uv": [7.75, 0, 5.375, 3],
+					"texture": "#0"
+				}
+			}
+		}
+	]
+}

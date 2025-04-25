@@ -1,0 +1,4 @@
+function on_load minecraft:load {
+	
+}
+

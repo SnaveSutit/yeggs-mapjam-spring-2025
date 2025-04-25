@@ -1,0 +1,89 @@
+function on_load minecraft:load {
+	scoreboard objectives add forklift_forwards_momentum dummy
+}
+
+function summon {
+	function animated_java:forklift/summon {args:{}}
+}
+
+
+function on_tick minecraft:tick {
+	scoreboard players set #forward i 0
+	scoreboard players set #backward i 0
+	scoreboard players set #left i 0
+	scoreboard players set #right i 0
+
+	execute as @n[type=item_display,tag=forklift] at @s run {
+
+		function animated_java:forklift/as_own_locator_entities {command:'function forklift:get_player_inputs'}
+
+		execute if score #left i matches 1 at @s run {
+			tp @s ~ ~ ~ ~-5 ~
+		}
+		execute if score #right i matches 1 at @s run {
+			tp @s ~ ~ ~ ~5 ~
+		}
+
+		execute if score #forward i matches 1 run {
+			scoreboard players add @s forklift_forwards_momentum 1000
+		}
+		execute if score #backward i matches 1 at @s run {
+			scoreboard players remove @s forklift_forwards_momentum 1000
+		}
+
+		scoreboard players operation #momentum i = @s forklift_forwards_momentum
+		scoreboard players operation #momentum i /= 100 i
+		execute if score #momentum i matches 1.. at @s run {
+			tp @s ^ ^ ^0.025
+			scoreboard players remove #momentum i 1
+			execute if score #momentum i matches 1.. at @s run function ^0
+		}
+		execute if score #momentum i matches ..-1 at @s run {
+			tp @s ^ ^ ^-0.025
+			scoreboard players add #momentum i 1
+			execute if score #momentum i matches ..-1 at @s run function ^0
+		}
+
+		scoreboard players operation #momentum i = @s forklift_forwards_momentum
+		scoreboard players operation #momentum i /= 2 i
+		execute if score #momentum i matches -1 run scoreboard players set #momentum i 0
+		scoreboard players operation @s forklift_forwards_momentum = #momentum i
+
+	}
+}
+
+function get_player_inputs {
+	execute unless entity @s[tag=forklift_seat] run return fail
+	execute on passengers if predicate input:key_forward run {
+		scoreboard players set #forward i 1
+	}
+	execute on passengers if predicate input:key_backward run {
+		scoreboard players set #backward i 1
+	}
+	execute on passengers if predicate input:key_left run {
+		scoreboard players set #left i 1
+	}
+	execute on passengers if predicate input:key_right run {
+		scoreboard players set #right i 1
+	}
+}
+
+function on_interaction_as_player {
+	execute as @e[type=interaction,distance=..10,nbt={interaction:{}}] run {
+		scoreboard players set #check i 0
+		execute as @n[tag=forklift_seat] on passengers run scoreboard players set #check i 1
+	}
+
+	execute if score #check i matches 1 run {
+		execute on vehicle if entity @s[tag=forklift_seat] run scoreboard players set #check i 2
+		execute if score #check i matches 2 run {
+			say You are in the seat
+		}
+		execute if score #check i matches 1 run {
+			say Someone else is in the seat
+		}
+	}
+	execute if score #check i matches 0 run {
+		ride @s mount @n[tag=forklift_seat]
+	}
+}

@@ -2,5 +2,13 @@
 	"pack": {
 		"pack_format": 71,
 		"description": "Made with MC-Build!"
+	},
+	"filter": {
+		"block": [
+			{
+				"namespace": "^minecraft$",
+				"path": "^advancement/.*$"
+			}
+		]
 	}
 }

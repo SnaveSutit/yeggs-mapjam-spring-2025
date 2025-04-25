@@ -1,0 +1,32 @@
+advancement interaction_click_event {
+	"criteria": {
+		"interact": {
+			"trigger": "minecraft:player_interacted_with_entity",
+			"conditions": {
+				"entity": {
+					"type": "minecraft:interaction"
+				}
+			}
+		}
+	},
+	"rewards": {
+		"function": "interaction:click"
+	}
+}
+
+function click {
+	# say "on_interaction_clicked"
+	advancement revoke @s only interaction:interaction_click_event
+	function #interaction:on_interaction_as_player
+	execute as @e[type=interaction,distance=..10,nbt={interaction:{}}] run {
+		function #interaction:on_interaction_as_entity
+		data remove entity @s interaction
+	}
+}
+
+tag function on_interaction_as_player {
+	forklift:on_interaction_as_player
+}
+
+tag function on_interaction_as_entity {
+}

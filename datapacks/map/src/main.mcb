@@ -1,5 +1,35 @@
 function on_load minecraft:load {
 	scoreboard objectives add mcb.i dummy
 
+	scoreboard objectives add i dummy
+
+	scoreboard players set 2 i 2
+	scoreboard players set 4 i 4
+	scoreboard players set 9 i 9
+	scoreboard players set 10 i 10
+	scoreboard players set 100 i 100
+
 	tellraw @a {"text":"Map reloaded!","color":"green"}
+}
+
+
+function set_scale {
+	#ARGS: {scale: int}
+	attribute @s minecraft:scale modifier remove scaled
+	$attribute @s minecraft:scale modifier add scaled $(scale) add_multiplied_base
+
+	attribute @s minecraft:jump_strength modifier remove scaled
+	$attribute @s minecraft:jump_strength modifier add scaled $(scale) add_multiplied_base
+
+	attribute @s minecraft:gravity modifier remove scaled
+	$attribute @s minecraft:gravity modifier add scaled $(scale) add_multiplied_base
+
+	attribute @s minecraft:movement_speed modifier remove scaled
+	$attribute @s minecraft:movement_speed modifier add scaled $(scale) add_multiplied_base
+
+	attribute @s minecraft:step_height modifier remove scaled
+	$attribute @s minecraft:step_height modifier add scaled $(scale) add_multiplied_base
+
+	attribute @s minecraft:safe_fall_distance modifier remove scaled
+	$attribute @s minecraft:safe_fall_distance modifier add scaled $(scale) add_multiplied_base
 }

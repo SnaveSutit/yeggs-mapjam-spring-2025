@@ -1,0 +1,27 @@
+{
+	"formatVersion": "1.0.0",
+	"rigs": {
+		"forklift": {
+			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
+			"versionedFiles": [
+				"assets/animated_java/items/blueprint/forklift/back_left_wheel.json",
+				"assets/animated_java/items/blueprint/forklift/back_right_wheel.json",
+				"assets/animated_java/items/blueprint/forklift/body.json",
+				"assets/animated_java/items/blueprint/forklift/crane.json",
+				"assets/animated_java/items/blueprint/forklift/forks.json",
+				"assets/animated_java/items/blueprint/forklift/front_left_wheel.json",
+				"assets/animated_java/items/blueprint/forklift/front_right_wheel.json",
+				"assets/animated_java/items/empty.json",
+				"assets/animated_java/models/blueprint/forklift/back_left_wheel.json",
+				"assets/animated_java/models/blueprint/forklift/back_right_wheel.json",
+				"assets/animated_java/models/blueprint/forklift/body.json",
+				"assets/animated_java/models/blueprint/forklift/crane.json",
+				"assets/animated_java/models/blueprint/forklift/forks.json",
+				"assets/animated_java/models/blueprint/forklift/front_left_wheel.json",
+				"assets/animated_java/models/blueprint/forklift/front_right_wheel.json",
+				"assets/animated_java/models/empty.json",
+				"assets/animated_java/textures/blueprint/forklift/texture.png"
+			]
+		}
+	}
+}
