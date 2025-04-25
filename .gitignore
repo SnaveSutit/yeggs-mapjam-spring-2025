@@ -1,6 +1,5 @@
 .temp/
 dist/
-.mcb
 
 world/datapacks/*
 world/advancements
@@ -14,8 +13,8 @@ world/level.dat_old
 world/session.lock
 world/playerdata/
 
-datapacks/*/data/
-datapacks/*/.mcproject/CROSS_RUN.json
+datapacks/map/data/
+datapacks/*/.mcb
 
 # Logs
 logs
