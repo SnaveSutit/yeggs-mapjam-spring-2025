@@ -1,5 +1,6 @@
 .temp/
 dist/
+.mcb
 
 world/datapacks/*
 world/advancements

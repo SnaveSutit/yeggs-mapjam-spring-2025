@@ -7,7 +7,7 @@
 		"setup": "ts-node ./.tools/setup.ts",
 		"create_datapack": "ts-node ./.tools/create_datapack.ts",
 		"scan_datapacks": "ts-node ./.tools/scan_datapacks.ts",
-		"dev": "cd \"datapacks\\Map\" && mcb build"
+		"dev": "cd \"datapacks\\Map\" && mcb watch"
 	},
 	"datapacks": {
 		"test": "TEST",
