@@ -1,3 +1,5 @@
 function on_load minecraft:load {
 	scoreboard objectives add mcb.i dummy
+
+	tellraw @a {"text":"Map reloaded!","color":"green"}
 }
