@@ -1,6 +1,7 @@
 function on_load minecraft:load {
 	scoreboard objectives add forklift_forwards_momentum dummy
 	scoreboard objectives add forklift_turn_momentum dummy
+	scoreboard objectives add forklift_lift_state dummy
 }
 
 function debug {
@@ -9,7 +10,7 @@ function debug {
 }
 
 function summon {
-	function animated_java:forklift/summon {args:{}}
+	function animated_java:forklift/summon {args:{animation:"fork_height_0"}}
 }
 
 
@@ -101,6 +102,23 @@ function on_tick minecraft:tick {
 		scoreboard players operation #momentum i *= 8 i
 		execute if score #momentum i matches -100..100 run scoreboard players set #momentum i 0
 		scoreboard players operation @s forklift_forwards_momentum = #momentum i
+
+		execute unless score @s forklift_lift_state matches 0 at @s if block ~ ~-4 ~ red_wool run {
+			function animated_java:forklift/animations/fork_height_0/play
+			scoreboard players set @s forklift_lift_state 0
+		}
+		execute unless score @s forklift_lift_state matches 1 at @s if block ~ ~-4 ~ orange_wool run {
+			function animated_java:forklift/animations/fork_height_1/play
+			scoreboard players set @s forklift_lift_state 1
+		}
+		execute unless score @s forklift_lift_state matches 2 at @s if block ~ ~-4 ~ yellow_wool run {
+			function animated_java:forklift/animations/fork_height_2/play
+			scoreboard players set @s forklift_lift_state 2
+		}
+		execute unless score @s forklift_lift_state matches 3 at @s if block ~ ~-4 ~ lime_wool run {
+			function animated_java:forklift/animations/fork_height_3/play
+			scoreboard players set @s forklift_lift_state 3
+		}
 
 	}
 }

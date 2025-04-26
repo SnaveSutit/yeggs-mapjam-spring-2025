@@ -42,15 +42,16 @@ function summon {
 
 function on_tick minecraft:tick {
 	execute as @e[type=minecraft:armor_stand,tag=pan] at @s run {
-		# Check if the pan's hitbox is still there.
+		# Check if the pan's hitbox is still there and is alive.
 		scoreboard players set #check i 0
-		execute on passengers on passengers if entity @s[type=minecraft:pig] run scoreboard players set #check i 1
+		execute on passengers on passengers if entity @s[type=minecraft:pig,nbt={DeathTime:0s}] run scoreboard players set #check i 1
 		execute if score #check i matches 0 run {
 			execute on passengers run {
 				execute on passengers if entity @s[tag=aj.pan.root] run function animated_java:pan/remove/this
 				kill @s
 			}
 			kill @s
+			playsound minecraft:entity.item.break block @a ~ ~ ~ 2 0.9
 		}
 
 		# Attempt to attach to nearby lock points

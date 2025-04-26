@@ -4,6 +4,6 @@ execute on passengers if entity @s[tag=aj.forklift.bone.front_right_wheel] run d
 execute on passengers if entity @s[tag=aj.forklift.bone.back_right_wheel] run data merge entity @s {transformation: [-1f,0f,0f,1.0938f,0f,1f,0f,0.2188f,0f,0f,-1f,-1.0312f,0f,0f,0f,1f], start_interpolation: -1}
 execute on passengers if entity @s[tag=aj.forklift.bone.front_left_wheel] run data merge entity @s {transformation: [-1f,0f,0f,-1.0938f,0f,1f,0f,0.2188f,0f,0f,-1f,1.0312f,0f,0f,0f,1f], start_interpolation: -1}
 execute on passengers if entity @s[tag=aj.forklift.bone.back_left_wheel] run data merge entity @s {transformation: [-1f,0f,0f,-1.0937f,0f,1f,0f,0.2188f,0f,0f,-1f,-1.0313f,0f,0f,0f,1f], start_interpolation: -1}
-execute on passengers if entity @s[tag=aj.forklift.bone.forks] run data merge entity @s {transformation: [-2.6667f,0f,0f,-0.0313f,0f,2.6667f,0f,2f,0f,0f,-2.6667f,1.5625f,0f,0f,0f,1f], start_interpolation: -1}
+execute on passengers if entity @s[tag=aj.forklift.bone.forks] run data merge entity @s {transformation: [-2.6667f,0f,0f,-0.0313f,0f,2.6667f,0f,1f,0f,0f,-2.6667f,1.5625f,0f,0f,0f,1f], start_interpolation: -1}
 execute on passengers if entity @s[tag=aj.forklift.bone.crane] run data merge entity @s {transformation: [-2.6667f,0f,0f,0f,0f,2.6667f,0f,0.625f,0f,0f,-2.6667f,1.5f,0f,0f,0f,1f], start_interpolation: -1}
 execute on passengers if entity @s[tag=aj.forklift.bone.body] run data merge entity @s {transformation: [-2f,0f,0f,0f,0f,2f,0f,0.625f,0f,0f,-2f,0f,0f,0f,0f,1f], start_interpolation: -1}
