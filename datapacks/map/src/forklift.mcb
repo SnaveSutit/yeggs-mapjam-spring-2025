@@ -128,6 +128,9 @@ dir activate_forks {
 			execute as @n[tag=liftable_item,distance=..6] run {
 				tp @s ~ ~ ~ ~ ~
 				ride @s mount @n[tag=cake_mount,distance=..2]
+				execute on passengers on passengers if entity @s[tag=aj.global.root] run {
+					rotate @s ~ ~
+				}
 			}
 		}
 	}

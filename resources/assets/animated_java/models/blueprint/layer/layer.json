@@ -1,0 +1,43 @@
+{
+	"textures": {
+		"0": "animated_java:blueprint/layer/texture",
+		"particle": "minecraft:item/pufferfish"
+	},
+	"display": {
+		"head": {
+			"rotation": [0, 180, 0]
+		}
+	},
+	"elements": [
+		{
+			"from": [-4, 8, -4],
+			"to": [20, 10.66667, 20],
+			"faces": {
+				"north": {
+					"uv": [4.5, 0, 9, 0.5],
+					"texture": "#0"
+				},
+				"east": {
+					"uv": [4.5, 0.5, 9, 1],
+					"texture": "#0"
+				},
+				"south": {
+					"uv": [4.5, 1, 9, 1.5],
+					"texture": "#0"
+				},
+				"west": {
+					"uv": [4.5, 1.5, 9, 2],
+					"texture": "#0"
+				},
+				"up": {
+					"uv": [4.5, 4.5, 0, 0],
+					"texture": "#0"
+				},
+				"down": {
+					"uv": [4.5, 4.5, 0, 9],
+					"texture": "#0"
+				}
+			}
+		}
+	]
+}

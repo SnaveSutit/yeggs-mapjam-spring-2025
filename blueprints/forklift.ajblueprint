@@ -458,7 +458,7 @@
 		},
 		{
 			"name": "cake_mount",
-			"position": [0.5, 33, -82],
+			"position": [0.5, 33, -98],
 			"rotation": [0, 0, 0],
 			"ignore_inherited_scale": false,
 			"visibility": true,

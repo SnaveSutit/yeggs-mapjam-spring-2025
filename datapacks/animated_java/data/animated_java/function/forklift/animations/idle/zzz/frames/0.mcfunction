@@ -6,4 +6,4 @@ $data merge entity $(bone_back_left_wheel) {transformation: [-1f,0f,0f,-1.0937f,
 $data merge entity $(bone_forks) {transformation: [-2.6667f,0f,0f,-0.0313f,0f,2.6667f,0f,2f,0f,0f,-2.6667f,1.5625f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(bone_crane) {transformation: [-2.6667f,0f,0f,0f,0f,2.6667f,0f,0.625f,0f,0f,-2.6667f,1.5f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(bone_body) {transformation: [-2f,0f,0f,0f,0f,2f,0f,0.625f,0f,0f,-2f,0f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
-data modify entity @s data merge value {"locators":{"seat":{"posx":0,"posy":1,"posz":0,"roty":0,"rotx":0},"seat_interaction":{"posx":0,"posy":0,"posz":0,"roty":0,"rotx":0},"cake_mount":{"posx":-0.031250000000000625,"posy":2.0625,"posz":5.125,"roty":0,"rotx":0}},"cameras":{}}
+data modify entity @s data merge value {"locators":{"seat":{"posx":0,"posy":1,"posz":0,"roty":0,"rotx":0},"seat_interaction":{"posx":0,"posy":0,"posz":0,"roty":0,"rotx":0},"cake_mount":{"posx":-0.03125000000000075,"posy":2.0625,"posz":6.125,"roty":0,"rotx":0}},"cameras":{}}
