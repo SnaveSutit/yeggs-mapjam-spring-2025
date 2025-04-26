@@ -114,6 +114,39 @@
 				"data/animated_java/tags/function/forklift/as_root/pre_tick.json"
 			]
 		},
+		"item_milk": {
+			"coreFiles": [
+				"data/animated_java/function/global/errors/function_not_executed_as_root_entity.mcfunction",
+				"data/animated_java/function/global/internal/gu/convert_uuid_array_to_string.mcfunction",
+				"data/animated_java/function/global/internal/gu/load.mcfunction",
+				"data/animated_java/function/global/internal/gu/zzz/0.mcfunction",
+				"data/animated_java/function/global/internal/gu/zzz/1.mcfunction",
+				"data/animated_java/function/global/on_load.mcfunction",
+				"data/animated_java/function/global/remove/everything.mcfunction",
+				"data/animated_java/function/item_milk/invalid_version_warning.mcfunction",
+				"data/animated_java/function/item_milk/on_load.mcfunction",
+				"data/animated_java/tags/function/global/on_load.json",
+				"data/animated_java/tags/function/global/root/on_tick.json",
+				"data/minecraft/tags/function/load.json",
+				"pack.mcmeta"
+			],
+			"versionedFiles": [
+				"data/animated_java/function/item_milk/invalid_version_warning.mcfunction",
+				"data/animated_java/function/item_milk/remove/all.mcfunction",
+				"data/animated_java/function/item_milk/remove/entities.mcfunction",
+				"data/animated_java/function/item_milk/remove/this.mcfunction",
+				"data/animated_java/function/item_milk/root/on_tick.mcfunction",
+				"data/animated_java/function/item_milk/set_default_pose.mcfunction",
+				"data/animated_java/function/item_milk/summon.mcfunction",
+				"data/animated_java/function/item_milk/zzz/0.mcfunction",
+				"data/animated_java/function/item_milk/zzz/1.mcfunction",
+				"data/animated_java/function/item_milk/zzz/2.mcfunction",
+				"data/animated_java/tags/function/item_milk/as_root/on_remove.json",
+				"data/animated_java/tags/function/item_milk/as_root/on_summon.json",
+				"data/animated_java/tags/function/item_milk/as_root/post_tick.json",
+				"data/animated_java/tags/function/item_milk/as_root/pre_tick.json"
+			]
+		},
 		"launcher": {
 			"coreFiles": [
 				"data/animated_java/function/global/errors/function_not_executed_as_root_entity.mcfunction",

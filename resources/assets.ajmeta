@@ -23,6 +23,16 @@
 				"assets/animated_java/textures/blueprint/forklift/texture.png"
 			]
 		},
+		"item_milk": {
+			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
+			"versionedFiles": [
+				"assets/animated_java/items/blueprint/item_milk/malk.json",
+				"assets/animated_java/items/empty.json",
+				"assets/animated_java/models/blueprint/item_milk/malk.json",
+				"assets/animated_java/models/empty.json",
+				"assets/animated_java/textures/blueprint/item_milk/milk.png"
+			]
+		},
 		"launcher": {
 			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
 			"versionedFiles": [

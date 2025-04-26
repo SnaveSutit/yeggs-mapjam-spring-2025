@@ -1,6 +1,7 @@
 {
 	"values": [
 		"animated_java:forklift/on_load",
+		"animated_java:item_milk/on_load",
 		"animated_java:launcher/on_load",
 		"animated_java:layer/on_load",
 		"animated_java:mixer/on_load",

@@ -1,0 +1,13 @@
+function on_load minecraft:load {
+	
+}
+
+dir summon {
+	function milk {
+		execute align xyz positioned ~.5 ~ ~.5 rotated ~ 0 run function animated_java:item_milk/summon {args:{}}
+	}
+}
+
+function on_tick minecraft:tick {
+	
+}
