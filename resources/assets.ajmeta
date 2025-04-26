@@ -33,6 +33,16 @@
 				"assets/animated_java/textures/blueprint/layer/texture.png"
 			]
 		},
+		"oven": {
+			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
+			"versionedFiles": [
+				"assets/animated_java/items/blueprint/oven/oven.json",
+				"assets/animated_java/items/empty.json",
+				"assets/animated_java/models/blueprint/oven/oven.json",
+				"assets/animated_java/models/empty.json",
+				"assets/animated_java/textures/blueprint/oven/oven.png"
+			]
+		},
 		"pan": {
 			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
 			"versionedFiles": [
@@ -45,6 +55,7 @@
 				"assets/animated_java/models/blueprint/pan/batter_chocolate/layer.json",
 				"assets/animated_java/models/blueprint/pan/batter_strawberry/layer.json",
 				"assets/animated_java/models/blueprint/pan/batter_vanilla/layer.json",
+				"assets/animated_java/models/blueprint/pan/burnt/layer.json",
 				"assets/animated_java/models/blueprint/pan/empty/layer.json",
 				"assets/animated_java/models/blueprint/pan/layer.json",
 				"assets/animated_java/models/blueprint/pan/pan.json",

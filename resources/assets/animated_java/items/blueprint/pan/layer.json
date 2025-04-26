@@ -72,6 +72,16 @@
 						{"type": "minecraft:dye", "default": [1, 1, 1]}
 					]
 				}
+			},
+			{
+				"when": "burnt",
+				"model": {
+					"type": "minecraft:model",
+					"model": "animated_java:blueprint/pan/burnt/layer",
+					"tints": [
+						{"type": "minecraft:dye", "default": [1, 1, 1]}
+					]
+				}
 			}
 		],
 		"fallback": {

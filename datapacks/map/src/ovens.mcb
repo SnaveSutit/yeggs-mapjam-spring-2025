@@ -1,0 +1,25 @@
+
+function summon {
+	execute rotated -90 0 run function animated_java:oven/summon {args:{}}
+}
+
+function on_tick minecraft:tick {
+	execute as @e[type=minecraft:item_display,tag=aj.oven.root] at @s run {
+		function animated_java:oven/as_own_locator_entities {command:'execute at @s run function ovens:on_tick/as_lock_point'}
+	}
+}
+
+dir on_tick {
+	function as_lock_point {
+		execute unless entity @s[tag=pan_lock_point] run return fail
+		execute on passengers run {
+			scoreboard players add @s cook_time 1
+			execute if score @s cook_time matches 300 run {
+				function pan:finish_baking
+			}
+			execute if score @s cook_time matches 600 run {
+				function pan:burn
+			}
+		}
+	}
+}

@@ -147,6 +147,49 @@
 				"data/animated_java/tags/function/layer/as_root/pre_tick.json"
 			]
 		},
+		"oven": {
+			"coreFiles": [
+				"data/animated_java/function/global/errors/function_not_executed_as_root_entity.mcfunction",
+				"data/animated_java/function/global/internal/gu/convert_uuid_array_to_string.mcfunction",
+				"data/animated_java/function/global/internal/gu/load.mcfunction",
+				"data/animated_java/function/global/internal/gu/zzz/0.mcfunction",
+				"data/animated_java/function/global/internal/gu/zzz/1.mcfunction",
+				"data/animated_java/function/global/on_load.mcfunction",
+				"data/animated_java/function/global/remove/everything.mcfunction",
+				"data/animated_java/function/oven/invalid_version_warning.mcfunction",
+				"data/animated_java/function/oven/on_load.mcfunction",
+				"data/animated_java/tags/function/global/on_load.json",
+				"data/animated_java/tags/function/global/root/on_tick.json",
+				"data/minecraft/tags/function/load.json",
+				"pack.mcmeta"
+			],
+			"versionedFiles": [
+				"data/animated_java/function/oven/as_own_locator_entities.mcfunction",
+				"data/animated_java/function/oven/invalid_version_warning.mcfunction",
+				"data/animated_java/function/oven/remove/all.mcfunction",
+				"data/animated_java/function/oven/remove/entities.mcfunction",
+				"data/animated_java/function/oven/remove/this.mcfunction",
+				"data/animated_java/function/oven/remove/zzz/0.mcfunction",
+				"data/animated_java/function/oven/remove/zzz/kill.mcfunction",
+				"data/animated_java/function/oven/remove/zzz/kill_passengers.mcfunction",
+				"data/animated_java/function/oven/root/on_tick.mcfunction",
+				"data/animated_java/function/oven/root/zzz/0.mcfunction",
+				"data/animated_java/function/oven/root/zzz/1.mcfunction",
+				"data/animated_java/function/oven/root/zzz/2.mcfunction",
+				"data/animated_java/function/oven/set_default_pose.mcfunction",
+				"data/animated_java/function/oven/summon.mcfunction",
+				"data/animated_java/function/oven/zzz/0.mcfunction",
+				"data/animated_java/function/oven/zzz/1.mcfunction",
+				"data/animated_java/function/oven/zzz/2.mcfunction",
+				"data/animated_java/function/oven/zzz/3.mcfunction",
+				"data/animated_java/function/oven/zzz/4.mcfunction",
+				"data/animated_java/function/oven/zzz/execute.mcfunction",
+				"data/animated_java/tags/function/oven/as_root/on_remove.json",
+				"data/animated_java/tags/function/oven/as_root/on_summon.json",
+				"data/animated_java/tags/function/oven/as_root/post_tick.json",
+				"data/animated_java/tags/function/oven/as_root/pre_tick.json"
+			]
+		},
 		"pan": {
 			"coreFiles": [
 				"data/animated_java/function/global/errors/function_not_executed_as_root_entity.mcfunction",
@@ -278,6 +321,8 @@
 				"data/animated_java/function/pan/variants/batter_strawberry/zzz/apply_to_bone_layer.mcfunction",
 				"data/animated_java/function/pan/variants/batter_vanilla/apply.mcfunction",
 				"data/animated_java/function/pan/variants/batter_vanilla/zzz/apply_to_bone_layer.mcfunction",
+				"data/animated_java/function/pan/variants/burnt/apply.mcfunction",
+				"data/animated_java/function/pan/variants/burnt/zzz/apply_to_bone_layer.mcfunction",
 				"data/animated_java/function/pan/variants/default/apply.mcfunction",
 				"data/animated_java/function/pan/variants/default/zzz/apply_to_bone_layer.mcfunction",
 				"data/animated_java/function/pan/variants/default/zzz/apply_to_bone_pan.mcfunction",

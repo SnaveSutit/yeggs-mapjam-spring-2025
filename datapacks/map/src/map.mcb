@@ -11,8 +11,6 @@ function on_load minecraft:load {
 	scoreboard players set 100 i 100
 	scoreboard players set 360 i 360
 
-	function nexus:setup/main
-
 	tellraw @a {"text":"Map reloaded!","color":"green"}
 }
 
@@ -36,4 +34,8 @@ function set_scale {
 
 	attribute @s minecraft:safe_fall_distance modifier remove scaled
 	$attribute @s minecraft:safe_fall_distance modifier add scaled $(scale) add_multiplied_base
+}
+
+function reset {
+
 }
