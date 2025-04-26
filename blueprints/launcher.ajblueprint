@@ -1,0 +1,294 @@
+{
+	"meta": {
+		"format": "animated_java_blueprint",
+		"format_version": "1.6.5",
+		"uuid": "8d9a3e02-41ca-fad5-e6b1-e88af995ad90",
+		"save_location": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\blueprints\\launcher.ajblueprint",
+		"last_used_export_namespace": "launcher"
+	},
+	"blueprint_settings": {
+		"export_namespace": "launcher",
+		"show_bounding_box": false,
+		"auto_bounding_box": true,
+		"bounding_box": [48, 48],
+		"enable_plugin_mode": false,
+		"resource_pack_export_mode": "raw",
+		"data_pack_export_mode": "raw",
+		"target_minecraft_versions": ["1.21.5"],
+		"display_item": "minecraft:white_dye",
+		"custom_model_data_offset": 0,
+		"enable_advanced_resource_pack_settings": false,
+		"resource_pack": "../resources",
+		"enable_advanced_data_pack_settings": false,
+		"data_pack": "../datapacks/animated_java",
+		"summon_commands": "",
+		"ticking_commands": "",
+		"interpolation_duration": 1,
+		"teleportation_duration": 1,
+		"use_storage_for_animation": false,
+		"show_function_errors": true,
+		"show_outdated_warning": false,
+		"baked_animations": true,
+		"json_file": ""
+	},
+	"resolution": {
+		"width": 64,
+		"height": 64
+	},
+	"elements": [
+		{
+			"name": "cube",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-72, 18, -72],
+			"to": [72, 32, 72],
+			"autouv": 0,
+			"color": 4,
+			"inflate": 2,
+			"origin": [0, 17, 0],
+			"faces": {
+				"north": {
+					"uv": [0, 18, 18, 20],
+					"texture": 0
+				},
+				"east": {
+					"uv": [18, 0, 36, 2],
+					"texture": 0
+				},
+				"south": {
+					"uv": [18, 2, 36, 4],
+					"texture": 0
+				},
+				"west": {
+					"uv": [18, 4, 36, 6],
+					"texture": 0
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [18, 0, 0, 18],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "11a2abd6-d449-9ede-a8c7-f4e7b4b81ec8"
+		},
+		{
+			"name": "cube",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-16, 0, -16],
+			"to": [16, 16, 16],
+			"autouv": 0,
+			"color": 5,
+			"origin": [-16, -16, -16],
+			"faces": {
+				"north": {
+					"uv": [0, 32, 32, 48],
+					"texture": 1
+				},
+				"east": {
+					"uv": [32, 0, 64, 16],
+					"texture": 1
+				},
+				"south": {
+					"uv": [32, 16, 64, 32],
+					"texture": 1
+				},
+				"west": {
+					"uv": [32, 32, 64, 48],
+					"texture": 1
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [32, 0, 0, 32],
+					"texture": 1
+				}
+			},
+			"type": "cube",
+			"uuid": "0a1f4161-8bc2-19f8-12b8-090b26bf49e6"
+		},
+		{
+			"name": "cake_lock_point",
+			"position": [0, 17, 0],
+			"rotation": [0, 0, 0],
+			"ignore_inherited_scale": false,
+			"visibility": true,
+			"locked": false,
+			"config": {
+				"use_entity": true,
+				"entity_type": "minecraft:item_display",
+				"sync_passenger_rotation": false,
+				"summon_commands": "tag @s add pan_lock_point",
+				"ticking_commands": ""
+			},
+			"uuid": "cca41eed-834c-f4f1-b6d5-a8ec98a6146f",
+			"type": "locator"
+		},
+		{
+			"name": "cube inverted",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [72, 32, 72],
+			"to": [-72, 18, -72],
+			"autouv": 0,
+			"color": 4,
+			"inflate": -2,
+			"origin": [0, 17, 0],
+			"faces": {
+				"north": {
+					"uv": [18, 4, 36, 2],
+					"texture": 0
+				},
+				"east": {
+					"uv": [18, 6, 36, 4],
+					"texture": 0
+				},
+				"south": {
+					"uv": [0, 20, 18, 18],
+					"texture": 0
+				},
+				"west": {
+					"uv": [18, 2, 36, 0],
+					"texture": 0
+				},
+				"up": {
+					"uv": [0, 0, 18, 18],
+					"texture": 0
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "b1426f29-c7fa-3fbe-ceda-f9c94a6f7b5b"
+		}
+	],
+	"outliner": [
+		{
+			"name": "pan",
+			"origin": [0, 16, 0],
+			"color": 0,
+			"configs": {
+				"variants": {}
+			},
+			"uuid": "6db20d24-4c32-cc90-c739-53ded5bedba3",
+			"export": true,
+			"mirror_uv": false,
+			"isOpen": true,
+			"locked": false,
+			"visibility": true,
+			"autouv": 0,
+			"selected": false,
+			"children": ["11a2abd6-d449-9ede-a8c7-f4e7b4b81ec8", "b1426f29-c7fa-3fbe-ceda-f9c94a6f7b5b"]
+		},
+		{
+			"name": "spring",
+			"origin": [0, 16, 0],
+			"color": 0,
+			"configs": {
+				"variants": {}
+			},
+			"uuid": "a8679050-af81-fc68-57cc-93a824a97de9",
+			"export": true,
+			"mirror_uv": false,
+			"isOpen": true,
+			"locked": false,
+			"visibility": true,
+			"autouv": 0,
+			"selected": false,
+			"children": ["0a1f4161-8bc2-19f8-12b8-090b26bf49e6"]
+		},
+		"cca41eed-834c-f4f1-b6d5-a8ec98a6146f"
+	],
+	"textures": [
+		{
+			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\pan.png",
+			"name": "pan.png",
+			"folder": "",
+			"namespace": "",
+			"id": "0",
+			"group": "",
+			"width": 512,
+			"height": 512,
+			"uv_width": 512,
+			"uv_height": 512,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "1550810a-d427-f5f7-85f3-c86433c90384",
+			"relative_path": "../resources/assets/cooking/textures/blueprint/pan/pan.png",
+			"source": "data:image/png;base64,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0o1MgAABAgQEgBsgQIAAAQJBAQEQXLqRCRAgQICAAHADBAgQIEAgKCAAgks3MgECBAgQEABugAABAgQIBAUEQHDpRiZAgAABAgLADRAgQIAAgaCAAAgu3cgECBAgQEAAuAECBAgQIBAUEADBpRuZAAECBAgIADdAgAABAgSCAgIguHQjEyBAgAABAeAGCBAgQIBAUEAABJduZAIECBAgIADcAAECBAgQCAoIgODSjUyAAAECBASAGyBAgAABAkEBARBcupEJECBAgIAAcAMECBAgQCAoIACCSzcyAQIECBAQAG6AAAECBAgEBQRAcOlGJkCAAAECAsANECBAgACBoIAACC7dyAQIECBAQAC4AQIECBAgEBQQAMGlG5kAAQIECAgAN0CAAAECBIICAiC4dCMTIECAAAEB4AYIECBAgEBQQAAEl25kAgQIECAgANwAAQIECBAICgiA4NKNTIAAAQIEBIAbIECAAAECQQEBEFy6kQkQIECAgABwAwQIECBAICggAIJLNzIBAgQIEBAAboAAAQIECAQFBEBw6UYmQIAAAQICwA0QIECAAIGggAAILt3IBAgQIEBAALgBAgQIECAQFBAAwaUbmQABAgQICAA3QIAAAQIEggICILh0IxMgQIAAAQHgBggQIECAQFBAAASXbmQCBAgQICAA3AABAgQIEAgKCIDg0o1MgAABAgQEgBsgQIAAAQJBAQEQXLqRCRAgQICAAHADBAgQIEAgKCAAgks3MgECBAgQEABugAABAgQIBAUEQHDpRiZAgAABAgLADRAgQIAAgaCAAAgu3cgECBAgQEAAuAECBAgQIBAUEADBpRuZAAECBAgIADdAgAABAgSCAgIguHQjEyBAgAABAeAGCBAgQIBAUEAABJduZAIECBAgIADcAAECBAgQCAoIgODSjUyAAAECBASAGyBAgAABAkEBARBcupEJECBAgIAAcAMECBAgQCAoIACCSzcyAQIECBAQAG6AAAECBAgEBQRAcOlGJkCAAAECAsANECBAgACBoIAACC7dyAQIECBAQAC4AQIECBAgEBQQAMGlG5kAAQIECAgAN0CAAAECBIICAiC4dCMTIECAAAEB4AYIECBAgEBQQAAEl25kAgQIECAgANwAAQIECBAICgiA4NKNTIAAAQIEBIAbIECAAAECQQEBEFy6kQkQIECAgABwAwQIECBAICggAIJLNzIBAgQIEBAAboAAAQIECAQFBEBw6UYmQIAAAQICwA0QIECAAIGggAAILt3IBAgQIEBAALgBAgQIECAQFBAAwaUbmQABAgQICAA3QIAAAQIEggICILh0IxMgQIAAAQHgBggQIECAQFBAAASXbmQCBAgQICAA3AABAgQIEAgKCIDg0o1MgAABAgQEgBsgQIAAAQJBAQEQXLqRCRAgQICAAHADBAgQIEAgKCAAgks3MgECBAgQEABugAABAgQIBAUEQHDpRiZAgAABAgLADRAgQIAAgaCAAAgu3cgECBAgQEAAuAECBAgQIBAUEADBpRuZAAECBAgIADdAgAABAgSCAgIguHQjEyBAgAABAeAGCBAgQIBAUEAABJduZAIECBAgIADcAAECBAgQCAoIgODSjUyAAAECBASAGyBAgAABAkEBARBcupEJECBAgIAAcAMECBAgQCAoIACCSzcyAQIECBAQAG6AAAECBAgEBQRAcOlGJkCAAAECAsANECBAgACBoIAACC7dyAQIECBAQAC4AQIECBAgEBQQAMGlG5kAAQIECAgAN0CAAAECBIICAiC4dCMTIECAAAEB4AYIECBAgEBQQAAEl25kAgQIECAgANwAAQIECBAICgiA4NKNTIAAAQIEBIAbIECAAAECQQEBEFy6kQkQIECAgABwAwQIECBAICggAIJLNzIBAgQIEBAAboAAAQIECAQFBEBw6UYmQIAAAQICwA0QIECAAIGggAAILt3IBAgQIEBAALgBAgQIECAQFBAAwaUbmQABAgQICAA3QIAAAQIEggICILh0IxMgQIAAAQHgBggQIECAQFBAAASXbmQCBAgQICAA3AABAgQIEAgKCIDg0o1MgAABAgQEgBsgQIAAAQJBAQEQXLqRCRAgQICAAHADBAgQIEAgKCAAgks3MgECBAgQEABugAABAgQIBAUEQHDpRiZAgAABAgLADRAgQIAAgaCAAAgu3cgECBAgQEAAuAECBAgQIBAUEADBpRuZAAECBAgIADdAgAABAgSCAgIguHQjEyBAgAABAeAGCBAgQIBAUEAABJduZAIECBAgIADcAAECBAgQCAoIgODSjUyAAAECBASAGyBAgAABAkEBARBcupEJECBAgIAAcAMECBAgQCAoIACCSzcyAQIECBAQAG6AAAECBAgEBQRAcOlGJkCAAAECAsANECBAgACBoIAACC7dyAQIECBAQAC4AQIECBAgEBQQAMGlG5kAAQIECAgAN0CAAAECBIICAiC4dCMTIECAAAEB4AYIECBAgEBQQAAEl25kAgQIECAgANwAAQIECBAICgiA4NKNTIAAAQIEBIAbIECAAAECQQEBEFy6kQkQIECAgABwAwQIECBAICggAIJLNzIBAgQIEBAAboAAAQIECAQFBEBw6UYmQIAAAQICwA0QIECAAIGggAAILt3IBAgQIEBAALgBAgQIECAQFBAAwaUbmQABAgQICAA3QIAAAQIEggICILh0IxMgQIAAAQHgBggQIECAQFBAAASXbmQCBAgQICAA3AABAgQIEAgKCIDg0o1MgAABAgQEgBsgQIAAAQJBAQEQXLqRCRAgQICAAHADBAgQIEAgKCAAgks3MgECBAgQEABugAABAgQIBAUEQHDpRiZAgAABAgLADRAgQIAAgaCAAAgu3cgECBAgQEAAuAECBAgQIBAUEADBpRuZAAECBAgIADdAgAABAgSCAgIguHQjEyBAgAABAeAGCBAgQIBAUEAABJduZAIECBAgIADcAAECBAgQCAoIgODSjUyAAAECBASAGyBAgAABAkEBARBcupEJECBAgIAAcAMECBAgQCAoIACCSzcyAQIECBAQAG6AAAECBAgEBQRAcOlGJkCAAAECAsANECBAgACBoIAACC7dyAQIECBAQAC4AQIECBAgEBQQAMGlG5kAAQIECAgAN0CAAAECBIICAiC4dCMTIECAAAEB4AYIECBAgEBQQAAEl25kAgQIECAgANwAAQIECBAICgiA4NKNTIAAAQIEBIAbIECAAAECQQEBEFy6kQkQIECAgABwAwQIECBAICggAIJLNzIBAgQIEBAAboAAAQIECAQFBEBw6UYmQIAAAQICwA0QIECAAIGggAAILt3IBAgQIEBAALgBAgQIECAQFBAAwaUbmQABAgQICAA3QIAAAQIEggICILh0IxMgQIAAAQHgBggQIECAQFBAAASXbmQCBAgQICAA3AABAgQIEAgKCIDg0o1MgAABAgQEgBsgQIAAAQJBAQEQXLqRCRAgQICAAHADBAgQIEAgKCAAgks3MgECBAgQEABugAABAgQIBAUEQHDpRiZAgAABAgLADRAgQIAAgaCAAAgu3cgECBAgQEAAuAECBAgQIBAUEADBpRuZAAECBAgIADdAgAABAgSCAgIguHQjEyBAgAABAeAGCBAgQIBAUEAABJduZAIECBAgIADcAAECBAgQCAoIgODSjUyAAAECBASAGyBAgAABAkEBARBcupEJECBAgIAAcAMECBAgQCAoIACCSzcyAQIECBAQAG6AAAECBAgEBQRAcOlGJkCAAAECAsANECBAgACBoIAACC7dyAQIECBAQAC4AQIECBAgEBQQAMGlG5kAAQIECAgAN0CAAAECBIICAiC4dCMTIECAAAEB4AYIECBAgEBQQAAEl25kAgQIECAgANwAAQIECBAICgiA4NKNTIAAAQIEBIAbIECAAAECQQEBEFy6kQkQIECAgABwAwQIECBAICggAIJLNzIBAgQIEBAAboAAAQIECAQFBEBw6UYmQIAAAQICwA0QIECAAIGggAAILt3IBAgQIEBAALgBAgQIECAQFBAAwaUbmQABAgQICAA3QIAAAQIEggICILh0IxMgQIAAAQHgBggQIECAQFBAAASXbmQCBAgQICAA3AABAgQIEAgKCIDg0o1MgAABAgQEgBsgQIAAAQJBAQEQXLqRCRAgQICAAHADBAgQIEAgKCAAgks3MgECBAgQEABugAABAgQIBAUEQHDpRiZAgAABAgLADRAgQIAAgaCAAAgu3cgECBAgQEAAuAECBAgQIBAUEADBpRuZAAECBAgIADdAgAABAgSCAgIguHQjEyBAgAABAeAGCBAgQIBAUOC/qjT0Pfp8dj0AAAAASUVORK5CYII="
+		},
+		{
+			"path": "",
+			"name": "spring.png",
+			"folder": "block",
+			"namespace": "",
+			"id": "1",
+			"group": "",
+			"width": 64,
+			"height": 64,
+			"uv_width": 64,
+			"uv_height": 64,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": false,
+			"uuid": "cff1cff4-fe9f-3f58-e6d7-cc362fae6fa4",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAASJJREFUeF7tmD0OAVEUhd9Uiun9ZBKhsgX7UKrsQanX6yzALixA7EBFJJKhUlBokCes4buJbzZw7jvvvHPPmWI0mb4S+F3nHRA9pSITULXayBCnc50yAcNWE8HfnC8SoAJ8AnqAJugWcA2aAwxCSBIzCRqF7QKWob+vw6vZEzHgHyjeBjMBjWqAkPA47fj/ARKgAnwCeoAm6BZwDZoDCAYMQiZBo7Bd4NMGCQP6YeJ1eLy+oQQstwuS/1RkAnrtEhniUN9TJqDsdxH8+/4oASrAJ6AHaIJuAdegOcAghCQxk6BR2C4QowwhBvAFxeswefgI2EWEIcgZJIBkPwK2CohwC+QMKoBkPwK2CohwC+QMKoBkPwK2CohwC+QMKoBkPwL2Gxs10hDNSEKXAAAAAElFTkSuQmCC"
+		}
+	],
+	"variants": {
+		"default": {
+			"name": "default",
+			"display_name": "Default",
+			"uuid": "e61c7996-e49b-2789-f462-0d19467c0ecb",
+			"texture_map": {},
+			"excluded_nodes": [],
+			"is_default": true
+		},
+		"list": []
+	},
+	"animations": [],
+	"animation_controllers": []
+}

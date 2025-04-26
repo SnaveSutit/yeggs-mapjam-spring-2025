@@ -23,6 +23,18 @@
 				"assets/animated_java/textures/blueprint/forklift/texture.png"
 			]
 		},
+		"launcher": {
+			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
+			"versionedFiles": [
+				"assets/animated_java/items/blueprint/launcher/pan.json",
+				"assets/animated_java/items/blueprint/launcher/spring.json",
+				"assets/animated_java/items/empty.json",
+				"assets/animated_java/models/blueprint/launcher/pan.json",
+				"assets/animated_java/models/blueprint/launcher/spring.json",
+				"assets/animated_java/models/empty.json",
+				"assets/animated_java/textures/blueprint/launcher/spring.png"
+			]
+		},
 		"layer": {
 			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
 			"versionedFiles": [
@@ -31,6 +43,31 @@
 				"assets/animated_java/models/blueprint/layer/layer.json",
 				"assets/animated_java/models/empty.json",
 				"assets/animated_java/textures/blueprint/layer/texture.png"
+			]
+		},
+		"mixer": {
+			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
+			"versionedFiles": [
+				"assets/animated_java/items/blueprint/mixer/basin.json",
+				"assets/animated_java/items/blueprint/mixer/batter.json",
+				"assets/animated_java/items/blueprint/mixer/flow.json",
+				"assets/animated_java/items/blueprint/mixer/handle.json",
+				"assets/animated_java/items/blueprint/mixer/lid.json",
+				"assets/animated_java/items/blueprint/mixer/spout.json",
+				"assets/animated_java/items/blueprint/mixer/valve.json",
+				"assets/animated_java/items/empty.json",
+				"assets/animated_java/models/blueprint/mixer/basin.json",
+				"assets/animated_java/models/blueprint/mixer/batter.json",
+				"assets/animated_java/models/blueprint/mixer/flow.json",
+				"assets/animated_java/models/blueprint/mixer/handle.json",
+				"assets/animated_java/models/blueprint/mixer/lid.json",
+				"assets/animated_java/models/blueprint/mixer/pour_chocolate/flow.json",
+				"assets/animated_java/models/blueprint/mixer/pour_strawberry/flow.json",
+				"assets/animated_java/models/blueprint/mixer/pour_vanilla/flow.json",
+				"assets/animated_java/models/blueprint/mixer/spout.json",
+				"assets/animated_java/models/blueprint/mixer/valve.json",
+				"assets/animated_java/models/empty.json",
+				"assets/animated_java/textures/blueprint/mixer/texture.png"
 			]
 		},
 		"oven": {
@@ -46,6 +83,7 @@
 		"pan": {
 			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
 			"versionedFiles": [
+				"assets/animated_java/items/blueprint/pan/frosting.json",
 				"assets/animated_java/items/blueprint/pan/layer.json",
 				"assets/animated_java/items/blueprint/pan/pan.json",
 				"assets/animated_java/items/empty.json",
@@ -55,12 +93,27 @@
 				"assets/animated_java/models/blueprint/pan/batter_chocolate/layer.json",
 				"assets/animated_java/models/blueprint/pan/batter_strawberry/layer.json",
 				"assets/animated_java/models/blueprint/pan/batter_vanilla/layer.json",
+				"assets/animated_java/models/blueprint/pan/burnt/frosting.json",
 				"assets/animated_java/models/blueprint/pan/burnt/layer.json",
+				"assets/animated_java/models/blueprint/pan/empty/frosting.json",
 				"assets/animated_java/models/blueprint/pan/empty/layer.json",
+				"assets/animated_java/models/blueprint/pan/frosted/frosting.json",
+				"assets/animated_java/models/blueprint/pan/frosting.json",
 				"assets/animated_java/models/blueprint/pan/layer.json",
 				"assets/animated_java/models/blueprint/pan/pan.json",
+				"assets/animated_java/models/empty.json"
+			]
+		},
+		"splat": {
+			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
+			"versionedFiles": [
+				"assets/animated_java/items/blueprint/splat/pan.json",
+				"assets/animated_java/items/blueprint/splat/splat.json",
+				"assets/animated_java/items/empty.json",
+				"assets/animated_java/models/blueprint/splat/pan.json",
+				"assets/animated_java/models/blueprint/splat/splat.json",
 				"assets/animated_java/models/empty.json",
-				"assets/animated_java/textures/blueprint/pan/pan.png"
+				"assets/animated_java/textures/blueprint/splat/splat.png"
 			]
 		}
 	}

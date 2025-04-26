@@ -1,0 +1,44 @@
+{
+	"textures": {
+		"9": "cooking:blueprint/pan/frosting",
+		"particle": "minecraft:item/pufferfish"
+	},
+	"display": {
+		"head": {
+			"rotation": [0, 180, 0]
+		}
+	},
+	"elements": [
+		{
+			"from": [-4, 9.57241, -4],
+			"to": [20, 12.38621, 20],
+			"rotation": {
+				"angle": 0,
+				"axis": "y",
+				"origin": [8, 9.65517, 8]
+			},
+			"faces": {
+				"north": {
+					"uv": [0, 4.5, 4.5, 5],
+					"texture": "#9"
+				},
+				"east": {
+					"uv": [4.5, 0, 9, 0.5],
+					"texture": "#9"
+				},
+				"south": {
+					"uv": [4.5, 0.5, 9, 1],
+					"texture": "#9"
+				},
+				"west": {
+					"uv": [4.5, 1, 9, 1.5],
+					"texture": "#9"
+				},
+				"up": {
+					"uv": [4.5, 4.5, 0, 0],
+					"texture": "#9"
+				}
+			}
+		}
+	]
+}

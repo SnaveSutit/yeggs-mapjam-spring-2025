@@ -174,22 +174,24 @@ function get_player_inputs {
 	}
 }
 
-function on_interaction_as_player {
-	execute as @e[type=interaction,distance=..10,nbt={interaction:{}}] run {
-		scoreboard players set #check i 0
-		execute as @n[tag=forklift_seat] on passengers run scoreboard players set #check i 1
-	}
+function on_interaction {
+	execute unless entity @s[tag=forklift_seat_interaction] run return fail
 
-	execute if score #check i matches 1 run {
-		execute on vehicle if entity @s[tag=forklift_seat] run scoreboard players set #check i 2
-		execute if score #check i matches 2 run {
-			execute as @n[tag=forklift] at @s run function forklift:activate_forks
-		}
+	scoreboard players set #check i 0
+	execute as @n[tag=forklift_seat,distance=..10] on passengers run scoreboard players set #check i 1
+
+	execute as @a[tag=interaction] run {
 		execute if score #check i matches 1 run {
-			say Someone else is in the seat
+			execute on vehicle if entity @s[tag=forklift_seat] run scoreboard players set #check i 2
+			execute if score #check i matches 2 run {
+				execute as @n[tag=forklift,distance=..10] at @s run function forklift:activate_forks
+			}
+			execute if score #check i matches 1 run {
+				say Someone else is in the seat
+			}
 		}
-	}
-	execute if score #check i matches 0 run {
-		ride @s mount @n[tag=forklift_seat]
+		execute if score #check i matches 0 run {
+			ride @s mount @n[tag=forklift_seat,distance=..10]
+		}
 	}
 }

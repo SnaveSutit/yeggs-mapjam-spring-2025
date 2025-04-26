@@ -56,6 +56,7 @@ function on_tick minecraft:tick {
 			}
 			kill @s
 			playsound minecraft:entity.item.break block @a ~ ~ ~ 2 0.9
+			execute positioned ~ 1 ~ rotated 0 0 run function animated_java:splat/summon {args:{animation:splat,start_animation:true}}
 		}
 
 		# Attempt to attach to nearby lock points
@@ -111,6 +112,13 @@ function burn {
 	tag @s add burnt
 	execute on passengers on passengers if entity @s[tag=aj.pan.root] run {
 		function animated_java:pan/variants/burnt/apply
+	}
+}
+
+function frost {
+	tag @s add frosted
+	execute on passengers on passengers if entity @s[tag=aj.pan.root] run {
+		function animated_java:pan/variants/frosted/apply
 	}
 }
 

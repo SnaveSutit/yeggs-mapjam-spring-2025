@@ -1,6 +1,6 @@
 {
 	"textures": {
-		"0": "animated_java:blueprint/pan/pan",
+		"0": "cooking:blueprint/pan/pan",
 		"particle": "minecraft:item/pufferfish"
 	},
 	"display": {

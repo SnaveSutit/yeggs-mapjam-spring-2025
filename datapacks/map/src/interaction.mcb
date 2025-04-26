@@ -15,18 +15,16 @@ advancement interaction_click_event {
 }
 
 function click {
-	# say "on_interaction_clicked"
 	advancement revoke @s only interaction:interaction_click_event
-	function #interaction:on_interaction_as_player
+	tag @s add interaction
 	execute as @e[type=interaction,distance=..10,nbt={interaction:{}}] run {
-		function #interaction:on_interaction_as_entity
+		function #interaction:on_interaction
 		data remove entity @s interaction
 	}
+	tag @s remove interaction
 }
 
-tag function on_interaction_as_player {
-	forklift:on_interaction_as_player
-}
-
-tag function on_interaction_as_entity {
+tag function on_interaction {
+	forklift:on_interaction
+	mixer:on_interaction
 }

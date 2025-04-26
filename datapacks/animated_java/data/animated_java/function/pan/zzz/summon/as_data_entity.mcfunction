@@ -5,3 +5,5 @@ execute on vehicle on passengers if entity @s[tag=aj.pan.node.pan] run function 
 data modify entity @s item.components."minecraft:custom_data".bones.bone_pan set from storage aj:uuid main.out
 execute on vehicle on passengers if entity @s[tag=aj.pan.node.layer] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
 data modify entity @s item.components."minecraft:custom_data".bones.bone_layer set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.pan.node.frosting] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
+data modify entity @s item.components."minecraft:custom_data".bones.bone_frosting set from storage aj:uuid main.out

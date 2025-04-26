@@ -39,3 +39,19 @@ function set_scale {
 function reset {
 
 }
+
+function setup_debug_environment {
+	execute unless entity @s[name=SnaveSutit] run return run tellraw @s {"text":"You are not SnaveSutit!","color":"red"}
+	kill @e[type=!player]
+	# Pan Dispenser
+	execute positioned -119 2 -34 run function pan:create_lock_point
+	execute positioned -119 4 -34 run function pan:summon
+	execute positioned -133 1 -15 rotated -90 0 run function ovens:summon
+	execute positioned -119 1 -18 run function forklift:debug
+	execute positioned -68.0 5 -16.0 rotated 90 0 run function animated_java:mixer/summon {args:{}}
+	execute positioned -68.0 5 1.0 rotated 90 0 run function animated_java:mixer/summon {args:{}}
+	# Frosting area
+	execute positioned -67 3 24 run function pan:create_lock_point
+	# Launcher
+	execute positioned -100 1 17 rotated 0 0 run function animated_java:launcher/summon {args:{}}
+}

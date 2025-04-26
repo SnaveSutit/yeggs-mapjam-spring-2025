@@ -1,0 +1,32 @@
+{
+	"textures": {
+		"0": "animated_java:blueprint/mixer/texture",
+		"particle": "minecraft:item/pufferfish"
+	},
+	"display": {
+		"head": {
+			"rotation": [0, 180, 0]
+		}
+	},
+	"elements": [
+		{
+			"from": [-4, 18, -4],
+			"to": [20, 18, 20],
+			"rotation": {
+				"angle": 0,
+				"axis": "y",
+				"origin": [8, 18, 8]
+			},
+			"faces": {
+				"up": {
+					"uv": [12, 3, 9, 0],
+					"texture": "#0"
+				},
+				"down": {
+					"uv": [7.75, 9, 4.75, 12],
+					"texture": "#0"
+				}
+			}
+		}
+	]
+}
