@@ -42,9 +42,10 @@
 				"assets/animated_java/models/blueprint/pan/batter_vanilla/layer.json",
 				"assets/animated_java/models/blueprint/pan/empty/layer.json",
 				"assets/animated_java/models/blueprint/pan/layer.json",
+				"assets/animated_java/models/blueprint/pan/layer_vanilla/layer.json",
 				"assets/animated_java/models/blueprint/pan/pan.json",
 				"assets/animated_java/models/empty.json",
-				"assets/animated_java/textures/blueprint/pan/layer.png",
+				"assets/animated_java/textures/blueprint/pan/batter_vanilla.png",
 				"assets/animated_java/textures/blueprint/pan/pan.png",
 				"assets/animated_java/textures/blueprint/pan/transparent.png"
 			]
