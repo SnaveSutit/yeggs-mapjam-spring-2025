@@ -23,6 +23,76 @@
 				"assets/animated_java/textures/blueprint/forklift/texture.png"
 			]
 		},
+		"ingredient_berries": {
+			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
+			"versionedFiles": [
+				"assets/animated_java/items/blueprint/ingredient_berries/berries.json",
+				"assets/animated_java/items/empty.json",
+				"assets/animated_java/models/blueprint/ingredient_berries/berries.json",
+				"assets/animated_java/models/empty.json",
+				"assets/animated_java/textures/blueprint/ingredient_berries/berries.png"
+			]
+		},
+		"ingredient_chocolate": {
+			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
+			"versionedFiles": [
+				"assets/animated_java/items/blueprint/ingredient_chocolate/chocolate.json",
+				"assets/animated_java/items/empty.json",
+				"assets/animated_java/models/blueprint/ingredient_chocolate/chocolate.json",
+				"assets/animated_java/models/empty.json",
+				"assets/animated_java/textures/blueprint/ingredient_chocolate/chocolate.png"
+			]
+		},
+		"ingredient_eggs": {
+			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
+			"versionedFiles": [
+				"assets/animated_java/items/blueprint/ingredient_eggs/eggs.json",
+				"assets/animated_java/items/empty.json",
+				"assets/animated_java/models/blueprint/ingredient_eggs/eggs.json",
+				"assets/animated_java/models/empty.json",
+				"assets/animated_java/textures/blueprint/ingredient_eggs/eggs.png"
+			]
+		},
+		"ingredient_flour": {
+			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
+			"versionedFiles": [
+				"assets/animated_java/items/blueprint/ingredient_flour/flour.json",
+				"assets/animated_java/items/empty.json",
+				"assets/animated_java/models/blueprint/ingredient_flour/flour.json",
+				"assets/animated_java/models/empty.json",
+				"assets/animated_java/textures/blueprint/ingredient_flour/flour.png"
+			]
+		},
+		"ingredient_milk": {
+			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
+			"versionedFiles": [
+				"assets/animated_java/items/blueprint/ingredient_milk/malk.json",
+				"assets/animated_java/items/empty.json",
+				"assets/animated_java/models/blueprint/ingredient_milk/malk.json",
+				"assets/animated_java/models/empty.json",
+				"assets/animated_java/textures/blueprint/ingredient_milk/milk.png"
+			]
+		},
+		"ingredient_sugar": {
+			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
+			"versionedFiles": [
+				"assets/animated_java/items/blueprint/ingredient_sugar/sugar.json",
+				"assets/animated_java/items/empty.json",
+				"assets/animated_java/models/blueprint/ingredient_sugar/sugar.json",
+				"assets/animated_java/models/empty.json",
+				"assets/animated_java/textures/blueprint/ingredient_sugar/sugar.png"
+			]
+		},
+		"ingredient_vanilla": {
+			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
+			"versionedFiles": [
+				"assets/animated_java/items/blueprint/ingredient_vanilla/vanilla.json",
+				"assets/animated_java/items/empty.json",
+				"assets/animated_java/models/blueprint/ingredient_vanilla/vanilla.json",
+				"assets/animated_java/models/empty.json",
+				"assets/animated_java/textures/blueprint/ingredient_vanilla/vanilla.png"
+			]
+		},
 		"item_milk": {
 			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
 			"versionedFiles": [

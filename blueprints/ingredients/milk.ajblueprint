@@ -2,12 +2,12 @@
 	"meta": {
 		"format": "animated_java_blueprint",
 		"format_version": "1.6.5",
-		"uuid": "68cbba06-339e-cfa7-b11c-79d409ef6205",
-		"save_location": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\blueprints\\item_milk.ajblueprint",
-		"last_used_export_namespace": "item_milk"
+		"uuid": "041c8b66-9541-ceff-c443-27e4cd714d53",
+		"save_location": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\blueprints\\ingredients\\milk.ajblueprint",
+		"last_used_export_namespace": "ingredient_milk"
 	},
 	"blueprint_settings": {
-		"export_namespace": "item_milk",
+		"export_namespace": "ingredient_milk",
 		"show_bounding_box": false,
 		"auto_bounding_box": true,
 		"bounding_box": [48, 48],
@@ -18,9 +18,9 @@
 		"display_item": "minecraft:white_dye",
 		"custom_model_data_offset": 0,
 		"enable_advanced_resource_pack_settings": false,
-		"resource_pack": "../resources",
+		"resource_pack": "../../resources",
 		"enable_advanced_data_pack_settings": false,
-		"data_pack": "../datapacks/animated_java",
+		"data_pack": "../../datapacks/animated_java",
 		"summon_commands": "",
 		"ticking_commands": "",
 		"interpolation_duration": 1,
@@ -180,7 +180,7 @@
 			"locked": false,
 			"visibility": true,
 			"autouv": 0,
-			"selected": true,
+			"selected": false,
 			"children": ["85f98a17-5278-ab88-aaf0-50234ab07f41", "ad409660-6021-a269-c462-c727b0fa9b7e", "40ed53df-75cd-2865-f31e-91704e81736e"]
 		}
 	],
