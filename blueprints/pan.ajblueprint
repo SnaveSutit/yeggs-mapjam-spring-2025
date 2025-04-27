@@ -471,12 +471,54 @@
 					"texture": 9
 				},
 				"down": {
-					"uv": [0, 10, 118, 128],
-					"texture": 9
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				}
 			},
 			"type": "cube",
 			"uuid": "4014d5b5-2ea8-c3cd-d234-91431393eb58"
+		},
+		{
+			"name": "cube inverted",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [72.5, 26.5, 72.5],
+			"to": [-72.5, 9.5, -72.5],
+			"autouv": 0,
+			"color": 1,
+			"origin": [0, 11, 0],
+			"faces": {
+				"north": {
+					"uv": [78, 10, 0, 0],
+					"texture": 9
+				},
+				"east": {
+					"uv": [0, 10, 84, 0],
+					"texture": 9
+				},
+				"south": {
+					"uv": [6, 10, 108, 0],
+					"texture": 9
+				},
+				"west": {
+					"uv": [0, 10, 128, 0],
+					"texture": 9
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 128, 118, 10],
+					"texture": 9
+				}
+			},
+			"type": "cube",
+			"uuid": "2672abe3-6677-4fe3-52ed-2c1c54f8e98f"
 		}
 	],
 	"outliner": [
@@ -538,7 +580,7 @@
 			"visibility": true,
 			"autouv": 0,
 			"selected": false,
-			"children": ["4014d5b5-2ea8-c3cd-d234-91431393eb58"]
+			"children": ["4014d5b5-2ea8-c3cd-d234-91431393eb58", "2672abe3-6677-4fe3-52ed-2c1c54f8e98f"]
 		}
 	],
 	"textures": [

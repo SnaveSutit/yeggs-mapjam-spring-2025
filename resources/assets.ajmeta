@@ -130,11 +130,16 @@
 		"layer": {
 			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
 			"versionedFiles": [
+				"assets/animated_java/items/blueprint/layer/frosting.json",
 				"assets/animated_java/items/blueprint/layer/layer.json",
 				"assets/animated_java/items/empty.json",
 				"assets/animated_java/models/blueprint/layer/baked_chocolate/layer.json",
 				"assets/animated_java/models/blueprint/layer/baked_strawberry/layer.json",
 				"assets/animated_java/models/blueprint/layer/baked_vanilla/layer.json",
+				"assets/animated_java/models/blueprint/layer/frosted_chocolate/frosting.json",
+				"assets/animated_java/models/blueprint/layer/frosted_strawberry/frosting.json",
+				"assets/animated_java/models/blueprint/layer/frosted_vanilla/frosting.json",
+				"assets/animated_java/models/blueprint/layer/frosting.json",
 				"assets/animated_java/models/blueprint/layer/layer.json",
 				"assets/animated_java/models/empty.json"
 			]

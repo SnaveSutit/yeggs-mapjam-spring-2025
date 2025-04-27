@@ -44,7 +44,7 @@ function set_scale {
 
 function reset {
 	kill @e[type=!player]
-	schedule 1t {
+	schedule 10t {
 		# Forklift
 		execute positioned -20 1 -18 rotated 180 0 run function forklift:summon
 		# Pan Dispenser

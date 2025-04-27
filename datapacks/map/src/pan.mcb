@@ -60,6 +60,17 @@ dir debug {
 				function pan:finish_baking
 			}
 		}
+		REPEAT(['vanilla','chocolate','strawberry']) as frosting {
+			function summon_pan_baked_<%flavor%>_frosted_<%frosting%> {
+				function pan:summon
+				execute as @n[tag=pan,distance=..1] run {
+					function pan:fill_batter {flavor:<%flavor%>}
+					execute on passengers on passengers if entity @s[tag=aj.pan.root] run function animated_java:pan/animations/fill_batter/pause
+					function pan:finish_baking
+					function pan:frost {frosting:<%frosting%>}
+				}
+			}
+		}
 	}
 }
 
@@ -91,7 +102,7 @@ function on_tick minecraft:tick {
 		scoreboard players set #check i 0
 		execute on vehicle run scoreboard players set #check i 1
 		execute if score #check i matches 0 if entity @n[type=minecraft:item_display,tag=pan_lock_point,distance=..4] run {
-			execute on passengers on passengers if entity @s[tag=aj.pan.root] run function pan:snap_rotation
+			execute on passengers on passengers if entity @s[tag=aj.pan.root] run function util:snap_rotation
 			ride @s mount @n[type=minecraft:item_display,tag=pan_lock_point,distance=..4]
 		}
 
@@ -99,14 +110,6 @@ function on_tick minecraft:tick {
 			particle minecraft:large_smoke ~ ~1 ~ 1.25 0 1.25 0 5
 		}
 	}
-}
-
-
-function snap_rotation {
-	execute if entity @s[y_rotation=-45..45] run rotate @s 0 0
-	execute if entity @s[y_rotation=135..-135] run rotate @s 180 0
-	execute if entity @s[y_rotation=45..135] run rotate @s 90 0
-	execute if entity @s[y_rotation=-135..-45] run rotate @s -90 0
 }
 
 
@@ -120,6 +123,7 @@ function kill_all {
 
 function fill_batter {
 	#ARGS: {flavor: string}
+	tag @s add batter
 	$execute on passengers on passengers if entity @s[tag=aj.pan.root] run { {flavor:$(flavor)}
 		$data modify entity @s data.flavor set value $(flavor)
 		$function animated_java:pan/variants/batter_$(flavor)/apply
@@ -129,6 +133,8 @@ function fill_batter {
 
 
 function finish_baking {
+	execute if entity @s[tag=!batter] run return fail
+	tag @s add baked
 	execute on passengers on passengers if entity @s[tag=aj.pan.root] run { with entity @s data
 		$function animated_java:pan/variants/baked_$(flavor)/apply
 		function animated_java:pan/animations/finish_baking/play
@@ -143,24 +149,35 @@ function burn {
 	}
 }
 
+
 function frost {
+	#ARGS: {frosting: string}
+	execute if entity @s[tag=!batter] run return run tellraw @p {"text":"You need to mix and bake some batter first!","color":"red"}
+	execute if entity @s[tag=!baked] run return run tellraw @p {"text":"You need to bake the batter first!","color":"red"}
 	tag @s add frosted
-	execute on passengers on passengers if entity @s[tag=aj.pan.root] run {
-		function animated_java:pan/variants/frosted/apply
+	$execute on passengers on passengers if entity @s[tag=aj.pan.root] run { {frosting:$(frosting)}
+		$data modify entity @s data.frosting set value $(frosting)
+		$function animated_java:pan/variants/frosted_$(frosting)/apply
 	}
 }
 
 
 function empty_batter {
-	function animated_java:pan/variants/empty
-	function animated_java:pan/animations/empty/set_frame {frame:0}
+	execute on passengers on passengers if entity @s[tag=aj.pan.root] run {
+		function animated_java:pan/variants/empty/apply
+		function animated_java:pan/animations/empty/set_frame {frame:0}
+	}
 }
 
 
 function extract_to_layer {
+	execute if entity @s[tag=!baked] run return run tellraw @p {"text":"You need to bake the batter first!","color":"red"}
+	execute if entity @s[tag=!frosted] run return run tellraw @p {"text":"You need to frost the layer first!","color":"red"}
 	data remove storage temp:temp data.flavor
-	execute on passengers on passengers if entity @s[tag=aj.pan.root] run \
-		data modify storage temp:temp data.flavor set from entity @s data.flavor
+	execute on passengers on passengers if entity @s[tag=aj.pan.root] run {
+		data remove storage temp:temp data
+		data modify storage temp:temp data set from entity @s data
+	}
 	function layer:summon with storage temp:temp data
 	function util:kill_stacked_entities
 }

@@ -32,8 +32,8 @@
 		"json_file": ""
 	},
 	"resolution": {
-		"width": 512,
-		"height": 512
+		"width": 128,
+		"height": 128
 	},
 	"elements": [
 		{
@@ -44,39 +44,123 @@
 			"light_emission": 0,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
-			"from": [-72, 0, -72],
-			"to": [72, 16, 72],
+			"from": [-72, 1, -72],
+			"to": [72, 17, 72],
 			"autouv": 0,
-			"color": 0,
-			"origin": [0, 0, 0],
+			"color": 1,
+			"origin": [0, 1, 0],
 			"faces": {
 				"north": {
-					"uv": [144, 0, 288, 16],
+					"uv": [0, 0, 128, 10],
 					"texture": 0
 				},
 				"east": {
-					"uv": [144, 16, 288, 32],
+					"uv": [0, 0, 128, 10],
 					"texture": 0
 				},
 				"south": {
-					"uv": [144, 32, 288, 48],
+					"uv": [0, 0, 128, 10],
 					"texture": 0
 				},
 				"west": {
-					"uv": [0, 144, 144, 160],
+					"uv": [0, 0, 128, 10],
 					"texture": 0
 				},
 				"up": {
-					"uv": [144, 144, 0, 0],
+					"uv": [118, 128, 0, 10],
 					"texture": 0
 				},
 				"down": {
-					"uv": [288, 48, 144, 192],
+					"uv": [0, 10, 118, 128],
 					"texture": 0
 				}
 			},
 			"type": "cube",
-			"uuid": "1ec3e508-a2a2-ed30-5813-6b82f0884ef9"
+			"uuid": "5bb5128b-384b-9497-d1ee-9889b25aacf4"
+		},
+		{
+			"name": "cube",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-72.5, 7.5, -72.5],
+			"to": [72.5, 18.5, 72.5],
+			"autouv": 0,
+			"color": 1,
+			"origin": [0, 9, 0],
+			"faces": {
+				"north": {
+					"uv": [6, 4, 108, 10],
+					"texture": 3
+				},
+				"east": {
+					"uv": [0, 4, 128, 10],
+					"texture": 3
+				},
+				"south": {
+					"uv": [78, 4, 0, 10],
+					"texture": 3
+				},
+				"west": {
+					"uv": [0, 4, 84, 10],
+					"texture": 3
+				},
+				"up": {
+					"uv": [118, 128, 0, 10],
+					"texture": 3
+				},
+				"down": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "88ee09c1-ac1b-6757-9451-00baa28e24e9"
+		},
+		{
+			"name": "cube inverted",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [72.5, 16.5, 72.5],
+			"to": [-72.5, 7.5, -72.5],
+			"autouv": 0,
+			"color": 1,
+			"origin": [0, 9, 0],
+			"faces": {
+				"north": {
+					"uv": [78, 10, 0, 0],
+					"texture": 3
+				},
+				"east": {
+					"uv": [0, 10, 84, 0],
+					"texture": 3
+				},
+				"south": {
+					"uv": [6, 10, 108, 0],
+					"texture": 3
+				},
+				"west": {
+					"uv": [0, 10, 128, 0],
+					"texture": 3
+				},
+				"up": {
+					"uv": [0, 0, 0, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 128, 118, 10],
+					"texture": 3
+				}
+			},
+			"type": "cube",
+			"uuid": "a5d3d912-adc7-e47d-31af-7f43f066aaa5"
 		}
 	],
 	"outliner": [
@@ -95,7 +179,24 @@
 			"visibility": true,
 			"autouv": 0,
 			"selected": false,
-			"children": ["1ec3e508-a2a2-ed30-5813-6b82f0884ef9"]
+			"children": ["5bb5128b-384b-9497-d1ee-9889b25aacf4"]
+		},
+		{
+			"name": "frosting",
+			"origin": [0, -2, 0],
+			"color": 0,
+			"configs": {
+				"variants": {}
+			},
+			"uuid": "88ab5c0d-c729-0f45-5ef6-9e3942442e21",
+			"export": true,
+			"mirror_uv": false,
+			"isOpen": true,
+			"locked": false,
+			"visibility": true,
+			"autouv": 0,
+			"selected": false,
+			"children": ["88ee09c1-ac1b-6757-9451-00baa28e24e9", "a5d3d912-adc7-e47d-31af-7f43f066aaa5"]
 		}
 	],
 	"textures": [
@@ -108,8 +209,8 @@
 			"group": "",
 			"width": 64,
 			"height": 64,
-			"uv_width": 512,
-			"uv_height": 512,
+			"uv_width": 128,
+			"uv_height": 128,
 			"particle": false,
 			"use_as_default": false,
 			"layers_enabled": false,
@@ -124,7 +225,7 @@
 			"visible": true,
 			"internal": true,
 			"saved": true,
-			"uuid": "5522905a-d13d-8953-d047-0688644f5934",
+			"uuid": "2a701a8c-1203-6c90-fcc0-3b27a5728591",
 			"relative_path": "../resources/assets/cooking/textures/blueprint/pan/baked_vanilla.png",
 			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAABYJJREFUeF7tW0trFEEQns2SNTEPInkIuQmCIF6iVw+if8Pf4z/x6F/wIng0CCIEBE8G3CQYEqN5sFFqdmtSU11dVT3Tm2yMe9HM9qPqq68e3VPb2X3z7E+R6XO42ykWVobL0f/j35m2UZfB/b17dRAAEBg+B3tT3rnBuN5MOHVm7jx4SIXkQMHgb1vdxjJ4Ji4uD2UCOTofX73IxgC+eX/n2JRn4+l0NUYCAw0jLXR8FBrrlGz56fO+uP+jh0vV887rl0/cAKytCiY2VRwOoGCAAGgFnM5ZoTGRz4U13r87cElClYcJSQC4dhjDIBAarSmB1wqAnEFwDLpnXXJ543mwXhkE4Yu9zbfuzaSF3JOLohgc/kgZHow9PQx9e3b9Xjnu9/bX2vhf3y/+zgbA0v2NqALdhTumchMJgIQePENkqVaaApcBAMoi7dWYARYAXqtRoXAOF9S7lkUlWJevJbkHukHUBXCj23eHfkQ/yACv0BIAliLW9xqrPHLtf9kst/gPQCwLpDLA4+eWVdt8PzgYZpHuYugCfF1wCXQBZDiNa9VZACZq0V0TOAcgVCnYS/q7VHik/FgAoDGgt3BRL2tRtwbMrbUQp5O+jB0de9IXFUYlNfCtGJDEAA8A3DK5AEh1CZAjuws0AaBGydUHjRmAtAel+P/bMgDmQxyIxgAp/XldoDEAqSYn49H6JVCOshpiFJT60TSYCgAVoLELtACATs0CgISMtLAV7SkbqsA5onSyvixIJs9nE1QGxE53asCjGwjRf7CzVeXqQHgpW+AgzBotAJDkTgaA51vVAvNhCT3Y/nB9AKAFUK2WpxXXKO2IQAgAFD/r53IzVnAGSBu1YIXKgBgAbr+TADg7ck+vBsaKJhzgBEAK0tcCADVuAAhOACTkmwMQ2xSeo8UyMYACEE216bwqZyQHwWofD+o8qk/PFcVUry7q+enwGfyrfWKuY7kHWZOmcIxpeQFAhaWUBYIAAPwDiknPpXESQAQAix2NAJAmRQ11xQBYXiAVcXArpN4KJwHAJZBcwJIy9r3iAt7CrDUABXlZhqczVZ9/DYDytpUUQaLyWjkb8XWsDnG9rnR89jJHCYqtGWAdekoZbwIAarRtCABaHXL+OBgA1peu5scaBGsXFOg6649DMsP5gGYQDUTLFSIucCUAoKy1E2QMAKrYGADguGE8yM8AoUI0AYAUFyue4HoL3KLpBUqEMZcKQC04xqpBCwDMDAmlr+Yt+QHAQ5B2SNLK4RQA6IHLigltGMDfCLnSYEwgy68NAGDZnG7gYsCkAFDFh4bWptN4MaQGwUkBwBUEDbc4290uplfWg/cF+QCQfN+iPZiGBzXPHGpSIyjylyW8ecIEIOjiiF2CTigAktdQN0gGwLwLoFb1WPMSGMADaBIAgcKjI7ErInsASKCzeNByuMDYAGh1NJao1LTI4TdRRrbIxoB/HgC4K+N5M6kYSr05pgzwzFUsHXs7nJQFJg6AhBI4GwCe4svVF+DsCar2S2CAtP/YAUh6S6yhmKCoxxjVHUSkQyTJBbAUltpMe/MX3WKulJgivQXYSb+A0naqN1triPJ0o2YDAJoKrTcxTXSO9QEGNzpCU6QUoGNBHJun1SYpjQFSt3hM4RSgpNRqpdtY8zXIMxEASNZLcRuLFRMDALe0N1B6OrrKcpb96MKaJ7XN4xpJLiBR21MQcQBigFiK4P64JwJtzWsNAFU8djnChVF7+FlDs5WyOPA5GYBrq/0BGgCBVUZ518MMmMt/wgLPpC5UKgN/N8l9nzNC+xEV/TGY+nrcslJFS0drKlVGrC2ETnQNgCC4MhlaA2DlcYqc5Y98LUk4az/re84gugf9mRxfx/zJTGzjGw+AZZHr8r3EgL+uVOSi9yyo6wAAAABJRU5ErkJggg=="
 		},
@@ -137,8 +238,8 @@
 			"group": "",
 			"width": 64,
 			"height": 64,
-			"uv_width": 512,
-			"uv_height": 512,
+			"uv_width": 128,
+			"uv_height": 128,
 			"particle": false,
 			"use_as_default": false,
 			"layers_enabled": false,
@@ -153,7 +254,7 @@
 			"visible": true,
 			"internal": true,
 			"saved": true,
-			"uuid": "bc532429-ff8f-4e93-836d-680b9eae4587",
+			"uuid": "17fef416-7645-203e-f4cb-991bb54a56f1",
 			"relative_path": "../resources/assets/cooking/textures/blueprint/pan/baked_chocolate.png",
 			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAABNhJREFUeF7tm99PE0EQx/ciNQg2QY1W46M++P//PfqsSFSSAjaCwUzrNNO5+Xm7pUeBF6C3ezf7me/Mzu5tu09ldlse8E/3CGCPFTAvV6K2p+Vo/Xn3vkzDIUA7ZqOGGlNzH+252mB5e/7sFIDsoFu1B6NxgBq8wQAeUg748HHa88kyCcKFL5/nYYdJNwp3LqVczm8yzXttF1f9/q9mh8t2P04XG+3P59fr/5sBeDt7pg7geHrgDm6UACR68BmSpaOyBnAXANAW6VmDFeABiHqNGoV9uKHRe3lSgvvye0nhgWGghgA+6GQ66T0TFRA1WgLgDcS7bqkqYte309/LRzwC0GaBrAIice55teY6DS1PARASGAKocJrXNtYCVna3DG4BhOcL6X8e81IO4HamANAccHjUn868gT497Hqc/izkSpu2hTYeAM0BTRUQAaBldjCwBkA2JMCOnShA8xQM4MXr/iwSVQD0x0Hxvy04EQVAf8gDag6Qpr9oCFADMgCyHueFGIajBwD6QVso9dVpMAuAeooalgmBGgDRqpRWjCYAiYxE1kuCQ/poIHiSrAWWBoBxiBKyDJA8/+tstQqToEnt8f6YM2oASIk6DYB60/P88fP+lPn962pZei8A0AJIW8xocb8cpADg8kJf80cUICmuRhWmAjQA0biTAFzf/I12X7fTpkxsEAUgOeteALDyBi+0PFic/mAAGnX4HI1opQAKwAq5tLRKsesAa48vIjse05ODJ6V0bA1w260+g9/GjxY6GY9LCTw9C1hxhwOWpizotwTAfmBg0udSO4kPBeCpYxCAzLS3awBeCEgFGewKmbvCGQDcADEEPCuV61YIWCtRertqAPRmXhHEs7MWAlEeowBA19kaAKuY0WIdq0OEIa0eo6CspFitgCFep4bvDQAr2w5VAHod5vxtKIDbjGrYahLkOzmghjfvVu/qNpLTxc162wwkbEH0QkELgZ0AQGNp7GkA6MC2AaAH/f+L2OYKkCpEDwBkeK14AsMhLCL5x1OHNCXeCQA6JWrVoAcA80Km9LWANM8BuAiyFklaLRBRAAVAF1wZr6cVwN8I1cjQi2tPAWB8zfMH5YCxAGgle4DAiyEzB4wFQCQJemFx/vO6nLycbA+AFPue7MEj3LuRPlTOnjqkt0pUBa4CpFMc3o6uFc88FrcNQEqSVQC0rDtmBfAEmgKgDTiSkVvLecgrNmmvoBkAbyOiNQBPfV4+kEpzNwdYCth7ALBXxufNiPQRWnbnmHow0jdS6vI2/PBEai2QrcYig/BKZzpVenO9VOpWA4jU2toGSWsAmi3S86XtL3RgOAlaL0ZqdovpQCKQIk7Qav0qBWApLB0zpUdlMnlhyGA4MMgVUNpOJt3GgajIadRUDrAAwKFC703MkMHymUV7Bm1nzUZaEsfD0+YhKQ9AdIAZUFbhoilt9ACk+MyEjaeK0QDQdl696VPL2FICi0x12EY6MIngUyEgST3iQT5TaDNHFgCC9vpVA6AD1zZHuDEWmFYApJpec5JXyZrnAywAVGbwt7cu4Abyr7DAdekUKu3H301KuYG2t75ERb8MZr4e92hnjqZ6xmUBeMVPNQBvmqPkvHjk95KM857nXecA6TPo1+T4fdyvzGgPfvAAPI/cl+uSAv4BLbudWSfTpskAAAAASUVORK5CYII="
 		},
@@ -166,8 +267,8 @@
 			"group": "",
 			"width": 64,
 			"height": 64,
-			"uv_width": 512,
-			"uv_height": 512,
+			"uv_width": 128,
+			"uv_height": 128,
 			"particle": false,
 			"use_as_default": false,
 			"layers_enabled": false,
@@ -182,9 +283,96 @@
 			"visible": true,
 			"internal": true,
 			"saved": true,
-			"uuid": "f2a640cf-a51d-273a-0665-862af5bc5bc0",
+			"uuid": "76976892-1d37-3b97-925c-053fb5380586",
 			"relative_path": "../resources/assets/cooking/textures/blueprint/pan/baked_strawberry.png",
 			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAABOtJREFUeF7tm81qFVEMx+fWqkVFWhW/EQRxoS4UXLnxAXwKH8ZH8hVcCboQFyII4jdiixSpWltJL2nTTJJ/MjO3vf24G+udMzPJL//k5JyZO3qy8HC9OcCf0SGAfayAtzPfTW3fWDu3+f3o8dnb6RSQJ1azRhrT5zrefT1n9Xh97xKAqtNDjSej2UEPXmcAB6kGPHg014rJRhGkA8+erqQDZl0ofXLTNEsf/1WGt8Yuf/vb+u7qvbFzH15s9+P9p62hgwG4dfeo68D8lSPQuakEYNGj75is9CpyYCcAsC3WvTorAAHIRk0axedoQ7PXQlKi6+prWenBaeCmAN/o2uX2LVkBWaMtAMgRdDxSVcau1y/HNeMQgDcLVBWQyXMU1T7HZWohBVBKcAqwwmVd27YWiKp7ZPAQQHS9sP6vc96qAdrOEgBZA06db091yNHjC+2u+vfiyGQnx9IYBMALwKAKyADwKjsZ2AdANiXmz/xsln6c3gC2KwrwIkUOXLgz0/IjqwA6kZ3Sf0dwMgqg86kOuDXAmv6yKSANqADIRtwap0Gha5FSqNV3p8EqAGmAvHklBZDR2eNIAXQdCMAiY10YFcEu53iO6iKZBeKNCxXgre6igoci//XV2sYQC5qlFL4e14w+ACy7ywBkNFHkFy61V4Dvnv/ZOwBkA+QtZry8Jy8tAIuf/TV/RgGWlPuoIlSAByCbdxaAXyur2dM3x3lTJg/IArCCtScARHVDN1oIlqbfGYBHnb5nI4ZSgAQQpVxZWk0T9wHRHl9GdjqnT8zNNuuz21NgtDr+jv6NPl7qVCJuFfDyLBDlHTtsTVl0HgHQH3LM+t4aZwGSAJA6OgGoTHu7DQClgNWQ0a5QuCtcAaANsFIAGekdj1Ig25j1BiCNQ02Qrs5eCmSBTAUAuc72AETNjJfr3B0yDGv1mAUVFcXeCugSdWn4vgEQVduuCuCo05w/CQVom1kNEy2C1gbF9fvHWmqm9YGcQSKIKBW8FNgVAGyszD0PgHRsEgA0uIkpwOoQEQCq8F7zRIZTWmTqD1KHPL6jAOSU6HWDCADXhUrrGwEZHAAvgqJFUtQOVwDIBVcl6mUF6CdCfWSI8hoBIOP73L9TDZgWAEPJniDoZiicBqcFQKYIorT48ma9uXhz61EbK2IwAFbuI9mTETq6mXOknJE6dC+iH5tBANZbHGhLO8pnnYuTBmAVSZkGZQBe1Z1mBegCWgLgOZypyEPLucsjNmuvYDAAaCNiaABIfageWK05TIFIAfseAO2V6XkzI32GVt05lhHMnJtpdfWY0iwwbQDQXG+1ur0BZHptb4MkE0W0drB6Bautzb50WVaAB6DPbrG8ZgZSJgher99LAdwKW6+ZyldlKnWhizMaGNUKam3nTo73CdBUJ88vKSACQC8VoicxXZzVznj3kOOi2cgr4vzydPiSFAKQdbACKoqmp7SpB5ApWpkpjQF4G5wWoB1VgGeY7sWzBcsqYJmpjsdYL0wypFIKWNHJFD49U3gzh44SWn8waHRebwDSEG9zRBsTgRkKgNXTe0FCnWz4fkAEQMqM/kbrAm2g/gkLHbfeQvWmMGv6085GP6KSPwYLH48j2rIwZWcFGod6CxTRTMHrDQA5JMmhfNTXsoxD90PHtYLkPeTP5PR14E9mvBsfeAAoInvluKWA/zGtzPzW2KnPAAAAAElFTkSuQmCC"
+		},
+		{
+			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\frosting_vanilla.png",
+			"name": "frosting_vanilla.png",
+			"folder": "",
+			"namespace": "",
+			"id": "3",
+			"group": "",
+			"width": 64,
+			"height": 64,
+			"uv_width": 128,
+			"uv_height": 128,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "ef025d06-c08b-b769-787b-a291d433900d",
+			"relative_path": "../resources/assets/cooking/textures/blueprint/pan/frosting_vanilla.png",
+			"source": "data:image/png;base64,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"
+		},
+		{
+			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\frosting_chocolate.png",
+			"name": "frosting_chocolate.png",
+			"folder": "",
+			"namespace": "",
+			"id": "4",
+			"group": "",
+			"width": 64,
+			"height": 64,
+			"uv_width": 128,
+			"uv_height": 128,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "057621c8-fe6d-349e-6508-ee30ad990dba",
+			"relative_path": "../resources/assets/cooking/textures/blueprint/pan/frosting_chocolate.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAACdNJREFUeF7Fm0tvFEcQx3v2aa/x2gsLRsZBwYlySE7hllNuueU7xR8m95w5RMopRIpCJBBEECAxBgw2LF7jx673Ef17pmZraqune9ZrZaTIznimp/+/rkd3dRPdrq+ODbuWm3X+v87fD7u9zN+ubawGvYeH3u58yH02tA+8Edmf0M5EEkAeDN9HfBB8wmWnQ0C4+iTfdT0XtaJSxgKoE7dqzSCIUnRRkUEfEQ8973fV16jPLnAahMgYYwG0olLaqBTvanCxuah2REJwdVh7ORQ8b7MzHtmmbtdXjc9qJAQVAHWsOx6ZoTF4ZupaiqLxpahi739968bU3wmCFN8Zj9T20EDZmHEzKhkJ4Y/eB+c7NIAzA/hmqa26ABqsLcUCtaveqOVa7+He8SzWfa53eH+1/t35Z3sKZOQCkCcevdQ+0Dvup/f3X3dNveIGeC6lycuuProGJxiAT7wEQMIlgN5wZJr1fEuZFURR8fhOEIAQ8dRpThriCQxGn1/ztoRZxBcGIM2IBLZYXOgcDaZcQYq3UObsChcCwBVA6rWy6fWHdkABQQLA/cOD01xLnhVAEWt0xSXeMacL5Im3whMAEgIswCc+dZeCVlBUvA/A1eW6+fH+k+ks8O2165k0SKZPI88tgMQ0opEpIr5oPJhF/FwBcPHSAsgKdt4dprpWKtVZg3kcOIV1zApAg4CRpyvYAvio43dc3Q8naZR/+uKdKnhWEPMEICEQgGfPOubXo/0wFyDRpBIxgHL8Z+0lc+fedgpgIZkO48bpeGBCICyvLKgA+0cDe/88FkANU1v8Q7kA9t+fmPblRZvWQgFw8QQAP/MguMTzjp8XADLVm7fTmckLAJ24sbGSQqPcTze+vNmyv5IFuAC4IPjEa2aBAekllpH5exSvAOVFabowADQEK3BBkOLxHAGA6WsXWUJR4dwa0S4A1JMJWAaGgMDnKIUBxOIpI0apJcDn6eK+zwHg90YlDpZ0NZphawCCjvfggtogaHBTENEoMznDs5p43Fdd4KvKytRyGB2hi6c7rSOwAineAnEAkCa93zlSrYe7YhEALvEzAcAs72BwpnaQbl6uuouoEgJNsjSf5iDaraXU5F0fpzb6ySJMe04G01/e7k6nwe8+vZlawMudA9sOLEBOcV0gfACOu31rDa41OgmBj6ffb8VuR36fZwEuAFomcQLgEx9tNUcd0CC4ANDoAwCu1vVL9mdzsWq6JxOrGpxNPLBSjSwEWIAPAJ/gSECuNJoLAI3QoscFQQLwiUebAMDF417/bGjGpch+jwPA3wCBu4hmBXni0QYAaMt5FcD3X9xKh8AHoMwqxy7f5H7PR3+1UTOj8diKxwUAR1p+z4HA5/WY2rr83gZaVp6j59TlcCiAWcQfD4Y2Q8ACYPoQf9CdzNDKVX0RBSuwFikAbVyPXePR4z21yMJHvjAAvuaXLhAiXhsNAKDpNQDsvZtOeRqE4dmZNeG8eORaQNHo2xgiK9ft9a07v9/9gfc1IgvIM3/M5MicXaYPsXRh1On/JYA0FVL6GpdMOVlx2vjQPzPlKO78RQAY7L4yP+9spxAsAJ/v86msCwQHwCERAGvSzC/TdcY43pEiCBh9Gr08APYZVkegyJ+7X9Fe35oCwPcFegN9Ti/n8hoEBD/clyA4AAKTWWQlAAyb15MIHwBqDyC0yD9lrT4AdpQUCBwALThevp7s/PCcrwHg/qiKxwMJgCLi5cC4yvQpiPb6VvfB3+bu6f7EBeTOEAFwreA4AJnyNDfg6wo+InJNwPM9Kk6+worWPxlftCAYBCBv+SrL4uQOXDzN5FLBzLyr1ciUqlWDVebD7Q4mBNb//919n7FYAKB+yGm57J9cQVorS1wrM5EKsQBfNYYDQI/hClw8VnEyfzdb2QXTRjMuiVkACIDV6hQA3OcQXNkH9/MAWPejzZx5A3jyYlIZxofW1uJDFUO2j8DFN+vxZil+kvg8APjbxpXlPO32byoA/IEF2M/XLpkX9bY/BoRagEt8VCqbwWm8ALJik9En8bi382YCTqs0ScW+yhIBGI4H5uYnV+zrPNjSN56alfMBIPMn8VS0wIIGwulyAdg77GU6hud9ALQFl1Zs0SpJiDNP949svMF178HeFn6qWaDoyJN4+PvYRPa/2kJs4oNetiKrrcw21pZNrVwyC5VSpszOR5/Ey6W1q9okLYGX8/58tGfGQ6MD8ImnTnHKqCF0O/FRucZyzfSTJT6Jz0tJfFV39+Er1ce5eNfES3uR+tisTy+0VAByb9AVcaR4PAcA5ON8B5mPOMTC53EvRDh9HwDkyMu+5RVetY2RuQDY3Lxs+0GjrwGgjpJoAMgrrmr7CwTAtwhzQbgQAJjgkGAXAL6rRJHfBUAKJ3DYZ/AB8MWF+QKgfCpSG7kAzP/GalxK30+WuVw87ssKs0s8ng0BYGNPUnonK+HWEAwAa4GQ43An/clWVOlsZC2B5/aGiczj3Y+ZmEC5GKnut/uvLSCqK4YAIIugmqKMAZ3dj5n9B+4ulfLk4Ce9VzgG5NXx0ShKVDu701UewMF2OmZftSQaEwC81xtm92K0jRUuXttHoOktIEhrgHgMqrSCQgA08er+nJY2ksXP5vqKzfNcPB5HiY3WD7OIRxt8kSMtAcLnAoCTx6hmzgp5dmwx0cGFAqZ2+eqMZPZ848SVoulUqnRlzQL4LBDtRa55AF+vy1RHHZGmSaNC+d4lnqzAJQjWwWeaeTtE1AYgcACuIBgEQBYrXACsPx8NDG1PuUpqLqEuKyAAIaNPdUZpBTMDkL4vxVOeT2d+iSvwPbrQ2iLAaBOdUAD8dCoHoInHtxAEvRbgG331+EwABN8hCQ4ixAV4ioU4LHZwacGPp8G5AKDRz5wiZa6QxoikwOoTT5Yga4raGYF0nV82ZnMtzjIkXrpa0Pa4nAhJF0AAkmZv01CymUEwEPi0/Tq4QwiAIhDwLM08/3qiH9kL3h6nqrDruCxRlaZvAyA7PjcPAPQtfmzGimUHt0g47hcRj+fV3WFeFvdBkCZG5kg537djS1kj045y2ksCwPPa+t6VXQqdD9D+xUjeNpPr6Bz8UPswIvLy1cZUpZjndtkmhAECnyVqc/sLA8Ab1racaKJDiyGXeBsrlHN+EM+PvlnLUM76+BY31M/QipbXBVxEffd9q8mQCY0GIQRAqPigGOATWtTkuAW4prPqjnHyIQLgMv8i4v83AOoWFSPZ6/XNRjuuED97FZ9S45drVodnigBASf+n5zvh/2yuiDXkdkTbo0sat34fMKGZxfLkOxcKIG80tAML/J/ZUQpFQHXN6M4LgDZ0LswCfNFY2xihdwBgFvG+b8pNXDyvAfgP8xgxA5pChDkAAAAASUVORK5CYII="
+		},
+		{
+			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\frosting_strawberry.png",
+			"name": "frosting_strawberry.png",
+			"folder": "",
+			"namespace": "",
+			"id": "5",
+			"group": "",
+			"width": 64,
+			"height": 64,
+			"uv_width": 128,
+			"uv_height": 128,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "1b047b42-50c4-8e4b-655c-10d70d2c506b",
+			"relative_path": "../resources/assets/cooking/textures/blueprint/pan/frosting_strawberry.png",
+			"source": "data:image/png;base64,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"
 		}
 	],
 	"variants": {
@@ -202,27 +390,54 @@
 				"display_name": "Baked Vanilla",
 				"uuid": "74c63ee9-7b76-9f4c-9e32-ae0f7fa81dde",
 				"texture_map": {
-					"5522905a-d13d-8953-d047-0688644f5934": "5522905a-d13d-8953-d047-0688644f5934"
+					"2a701a8c-1203-6c90-fcc0-3b27a5728591": "2a701a8c-1203-6c90-fcc0-3b27a5728591"
 				},
-				"excluded_nodes": []
+				"excluded_nodes": ["88ab5c0d-c729-0f45-5ef6-9e3942442e21"]
 			},
 			{
 				"name": "baked_chocolate",
 				"display_name": "Baked Chocolate",
 				"uuid": "521cd5b2-9da8-3a02-2602-2f4667a3eba5",
 				"texture_map": {
-					"5522905a-d13d-8953-d047-0688644f5934": "bc532429-ff8f-4e93-836d-680b9eae4587"
+					"2a701a8c-1203-6c90-fcc0-3b27a5728591": "17fef416-7645-203e-f4cb-991bb54a56f1"
 				},
-				"excluded_nodes": []
+				"excluded_nodes": ["88ab5c0d-c729-0f45-5ef6-9e3942442e21"]
 			},
 			{
 				"name": "baked_strawberry",
 				"display_name": "Baked Strawberry",
 				"uuid": "9d4b0439-a360-792f-6b9a-b8fcd6e5f387",
 				"texture_map": {
-					"5522905a-d13d-8953-d047-0688644f5934": "f2a640cf-a51d-273a-0665-862af5bc5bc0"
+					"2a701a8c-1203-6c90-fcc0-3b27a5728591": "76976892-1d37-3b97-925c-053fb5380586"
 				},
-				"excluded_nodes": []
+				"excluded_nodes": ["88ab5c0d-c729-0f45-5ef6-9e3942442e21"]
+			},
+			{
+				"name": "frosted_vanilla",
+				"display_name": "Frosted Vanilla",
+				"uuid": "e783b4e9-87f2-4225-a6c2-39026bc518eb",
+				"texture_map": {
+					"ef025d06-c08b-b769-787b-a291d433900d": "ef025d06-c08b-b769-787b-a291d433900d"
+				},
+				"excluded_nodes": ["0cb48dc8-3a48-cbd2-dd07-3122e08395c9"]
+			},
+			{
+				"name": "frosted_chocolate",
+				"display_name": "Frosted Chocolate",
+				"uuid": "b973f838-968f-dd6c-e7c4-7b0f05bb0791",
+				"texture_map": {
+					"ef025d06-c08b-b769-787b-a291d433900d": "057621c8-fe6d-349e-6508-ee30ad990dba"
+				},
+				"excluded_nodes": ["0cb48dc8-3a48-cbd2-dd07-3122e08395c9"]
+			},
+			{
+				"name": "frosted_strawberry",
+				"display_name": "Frosted Strawberry",
+				"uuid": "771d59b9-3775-ed9a-ce7b-e984953f62d7",
+				"texture_map": {
+					"ef025d06-c08b-b769-787b-a291d433900d": "1b047b42-50c4-8e4b-655c-10d70d2c506b"
+				},
+				"excluded_nodes": ["0cb48dc8-3a48-cbd2-dd07-3122e08395c9"]
 			}
 		]
 	},
