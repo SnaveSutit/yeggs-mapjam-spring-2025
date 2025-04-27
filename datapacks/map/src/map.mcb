@@ -59,7 +59,7 @@ function reset {
 		execute positioned 34.0 6 -2.0 rotated 90 0 run function mixer:summon
 		# Frosting Station
 		function static_pipette:summon
-		execute positioned 34 3 10 run function pan:create_lock_point
+		execute positioned 34 3 10 run function static_pipette:create_lock_point
 		# Cake Launcher
 		execute positioned 0 1 13 rotated 0 0 run function launcher:summon
 		# Ingredients

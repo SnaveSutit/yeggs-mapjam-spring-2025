@@ -7,6 +7,7 @@ function on_load minecraft:load {
 
 function summon {
 	execute positioned 34 6 20.0 rotated 180 0 run function animated_java:static_pipette/summon {args:{}}
+	data modify storage map:frosting data.frosting set value 'vanilla'
 }
 
 function on_tick minecraft:tick {
@@ -15,6 +16,7 @@ function on_tick minecraft:tick {
 			execute if score #static_pipette i matches 0 if entity @a[dx=2,dy=0,dz=4] run return run {
 				function animated_java:static_pipette/animations/squish/play
 				playsound minecraft:entity.puffer_fish.flop block @a ~ ~ ~ 1 0.1
+				execute as @n[tag=static_pipette_lock_point,distance=..20] at @s on passengers if entity @s[tag=pan] run function pan:frost with storage map:frosting data
 				scoreboard players set #static_pipette i -1
 			}
 			execute if score #static_pipette i matches 1 unless entity @a[dx=2,dy=0,dz=4] run return run {
@@ -23,4 +25,16 @@ function on_tick minecraft:tick {
 			}
 		}
 	}
+}
+
+function create_lock_point {
+	execute align xyz positioned ~.5 ~ ~.5 summon minecraft:item_display run {
+		tag @s add pan_lock_point
+		tag @s add static_pipette_lock_point
+	}
+}
+
+function set_frosting {
+	#ARGS: {frosting: string}
+	$data modify storage map:frosting data.frosting set value '$(frosting)'
 }

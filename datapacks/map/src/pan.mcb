@@ -73,6 +73,9 @@ dir debug {
 					function pan:frost {frosting:<%frosting%>}
 					function pan:frost {frosting:<%frosting%>}
 					function pan:frost {frosting:<%frosting%>}
+					function pan:frost {frosting:<%frosting%>}
+					function pan:frost {frosting:<%frosting%>}
+					function pan:frost {frosting:<%frosting%>}
 				}
 			}
 		}
@@ -171,20 +174,19 @@ function frost {
 		$data modify entity @s data.frosting set value $(frosting)
 		$function animated_java:pan/variants/frosted_$(frosting)/apply
 
-		execute if score #this frosting_amount matches 2 run {
+		execute if score #this frosting_amount matches 6 run {
 			function animated_java:pan/animations/frost3/play
-			scoreboard players add #this frosting_amount 1
-			say Frosting complete!
+			playsound minecraft:block.note_block.bell block @a ~ ~ ~ 2 1
+			particle minecraft:happy_villager ~ ~3 ~ 2.5 0.25 2.5 1 20 force
 			execute on vehicle on vehicle run tag @s add frosted
 		}
-		execute if score #this frosting_amount matches 1 run {
+		execute if score #this frosting_amount matches 3 run {
 			function animated_java:pan/animations/frost2/play
-			scoreboard players add #this frosting_amount 1
 		}
 		execute if score #this frosting_amount matches 0 run {
 			function animated_java:pan/animations/frost1/play
-			scoreboard players add #this frosting_amount 1
 		}
+		scoreboard players add #this frosting_amount 1
 	}
 	scoreboard players operation @s frosting_amount = #this frosting_amount
 }
