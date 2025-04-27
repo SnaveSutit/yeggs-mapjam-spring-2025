@@ -46,7 +46,7 @@ function on_tick minecraft:tick {
 			scoreboard players remove @s spawn_timer 1
 			execute if score @s spawn_timer matches ..0 run {
 				function ingredient:summon with entity @s data
-				scoreboard players set @s spawn_timer 100
+				scoreboard players set @s spawn_timer 300
 			}
 		}
 	}

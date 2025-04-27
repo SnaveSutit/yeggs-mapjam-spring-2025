@@ -64,8 +64,10 @@ function reset {
 		execute positioned 0 1 13 rotated 0 0 run function launcher:summon
 		# Ingredients
 		execute positioned 2 4 -37 rotated 0 0 run function ingredient:create_dispenser {type:milk}
-		execute positioned 8 4 -37 rotated 0 0 run function ingredient:create_dispenser {type:eggs}
+		execute positioned 8 4 -37 rotated 0 0 run function ingredient:create_dispenser {type:milk}
+		execute positioned 14 4 -37 rotated 0 0 run function ingredient:create_dispenser {type:eggs}
 		execute positioned 8 12 -37 rotated 0 0 run function ingredient:create_dispenser {type:flour}
+		execute positioned 14 12 -37 rotated 0 0 run function ingredient:create_dispenser {type:sugar}
 		execute positioned 20 12 -37 rotated 0 0 run function ingredient:create_dispenser {type:sugar}
 		execute positioned 2 20 -37 rotated 0 0 run function ingredient:create_dispenser {type:vanilla}
 		execute positioned 8 20 -37 rotated 0 0 run function ingredient:create_dispenser {type:chocolate}
