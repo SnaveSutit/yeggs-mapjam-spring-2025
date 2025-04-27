@@ -53,3 +53,17 @@ predicate key_right {
 		}
 	}
 }
+
+predicate key_sneak {
+	"condition": "minecraft:entity_properties",
+	"entity": "this",
+	"predicate": {
+		"type": "minecraft:player",
+		"type_specific": {
+			"type": "minecraft:player",
+			"input": {
+				"sneak": true
+			}
+		}
+	}
+}

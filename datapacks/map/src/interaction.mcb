@@ -10,11 +10,27 @@ advancement interaction_click_event {
 		}
 	},
 	"rewards": {
-		"function": "interaction:click"
+		"function": "interaction:interact"
 	}
 }
 
-function click {
+advancement interaction_punch_event {
+	"criteria": {
+		"punch": {
+			"trigger": "minecraft:player_hurt_entity",
+			"conditions": {
+				"entity": {
+					"type": "minecraft:interaction"
+				}
+			}
+		}
+	},
+	"rewards": {
+		"function": "interaction:punch"
+	}
+}
+
+function interact {
 	advancement revoke @s only interaction:interaction_click_event
 	tag @s add interaction
 	execute as @e[type=interaction,distance=..10,nbt={interaction:{}}] run {
@@ -24,7 +40,22 @@ function click {
 	tag @s remove interaction
 }
 
+function punch {
+	advancement revoke @s only interaction:interaction_punch_event
+	tag @s add interaction
+	execute as @e[type=interaction,distance=..10,nbt={attack:{}}] run {
+		function #interaction:on_interaction
+		data remove entity @s attack
+	}
+	tag @s remove interaction
+}
+
 tag function on_interaction {
 	forklift:on_interaction
 	mixer:on_interaction
+	ingredient:on_interaction
+}
+
+tag function on_punch {
+	ingredient:on_interaction
 }

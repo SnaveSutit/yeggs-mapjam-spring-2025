@@ -1,34 +1,99 @@
 function on_load minecraft:load {
+	scoreboard objectives add ingredient_link_id dummy
 }
 
-dir summon {
-	function milk {
-		execute align xyz positioned ~.5 ~ ~.5 rotated ~ 0 run function animated_java:ingredient_milk/summon {args:{}}
-	}
-	function flour {
-		execute align xyz positioned ~.5 ~ ~.5 rotated ~ 0 run function animated_java:ingredient_flour/summon {args:{}}
-	}
-	function sugar {
-		execute align xyz positioned ~.5 ~ ~.5 rotated ~ 0 run function animated_java:ingredient_sugar/summon {args:{}}
-	}
+function summon {
+	#ARGS: {type: string}
+	$execute align xyz positioned ~.5 ~ ~.5 rotated ~ 0 run function animated_java:ingredient_$(type)/summon {args:{}}
+	$execute align xyz positioned ~.5 ~ ~.5 summon minecraft:armor_stand run { {type:$(type)}
+		$tag @s add ingredient_$(type)
+		tag @s add ingredient
+		data merge entity @s {Silent:true,Invisible:true,Invulnerable:true}
 
-	function eggs {
-		execute align xyz positioned ~.5 ~ ~.5 rotated ~ 0 run function animated_java:ingredient_eggs/summon {args:{}}
-	}
+		tag @s add mount
+		execute summon minecraft:interaction run {
+			tag @s add ingredient_offset
+			data merge entity @s {width:0,height:-1.95}
+			ride @s mount @n[tag=mount,distance=..4]
 
-	function vanilla {
-		execute align xyz positioned ~.5 ~ ~.5 rotated ~ 0 run function animated_java:ingredient_vanilla/summon {args:{}}
+			tag @s add mount2
+			execute as @n[type=minecraft:item_display,tag=aj.global.root,distance=..4] run {
+				ride @s mount @n[tag=mount2,distance=..4]
+			}
+			execute summon minecraft:interaction run {
+				tag @s add ingredient_interaction
+				data merge entity @s {width:3,height:3,response:true}
+				ride @s mount @n[tag=mount2,distance=..4]
+			}
+			tag @s remove mount2
+		}
+		tag @s remove mount
 	}
-
-	function chocolate {
-		execute align xyz positioned ~.5 ~ ~.5 rotated ~ 0 run function animated_java:ingredient_chocolate/summon {args:{}}
-	}
-
-	function berries {
-		execute align xyz positioned ~.5 ~ ~.5 rotated ~ 0 run function animated_java:ingredient_berries/summon {args:{}}
-	}
-
 }
 
 function on_tick minecraft:tick {
+	execute as @a at @s run {
+		execute if score @s ingredient_link_id matches 0.. run {
+			scoreboard players operation #this ingredient_link_id = @s ingredient_link_id
+			execute store success score #sneaking i if predicate input:key_sneak
+			execute as @n[type=minecraft:armor_stand,tag=ingredient] if score @s ingredient_link_id = #this ingredient_link_id rotated ~ 0 run {
+				tp @s ~ ~2 ~ ~ ~
+				execute if score #sneaking i matches 1 run {
+					scoreboard players reset @s ingredient_link_id
+				}
+			}
+			execute if score #sneaking i matches 1 run {
+				scoreboard players reset @s ingredient_link_id
+			}
+		}
+	}
+}
+
+function on_interaction {
+	execute on vehicle on vehicle at @s run {
+		execute if score @s ingredient_link_id matches 0.. run {
+			# Throw the ingredient
+			scoreboard players operation #this ingredient_link_id = @s ingredient_link_id
+			tag @s add to_throw
+			execute as @a if score @s ingredient_link_id = #this ingredient_link_id at @s run {
+				scoreboard players reset @s ingredient_link_id
+				function ingredient:throw
+			}
+			tag @s remove to_throw
+			scoreboard players reset @s ingredient_link_id
+		} else run {
+			execute store result score @s ingredient_link_id run scoreboard players add #last_ingredient_link_id i 1
+			execute as @n[tag=interaction,distance=..10] run {
+				scoreboard players operation @s ingredient_link_id = #last_ingredient_link_id i
+			}
+		}
+	}
+}
+
+function throw {
+	# The ingredient must be tagged with "to_throw", and this function should be called from the player.
+	# Look Vector
+	execute positioned 0.0 0.0 0.0 run {
+		execute anchored feet positioned ^ ^ ^1 run summon minecraft:marker ~ ~ ~ {Tags:['vector']}
+		execute as @e[type=minecraft:marker,tag=vector,limit=1,distance=..3] at @s run {
+			execute store result score #x i run data get entity @s Pos[0] 1000
+			execute store result score #y i run data get entity @s Pos[1] 1000
+			execute store result score #z i run data get entity @s Pos[2] 1000
+			kill @s
+		}
+	}
+	# Motion Vector
+	execute store result score #x_motion i run data get entity @s Motion[0] 1000
+	execute store result score #y_motion i run data get entity @s Motion[1] 1000
+	execute store result score #z_motion i run data get entity @s Motion[2] 1000
+
+	scoreboard players operation #x i += #x_motion i
+	scoreboard players operation #y i += #y_motion i
+	scoreboard players operation #z i += #z_motion i
+
+	execute as @n[tag=to_throw,distance=..4] at @s run {
+		execute store result entity @s Motion[0] double 0.001 run scoreboard players get #x i
+		execute store result entity @s Motion[1] double 0.001 run scoreboard players get #y i
+		execute store result entity @s Motion[2] double 0.001 run scoreboard players get #z i
+	}
 }

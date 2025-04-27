@@ -21,6 +21,21 @@ dir debug {
 	}
 }
 
+function clear_recipe_tags {
+	tag @s remove contains_milk
+	tag @s remove contains_flour
+	tag @s remove contains_sugar
+	tag @s remove contains_eggs
+	tag @s remove contains_vanilla
+	tag @s remove contains_chocolate
+	tag @s remove contains_berries
+}
+
+function clear_batter_tags {
+	tag @s remove vanilla_batter
+	tag @s remove chocolate_batter
+	tag @s remove berry_batter
+}
 
 function on_tick minecraft:tick {
 	execute as @e[type=minecraft:item_display,tag=aj.mixer.root] at @s run {
@@ -31,9 +46,58 @@ function on_tick minecraft:tick {
 		}
 
 		execute if score @s mixer_state matches 2 run {
-			# function animated_java:mixer/animations/close_lid/play
-			# scoreboard players set @s mixing_needed 100
-			# scoreboard players set @s mixer_state 1
+			scoreboard players set #ingredient_type i -1
+			tag @s add this_mixer
+			execute positioned ~-5 ~ ~-5 as @e[type=minecraft:armor_stand,tag=ingredient,dx=10,dy=0,dz=10] run {
+				execute if entity @s[tag=ingredient_milk] run scoreboard players set #ingredient_type i 0
+				execute if entity @s[tag=ingredient_flour] run scoreboard players set #ingredient_type i 1
+				execute if entity @s[tag=ingredient_sugar] run scoreboard players set #ingredient_type i 2
+				execute if entity @s[tag=ingredient_eggs] run scoreboard players set #ingredient_type i 3
+				execute if entity @s[tag=ingredient_vanilla] run scoreboard players set #ingredient_type i 4
+				execute if entity @s[tag=ingredient_chocolate] run scoreboard players set #ingredient_type i 5
+				execute if entity @s[tag=ingredient_berries] run scoreboard players set #ingredient_type i 6
+				execute at @s run playsound minecraft:entity.generic.splash block @a ~ ~ ~ 2 1
+				function util:kill_stacked_entities
+			}
+			tag @s remove this_mixer
+			execute if score #ingredient_type i matches 0.. run {
+				say Adding ingredient
+				execute if score #ingredient_type i matches 0 run tag @s add contains_milk
+				execute if score #ingredient_type i matches 1 run tag @s add contains_flour
+				execute if score #ingredient_type i matches 2 run tag @s add contains_sugar
+				execute if score #ingredient_type i matches 3 run tag @s add contains_eggs
+				execute if score #ingredient_type i matches 4 run tag @s add contains_vanilla
+				execute if score #ingredient_type i matches 5 run tag @s add contains_chocolate
+				execute if score #ingredient_type i matches 6 run tag @s add contains_berries
+				# Check for complete recipe
+				execute if entity @s[tag=contains_milk,tag=contains_flour,tag=contains_sugar,tag=contains_eggs] run {
+					say Checking for complete recipe
+					execute if entity @s[tag=contains_vanilla] run {
+						say "Vanilla recipe!"
+						function animated_java:mixer/animations/close_lid/play
+						scoreboard players set @s mixing_needed 100
+						scoreboard players set @s mixer_state 1
+						function mixer:clear_recipe_tags
+						tag @s add vanilla_batter
+					}
+					execute if entity @s[tag=contains_chocolate] run {
+						say "Chocolate recipe!"
+						function animated_java:mixer/animations/close_lid/play
+						scoreboard players set @s mixing_needed 100
+						scoreboard players set @s mixer_state 1
+						function mixer:clear_recipe_tags
+						tag @s add chocolate_batter
+					}
+					execute if entity @s[tag=contains_berries] run {
+						say "Berry recipe!"
+						function animated_java:mixer/animations/close_lid/play
+						scoreboard players set @s mixing_needed 100
+						scoreboard players set @s mixer_state 1
+						function mixer:clear_recipe_tags
+						tag @s add berry_batter
+					}
+				}
+			}
 		}
 
 		execute if score @s mixer_state matches 3 run {
@@ -93,14 +157,18 @@ dir valve {
 			$execute positioned ^$(posx) ^$(posy) ^$(posz) rotated ~$(roty) ~$(rotx) run {
 				particle end_rod ~ ~ ~
 				scoreboard players set #check i 0
+				# Yeah, I'm lazy.
+				execute on vehicle if entity @s[tag=vanilla_batter] as @n[tag=pan,distance=..6] run function pan:fill_batter {flavor:"vanilla"}
+				execute on vehicle if entity @s[tag=chocolate_batter] as @n[tag=pan,distance=..6] run function pan:fill_batter {flavor:"chocolate"}
+				execute on vehicle if entity @s[tag=berry_batter] as @n[tag=pan,distance=..6] run function pan:fill_batter {flavor:"strawberry"}
 				execute as @n[tag=pan,distance=..6] run {
-					# TODO: Change flavor based on recipe
-					function pan:fill_batter {flavor:"vanilla"}
 					scoreboard players set #check i 1
 					say "Fill pan success!"
+					function mixer:clear_batter_tags
 				}
 				execute if score #check i matches 0 run {
 					say "Fill pan failed!"
+					function mixer:clear_batter_tags
 				}
 			}
 		}
