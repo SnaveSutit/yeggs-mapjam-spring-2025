@@ -64,7 +64,7 @@ function reset {
 	execute positioned 8 20 -37 rotated 0 0 run function ingredient:create_dispenser {type:chocolate}
 	execute positioned 20 20 -37 rotated 0 0 run function ingredient:create_dispenser {type:berries}
 	# Fan
-	execute positioned 37 0 -11 run function map:fan/summon
+	execute positioned 37 -3 -11 run function map:fan/summon
 }
 
 function setup_debug_environment {
