@@ -1,0 +1,6 @@
+{
+	"parent": "animated_java:blueprint/orders/layer3",
+	"textures": {
+		"1": "cooking:blueprint/pan/baked_chocolate"
+	}
+}

@@ -45,6 +45,7 @@ function set_scale {
 function reset {
 	kill @e[type=!player]
 	schedule 10t {
+		function orders:summon
 		# Forklift
 		execute positioned -20 1 -18 rotated 180 0 run function forklift:summon
 		# Pan Dispenser
@@ -70,6 +71,8 @@ function reset {
 		execute positioned 20 20 -37 rotated 0 0 run function ingredient:create_dispenser {type:berries}
 		# Fan
 		execute positioned 37 -3 -11 run function map:fan/summon
+		# Misc
+		function sequence:reset_sequence
 	}
 }
 

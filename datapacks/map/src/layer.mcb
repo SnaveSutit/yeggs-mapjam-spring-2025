@@ -13,7 +13,7 @@ function summon {
 
 			tag @s add mount2
 			function animated_java:layer/summon {args:{}}
-			$execute as @n[type=minecraft:item_display,tag=layer] run { {flavor:$(flavor), frosting:$(frosting)}
+			$execute as @n[type=minecraft:item_display,tag=aj.layer.root] run { {flavor:$(flavor), frosting:$(frosting)}
 				$function animated_java:layer/variants/baked_$(flavor)/apply
 				$function animated_java:layer/variants/frosted_$(frosting)/apply
 				ride @s mount @n[type=minecraft:interaction,tag=mount2,distance=..2]

@@ -13,6 +13,7 @@
 		"animated_java:launcher/root/on_tick",
 		"animated_java:layer/root/on_tick",
 		"animated_java:mixer/root/on_tick",
+		"animated_java:orders/root/on_tick",
 		"animated_java:oven/root/on_tick",
 		"animated_java:pan/root/on_tick",
 		"animated_java:splat/root/on_tick"

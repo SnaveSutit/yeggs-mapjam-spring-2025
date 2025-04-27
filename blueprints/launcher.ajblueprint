@@ -593,6 +593,26 @@
 							"interpolation": "linear",
 							"easing": "linear",
 							"easingArgs": []
+						},
+						{
+							"channel": "commands",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "0",
+									"z": "0",
+									"commands": "execute on passengers on passengers on passengers if entity @s[tag=aj.layer.root] run function animated_java:layer/animations/launched/play",
+									"execute_condition": "",
+									"repeat": false,
+									"repeat_frequency": 1
+								}
+							],
+							"uuid": "5b4cb88f-971a-2822-c4a7-e62ffd6d95d5",
+							"time": 0.95,
+							"color": -1,
+							"interpolation": "linear",
+							"easing": "linear",
+							"easingArgs": []
 						}
 					]
 				},

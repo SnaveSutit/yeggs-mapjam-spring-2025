@@ -13,6 +13,7 @@
 		"animated_java:launcher/on_load",
 		"animated_java:layer/on_load",
 		"animated_java:mixer/on_load",
+		"animated_java:orders/on_load",
 		"animated_java:oven/on_load",
 		"animated_java:pan/on_load",
 		"animated_java:splat/on_load"
