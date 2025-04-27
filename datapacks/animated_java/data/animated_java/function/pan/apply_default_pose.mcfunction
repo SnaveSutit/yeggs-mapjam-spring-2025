@@ -2,4 +2,4 @@
 execute unless entity @s[type=item_display,tag=aj.pan.root] run return run function animated_java:global/errors/function_not_executed_as_root_entity {'export_namespace': 'pan', 'function_path': 'animated_java:pan/apply_default_pose'}
 execute on passengers if entity @s[tag=aj.pan.bone.pan] run data merge entity @s {transformation: [-6.8333f,0f,0f,0f,0f,6.8333f,0f,0f,0f,0f,-6.8333f,0f,0f,0f,0f,1f], start_interpolation: 0}
 execute on passengers if entity @s[tag=aj.pan.bone.layer] run data merge entity @s {transformation: [-6f,0f,0f,0f,0f,6f,0f,0f,0f,0f,-6f,0f,0f,0f,0f,1f], start_interpolation: 0}
-execute on passengers if entity @s[tag=aj.pan.bone.frosting] run data merge entity @s {transformation: [-6.0417f,0f,0f,0f,0f,6.0417f,0f,0f,0f,0f,-6.0417f,0f,0f,0f,0f,1f], start_interpolation: 0}
+execute on passengers if entity @s[tag=aj.pan.bone.frosting] run data merge entity @s {transformation: [-6.2917f,0f,0f,0f,0f,6.2917f,0f,2.625f,0f,0f,-6.2917f,0f,0f,0f,0f,1f], start_interpolation: 0}

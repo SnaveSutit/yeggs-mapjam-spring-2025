@@ -444,11 +444,12 @@
 			"light_emission": 0,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
-			"from": [-72.5, 9.5, -72.5],
-			"to": [72.5, 26.5, 72.5],
+			"from": [-72.5, 22.5, -72.5],
+			"to": [72.5, 39.5, 72.5],
 			"autouv": 0,
 			"color": 1,
-			"origin": [0, 11, 0],
+			"inflate": 3,
+			"origin": [0, 24, 0],
 			"faces": {
 				"north": {
 					"uv": [6, 0, 108, 10],
@@ -486,11 +487,12 @@
 			"light_emission": 0,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
-			"from": [72.5, 26.5, 72.5],
-			"to": [-72.5, 9.5, -72.5],
+			"from": [72.5, 39.5, 72.5],
+			"to": [-72.5, 22.5, -72.5],
 			"autouv": 0,
 			"color": 1,
-			"origin": [0, 11, 0],
+			"inflate": -3,
+			"origin": [0, 24, 0],
 			"faces": {
 				"north": {
 					"uv": [78, 10, 0, 0],
@@ -518,7 +520,7 @@
 				}
 			},
 			"type": "cube",
-			"uuid": "2672abe3-6677-4fe3-52ed-2c1c54f8e98f"
+			"uuid": "023ce95c-9c24-2b99-d0b4-e18114b74111"
 		}
 	],
 	"outliner": [
@@ -567,7 +569,7 @@
 		},
 		{
 			"name": "frosting",
-			"origin": [0, 0, 0],
+			"origin": [0, 42, 0],
 			"color": 0,
 			"configs": {
 				"variants": {}
@@ -579,8 +581,8 @@
 			"locked": false,
 			"visibility": true,
 			"autouv": 0,
-			"selected": false,
-			"children": ["4014d5b5-2ea8-c3cd-d234-91431393eb58", "2672abe3-6677-4fe3-52ed-2c1c54f8e98f"]
+			"selected": true,
+			"children": ["4014d5b5-2ea8-c3cd-d234-91431393eb58", "023ce95c-9c24-2b99-d0b4-e18114b74111"]
 		}
 	],
 	"textures": [
@@ -1104,6 +1106,29 @@
 							"easingArgs": []
 						}
 					]
+				},
+				"129ef29f-8de3-d1d8-fb65-0dd42d34a790": {
+					"name": "frosting",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "scale",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "0",
+									"z": "0"
+								}
+							],
+							"uuid": "05df8704-bcf6-28f1-6582-10df8a19a256",
+							"time": 0,
+							"color": -1,
+							"uniform": true,
+							"interpolation": "linear",
+							"easing": "linear",
+							"easingArgs": []
+						}
+					]
 				}
 			}
 		},
@@ -1122,6 +1147,11 @@
 			"start_delay": "",
 			"loop_delay": "0",
 			"excluded_nodes": [
+				{
+					"icon": "folder",
+					"name": "frosting",
+					"value": "129ef29f-8de3-d1d8-fb65-0dd42d34a790"
+				},
 				{
 					"icon": "folder",
 					"name": "pan",
@@ -1195,7 +1225,7 @@
 			"override": false,
 			"length": 1,
 			"snapping": 20,
-			"selected": true,
+			"selected": false,
 			"saved": false,
 			"path": "",
 			"anim_time_update": "",
@@ -1207,6 +1237,11 @@
 					"icon": "folder",
 					"name": "pan",
 					"value": "21b91d38-2da3-1145-dbb4-008ea23be51b"
+				},
+				{
+					"icon": "folder",
+					"name": "frosting",
+					"value": "129ef29f-8de3-d1d8-fb65-0dd42d34a790"
 				}
 			],
 			"animators": {
@@ -1235,7 +1270,7 @@
 							"data_points": [
 								{
 									"x": "0",
-									"y": "8\n",
+									"y": "16\n",
 									"z": "0"
 								}
 							],
@@ -1244,6 +1279,230 @@
 							"color": -1,
 							"interpolation": "linear",
 							"easing": "easeOutCubic",
+							"easingArgs": []
+						}
+					]
+				}
+			}
+		},
+		{
+			"uuid": "e6f3f35b-6918-e0e2-580d-013f18a0223a",
+			"name": "frost1",
+			"loop": "hold",
+			"override": false,
+			"length": 1,
+			"snapping": 20,
+			"selected": false,
+			"saved": false,
+			"path": "",
+			"anim_time_update": "",
+			"blend_weight": "",
+			"start_delay": "",
+			"loop_delay": "0",
+			"excluded_nodes": [
+				{
+					"icon": "folder",
+					"name": "layer",
+					"value": "189b20e0-13c9-c589-e69f-e6950ff5cf45"
+				},
+				{
+					"icon": "folder",
+					"name": "pan",
+					"value": "21b91d38-2da3-1145-dbb4-008ea23be51b"
+				}
+			],
+			"animators": {
+				"129ef29f-8de3-d1d8-fb65-0dd42d34a790": {
+					"name": "frosting",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "scale",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "0",
+									"z": "0"
+								}
+							],
+							"uuid": "37dc2732-e379-ee33-cadc-abf793e4bf83",
+							"time": 0,
+							"color": -1,
+							"uniform": true,
+							"interpolation": "linear",
+							"easing": "linear",
+							"easingArgs": []
+						},
+						{
+							"channel": "scale",
+							"data_points": [
+								{
+									"x": "1 / 3",
+									"y": "0.6",
+									"z": "1 / 3"
+								}
+							],
+							"uuid": "65f7ed97-37f8-a3e4-f55b-cb72280ff832",
+							"time": 1,
+							"color": -1,
+							"uniform": false,
+							"interpolation": "linear",
+							"easing": "easeOutExpo",
+							"easingArgs": []
+						}
+					]
+				}
+			}
+		},
+		{
+			"uuid": "db57ccc2-9929-db41-5f6f-561e96691954",
+			"name": "frost2",
+			"loop": "hold",
+			"override": false,
+			"length": 1,
+			"snapping": 20,
+			"selected": false,
+			"saved": false,
+			"path": "",
+			"anim_time_update": "",
+			"blend_weight": "",
+			"start_delay": "",
+			"loop_delay": "0",
+			"excluded_nodes": [
+				{
+					"icon": "folder",
+					"name": "layer",
+					"value": "189b20e0-13c9-c589-e69f-e6950ff5cf45"
+				},
+				{
+					"icon": "folder",
+					"name": "pan",
+					"value": "21b91d38-2da3-1145-dbb4-008ea23be51b"
+				}
+			],
+			"animators": {
+				"129ef29f-8de3-d1d8-fb65-0dd42d34a790": {
+					"name": "frosting",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "scale",
+							"data_points": [
+								{
+									"x": "2 / 3",
+									"y": "0.6",
+									"z": "2 / 3"
+								}
+							],
+							"uuid": "65f7ed97-37f8-a3e4-f55b-cb72280ff832",
+							"time": 1,
+							"color": -1,
+							"uniform": false,
+							"interpolation": "linear",
+							"easing": "easeOutExpo",
+							"easingArgs": []
+						},
+						{
+							"channel": "scale",
+							"data_points": [
+								{
+									"x": "1 / 3",
+									"y": "0.6",
+									"z": "1 / 3"
+								}
+							],
+							"uuid": "a702673a-27c9-780d-0341-56381bcb0ec5",
+							"time": 0,
+							"color": -1,
+							"uniform": false,
+							"interpolation": "linear",
+							"easing": "easeOutExpo",
+							"easingArgs": []
+						}
+					]
+				}
+			}
+		},
+		{
+			"uuid": "5ab7cd9b-95ce-59a2-cd3f-fbc814780b1d",
+			"name": "frost3",
+			"loop": "hold",
+			"override": false,
+			"length": 1.5,
+			"snapping": 20,
+			"selected": true,
+			"saved": false,
+			"path": "",
+			"anim_time_update": "",
+			"blend_weight": "",
+			"start_delay": "",
+			"loop_delay": "0",
+			"excluded_nodes": [
+				{
+					"icon": "folder",
+					"name": "layer",
+					"value": "189b20e0-13c9-c589-e69f-e6950ff5cf45"
+				},
+				{
+					"icon": "folder",
+					"name": "pan",
+					"value": "21b91d38-2da3-1145-dbb4-008ea23be51b"
+				}
+			],
+			"animators": {
+				"129ef29f-8de3-d1d8-fb65-0dd42d34a790": {
+					"name": "frosting",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "scale",
+							"data_points": [
+								{
+									"x": "2 / 3",
+									"y": "0.6",
+									"z": "2 / 3"
+								}
+							],
+							"uuid": "a702673a-27c9-780d-0341-56381bcb0ec5",
+							"time": 0,
+							"color": -1,
+							"uniform": false,
+							"interpolation": "linear",
+							"easing": "easeOutExpo",
+							"easingArgs": []
+						},
+						{
+							"channel": "scale",
+							"data_points": [
+								{
+									"x": "1",
+									"y": "0.6",
+									"z": "1"
+								}
+							],
+							"uuid": "16b6f056-0719-1f14-b903-f30661c62c94",
+							"time": 0.5,
+							"color": -1,
+							"uniform": false,
+							"interpolation": "linear",
+							"easing": "easeOutExpo",
+							"easingArgs": []
+						},
+						{
+							"channel": "scale",
+							"data_points": [
+								{
+									"x": "1",
+									"y": "1",
+									"z": "1"
+								}
+							],
+							"uuid": "a96ee3b8-7240-3b9e-4957-653ec6819317",
+							"time": 1.5,
+							"color": -1,
+							"uniform": false,
+							"interpolation": "linear",
+							"easing": "easeInOutQuint",
 							"easingArgs": []
 						}
 					]

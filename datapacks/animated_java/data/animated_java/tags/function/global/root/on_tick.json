@@ -16,6 +16,7 @@
 		"animated_java:orders/root/on_tick",
 		"animated_java:oven/root/on_tick",
 		"animated_java:pan/root/on_tick",
-		"animated_java:splat/root/on_tick"
+		"animated_java:splat/root/on_tick",
+		"animated_java:static_pipette/root/on_tick"
 	]
 }

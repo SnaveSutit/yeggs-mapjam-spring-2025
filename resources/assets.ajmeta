@@ -310,6 +310,18 @@
 				"assets/animated_java/models/empty.json",
 				"assets/animated_java/textures/blueprint/splat/splat.png"
 			]
+		},
+		"static_pipette": {
+			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
+			"versionedFiles": [
+				"assets/animated_java/items/blueprint/static_pipette/bag.json",
+				"assets/animated_java/items/blueprint/static_pipette/tip.json",
+				"assets/animated_java/items/empty.json",
+				"assets/animated_java/models/blueprint/static_pipette/bag.json",
+				"assets/animated_java/models/blueprint/static_pipette/tip.json",
+				"assets/animated_java/models/empty.json",
+				"assets/animated_java/textures/blueprint/static_pipette/static_pipette.png"
+			]
 		}
 	}
 }

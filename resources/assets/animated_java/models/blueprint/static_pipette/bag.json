@@ -1,0 +1,48 @@
+{
+	"textures": {
+		"0": "animated_java:blueprint/static_pipette/static_pipette",
+		"particle": "minecraft:item/pufferfish"
+	},
+	"display": {
+		"head": {
+			"rotation": [0, 180, 0]
+		}
+	},
+	"elements": [
+		{
+			"from": [0.78803, 7.97007, -6.39401],
+			"to": [15.21197, 17.60599, 17.60599],
+			"rotation": {
+				"angle": 0,
+				"axis": "y",
+				"origin": [8, 12.78803, 8]
+			},
+			"faces": {
+				"north": {
+					"uv": [6, 2, 9, 4],
+					"texture": "#0"
+				},
+				"east": {
+					"uv": [0, 6, 6, 8],
+					"texture": "#0"
+				},
+				"south": {
+					"uv": [6, 4, 9, 6],
+					"texture": "#0"
+				},
+				"west": {
+					"uv": [6, 0, 12, 2],
+					"texture": "#0"
+				},
+				"up": {
+					"uv": [3, 6, 0, 0],
+					"texture": "#0"
+				},
+				"down": {
+					"uv": [6, 0, 3, 6],
+					"texture": "#0"
+				}
+			}
+		}
+	]
+}

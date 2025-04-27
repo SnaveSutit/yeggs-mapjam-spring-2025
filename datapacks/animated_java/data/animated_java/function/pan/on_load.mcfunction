@@ -2,3 +2,6 @@
 scoreboard objectives add aj.empty.frame dummy
 scoreboard objectives add aj.fill_batter.frame dummy
 scoreboard objectives add aj.finish_baking.frame dummy
+scoreboard objectives add aj.frost1.frame dummy
+scoreboard objectives add aj.frost2.frame dummy
+scoreboard objectives add aj.frost3.frame dummy

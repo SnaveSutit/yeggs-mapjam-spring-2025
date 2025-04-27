@@ -3,3 +3,6 @@ execute unless entity @s[type=item_display,tag=aj.pan.root] run return run funct
 tag @s remove aj.pan.animation.empty.playing
 tag @s remove aj.pan.animation.fill_batter.playing
 tag @s remove aj.pan.animation.finish_baking.playing
+tag @s remove aj.pan.animation.frost1.playing
+tag @s remove aj.pan.animation.frost2.playing
+tag @s remove aj.pan.animation.frost3.playing
