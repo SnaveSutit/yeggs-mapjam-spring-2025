@@ -24,10 +24,30 @@
 				}
 			},
 			{
-				"when": "frosted",
+				"when": "frosted_vanilla",
 				"model": {
 					"type": "minecraft:model",
-					"model": "animated_java:blueprint/pan/frosted/frosting",
+					"model": "animated_java:blueprint/pan/frosted_vanilla/frosting",
+					"tints": [
+						{"type": "minecraft:dye", "default": [1, 1, 1]}
+					]
+				}
+			},
+			{
+				"when": "frosted_chocolate",
+				"model": {
+					"type": "minecraft:model",
+					"model": "animated_java:blueprint/pan/frosted_chocolate/frosting",
+					"tints": [
+						{"type": "minecraft:dye", "default": [1, 1, 1]}
+					]
+				}
+			},
+			{
+				"when": "frosted_strawberry",
+				"model": {
+					"type": "minecraft:model",
+					"model": "animated_java:blueprint/pan/frosted_strawberry/frosting",
 					"tints": [
 						{"type": "minecraft:dye", "default": [1, 1, 1]}
 					]

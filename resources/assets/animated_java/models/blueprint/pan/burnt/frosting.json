@@ -1,7 +1,7 @@
 {
 	"parent": "animated_java:blueprint/pan/frosting",
 	"textures": {
-		"1": "cooking:blueprint/pan/burnt",
+		"5": "cooking:blueprint/pan/burnt",
 		"9": "cooking:blueprint/transparent"
 	}
 }

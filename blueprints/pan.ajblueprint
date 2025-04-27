@@ -3,7 +3,7 @@
 		"format": "animated_java_blueprint",
 		"format_version": "1.6.5",
 		"uuid": "be7e380a-c0a3-ef09-057e-659a0f8936b2",
-		"save_location": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\blueprints\\pan.ajblueprint",
+		"save_location": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\blueprints\\pan.ajblueprint",
 		"last_used_export_namespace": "pan"
 	},
 	"blueprint_settings": {
@@ -14,7 +14,7 @@
 		"enable_plugin_mode": false,
 		"resource_pack_export_mode": "raw",
 		"data_pack_export_mode": "raw",
-		"target_minecraft_version": "1.21.2",
+		"target_minecraft_versions": ["1.21.5"],
 		"display_item": "minecraft:white_dye",
 		"custom_model_data_offset": 0,
 		"enable_advanced_resource_pack_settings": false,
@@ -30,7 +30,7 @@
 		"show_outdated_warning": false,
 		"baked_animations": true,
 		"json_file": "",
-		"target_minecraft_versions": ["1.21.5"]
+		"target_minecraft_version": "1.21.2"
 	},
 	"resolution": {
 		"width": 128,
@@ -53,27 +53,27 @@
 			"faces": {
 				"north": {
 					"uv": [0, 0, 128, 10],
-					"texture": 3
+					"texture": 5
 				},
 				"east": {
 					"uv": [0, 0, 128, 10],
-					"texture": 3
+					"texture": 5
 				},
 				"south": {
 					"uv": [0, 0, 128, 10],
-					"texture": 3
+					"texture": 5
 				},
 				"west": {
 					"uv": [0, 0, 128, 10],
-					"texture": 3
+					"texture": 5
 				},
 				"up": {
 					"uv": [118, 128, 0, 10],
-					"texture": 3
+					"texture": 5
 				},
 				"down": {
 					"uv": [0, 10, 118, 128],
-					"texture": null
+					"texture": 5
 				}
 			},
 			"type": "cube",
@@ -88,10 +88,9 @@
 			"render_order": "default",
 			"allow_mirror_modeling": true,
 			"from": [-73, 0, -73],
-			"to": [73, 4, 73],
+			"to": [73, 1, 73],
 			"autouv": 0,
 			"color": 6,
-			"visibility": false,
 			"origin": [0, 0, 0],
 			"faces": {
 				"north": {
@@ -112,11 +111,11 @@
 				},
 				"up": {
 					"uv": [0, 13, 73, 86],
-					"texture": 2
+					"texture": 1
 				},
 				"down": {
 					"uv": [0, 13, 73, 86],
-					"texture": 2
+					"texture": 1
 				}
 			},
 			"type": "cube",
@@ -134,28 +133,27 @@
 			"to": [73, 18, 73],
 			"autouv": 0,
 			"color": 6,
-			"visibility": false,
 			"origin": [-140, 0, 143],
 			"faces": {
 				"north": {
 					"uv": [0, 86, 73, 95],
-					"texture": 2
+					"texture": 1
 				},
 				"east": {
 					"uv": [0, 0, 1.5, 9],
-					"texture": 2
+					"texture": 1
 				},
 				"south": {
 					"uv": [0, 0, 73, 9],
-					"texture": 2
+					"texture": 1
 				},
 				"west": {
 					"uv": [0, 0, 1.5, 9],
-					"texture": 2
+					"texture": 1
 				},
 				"up": {
 					"uv": [0, 0, 73, 1],
-					"texture": 2
+					"texture": 1
 				},
 				"down": {
 					"uv": [0, 0, 0, 0],
@@ -177,24 +175,23 @@
 			"to": [-70, 18, 73],
 			"autouv": 0,
 			"color": 6,
-			"visibility": false,
 			"origin": [-143, 0, -140],
 			"faces": {
 				"north": {
 					"uv": [0, 0, 1.5, 9],
-					"texture": 2
+					"texture": 1
 				},
 				"east": {
 					"uv": [0, 86, 73, 95],
-					"texture": 2
+					"texture": 1
 				},
 				"south": {
 					"uv": [0, 0, 1.5, 9],
-					"texture": 2
+					"texture": 1
 				},
 				"west": {
 					"uv": [0, 0, 73, 9],
-					"texture": 2
+					"texture": 1
 				},
 				"up": {
 					"uv": [0, 0, 0, 0.5],
@@ -222,29 +219,28 @@
 			"to": [73, 18, -70],
 			"autouv": 0,
 			"color": 6,
-			"visibility": false,
 			"origin": [140, 0, -143],
 			"faces": {
 				"north": {
 					"uv": [0, 0, 73, 9],
-					"texture": 2
+					"texture": 1
 				},
 				"east": {
 					"uv": [0, 0, 1.5, 9],
-					"texture": 2
+					"texture": 1
 				},
 				"south": {
 					"uv": [0, 86, 73, 95],
-					"texture": 2
+					"texture": 1
 				},
 				"west": {
 					"uv": [0, 0, 1.5, 9],
-					"texture": 2
+					"texture": 1
 				},
 				"up": {
 					"uv": [0, 0, 73, 1],
 					"rotation": 180,
-					"texture": 2
+					"texture": 1
 				},
 				"down": {
 					"uv": [0, 0, 0, 0],
@@ -267,24 +263,23 @@
 			"to": [73, 18, 73],
 			"autouv": 0,
 			"color": 6,
-			"visibility": false,
 			"origin": [143, 0, 140],
 			"faces": {
 				"north": {
 					"uv": [0, 0, 1.5, 9],
-					"texture": 2
+					"texture": 1
 				},
 				"east": {
 					"uv": [0, 0, 73, 9],
-					"texture": 2
+					"texture": 1
 				},
 				"south": {
 					"uv": [0, 0, 1.5, 9],
-					"texture": 2
+					"texture": 1
 				},
 				"west": {
 					"uv": [0, 86, 73, 95],
-					"texture": 2
+					"texture": 1
 				},
 				"up": {
 					"uv": [0, 0, 0, 0],
@@ -312,13 +307,12 @@
 			"to": [-70, 18, 73],
 			"autouv": 0,
 			"color": 6,
-			"visibility": false,
 			"origin": [-70, -55, -140],
 			"faces": {
 				"north": {
 					"uv": [0, 9, 1.5, 13],
 					"rotation": 90,
-					"texture": 2
+					"texture": 1
 				},
 				"east": {
 					"uv": [0, 0, 73, 2],
@@ -328,21 +322,21 @@
 				"south": {
 					"uv": [0, 9, 1.5, 13],
 					"rotation": 270,
-					"texture": 2
+					"texture": 1
 				},
 				"west": {
 					"uv": [0, 9, 73, 11],
-					"texture": 2
+					"texture": 1
 				},
 				"up": {
 					"uv": [0, 9, 73, 13],
 					"rotation": 270,
-					"texture": 2
+					"texture": 1
 				},
 				"down": {
 					"uv": [0, 9, 73, 13],
 					"rotation": 270,
-					"texture": 2
+					"texture": 1
 				}
 			},
 			"type": "cube",
@@ -360,22 +354,21 @@
 			"to": [82, 18.125, 73.2],
 			"autouv": 0,
 			"color": 6,
-			"visibility": false,
 			"origin": [70, -55, -140],
 			"faces": {
 				"north": {
 					"uv": [1, 87, 2.5, 86],
 					"rotation": 90,
-					"texture": 2
+					"texture": 1
 				},
 				"east": {
 					"uv": [3, 88, 70, 90],
-					"texture": 2
+					"texture": 1
 				},
 				"south": {
 					"uv": [1, 87, 2.5, 86],
 					"rotation": 270,
-					"texture": 2
+					"texture": 1
 				},
 				"west": {
 					"uv": [73, 0, 0, 2],
@@ -385,12 +378,12 @@
 				"up": {
 					"uv": [3, 86, 70, 90],
 					"rotation": 270,
-					"texture": 2
+					"texture": 1
 				},
 				"down": {
 					"uv": [3, 86, 70, 90],
 					"rotation": 270,
-					"texture": 2
+					"texture": 1
 				}
 			},
 			"type": "cube",
@@ -408,13 +401,12 @@
 			"to": [-70, 18.125, 73.2],
 			"autouv": 0,
 			"color": 6,
-			"visibility": false,
 			"origin": [-70, -55, -140],
 			"faces": {
 				"north": {
 					"uv": [1, 86, 2.5, 87],
 					"rotation": 90,
-					"texture": 2
+					"texture": 1
 				},
 				"east": {
 					"uv": [0, 0, 73, 2],
@@ -424,21 +416,21 @@
 				"south": {
 					"uv": [1, 86, 2.5, 87],
 					"rotation": 270,
-					"texture": 2
+					"texture": 1
 				},
 				"west": {
 					"uv": [70, 88, 3, 90],
-					"texture": 2
+					"texture": 1
 				},
 				"up": {
 					"uv": [3, 90, 70, 86],
 					"rotation": 270,
-					"texture": 2
+					"texture": 1
 				},
 				"down": {
 					"uv": [3, 90, 70, 86],
 					"rotation": 270,
-					"texture": 2
+					"texture": 1
 				}
 			},
 			"type": "cube",
@@ -460,27 +452,27 @@
 			"faces": {
 				"north": {
 					"uv": [6, 0, 108, 10],
-					"texture": 12
+					"texture": 9
 				},
 				"east": {
 					"uv": [0, 0, 128, 10],
-					"texture": 12
+					"texture": 9
 				},
 				"south": {
 					"uv": [78, 0, 0, 10],
-					"texture": 12
+					"texture": 9
 				},
 				"west": {
 					"uv": [0, 0, 84, 10],
-					"texture": 12
+					"texture": 9
 				},
 				"up": {
 					"uv": [118, 128, 0, 10],
-					"texture": 12
+					"texture": 9
 				},
 				"down": {
 					"uv": [0, 10, 118, 128],
-					"texture": null
+					"texture": 9
 				}
 			},
 			"type": "cube",
@@ -498,9 +490,9 @@
 			"uuid": "21b91d38-2da3-1145-dbb4-008ea23be51b",
 			"export": true,
 			"mirror_uv": false,
-			"isOpen": false,
+			"isOpen": true,
 			"locked": false,
-			"visibility": false,
+			"visibility": true,
 			"autouv": 0,
 			"selected": false,
 			"children": [
@@ -524,7 +516,7 @@
 			"uuid": "189b20e0-13c9-c589-e69f-e6950ff5cf45",
 			"export": true,
 			"mirror_uv": false,
-			"isOpen": false,
+			"isOpen": true,
 			"locked": false,
 			"visibility": true,
 			"autouv": 0,
@@ -541,7 +533,7 @@
 			"uuid": "129ef29f-8de3-d1d8-fb65-0dd42d34a790",
 			"export": true,
 			"mirror_uv": false,
-			"isOpen": false,
+			"isOpen": true,
 			"locked": false,
 			"visibility": true,
 			"autouv": 0,
@@ -551,11 +543,11 @@
 	],
 	"textures": [
 		{
-			"path": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\transparent.png",
+			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\transparent.png",
 			"name": "transparent.png",
 			"folder": "block",
 			"namespace": "",
-			"id": "4",
+			"id": "0",
 			"group": "d61327ea-0bed-3433-feca-55ce7a7720b3",
 			"width": 16,
 			"height": 16,
@@ -580,40 +572,11 @@
 			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAB9JREFUOE9jZKAQMFKon2HUAIbRMGAYDQNQPhr4vAAAJpgAEX/anFwAAAAASUVORK5CYII="
 		},
 		{
-			"path": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\frosting.png",
-			"name": "frosting.png",
-			"folder": "block",
-			"namespace": "",
-			"id": "9",
-			"group": "d61327ea-0bed-3433-feca-55ce7a7720b3",
-			"width": 512,
-			"height": 512,
-			"uv_width": 512,
-			"uv_height": 512,
-			"particle": false,
-			"use_as_default": false,
-			"layers_enabled": false,
-			"sync_to_project": "",
-			"render_mode": "default",
-			"render_sides": "auto",
-			"pbr_channel": "color",
-			"frame_time": 1,
-			"frame_order_type": "loop",
-			"frame_order": "",
-			"frame_interpolate": false,
-			"visible": true,
-			"internal": true,
-			"saved": true,
-			"uuid": "1370855f-5b73-d6b6-cdd6-30b52c1ae368",
-			"relative_path": "../resources/assets/cooking/textures/blueprint/pan/frosting.png",
-			"source": "data:image/png;base64,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"
-		},
-		{
-			"path": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\pan.png",
+			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\pan.png",
 			"name": "pan.png",
 			"folder": "block",
 			"namespace": "",
-			"id": "10",
+			"id": "1",
 			"group": "",
 			"width": 128,
 			"height": 128,
@@ -651,11 +614,11 @@
 			"source": "data:image/png;base64,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"
 		},
 		{
-			"path": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\baked_vanilla.png",
+			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\baked_vanilla.png",
 			"name": "baked_vanilla.png",
 			"folder": "block",
 			"namespace": "",
-			"id": "11",
+			"id": "2",
 			"group": "",
 			"width": 64,
 			"height": 64,
@@ -680,11 +643,11 @@
 			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAABYJJREFUeF7tW0trFEEQns2SNTEPInkIuQmCIF6iVw+if8Pf4z/x6F/wIng0CCIEBE8G3CQYEqN5sFFqdmtSU11dVT3Tm2yMe9HM9qPqq68e3VPb2X3z7E+R6XO42ykWVobL0f/j35m2UZfB/b17dRAAEBg+B3tT3rnBuN5MOHVm7jx4SIXkQMHgb1vdxjJ4Ji4uD2UCOTofX73IxgC+eX/n2JRn4+l0NUYCAw0jLXR8FBrrlGz56fO+uP+jh0vV887rl0/cAKytCiY2VRwOoGCAAGgFnM5ZoTGRz4U13r87cElClYcJSQC4dhjDIBAarSmB1wqAnEFwDLpnXXJ543mwXhkE4Yu9zbfuzaSF3JOLohgc/kgZHow9PQx9e3b9Xjnu9/bX2vhf3y/+zgbA0v2NqALdhTumchMJgIQePENkqVaaApcBAMoi7dWYARYAXqtRoXAOF9S7lkUlWJevJbkHukHUBXCj23eHfkQ/yACv0BIAliLW9xqrPHLtf9kst/gPQCwLpDLA4+eWVdt8PzgYZpHuYugCfF1wCXQBZDiNa9VZACZq0V0TOAcgVCnYS/q7VHik/FgAoDGgt3BRL2tRtwbMrbUQp5O+jB0de9IXFUYlNfCtGJDEAA8A3DK5AEh1CZAjuws0AaBGydUHjRmAtAel+P/bMgDmQxyIxgAp/XldoDEAqSYn49H6JVCOshpiFJT60TSYCgAVoLELtACATs0CgISMtLAV7SkbqsA5onSyvixIJs9nE1QGxE53asCjGwjRf7CzVeXqQHgpW+AgzBotAJDkTgaA51vVAvNhCT3Y/nB9AKAFUK2WpxXXKO2IQAgAFD/r53IzVnAGSBu1YIXKgBgAbr+TADg7ck+vBsaKJhzgBEAK0tcCADVuAAhOACTkmwMQ2xSeo8UyMYACEE216bwqZyQHwWofD+o8qk/PFcVUry7q+enwGfyrfWKuY7kHWZOmcIxpeQFAhaWUBYIAAPwDiknPpXESQAQAix2NAJAmRQ11xQBYXiAVcXArpN4KJwHAJZBcwJIy9r3iAt7CrDUABXlZhqczVZ9/DYDytpUUQaLyWjkb8XWsDnG9rnR89jJHCYqtGWAdekoZbwIAarRtCABaHXL+OBgA1peu5scaBGsXFOg6649DMsP5gGYQDUTLFSIucCUAoKy1E2QMAKrYGADguGE8yM8AoUI0AYAUFyue4HoL3KLpBUqEMZcKQC04xqpBCwDMDAmlr+Yt+QHAQ5B2SNLK4RQA6IHLigltGMDfCLnSYEwgy68NAGDZnG7gYsCkAFDFh4bWptN4MaQGwUkBwBUEDbc4290uplfWg/cF+QCQfN+iPZiGBzXPHGpSIyjylyW8ecIEIOjiiF2CTigAktdQN0gGwLwLoFb1WPMSGMADaBIAgcKjI7ErInsASKCzeNByuMDYAGh1NJao1LTI4TdRRrbIxoB/HgC4K+N5M6kYSr05pgzwzFUsHXs7nJQFJg6AhBI4GwCe4svVF+DsCar2S2CAtP/YAUh6S6yhmKCoxxjVHUSkQyTJBbAUltpMe/MX3WKulJgivQXYSb+A0naqN1triPJ0o2YDAJoKrTcxTXSO9QEGNzpCU6QUoGNBHJun1SYpjQFSt3hM4RSgpNRqpdtY8zXIMxEASNZLcRuLFRMDALe0N1B6OrrKcpb96MKaJ7XN4xpJLiBR21MQcQBigFiK4P64JwJtzWsNAFU8djnChVF7+FlDs5WyOPA5GYBrq/0BGgCBVUZ518MMmMt/wgLPpC5UKgN/N8l9nzNC+xEV/TGY+nrcslJFS0drKlVGrC2ETnQNgCC4MhlaA2DlcYqc5Y98LUk4az/re84gugf9mRxfx/zJTGzjGw+AZZHr8r3EgL+uVOSi9yyo6wAAAABJRU5ErkJggg=="
 		},
 		{
-			"path": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\baked_chocolate.png",
+			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\baked_chocolate.png",
 			"name": "baked_chocolate.png",
 			"folder": "block",
 			"namespace": "",
-			"id": "11",
+			"id": "3",
 			"group": "",
 			"width": 64,
 			"height": 64,
@@ -709,11 +672,11 @@
 			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAABNhJREFUeF7tm99PE0EQx/ciNQg2QY1W46M++P//PfqsSFSSAjaCwUzrNNO5+Xm7pUeBF6C3ezf7me/Mzu5tu09ldlse8E/3CGCPFTAvV6K2p+Vo/Xn3vkzDIUA7ZqOGGlNzH+252mB5e/7sFIDsoFu1B6NxgBq8wQAeUg748HHa88kyCcKFL5/nYYdJNwp3LqVczm8yzXttF1f9/q9mh8t2P04XG+3P59fr/5sBeDt7pg7geHrgDm6UACR68BmSpaOyBnAXANAW6VmDFeABiHqNGoV9uKHRe3lSgvvye0nhgWGghgA+6GQ66T0TFRA1WgLgDcS7bqkqYte309/LRzwC0GaBrAIice55teY6DS1PARASGAKocJrXNtYCVna3DG4BhOcL6X8e81IO4HamANAccHjUn868gT497Hqc/izkSpu2hTYeAM0BTRUQAaBldjCwBkA2JMCOnShA8xQM4MXr/iwSVQD0x0Hxvy04EQVAf8gDag6Qpr9oCFADMgCyHueFGIajBwD6QVso9dVpMAuAeooalgmBGgDRqpRWjCYAiYxE1kuCQ/poIHiSrAWWBoBxiBKyDJA8/+tstQqToEnt8f6YM2oASIk6DYB60/P88fP+lPn962pZei8A0AJIW8xocb8cpADg8kJf80cUICmuRhWmAjQA0biTAFzf/I12X7fTpkxsEAUgOeteALDyBi+0PFic/mAAGnX4HI1opQAKwAq5tLRKsesAa48vIjse05ODJ6V0bA1w260+g9/GjxY6GY9LCTw9C1hxhwOWpizotwTAfmBg0udSO4kPBeCpYxCAzLS3awBeCEgFGewKmbvCGQDcADEEPCuV61YIWCtRertqAPRmXhHEs7MWAlEeowBA19kaAKuY0WIdq0OEIa0eo6CspFitgCFep4bvDQAr2w5VAHod5vxtKIDbjGrYahLkOzmghjfvVu/qNpLTxc162wwkbEH0QkELgZ0AQGNp7GkA6MC2AaAH/f+L2OYKkCpEDwBkeK14AsMhLCL5x1OHNCXeCQA6JWrVoAcA80Km9LWANM8BuAiyFklaLRBRAAVAF1wZr6cVwN8I1cjQi2tPAWB8zfMH5YCxAGgle4DAiyEzB4wFQCQJemFx/vO6nLycbA+AFPue7MEj3LuRPlTOnjqkt0pUBa4CpFMc3o6uFc88FrcNQEqSVQC0rDtmBfAEmgKgDTiSkVvLecgrNmmvoBkAbyOiNQBPfV4+kEpzNwdYCth7ALBXxufNiPQRWnbnmHow0jdS6vI2/PBEai2QrcYig/BKZzpVenO9VOpWA4jU2toGSWsAmi3S86XtL3RgOAlaL0ZqdovpQCKQIk7Qav0qBWApLB0zpUdlMnlhyGA4MMgVUNpOJt3GgajIadRUDrAAwKFC703MkMHymUV7Bm1nzUZaEsfD0+YhKQ9AdIAZUFbhoilt9ACk+MyEjaeK0QDQdl696VPL2FICi0x12EY6MIngUyEgST3iQT5TaDNHFgCC9vpVA6AD1zZHuDEWmFYApJpec5JXyZrnAywAVGbwt7cu4Abyr7DAdekUKu3H301KuYG2t75ERb8MZr4e92hnjqZ6xmUBeMVPNQBvmqPkvHjk95KM857nXecA6TPo1+T4fdyvzGgPfvAAPI/cl+uSAv4BLbudWSfTpskAAAAASUVORK5CYII="
 		},
 		{
-			"path": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\baked_strawberry.png",
+			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\baked_strawberry.png",
 			"name": "baked_strawberry.png",
 			"folder": "block",
 			"namespace": "",
-			"id": "11",
+			"id": "4",
 			"group": "",
 			"width": 64,
 			"height": 64,
@@ -738,11 +701,11 @@
 			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAABOtJREFUeF7tm81qFVEMx+fWqkVFWhW/EQRxoS4UXLnxAXwKH8ZH8hVcCboQFyII4jdiixSpWltJL2nTTJJ/MjO3vf24G+udMzPJL//k5JyZO3qy8HC9OcCf0SGAfayAtzPfTW3fWDu3+f3o8dnb6RSQJ1azRhrT5zrefT1n9Xh97xKAqtNDjSej2UEPXmcAB6kGPHg014rJRhGkA8+erqQDZl0ofXLTNEsf/1WGt8Yuf/vb+u7qvbFzH15s9+P9p62hgwG4dfeo68D8lSPQuakEYNGj75is9CpyYCcAsC3WvTorAAHIRk0axedoQ7PXQlKi6+prWenBaeCmAN/o2uX2LVkBWaMtAMgRdDxSVcau1y/HNeMQgDcLVBWQyXMU1T7HZWohBVBKcAqwwmVd27YWiKp7ZPAQQHS9sP6vc96qAdrOEgBZA06db091yNHjC+2u+vfiyGQnx9IYBMALwKAKyADwKjsZ2AdANiXmz/xsln6c3gC2KwrwIkUOXLgz0/IjqwA6kZ3Sf0dwMgqg86kOuDXAmv6yKSANqADIRtwap0Gha5FSqNV3p8EqAGmAvHklBZDR2eNIAXQdCMAiY10YFcEu53iO6iKZBeKNCxXgre6igoci//XV2sYQC5qlFL4e14w+ACy7ywBkNFHkFy61V4Dvnv/ZOwBkA+QtZry8Jy8tAIuf/TV/RgGWlPuoIlSAByCbdxaAXyur2dM3x3lTJg/IArCCtScARHVDN1oIlqbfGYBHnb5nI4ZSgAQQpVxZWk0T9wHRHl9GdjqnT8zNNuuz21NgtDr+jv6NPl7qVCJuFfDyLBDlHTtsTVl0HgHQH3LM+t4aZwGSAJA6OgGoTHu7DQClgNWQ0a5QuCtcAaANsFIAGekdj1Ig25j1BiCNQ02Qrs5eCmSBTAUAuc72AETNjJfr3B0yDGv1mAUVFcXeCugSdWn4vgEQVduuCuCo05w/CQVom1kNEy2C1gbF9fvHWmqm9YGcQSKIKBW8FNgVAGyszD0PgHRsEgA0uIkpwOoQEQCq8F7zRIZTWmTqD1KHPL6jAOSU6HWDCADXhUrrGwEZHAAvgqJFUtQOVwDIBVcl6mUF6CdCfWSI8hoBIOP73L9TDZgWAEPJniDoZiicBqcFQKYIorT48ma9uXhz61EbK2IwAFbuI9mTETq6mXOknJE6dC+iH5tBANZbHGhLO8pnnYuTBmAVSZkGZQBe1Z1mBegCWgLgOZypyEPLucsjNmuvYDAAaCNiaABIfageWK05TIFIAfseAO2V6XkzI32GVt05lhHMnJtpdfWY0iwwbQDQXG+1ur0BZHptb4MkE0W0drB6Bautzb50WVaAB6DPbrG8ZgZSJgher99LAdwKW6+ZyldlKnWhizMaGNUKam3nTo73CdBUJ88vKSACQC8VoicxXZzVznj3kOOi2cgr4vzydPiSFAKQdbACKoqmp7SpB5ApWpkpjQF4G5wWoB1VgGeY7sWzBcsqYJmpjsdYL0wypFIKWNHJFD49U3gzh44SWn8waHRebwDSEG9zRBsTgRkKgNXTe0FCnWz4fkAEQMqM/kbrAm2g/gkLHbfeQvWmMGv6085GP6KSPwYLH48j2rIwZWcFGod6CxTRTMHrDQA5JMmhfNTXsoxD90PHtYLkPeTP5PR14E9mvBsfeAAoInvluKWA/zGtzPzW2KnPAAAAAElFTkSuQmCC"
 		},
 		{
-			"path": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\batter_vanilla.png",
+			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\batter_vanilla.png",
 			"name": "batter_vanilla.png",
 			"folder": "block",
 			"namespace": "",
-			"id": "11",
+			"id": "5",
 			"group": "",
 			"width": 64,
 			"height": 64,
@@ -767,11 +730,11 @@
 			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAABm1JREFUeF7tm82OHDUQx+2ez92dZMlGiFWEhDjwHLnnxCHixIWnyDV5A8QRiRsnxDkXHgUJJDgkRGJhw+589PTYyO52j9sul8vunmQQO7fdcbv7/6t/VbndPXz1+7eS/Y8//A7AnQPuUkDXgOmjxy/cUvDbN8++hsrD5dMnf1HLxusfXz6gjk2ZlzpnbBzf3vwgOe9e4/bqV33c5OJTJjZ/xOYY9Hs+nQ46nz3ZZPEFdyfn1e1P0gh2v1QAoA+fnzO5vtZfDQ1od7scDACfTDpzzS+/ogHAhJsZDYBjh6CuT4EYLc5Y1AEh4XqS+bnWbgs3MHJdwMcLL9qyutH/G9IJar7xgw9wALniKQ6AhHaUF12rMrENpkF1/SYrRUZnp2x68WU4BWK2hyIfckBUsDnQFW5LQyC0aZjgll4AMPG2AzDhbnWXVWQFTgCgU7KBEEubIIDy6ntZzD6KVntoQHFSt8/d8hdGjrqqJ0W81UlRkqwulledcaHakQwAK3pGeJsCJT0vKeJ1ZBMAFKcXHSfIsoZnw0BTAEJt9/o2ZZuI2+Op0acKTxHvXrdJh4MAcKOeYn2qeGrUsdxQEAwA2wVJDoDs79v+msndkvHRKJqrVAB9om93BhuAgZAMwK78UPRFeaQAyrJTDw4CQInX0Woc4EbYtfIhHADNqc5rou+2x2wHhKKvAPAi3MspENSYGDywQCNtVJQbZlaS9rI6CQAket/y6ujrj1gzPp6BNQAraHx8D64bYkNqf5ijNAB9bVsvFYJLYfdqhgYQFBwtn/UAWf3TGUkCAEDoDcDkvpq7mJ4zWf3tSTC2Ng7oK949gYLx3gEU08smMq9AAOafkHi5WRPjzhifzfGxorG7NapNgTZN96kwiAOM+NqaPgBRXun7Alt8imiw6GEgHAgeACsVegI48aPtAHBtDwkHu8oqvscacoObEgcC4IsPOUDXgPE95oovTh41AFfkFJBi5c0DgbAhgAAaF0zufw5viOBdABYPAbAdYADshasj6OL1/KIe78J0IZAAqMI9WbwYzR4/t/XqXeGhAbBdvcXVR7wNwFyfAQGmQ1MLQg4opjPG5EQ/+7AhcGhDZJ+n4ehjDhgCgIm+1wabLhKC8N4BmPzvRj/N/iHxbjp4EMSGDQgAj37QAT3tj4mPpsKxAMCib68mNcSyu8zVteP0Idop7KLYccGxA3CX0upvtawV6z89wRiEIwCg2pNKkVXnfkC3wd3Eqf5G24opweoewv7IagUCiDkh1BHE+i3onowusK8BslLL2wtnIdMFYNYAakNitPjMuwhRvvbE1xAZ2938DF80kgohF7xDAPU1C2dLPARAQVSfPci95v8QAHglZ0OIAbBDbWCEAGBpkOoAPuaM8zPaQshdxcEpsJdCAdC2MMAJRw3At67vAmoahHrbwQGILVPPJpMcYFxAAZBSCyAIg9aApd9Sde3JAaAPnOx3ZeqcjdcBI7KYfoIuaEIdILYQUseFNlnk7hY8ZzYA1d6K2X2rgodvad1U0C5CIECRp4gPAQiJRx1QrV9KVbn56CwYLQMBcwCUBm3ha57WxuzQR7yGEoj+IABUKqhlKx/jN0mQCyggqOJz7E8CoAchLmCjQutwl7KhqIZAuA8u23oRuQFqISK7ytkO2L19xYr5w2gaKBdQAej9POeBho6ekw4pkcein50CakdIVhsNIOYCveFJhEC5r4/VBPf72PY6xQHenqABoO0dcYGmLEo2OoPfKcIE9QXSR7xdA6IAYi5ocxZ4XSYW0VwIMfEx+5MBGBccCkIOgCHEZwE4BIQUABThbWdA+r8ZY1aCaArYDmgPxFqj43nssTpFfIroFPHq9drJhx+z8fyJ/2Ro8+Y7/8FI0xFyIGiIQH2wAeQIheoLVvXNePNucfBlaQhAXyfEiuEQ36eIV+frDYBaE4YQF5tDSus12sA7xe5b5SgAsdmxYga/72cWSPZFoUvm2NX3/L4j3szlQIBeqY8C0LYHIEAA3qUbPKtDr9iLLYv9jiAbAFQPcotjSvDVEx8B7e4EAKi5MQgkAPYFum4IOeFQbkCLXOAXJlkA1L1A6B37lJRwo0utE5RqDjrHQCDkP9oFUgGYi3Edod7KTPnRREo6uGOhc2XXAAxAKzbSIez3cg8NgfoTGRdasAYoAH2iQTk2F4otNnQed27oGPN7Jeh3g/8CRzAgy6bPBOIAAAAASUVORK5CYII="
 		},
 		{
-			"path": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\batter_chocolate.png",
+			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\batter_chocolate.png",
 			"name": "batter_chocolate.png",
 			"folder": "block",
 			"namespace": "",
-			"id": "11",
+			"id": "6",
 			"group": "",
 			"width": 64,
 			"height": 64,
@@ -796,11 +759,11 @@
 			"source": "data:image/png;base64,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"
 		},
 		{
-			"path": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\batter_strawberry.png",
+			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\batter_strawberry.png",
 			"name": "batter_strawberry.png",
 			"folder": "block",
 			"namespace": "",
-			"id": "11",
+			"id": "7",
 			"group": "",
 			"width": 64,
 			"height": 64,
@@ -825,11 +788,11 @@
 			"source": "data:image/png;base64,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"
 		},
 		{
-			"path": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\burnt.png",
+			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\burnt.png",
 			"name": "burnt.png",
 			"folder": "block",
 			"namespace": "",
-			"id": "11",
+			"id": "8",
 			"group": "",
 			"width": 64,
 			"height": 64,
@@ -854,11 +817,11 @@
 			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAABNlJREFUeF7tm2lTE0EQhjcgGwQtEdTC4///Mg8KBbEUxCjE6lQ11entc2aSLGi+QHbn6Hnm7Z7e2clk2u/Pu0afefe7m3Q7i9bo//i9UTdmM9h/tK8JAgCD1/WhRnJQ64Y16fu+mQJKAG4axsYBIDQOogRmSZ3RACgxvkWduxjQorGxt/HuxeuBiQsAcOP9l09h+6WGwpW7rrv4fpUpPih7NbscXHtz9HJx7ePZ56V7t/M/d9+bAXgyfaYO4ODpnju4UQKQ6ME1JEtHZQ1gHQDQFqmvYgV4AKKzRo3COtzQaFuelKBd3pbkHugGqgtgR1uTR6pvRY2WAHgD8e5bqorY9ePXt0UX/wFoq0BWARE/92a15j51LU8B4BLoAqhwGteW8gArulsGtwDC44X0nfu8FAO4nSkANAbs9fuDMXsD3e37QZ3r2UxkR8tCGQ+ANgFNFRABoEV2MLAGQNYlwI6NKECbKRjA8dFBsQKgIg6K/2/BiSgA6kMcUGOAtPxFXYAakAGQnXGeiKE7egCgHpSFVF9dBrMA6ExRwzIuUAMgmpXSjNEEIJGRyHpBsKSOBoIHyVpgaQDohyghywBp5k/OLhZVJGhSeWwfV40aAFKgTgOgs+nN/P7j3QGfD6fn9wcATYC0hxnN72GUEoDLn9eqaCIKkCrXqMJUgAYg6ncSgJub22j1u3Ja0oQFogCkyboXAKy4wRMtDxanXwxAow7X0YhWCqAALJdLS6vr7DzA2uOLyI779Pb2Vrc92Vqy82Z+u7gGf62P5jqZGZcCeHoVsPwOBywtWVAPAPAPDEy6LpWTAFEAnjqKAGSWvU0D8FxASshgV8jcFc4A4AZILuAZqd23XMB6EqXtVQOgjXlJEI/OmgtEgYwCAH3O1gBYyYzm65gdIgzp6TEKygqK1QoomXVq+IMBYEXbUgXgrMOavwoFcJtRDSsNgnwnB9Tw9tXhQM3wfEBXEAui5wqaC2wEABpLfU8DQAe2CgAc3MoUIGWIHgCI8FryBIaDW0Tij6cOaUls7gLWM4KVDXoAMC5kUl8LSHMF4EPQOgDQB67MrKcVwN8I1cjQ82tPAWB8Tf9FMWAsAFrJHiDwZMiMAWMBEAmCnlucnH/tjg+frw6A5Pue7GFG+OxG6lA5e+qQ3ipRFbgKkE5xeFvalj9zX1w1AClIVgHQou6YFcADaAqANuBIRG4t55JXbNJeQTMA3kZEawCe+rx4IKXmbgywFPDgAcBeGV83I9JHaNmdYzqDkbqRVJeX4YcnUs8C2WwsMggvdaZLpbfWS6luNYBIrq1tkLQGoNki9S9tf+EEhoOg9WKkZrdYe/aPBrHopEjlUi6AqbB0zJQelcnEhYjxVhl0A0htd3emSweiIqdRmwGAQ4Xem5iSwfKVReuDlrNWIy2I4+Fp85CUpQDptHjGR62yWuamKW30AKRn8YzbeKoYDQBt59VbPrWILS1hkaUOy0gHJhF8ygW0aOr5OF8ptJUjCwBBe/WqAdABapsj3BhL2q0ASDl9ZMmTlGieD7AAUJnB/95zATeQ/4QF7kunUGk9/m5Sig20vPUjKvpjMPP1uEc7czTVMy4LQAquXh+4eoUAeD5OyXn+yNuSZsfrz7vPAdI+6M/keDvuT2a0jv95AN6M3Jf7kgL+Ar0rmv69AMMSAAAAAElFTkSuQmCC"
 		},
 		{
-			"path": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\frosting_vanilla.png",
+			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\frosting_vanilla.png",
 			"name": "frosting_vanilla.png",
 			"folder": "block",
 			"namespace": "",
-			"id": "11",
+			"id": "9",
 			"group": "",
 			"width": 64,
 			"height": 64,
@@ -883,11 +846,11 @@
 			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAB1FJREFUeF7Vm89uHEUQxnfi2E7MxokRiCAlCJScOAUJOAASLwB3noIjEjd8QEg8CQ/AhRsHckFICfdISIDAgsgh4Njxvwz6Jlveb2qrqqtn1zisFEW7M9Pd36+rqqurx037y1ftiD+Xbva+ul/+ude/dPlW7jnc9fBufG92DNyKHk9yNM0MgAhGqZMShJJwPegMCG9M+lnnvmb/zhd9C5gMYuWF13IMN97r3/fgu9xzc9x1cP8n8+mTMXvgDAjNo28/7gCcv/zySaMz4r0Gz1+1ZSgI3oCth7Pguc2jh793Ta3deGc0KlmNgmACkIEd7z4Yrb37ZWMNdPf7z9ul9Ve7SyvX3p+9ZQJBi19941OzPTSwe/uTdmltY6QhNNc/cp+RCRwMoP3za9MFOkXLzgx3JhNcw/W9QqCbwwXcR3m8xvia8bUZkI0LIBLvATjamoKBBVwYn4bMaZveGJ3JyQMoidcARLgGcHQwGo2fPx0IleIxiByAjHiRxKQhXsDolWDRljBAfD0AbUYiUM+nvs9aBv8XAAoBpNPtQSglSEMB1FhjIjD7LpARLzOvIZTEy3O1EGrFDwbw1w/9ZbC0vLElZMWz22RADBH/nwO4/+NU1upz80V6DWUogAIE2wWyFsBRfusbW/BQEIsE4EHYuztqXvzASIRqAIh7MICLtM7vbY9GGQhevn44WUrnsQCZGmmLpioGsLs1Gq1d9VNcTnIEAIvv0t/tp91FEEqbFQz8zABg8OtU2NARX1uAB8CDUBJvORb6fLIze8X6je+qtgA8DCvwIETmLzOvhymWUCtcWyPEnpvsK1h4BKEaADo9nJBeHvctQYTp4McWcGGjL38puRES6HgaLmhNgmUZIt6CYIhHE3YM+M3YDmMg8uHlzhoIIGjxuM8DoE16R9UWpQ92xRoAjvhhAJDo7D+ylzz5deOGf11DEDeyZo1BjG9OTd5rXdrYdwDiORVMmytvGsvgzq/TTPDvSREDFqCzPA9EBEAGDxBehilC4OPSPwDgI34fWYAHwFhJygDQUVTUtCBkAKDd1WS5HRAyAASKVXlyltEcgAiCBrBo8SKKXSSyAq/sBgDGdn5+ABwc48jQv5qdfX6qBKEknhO3Sbv2XoBjgAzAcoMh4pEfYJVgAJxclXaeOliKNXj1Rp75hQIYIh4wAWD8ytQcrYKKBUEGH8UjbwOF9njjxlbVtpvNpeuf8U9Nqy3A6hSZ3LGRjnJLnA1i1uW7BiCCZZCYVfbzqLbI/Q0EADjNxlsnEPoAPOKcynogvHQ4A4CXvCwAPMMQJPJHbtW2m7MA+GDksTPLOpePrEGDYAAyg+wKVo4vIrLnjABhRX4dqIsA8IAFwdrMZC0BAPDRpq8THQl4NeL1uLwyvYAAgMcojHxILqCPxgRAaQdnAbDcQADo2dB7Ao4D2HSVCivW+DRk7Q5pACXxIoYhsPj11/ty9XLGAxXhf9xWuUNQZ9Tj0ztIuJi0y2BTAGqrMYDA4q+8PVvA8LI5Xgk0gC59diDUAGBXWzgAkH9yMJ05iMenlMXhHh0ILQAehAwAFi7jWXopEQOyFsCFDEAQ8RkAVjboVZotCB4AWJpspKw+FmYBpapNZAGlOqMOltaGyyq2lMbUZaZ3NvGfvQrUzrxUbCyxnkjOAzhCe7Pv7Ta9apNAYEuQPrvNU+sAmFe8l8qyr3sZWq14EVSCsKxNCd8tAPpgxHoOv1kmxtVab3YFggYQ+TyeydQaosKrWRtcJAAuZTE0K/jgt6i4ap0vZACgXw/CqQDgYqUHwLIgD4AWfuKv2zkL4L40iIUC0IkMb2CikhXHAF1h9sR30XoAAG0NaQDYC2RehzuenPt168jKbMXWsghrayt1xRoAXkktKombp0a1MSCq40umZXUEq9BVGd7anlvtO4p1sCJ3QLzXB+6xILhHZjUALPHW3t3y+dLWFkdvx4dPnxwiXuBL3wwhPDStBRBldKUT29K+HhDwz/uI2WeCbfqt1HaTs8DOm1svD+D9uhfovKqtiIoqOhEABEHeWJUCbRc4M6/mZgFExQo9Y4AgJuiV1LxZ9qrNAiAz+1JBXhgA7fsl+tYhZba2CDBeZYnrCqV6Asa8UACZ/TzPagZCqcqkq0slF9CrzJkCAAx2BYGTrS+KJeiaItcYpE0r1Y6OyWii7LNBnQjVugBbgjUQQCjNvrShy2v43YJQ6hPX08fjUhWueV2WB8BncPMCkHZ3fu6HTQ9CcualMd8C5I5aCFk/5EMLvXRa+YQGgPGtrvg5g75S9X6A9Scz0TGTV+3BbFgdY1Ny8VZcKbYOTQGB9wthhqcIzA2A28scOXni0Y71nh+WNV1MsSDwyhABSFa0yi6QN7L+naXdZCahQYsaQgZAUnyX9povSUV/NZYFkgEQJTPWuSEnSd7sV4g/OwDWEZW3ilhuELz3V/tO8dlYQAQgu4p4lvjMWICTeHTjjl6B0e/xpNJZovFMAaiBUJPOluJQBQTLBf4FKPQPKtSk8GcAAAAASUVORK5CYII="
 		},
 		{
-			"path": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\frosting_chocolate.png",
+			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\frosting_chocolate.png",
 			"name": "frosting_chocolate.png",
 			"folder": "block",
 			"namespace": "",
-			"id": "11",
+			"id": "10",
 			"group": "",
 			"width": 64,
 			"height": 64,
@@ -912,7 +875,7 @@
 			"source": "data:image/png;base64,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"
 		},
 		{
-			"path": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\frosting_strawberry.png",
+			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\pan\\frosting_strawberry.png",
 			"name": "frosting_strawberry.png",
 			"folder": "block",
 			"namespace": "",
@@ -956,8 +919,8 @@
 				"display_name": "Empty",
 				"uuid": "ebf63d8c-e560-f962-a2fa-0c9b15c3223b",
 				"texture_map": {
-					"1e553ccb-6b7f-ea0d-d7a3-6aaf193cc8c4": "cf87ca20-7a22-f859-b905-b9ffed270270",
-					"1370855f-5b73-d6b6-cdd6-30b52c1ae368": "cf87ca20-7a22-f859-b905-b9ffed270270"
+					"6a4c70f0-2cb4-b92e-cc4c-0311a32d235f": "cf87ca20-7a22-f859-b905-b9ffed270270",
+					"50544d5a-fef3-711e-9a0b-1cf6c6ea9ac3": "cf87ca20-7a22-f859-b905-b9ffed270270"
 				},
 				"excluded_nodes": ["21b91d38-2da3-1145-dbb4-008ea23be51b"]
 			},
@@ -966,7 +929,7 @@
 				"display_name": "Batter Vanilla",
 				"uuid": "55440980-e580-8380-9caf-f7180f8fb324",
 				"texture_map": {
-					"1e553ccb-6b7f-ea0d-d7a3-6aaf193cc8c4": "1e553ccb-6b7f-ea0d-d7a3-6aaf193cc8c4"
+					"50544d5a-fef3-711e-9a0b-1cf6c6ea9ac3": "50544d5a-fef3-711e-9a0b-1cf6c6ea9ac3"
 				},
 				"excluded_nodes": ["21b91d38-2da3-1145-dbb4-008ea23be51b", "129ef29f-8de3-d1d8-fb65-0dd42d34a790"]
 			},
@@ -975,7 +938,7 @@
 				"display_name": "Batter Chocolate",
 				"uuid": "1378d497-45c1-0e9e-5b84-583d687e60bf",
 				"texture_map": {
-					"1e553ccb-6b7f-ea0d-d7a3-6aaf193cc8c4": "2d3a96ea-d6f1-f361-d8d6-1ad0cbf46b0a"
+					"50544d5a-fef3-711e-9a0b-1cf6c6ea9ac3": "e1e4a0fd-ede4-54c6-85c0-4e5c4f92b3d2"
 				},
 				"excluded_nodes": ["21b91d38-2da3-1145-dbb4-008ea23be51b", "129ef29f-8de3-d1d8-fb65-0dd42d34a790"]
 			},
@@ -984,7 +947,7 @@
 				"display_name": "Batter Strawberry",
 				"uuid": "0ebede32-d72e-3597-6ae0-c5c9549245cf",
 				"texture_map": {
-					"1e553ccb-6b7f-ea0d-d7a3-6aaf193cc8c4": "3ff56f57-5073-f7cc-5ff3-6a708591bee3"
+					"50544d5a-fef3-711e-9a0b-1cf6c6ea9ac3": "7158a671-890b-febc-b8b0-ee9922d29f6f"
 				},
 				"excluded_nodes": ["21b91d38-2da3-1145-dbb4-008ea23be51b", "129ef29f-8de3-d1d8-fb65-0dd42d34a790"]
 			},
@@ -993,7 +956,7 @@
 				"display_name": "Baked Vanilla",
 				"uuid": "e5f69b46-e8d3-5f22-388c-530f3d0715b6",
 				"texture_map": {
-					"1e553ccb-6b7f-ea0d-d7a3-6aaf193cc8c4": "8f7d5ae7-57b6-7557-e2a0-b9b2dc270c7a"
+					"50544d5a-fef3-711e-9a0b-1cf6c6ea9ac3": "9c289b2d-769a-ba6d-8707-750d4364ee9f"
 				},
 				"excluded_nodes": ["21b91d38-2da3-1145-dbb4-008ea23be51b", "129ef29f-8de3-d1d8-fb65-0dd42d34a790"]
 			},
@@ -1002,7 +965,7 @@
 				"display_name": "Baked Chocolate",
 				"uuid": "e305c782-1cc6-1ad8-dd46-ac285ae394b9",
 				"texture_map": {
-					"1e553ccb-6b7f-ea0d-d7a3-6aaf193cc8c4": "f011b1b0-5f4a-a9a4-cb62-48908dba0ce1"
+					"50544d5a-fef3-711e-9a0b-1cf6c6ea9ac3": "df44e048-0e72-71f9-465b-4fefe16efead"
 				},
 				"excluded_nodes": ["21b91d38-2da3-1145-dbb4-008ea23be51b", "129ef29f-8de3-d1d8-fb65-0dd42d34a790"]
 			},
@@ -1011,7 +974,7 @@
 				"display_name": "Baked Strawberry",
 				"uuid": "e84ea5e4-ce5c-dc0d-9d82-f1b95b9aee84",
 				"texture_map": {
-					"1e553ccb-6b7f-ea0d-d7a3-6aaf193cc8c4": "274df11d-dcf7-10d5-cf22-98fcb0850db2"
+					"50544d5a-fef3-711e-9a0b-1cf6c6ea9ac3": "301b80c8-b725-6113-1264-220b1f0589e0"
 				},
 				"excluded_nodes": ["21b91d38-2da3-1145-dbb4-008ea23be51b", "129ef29f-8de3-d1d8-fb65-0dd42d34a790"]
 			},
@@ -1020,17 +983,35 @@
 				"display_name": "Burnt",
 				"uuid": "3b6ebe68-49e5-78c5-c602-ede58da3fee0",
 				"texture_map": {
-					"1e553ccb-6b7f-ea0d-d7a3-6aaf193cc8c4": "92bcd0ba-6f1c-60b7-4723-653694e4c14c",
-					"1370855f-5b73-d6b6-cdd6-30b52c1ae368": "cf87ca20-7a22-f859-b905-b9ffed270270"
+					"50544d5a-fef3-711e-9a0b-1cf6c6ea9ac3": "c9bfefc7-261a-a94b-1662-84f6c0c23e8f",
+					"6a4c70f0-2cb4-b92e-cc4c-0311a32d235f": "cf87ca20-7a22-f859-b905-b9ffed270270"
 				},
 				"excluded_nodes": ["21b91d38-2da3-1145-dbb4-008ea23be51b"]
 			},
 			{
-				"name": "frosted",
-				"display_name": "Frosted",
+				"name": "frosted_vanilla",
+				"display_name": "Frosted Vanilla",
 				"uuid": "bee14bfe-d729-c408-ac2f-10badbb25d59",
 				"texture_map": {
-					"1370855f-5b73-d6b6-cdd6-30b52c1ae368": "1370855f-5b73-d6b6-cdd6-30b52c1ae368"
+					"6a4c70f0-2cb4-b92e-cc4c-0311a32d235f": "6a4c70f0-2cb4-b92e-cc4c-0311a32d235f"
+				},
+				"excluded_nodes": ["21b91d38-2da3-1145-dbb4-008ea23be51b", "189b20e0-13c9-c589-e69f-e6950ff5cf45"]
+			},
+			{
+				"name": "frosted_chocolate",
+				"display_name": "Frosted Chocolate",
+				"uuid": "4e0e3cc9-cd4d-b022-9419-5e7ed8b010c1",
+				"texture_map": {
+					"6a4c70f0-2cb4-b92e-cc4c-0311a32d235f": "69b1cc65-7230-2388-3343-2c7da37d541f"
+				},
+				"excluded_nodes": ["21b91d38-2da3-1145-dbb4-008ea23be51b", "189b20e0-13c9-c589-e69f-e6950ff5cf45"]
+			},
+			{
+				"name": "frosted_strawberry",
+				"display_name": "Frosted Strawberry",
+				"uuid": "23046a96-ab05-7042-d4f4-2699b919aec1",
+				"texture_map": {
+					"6a4c70f0-2cb4-b92e-cc4c-0311a32d235f": "3a05ae84-a3a8-31de-596e-e2a14d166906"
 				},
 				"excluded_nodes": ["21b91d38-2da3-1145-dbb4-008ea23be51b", "189b20e0-13c9-c589-e69f-e6950ff5cf45"]
 			}
@@ -1091,7 +1072,7 @@
 			"override": false,
 			"length": 1.5,
 			"snapping": 20,
-			"selected": true,
+			"selected": false,
 			"saved": false,
 			"path": "",
 			"anim_time_update": "",
@@ -1172,7 +1153,7 @@
 			"override": false,
 			"length": 1,
 			"snapping": 20,
-			"selected": false,
+			"selected": true,
 			"saved": false,
 			"path": "",
 			"anim_time_update": "",
