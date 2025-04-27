@@ -3,7 +3,7 @@
 		"format": "animated_java_blueprint",
 		"format_version": "1.6.5",
 		"uuid": "8aa93121-4875-930b-ac7d-2d36bc128211",
-		"save_location": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\blueprints\\oven.ajblueprint",
+		"save_location": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\blueprints\\oven.ajblueprint",
 		"last_used_export_namespace": "oven"
 	},
 	"blueprint_settings": {
@@ -950,10 +950,10 @@
 	"textures": [
 		{
 			"path": "",
-			"name": "oven",
+			"name": "oven.png",
 			"folder": "block",
 			"namespace": "",
-			"id": "1",
+			"id": "0",
 			"group": "",
 			"width": 256,
 			"height": 256,

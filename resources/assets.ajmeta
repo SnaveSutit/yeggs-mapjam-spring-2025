@@ -35,6 +35,34 @@
 				"assets/animated_java/textures/blueprint/forklift/texture.png"
 			]
 		},
+		"frosting_mixer": {
+			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
+			"versionedFiles": [
+				"assets/animated_java/items/blueprint/frosting_mixer/base.json",
+				"assets/animated_java/items/blueprint/frosting_mixer/basin.json",
+				"assets/animated_java/items/blueprint/frosting_mixer/contents.json",
+				"assets/animated_java/items/blueprint/frosting_mixer/frosting_nozzle.json",
+				"assets/animated_java/items/blueprint/frosting_mixer/lid.json",
+				"assets/animated_java/items/blueprint/frosting_mixer/milk_sucker.json",
+				"assets/animated_java/items/empty.json",
+				"assets/animated_java/models/blueprint/frosting_mixer/base.json",
+				"assets/animated_java/models/blueprint/frosting_mixer/basin.json",
+				"assets/animated_java/models/blueprint/frosting_mixer/contents.json",
+				"assets/animated_java/models/blueprint/frosting_mixer/contents_chocolate/basin.json",
+				"assets/animated_java/models/blueprint/frosting_mixer/contents_chocolate/contents.json",
+				"assets/animated_java/models/blueprint/frosting_mixer/contents_generic/basin.json",
+				"assets/animated_java/models/blueprint/frosting_mixer/contents_generic/contents.json",
+				"assets/animated_java/models/blueprint/frosting_mixer/contents_strawberry/basin.json",
+				"assets/animated_java/models/blueprint/frosting_mixer/contents_strawberry/contents.json",
+				"assets/animated_java/models/blueprint/frosting_mixer/contents_vanilla/basin.json",
+				"assets/animated_java/models/blueprint/frosting_mixer/contents_vanilla/contents.json",
+				"assets/animated_java/models/blueprint/frosting_mixer/frosting_nozzle.json",
+				"assets/animated_java/models/blueprint/frosting_mixer/lid.json",
+				"assets/animated_java/models/blueprint/frosting_mixer/milk_sucker.json",
+				"assets/animated_java/models/empty.json",
+				"assets/animated_java/textures/blueprint/frosting_mixer/texture.png"
+			]
+		},
 		"ingredient_berries": {
 			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
 			"versionedFiles": [
@@ -53,6 +81,16 @@
 				"assets/animated_java/models/blueprint/ingredient_chocolate/chocolate.json",
 				"assets/animated_java/models/empty.json",
 				"assets/animated_java/textures/blueprint/ingredient_chocolate/chocolate.png"
+			]
+		},
+		"ingredient_chocolate_frosting": {
+			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
+			"versionedFiles": [
+				"assets/animated_java/items/blueprint/ingredient_chocolate_frosting/chocolate_frosting.json",
+				"assets/animated_java/items/empty.json",
+				"assets/animated_java/models/blueprint/ingredient_chocolate_frosting/chocolate_frosting.json",
+				"assets/animated_java/models/empty.json",
+				"assets/animated_java/textures/blueprint/ingredient_chocolate_frosting/chocolate_frosting.png"
 			]
 		},
 		"ingredient_eggs": {
@@ -85,6 +123,16 @@
 				"assets/animated_java/textures/blueprint/ingredient_milk/milk.png"
 			]
 		},
+		"ingredient_strawberry_frosting": {
+			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
+			"versionedFiles": [
+				"assets/animated_java/items/blueprint/ingredient_strawberry_frosting/strawberry_frosting.json",
+				"assets/animated_java/items/empty.json",
+				"assets/animated_java/models/blueprint/ingredient_strawberry_frosting/strawberry_frosting.json",
+				"assets/animated_java/models/empty.json",
+				"assets/animated_java/textures/blueprint/ingredient_strawberry_frosting/strawberry_frosting.png"
+			]
+		},
 		"ingredient_sugar": {
 			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
 			"versionedFiles": [
@@ -103,6 +151,16 @@
 				"assets/animated_java/models/blueprint/ingredient_vanilla/vanilla.json",
 				"assets/animated_java/models/empty.json",
 				"assets/animated_java/textures/blueprint/ingredient_vanilla/vanilla.png"
+			]
+		},
+		"ingredient_vanilla_frosting": {
+			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
+			"versionedFiles": [
+				"assets/animated_java/items/blueprint/ingredient_vanilla_frosting/vanilla_frosting.json",
+				"assets/animated_java/items/empty.json",
+				"assets/animated_java/models/blueprint/ingredient_vanilla_frosting/vanilla_frosting.json",
+				"assets/animated_java/models/empty.json",
+				"assets/animated_java/textures/blueprint/ingredient_vanilla_frosting/vanilla_frosting.png"
 			]
 		},
 		"item_milk": {

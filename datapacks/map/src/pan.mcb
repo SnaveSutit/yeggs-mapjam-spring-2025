@@ -76,6 +76,7 @@ dir debug {
 					function pan:frost {frosting:<%frosting%>}
 					function pan:frost {frosting:<%frosting%>}
 					function pan:frost {frosting:<%frosting%>}
+					function pan:frost {frosting:<%frosting%>}
 				}
 			}
 		}

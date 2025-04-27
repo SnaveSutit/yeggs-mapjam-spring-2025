@@ -1,0 +1,121 @@
+function on_load minecraft:load {
+	# -1 = animating
+	# 0 = closed and idle
+	# 1 = open and waiting for ingredients
+	# 2 = closed and mixing
+	# 3 = dispensing
+	scoreboard objectives add frosting_mixer_state dummy
+	scoreboard objectives add mix_count dummy
+}
+
+function summon {
+	function animated_java:frosting_mixer/summon {args:{}}
+}
+
+function clear_recipe_tags {
+	tag @s remove contains_sugar
+	function *clear_flavor_tags
+}
+
+function clear_flavor_tags {
+	tag @s remove contains_vanilla
+	tag @s remove contains_chocolate
+	tag @s remove contains_berries
+}
+
+function update_fill {
+	scoreboard players set #ingredient_count i 0
+	execute if entity @s[tag=contains_sugar] run scoreboard players add #ingredient_count i 1
+	execute if entity @s[tag=contains_vanilla] run {
+		scoreboard players add #ingredient_count i 1
+		function animated_java:frosting_mixer/variants/contents_vanilla/apply
+	}
+	execute if entity @s[tag=contains_chocolate] run {
+		scoreboard players add #ingredient_count i 1
+		function animated_java:frosting_mixer/variants/contents_chocolate/apply
+	}
+	execute if entity @s[tag=contains_berries] run {
+		scoreboard players add #ingredient_count i 1
+		function animated_java:frosting_mixer/variants/contents_strawberry/apply
+	}
+
+	execute if score #ingredient_count i matches 0 run {
+		function animated_java:frosting_mixer/animations/fill0/play
+		function animated_java:frosting_mixer/variants/contents_generic/apply
+	}
+	execute if score #ingredient_count i matches 1 run function animated_java:frosting_mixer/animations/fill1/play
+	execute if score #ingredient_count i matches 2 run function animated_java:frosting_mixer/animations/fill2/play
+}
+
+function on_tick minecraft:tick {
+	execute as @e[type=minecraft:item_display,tag=frosting_mixer] at @s run {
+		execute if score @s frosting_mixer_state matches 0 run {
+			function animated_java:frosting_mixer/animations/open/play
+			scoreboard players set @s frosting_mixer_state -1
+		}
+
+		# Waiting for ingredients
+		execute if score @s frosting_mixer_state matches 1 run {
+			tag @s add this
+			execute positioned ~-2.5 ~9 ~-5.5 as @e[tag=ingredient,dx=4,dy=0,dz=4] run {
+				execute if entity @s[tag=ingredient_sugar] as @n[tag=this,distance=..20] run {
+					tag @s add contains_sugar
+					function *update_fill
+				}
+				execute if entity @s[tag=ingredient_vanilla] as @n[tag=this,distance=..20] run {
+					tag @s add contains_flavor
+					tag @s add contains_vanilla
+					function *update_fill
+				}
+				execute if entity @s[tag=ingredient_chocolate] as @n[tag=this,distance=..20] run {
+					tag @s add contains_flavor
+					tag @s add contains_chocolate
+					function *update_fill
+				}
+				execute if entity @s[tag=ingredient_berries] as @n[tag=this,distance=..20] run {
+					tag @s add contains_flavor
+					tag @s add contains_berries
+					function *update_fill
+				}
+				execute at @s run playsound minecraft:entity.generic.splash block @a ~ ~ ~ 2 1
+				function util:kill_stacked_entities
+			}
+			tag @s remove this
+
+
+			execute if entity @s[tag=contains_sugar,tag=contains_flavor] run {
+				function animated_java:frosting_mixer/animations/start_mix/play
+				scoreboard players set @s mix_count 0
+				scoreboard players set @s frosting_mixer_state -1
+			}
+
+		}
+
+		execute if score @s frosting_mixer_state matches 2 run {
+			execute if score @s mix_count matches 0..3 run {
+				function animated_java:frosting_mixer/animations/mix/play
+				scoreboard players set @s frosting_mixer_state -1
+				say "Mixing..."
+			}
+			execute if score @s mix_count matches 4.. run {
+				scoreboard players set @s frosting_mixer_state 3
+				say "Done mixing!"
+			}
+			scoreboard players add @s mix_count 1
+		}
+
+		execute if score @s frosting_mixer_state matches 3 run {
+			function animated_java:frosting_mixer/animations/end_mix/play
+			scoreboard players set @s frosting_mixer_state -1
+		}
+	}
+}
+
+function spawn_frosting_pipette {
+	# Must be run as and at the frosting mixer
+	function *clear_recipe_tags
+	say "Spawning frosting pipette..."
+	execute if entity @s[tag=contains_vanilla] run return run
+	execute if entity @s[tag=contains_chocolate] run return run
+	execute if entity @s[tag=contains_berries] run return run
+}

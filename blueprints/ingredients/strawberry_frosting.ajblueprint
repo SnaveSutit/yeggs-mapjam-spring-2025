@@ -1,0 +1,144 @@
+{
+	"meta": {
+		"format": "animated_java_blueprint",
+		"format_version": "1.6.5",
+		"uuid": "17398fc3-7c3e-37a0-2955-c06745a2458d",
+		"save_location": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\blueprints\\ingredients\\strawberry_frosting.ajblueprint",
+		"last_used_export_namespace": "ingredient_strawberry_frosting"
+	},
+	"blueprint_settings": {
+		"export_namespace": "ingredient_strawberry_frosting",
+		"show_bounding_box": false,
+		"auto_bounding_box": true,
+		"bounding_box": [48, 48],
+		"enable_plugin_mode": false,
+		"resource_pack_export_mode": "raw",
+		"data_pack_export_mode": "raw",
+		"target_minecraft_versions": ["1.21.5"],
+		"display_item": "minecraft:white_dye",
+		"custom_model_data_offset": 0,
+		"enable_advanced_resource_pack_settings": false,
+		"resource_pack": "../../resources",
+		"enable_advanced_data_pack_settings": false,
+		"data_pack": "../../datapacks/animated_java",
+		"summon_commands": "",
+		"ticking_commands": "",
+		"interpolation_duration": 1,
+		"teleportation_duration": 1,
+		"use_storage_for_animation": false,
+		"show_function_errors": true,
+		"show_outdated_warning": false,
+		"baked_animations": true,
+		"json_file": ""
+	},
+	"resolution": {
+		"width": 256,
+		"height": 256
+	},
+	"elements": [
+		{
+			"name": "cube",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-24, 0, -24],
+			"to": [24, 48, 24],
+			"autouv": 0,
+			"color": 8,
+			"origin": [0, 24, 0],
+			"faces": {
+				"north": {
+					"uv": [0, 0, 48, 48],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0, 48, 48, 96],
+					"texture": 0
+				},
+				"south": {
+					"uv": [48, 0, 96, 48],
+					"texture": 0
+				},
+				"west": {
+					"uv": [48, 48, 96, 96],
+					"texture": 0
+				},
+				"up": {
+					"uv": [48, 144, 0, 96],
+					"texture": 0
+				},
+				"down": {
+					"uv": [144, 0, 96, 48],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "85f98a17-5278-ab88-aaf0-50234ab07f41"
+		}
+	],
+	"outliner": [
+		{
+			"name": "strawberry_frosting",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"configs": {
+				"variants": {}
+			},
+			"uuid": "7d7c1d88-d5cf-c11a-df17-f487580c5099",
+			"export": true,
+			"mirror_uv": false,
+			"isOpen": true,
+			"locked": false,
+			"visibility": true,
+			"autouv": 0,
+			"selected": false,
+			"children": ["85f98a17-5278-ab88-aaf0-50234ab07f41"]
+		}
+	],
+	"textures": [
+		{
+			"path": "",
+			"name": "strawberry_frosting.png",
+			"folder": "block",
+			"namespace": "",
+			"id": "0",
+			"group": "",
+			"width": 256,
+			"height": 256,
+			"uv_width": 256,
+			"uv_height": 256,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": false,
+			"uuid": "d392a8d8-e690-77c6-9f1c-fe0d76480c59",
+			"source": "data:image/png;base64,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"
+		}
+	],
+	"variants": {
+		"default": {
+			"name": "default",
+			"display_name": "Default",
+			"uuid": "9e46f8ed-c353-48a3-6f03-1247a7fffca8",
+			"texture_map": {},
+			"excluded_nodes": [],
+			"is_default": true
+		},
+		"list": []
+	},
+	"animations": [],
+	"animation_controllers": []
+}
