@@ -45,6 +45,14 @@ function summon {
 
 
 function on_tick minecraft:tick {
+	execute as @e[type=minecraft:item_display,tag=pan_dispenser] at @s unless entity @e[type=minecraft:armor_stand,tag=pan,distance=..5] run {
+		scoreboard players remove @s spawn_timer 1
+		execute if score @s spawn_timer matches ..0 run {
+			function pan:summon
+			scoreboard players set @s spawn_timer 120
+		}
+	}
+
 	execute as @e[type=minecraft:armor_stand,tag=pan] at @s run {
 		# Check if the pan's hitbox is still there and is alive.
 		scoreboard players set #check i 0
@@ -140,5 +148,11 @@ function remove_lock_point {
 	execute as @n[type=minecraft:item_display,tag=pan_lock_point] at @s run {
 		particle minecraft:block{block_state:"redstone_block"} ~ ~ ~ 0 0 0 0 10
 		kill @s
+	}
+}
+
+function create_dispenser {
+	execute align xyz positioned ~.5 ~ ~.5 summon minecraft:item_display run {
+		tag @s add pan_dispenser
 	}
 }

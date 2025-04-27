@@ -1,0 +1,7 @@
+{
+	"parent": "animated_java:blueprint/mixer/batter_output_plaque",
+	"textures": {
+		"1": "cooking:blueprint/pan/batter_generic",
+		"16": "animated_java:blueprint/mixer/output_plaque_generic"
+	}
+}

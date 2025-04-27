@@ -1,5 +1,6 @@
 {
 	"values": [
+		"animated_java:fan/on_load",
 		"animated_java:forklift/on_load",
 		"animated_java:ingredient_berries/on_load",
 		"animated_java:ingredient_chocolate/on_load",

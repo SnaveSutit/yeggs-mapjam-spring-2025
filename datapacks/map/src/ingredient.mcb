@@ -31,7 +31,26 @@ function summon {
 	}
 }
 
+function create_dispenser {
+	#ARGS: {type: string}
+	$execute align xyz positioned ~.5 ~ ~.5 summon minecraft:marker run { {type:$(type)}
+		tag @s add ingredient_dispenser
+		$data merge entity @s {data:{type:$(type)}}
+	}
+}
+
 function on_tick minecraft:tick {
+
+	execute as @e[type=minecraft:marker,tag=ingredient_dispenser] at @s run {
+		execute unless entity @e[type=minecraft:armor_stand,tag=ingredient,distance=..2] run {
+			scoreboard players remove @s spawn_timer 1
+			execute if score @s spawn_timer matches ..0 run {
+				function ingredient:summon with entity @s data
+				scoreboard players set @s spawn_timer 100
+			}
+		}
+	}
+
 	execute as @a at @s run {
 		execute if score @s ingredient_link_id matches 0.. run {
 			scoreboard players operation #this ingredient_link_id = @s ingredient_link_id

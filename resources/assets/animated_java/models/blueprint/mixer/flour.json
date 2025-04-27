@@ -1,0 +1,48 @@
+{
+	"textures": {
+		"7": "animated_java:blueprint/mixer/flour_badge",
+		"particle": "minecraft:item/pufferfish"
+	},
+	"display": {
+		"head": {
+			"rotation": [0, 180, 0]
+		}
+	},
+	"elements": [
+		{
+			"from": [0, 0, 8],
+			"to": [16, 16, 8],
+			"rotation": {
+				"angle": 0,
+				"axis": "y",
+				"origin": [8, 8, 8]
+			},
+			"faces": {
+				"north": {
+					"uv": [0, 0, 8, 8],
+					"texture": "#7"
+				},
+				"east": {
+					"uv": [0, 0, 0, 8],
+					"texture": "#7"
+				},
+				"south": {
+					"uv": [0, 8, 8, 16],
+					"texture": "#7"
+				},
+				"west": {
+					"uv": [0, 0, 0, 8],
+					"texture": "#7"
+				},
+				"up": {
+					"uv": [8, 0, 0, 0],
+					"texture": "#7"
+				},
+				"down": {
+					"uv": [8, 0, 0, 0],
+					"texture": "#7"
+				}
+			}
+		}
+	]
+}

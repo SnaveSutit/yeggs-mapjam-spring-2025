@@ -3,3 +3,9 @@ scoreboard objectives add aj.mix.frame dummy
 scoreboard objectives add aj.pour.frame dummy
 scoreboard objectives add aj.open_lid.frame dummy
 scoreboard objectives add aj.close_lid.frame dummy
+scoreboard objectives add aj.filled0.frame dummy
+scoreboard objectives add aj.filled1.frame dummy
+scoreboard objectives add aj.filled2.frame dummy
+scoreboard objectives add aj.filled3.frame dummy
+scoreboard objectives add aj.filled4.frame dummy
+scoreboard objectives add aj.filled5.frame dummy

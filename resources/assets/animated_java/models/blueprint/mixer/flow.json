@@ -1,6 +1,6 @@
 {
 	"textures": {
-		"1": "cooking:blueprint/pan/batter_vanilla",
+		"1": "cooking:blueprint/pan/batter_generic",
 		"particle": "minecraft:item/pufferfish"
 	},
 	"display": {

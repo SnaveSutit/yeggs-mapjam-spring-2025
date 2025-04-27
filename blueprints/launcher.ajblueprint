@@ -45,7 +45,7 @@
 			"render_order": "default",
 			"allow_mirror_modeling": true,
 			"from": [-72, 18, -72],
-			"to": [72, 32, 72],
+			"to": [72, 24, 72],
 			"autouv": 0,
 			"color": 4,
 			"inflate": 2,
@@ -122,7 +122,7 @@
 			"uuid": "0a1f4161-8bc2-19f8-12b8-090b26bf49e6"
 		},
 		{
-			"name": "cake_lock_point",
+			"name": "layer0_lock_point",
 			"position": [0, 17, 0],
 			"rotation": [0, 0, 0],
 			"ignore_inherited_scale": false,
@@ -146,7 +146,7 @@
 			"light_emission": 0,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
-			"from": [72, 32, 72],
+			"from": [72, 24, 72],
 			"to": [-72, 18, -72],
 			"autouv": 0,
 			"color": 4,
@@ -180,6 +180,40 @@
 			},
 			"type": "cube",
 			"uuid": "b1426f29-c7fa-3fbe-ceda-f9c94a6f7b5b"
+		},
+		{
+			"name": "layer1_lock_point",
+			"position": [0, 33, 0],
+			"rotation": [0, 0, 0],
+			"ignore_inherited_scale": false,
+			"visibility": true,
+			"locked": false,
+			"config": {
+				"use_entity": true,
+				"entity_type": "minecraft:item_display",
+				"sync_passenger_rotation": false,
+				"summon_commands": "tag @s add pan_lock_point",
+				"ticking_commands": ""
+			},
+			"uuid": "bc618443-fe45-6c41-d08f-bd86175b5247",
+			"type": "locator"
+		},
+		{
+			"name": "layer2_lock_point",
+			"position": [0, 49, 0],
+			"rotation": [0, 0, 0],
+			"ignore_inherited_scale": false,
+			"visibility": true,
+			"locked": false,
+			"config": {
+				"use_entity": true,
+				"entity_type": "minecraft:item_display",
+				"sync_passenger_rotation": false,
+				"summon_commands": "tag @s add pan_lock_point",
+				"ticking_commands": ""
+			},
+			"uuid": "d8d799df-211f-2a9d-0cab-36f7c0ed771f",
+			"type": "locator"
 		}
 	],
 	"outliner": [
@@ -217,7 +251,9 @@
 			"selected": false,
 			"children": ["0a1f4161-8bc2-19f8-12b8-090b26bf49e6"]
 		},
-		"cca41eed-834c-f4f1-b6d5-a8ec98a6146f"
+		"cca41eed-834c-f4f1-b6d5-a8ec98a6146f",
+		"bc618443-fe45-6c41-d08f-bd86175b5247",
+		"d8d799df-211f-2a9d-0cab-36f7c0ed771f"
 	],
 	"textures": [
 		{

@@ -14,8 +14,10 @@ dir on_tick {
 		execute unless entity @s[tag=pan_lock_point] run return fail
 		execute on passengers run {
 			scoreboard players add @s cook_time 1
+			particle minecraft:cloud ~ ~1 ~ 1.5 0 1.5 0.1 2 force
 			execute if score @s cook_time matches 300 run {
 				function pan:finish_baking
+				playsound minecraft:block.note_block.bell block @a
 			}
 			execute if score @s cook_time matches 600 run {
 				function pan:burn

@@ -1,6 +1,6 @@
 {
 	"textures": {
-		"0": "animated_java:blueprint/layer/texture",
+		"0": "cooking:blueprint/pan/baked_vanilla",
 		"particle": "minecraft:item/pufferfish"
 	},
 	"display": {
@@ -26,7 +26,7 @@
 					"texture": "#0"
 				},
 				"west": {
-					"uv": [4.5, 1.5, 9, 2],
+					"uv": [0, 4.5, 4.5, 5],
 					"texture": "#0"
 				},
 				"up": {
@@ -34,7 +34,7 @@
 					"texture": "#0"
 				},
 				"down": {
-					"uv": [4.5, 4.5, 0, 9],
+					"uv": [9, 1.5, 4.5, 6],
 					"texture": "#0"
 				}
 			}

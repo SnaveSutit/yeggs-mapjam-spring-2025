@@ -4,3 +4,9 @@ tag @s remove aj.mixer.animation.mix.playing
 tag @s remove aj.mixer.animation.pour.playing
 tag @s remove aj.mixer.animation.open_lid.playing
 tag @s remove aj.mixer.animation.close_lid.playing
+tag @s remove aj.mixer.animation.filled0.playing
+tag @s remove aj.mixer.animation.filled1.playing
+tag @s remove aj.mixer.animation.filled2.playing
+tag @s remove aj.mixer.animation.filled3.playing
+tag @s remove aj.mixer.animation.filled4.playing
+tag @s remove aj.mixer.animation.filled5.playing

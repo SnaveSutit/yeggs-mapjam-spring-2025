@@ -11,6 +11,8 @@ function on_load minecraft:load {
 	scoreboard players set 100 i 100
 	scoreboard players set 360 i 360
 
+	scoreboard objectives add spawn_timer dummy
+
 	tellraw @a {"text":"Map reloaded!","color":"green"}
 }
 
@@ -37,7 +39,32 @@ function set_scale {
 }
 
 function reset {
-
+	kill @e[type=!player]
+	# Forklift
+	execute positioned -20 1 -18 rotated 180 0 run function forklift:summon
+	# Pan Dispenser
+	execute positioned -19 2 -34 run function pan:create_dispenser
+	# Ovens
+	execute positioned -35 1 -16 rotated -90 0 run function ovens:summon
+	execute positioned -35 1 0 rotated -90 0 run function ovens:summon
+	execute positioned -35 1 16 rotated -90 0 run function ovens:summon
+	# Mixing Stations
+	execute positioned 34.0 6 -19.0 rotated 90 0 run function mixer:summon
+	execute positioned 34.0 6 -2.0 rotated 90 0 run function mixer:summon
+	# Frosting Station
+	execute positioned 34 3 10 run function pan:create_lock_point
+	# Cake Launcher
+	execute positioned 0 1 13 rotated 0 0 run function launcher:summon
+	# Ingredients
+	execute positioned 2 4 -37 rotated 0 0 run function ingredient:create_dispenser {type:milk}
+	execute positioned 8 4 -37 rotated 0 0 run function ingredient:create_dispenser {type:eggs}
+	execute positioned 8 12 -37 rotated 0 0 run function ingredient:create_dispenser {type:flour}
+	execute positioned 20 12 -37 rotated 0 0 run function ingredient:create_dispenser {type:sugar}
+	execute positioned 2 20 -37 rotated 0 0 run function ingredient:create_dispenser {type:vanilla}
+	execute positioned 8 20 -37 rotated 0 0 run function ingredient:create_dispenser {type:chocolate}
+	execute positioned 20 20 -37 rotated 0 0 run function ingredient:create_dispenser {type:berries}
+	# Fan
+	execute positioned 37 0 -11 run function map:fan/summon
 }
 
 function setup_debug_environment {
@@ -64,4 +91,21 @@ function setup_debug_environment {
 	execute positioned -92 2 -25 rotated 0 0 run function ingredient:summon {type:vanilla}
 	execute positioned -88 2 -25 rotated 0 0 run function ingredient:summon {type:chocolate}
 	execute positioned -84 2 -25 rotated 0 0 run function ingredient:summon {type:berries}
+}
+
+dir fan {
+	function summon {
+		execute rotated 0 0 run function animated_java:fan/summon {args:{animation:"spin",start_animation:true}}
+	}
+	function on_tick minecraft:tick {
+		execute as @e[type=minecraft:item_display,tag=fan] at @s positioned ~-1 ~ ~-1 run {
+			particle minecraft:white_smoke ~1 ~5 ~1 0.5 3 0.5 0 1
+			execute as @a[dx=2,dy=12,dz=2] run {
+				effect give @s minecraft:levitation 1 30 true
+			}
+			execute positioned ~-4 ~15 ~-4 as @a[dx=5,dy=2,dz=5] run {
+				effect clear @s minecraft:levitation
+			} 
+		}
+	}
 }

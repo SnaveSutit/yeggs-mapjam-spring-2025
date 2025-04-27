@@ -6,5 +6,11 @@ execute on passengers if entity @s[tag=aj.mixer.bone.lid] run function animated_
 execute on passengers if entity @s[tag=aj.mixer.bone.spout] run function animated_java:mixer/variants/default/zzz/apply_to_bone_spout
 execute on passengers if entity @s[tag=aj.mixer.bone.flow] run function animated_java:mixer/variants/default/zzz/apply_to_bone_flow
 execute on passengers if entity @s[tag=aj.mixer.bone.valve] run function animated_java:mixer/variants/default/zzz/apply_to_bone_valve
+execute on passengers if entity @s[tag=aj.mixer.bone.batter_output_plaque] run function animated_java:mixer/variants/default/zzz/apply_to_bone_batter_output_plaque
 execute on passengers if entity @s[tag=aj.mixer.bone.basin] run function animated_java:mixer/variants/default/zzz/apply_to_bone_basin
+execute on passengers if entity @s[tag=aj.mixer.bone.milk] run function animated_java:mixer/variants/default/zzz/apply_to_bone_milk
+execute on passengers if entity @s[tag=aj.mixer.bone.flour] run function animated_java:mixer/variants/default/zzz/apply_to_bone_flour
+execute on passengers if entity @s[tag=aj.mixer.bone.sugar] run function animated_java:mixer/variants/default/zzz/apply_to_bone_sugar
+execute on passengers if entity @s[tag=aj.mixer.bone.eggs] run function animated_java:mixer/variants/default/zzz/apply_to_bone_eggs
+execute on passengers if entity @s[tag=aj.mixer.bone.flavor] run function animated_java:mixer/variants/default/zzz/apply_to_bone_flavor
 return 1

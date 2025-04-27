@@ -9,8 +9,8 @@ function on_load minecraft:load {
 }
 
 function summon {
-	# -68.0 5 -16.0
-	execute rotated 90 0 run function animated_java:mixer/summon {args:{}}
+	execute rotated ~ 0 run function animated_java:mixer/summon {args:{variant:"hide_badges"}}
+	execute as @e[type=minecraft:item_display,tag=aj.mixer.bone.badges.decendant,distance=..1] run data modify entity @s billboard set value "vertical"
 }
 
 dir debug {
@@ -26,6 +26,10 @@ function clear_recipe_tags {
 	tag @s remove contains_flour
 	tag @s remove contains_sugar
 	tag @s remove contains_eggs
+	function *clear_flavor_tags
+}
+
+function clear_flavor_tags {
 	tag @s remove contains_vanilla
 	tag @s remove contains_chocolate
 	tag @s remove contains_berries
@@ -37,10 +41,41 @@ function clear_batter_tags {
 	tag @s remove berry_batter
 }
 
+function update_fill {
+	scoreboard players set #ingredient_count i 0
+	execute if entity @s[tag=contains_milk] run scoreboard players add #ingredient_count i 1
+	execute if entity @s[tag=contains_flour] run scoreboard players add #ingredient_count i 1
+	execute if entity @s[tag=contains_sugar] run scoreboard players add #ingredient_count i 1
+	execute if entity @s[tag=contains_eggs] run scoreboard players add #ingredient_count i 1
+	execute if entity @s[tag=contains_vanilla] run {
+		scoreboard players add #ingredient_count i 1
+		function animated_java:mixer/variants/batter_vanilla/apply
+	}
+	execute if entity @s[tag=contains_chocolate] run {
+		scoreboard players add #ingredient_count i 1
+		function animated_java:mixer/variants/batter_chocolate/apply
+	}
+	execute if entity @s[tag=contains_berries] run {
+		scoreboard players add #ingredient_count i 1
+		function animated_java:mixer/variants/batter_strawberry/apply
+	}
+
+	execute if score #ingredient_count i matches 0 run {
+		function animated_java:mixer/animations/filled0/play
+		function animated_java:mixer/variants/batter_generic/apply
+	}
+	execute if score #ingredient_count i matches 1 run function animated_java:mixer/animations/filled1/play
+	execute if score #ingredient_count i matches 2 run function animated_java:mixer/animations/filled2/play
+	execute if score #ingredient_count i matches 3 run function animated_java:mixer/animations/filled3/play
+	execute if score #ingredient_count i matches 4 run function animated_java:mixer/animations/filled4/play
+	execute if score #ingredient_count i matches 5.. run function animated_java:mixer/animations/filled5/play
+}
+
 function on_tick minecraft:tick {
 	execute as @e[type=minecraft:item_display,tag=aj.mixer.root] at @s run {
 
 		execute if score @s mixer_state matches 0 run {
+			function mixer:update_fill
 			function animated_java:mixer/animations/open_lid/play
 			scoreboard players set @s mixer_state 1
 		}
@@ -62,13 +97,38 @@ function on_tick minecraft:tick {
 			tag @s remove this_mixer
 			execute if score #ingredient_type i matches 0.. run {
 				say Adding ingredient
-				execute if score #ingredient_type i matches 0 run tag @s add contains_milk
-				execute if score #ingredient_type i matches 1 run tag @s add contains_flour
-				execute if score #ingredient_type i matches 2 run tag @s add contains_sugar
-				execute if score #ingredient_type i matches 3 run tag @s add contains_eggs
-				execute if score #ingredient_type i matches 4 run tag @s add contains_vanilla
-				execute if score #ingredient_type i matches 5 run tag @s add contains_chocolate
-				execute if score #ingredient_type i matches 6 run tag @s add contains_berries
+				execute if score #ingredient_type i matches 0 run {
+					tag @s add contains_milk
+					function animated_java:mixer/variants/complete_milk/apply
+				}
+				execute if score #ingredient_type i matches 1 run {
+					tag @s add contains_flour
+					function animated_java:mixer/variants/complete_flour/apply
+				}
+				execute if score #ingredient_type i matches 2 run {
+					tag @s add contains_sugar
+					function animated_java:mixer/variants/complete_sugar/apply
+				}
+				execute if score #ingredient_type i matches 3 run {
+					tag @s add contains_eggs
+					function animated_java:mixer/variants/complete_eggs/apply
+				}
+				execute if score #ingredient_type i matches 4 run {
+					function *clear_flavor_tags
+					tag @s add contains_vanilla
+					function animated_java:mixer/variants/complete_flavor/apply
+				}
+				execute if score #ingredient_type i matches 5 run {
+					function *clear_flavor_tags
+					tag @s add contains_chocolate
+					function animated_java:mixer/variants/complete_flavor/apply
+				}
+				execute if score #ingredient_type i matches 6 run {
+					function *clear_flavor_tags
+					tag @s add contains_berries
+					function animated_java:mixer/variants/complete_flavor/apply
+				}
+				function mixer:update_fill
 				# Check for complete recipe
 				execute if entity @s[tag=contains_milk,tag=contains_flour,tag=contains_sugar,tag=contains_eggs] run {
 					say Checking for complete recipe
@@ -134,11 +194,11 @@ function on_interaction {
 }
 
 function fill_lid {
-	fill ~5.5 ~9 ~5.5 ~-5.5 ~9 ~-5.5 minecraft:barrier
+	fill ~5.5 ~7 ~5.5 ~-5.5 ~7 ~-5.5 minecraft:barrier
 }
 
 function clear_lid {
-	fill ~5.5 ~9 ~5.5 ~-5.5 ~9 ~-5.5 minecraft:air
+	fill ~5.5 ~7 ~5.5 ~-5.5 ~7 ~-5.5 minecraft:air
 }
 
 dir valve {
@@ -155,7 +215,6 @@ dir valve {
 	function fill_pan {
 		execute on passengers if entity @s[tag=aj.global.data] run { with entity @s item.components."minecraft:custom_data".locators.spout_output
 			$execute positioned ^$(posx) ^$(posy) ^$(posz) rotated ~$(roty) ~$(rotx) run {
-				particle end_rod ~ ~ ~
 				scoreboard players set #check i 0
 				# Yeah, I'm lazy.
 				execute on vehicle if entity @s[tag=vanilla_batter] as @n[tag=pan,distance=..6] run function pan:fill_batter {flavor:"vanilla"}

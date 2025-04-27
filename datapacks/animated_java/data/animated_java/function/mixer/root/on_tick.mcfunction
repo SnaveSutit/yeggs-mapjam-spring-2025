@@ -5,6 +5,12 @@ execute if entity @s[tag=aj.mixer.animation.mix.playing] run function animated_j
 execute if entity @s[tag=aj.mixer.animation.pour.playing] run function animated_java:mixer/animations/pour/zzz/on_tick
 execute if entity @s[tag=aj.mixer.animation.open_lid.playing] run function animated_java:mixer/animations/open_lid/zzz/on_tick
 execute if entity @s[tag=aj.mixer.animation.close_lid.playing] run function animated_java:mixer/animations/close_lid/zzz/on_tick
+execute if entity @s[tag=aj.mixer.animation.filled0.playing] run function animated_java:mixer/animations/filled0/zzz/on_tick
+execute if entity @s[tag=aj.mixer.animation.filled1.playing] run function animated_java:mixer/animations/filled1/zzz/on_tick
+execute if entity @s[tag=aj.mixer.animation.filled2.playing] run function animated_java:mixer/animations/filled2/zzz/on_tick
+execute if entity @s[tag=aj.mixer.animation.filled3.playing] run function animated_java:mixer/animations/filled3/zzz/on_tick
+execute if entity @s[tag=aj.mixer.animation.filled4.playing] run function animated_java:mixer/animations/filled4/zzz/on_tick
+execute if entity @s[tag=aj.mixer.animation.filled5.playing] run function animated_java:mixer/animations/filled5/zzz/on_tick
 execute on passengers if entity @s[tag=aj.mixer.data] run function animated_java:mixer/root/zzz/on_tick/locators_and_cameras
 execute at @s on passengers run rotate @s ~ ~
 function #animated_java:mixer/as_root/post_tick
