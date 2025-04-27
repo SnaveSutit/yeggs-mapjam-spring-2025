@@ -7,6 +7,7 @@ tp @s ~ ~ ~ ~ ~
 execute at @s on passengers run rotate @s ~ ~
 data modify entity @s teleport_duration set value 1
 execute on passengers run data modify entity @s teleport_duration set value 1
+tag @s add layer
 tag @s remove aj.new
 execute on passengers run tag @s remove aj.new
 function #animated_java:layer/as_root/on_summon

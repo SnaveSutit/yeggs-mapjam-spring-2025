@@ -1,4 +1,7 @@
 function kill_stacked_entities {
-	execute on passengers run function ^0
-	kill @s
+	tp @s ~ ~1000 ~
+	block {
+		execute on passengers run function ^0
+		kill @s
+	}
 }

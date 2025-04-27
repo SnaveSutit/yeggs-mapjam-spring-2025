@@ -44,6 +44,26 @@ function summon {
 }
 
 
+dir debug {
+	REPEAT(['vanilla','chocolate','strawberry']) as flavor {
+		function summon_pan_batter_<%flavor%> {
+			function pan:summon
+			execute as @n[tag=pan,distance=..1] run {
+				function pan:fill_batter {flavor:<%flavor%>}
+			}
+		}
+		function summon_pan_baked_<%flavor%> {
+			function pan:summon
+			execute as @n[tag=pan,distance=..1] run {
+				function pan:fill_batter {flavor:<%flavor%>}
+				execute on passengers on passengers if entity @s[tag=aj.pan.root] run function animated_java:pan/animations/fill_batter/pause
+				function pan:finish_baking
+			}
+		}
+	}
+}
+
+
 function on_tick minecraft:tick {
 	execute as @e[type=minecraft:item_display,tag=pan_dispenser] at @s unless entity @e[type=minecraft:armor_stand,tag=pan,distance=..5] run {
 		scoreboard players remove @s spawn_timer 1
@@ -134,6 +154,15 @@ function frost {
 function empty_batter {
 	function animated_java:pan/variants/empty
 	function animated_java:pan/animations/empty/set_frame {frame:0}
+}
+
+
+function extract_to_layer {
+	data remove storage temp:temp data.flavor
+	execute on passengers on passengers if entity @s[tag=aj.pan.root] run \
+		data modify storage temp:temp data.flavor set from entity @s data.flavor
+	function layer:summon with storage temp:temp data
+	function util:kill_stacked_entities
 }
 
 

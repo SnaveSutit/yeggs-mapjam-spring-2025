@@ -3,9 +3,31 @@ function on_load minecraft:load {
 
 
 function summon {
+	# 0 = empty
+	# 1 = animating
+	# 2 = layer1 filled
+	# 3 = layer2 filled
+	# 4 = layer3 filled
+	# 5 = layer4 filled
+	scoreboard players set #launcher_state i 0
+	data remove storage map:launcher data
 	function animated_java:launcher/summon {args:{}}
 }
 
 
 function on_tick minecraft:tick {
+	execute as @e[type=minecraft:item_display,tag=launcher] at @s run {
+		execute as @n[type=minecraft:item_display,tag=aj.launcher.locator.layer0_lock_point,distance=..8] at @s run {
+			scoreboard players set #has_passenger i 0
+			execute on passengers run scoreboard players set #has_passenger i 1
+
+			execute if score #has_passenger i matches 1 run {
+				execute on passengers run function pan:extract_to_layer
+
+				ride @n[tag=layer,distance=..8] mount @s
+				scoreboard players set #launcher_state i 1
+				say "Layer 0 Lock Point Activated!"
+			}
+		}
+	}
 }

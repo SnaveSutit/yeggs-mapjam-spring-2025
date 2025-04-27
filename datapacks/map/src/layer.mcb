@@ -1,0 +1,8 @@
+function summon {
+	#ARGS: {flavor: string}
+	function animated_java:layer/summon {args:{}}
+	$execute as @n[type=minecraft:item_display,tag=layer] run { {flavor:$(flavor)}
+		$say $(flavor)
+		$function animated_java:layer/variants/baked_$(flavor)/apply
+	}
+}
