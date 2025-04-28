@@ -1,6 +1,0 @@
-{
-	"parent": "animated_java:blueprint/mixer/flour",
-	"textures": {
-		"7": "animated_java:blueprint/mixer/flour_badge_complete"
-	}
-}

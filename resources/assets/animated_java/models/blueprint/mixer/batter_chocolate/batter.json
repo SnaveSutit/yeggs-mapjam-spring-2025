@@ -1,7 +1,6 @@
 {
 	"parent": "animated_java:blueprint/mixer/batter",
 	"textures": {
-		"1": "cooking:blueprint/pan/batter_chocolate",
-		"16": "animated_java:blueprint/mixer/output_plaque_chocolate"
+		"0": "cooking:blueprint/pan/batter_chocolate"
 	}
 }

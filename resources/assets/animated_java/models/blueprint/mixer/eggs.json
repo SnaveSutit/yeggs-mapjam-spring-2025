@@ -1,6 +1,6 @@
 {
 	"textures": {
-		"11": "animated_java:blueprint/mixer/eggs_badge",
+		"6": "animated_java:blueprint/mixer/ingredient_badge",
 		"particle": "minecraft:item/pufferfish"
 	},
 	"display": {
@@ -20,27 +20,27 @@
 			"faces": {
 				"north": {
 					"uv": [0, 0, 8, 8],
-					"texture": "#11"
+					"texture": "#6"
 				},
 				"east": {
 					"uv": [0, 0, 0, 8],
-					"texture": "#11"
+					"texture": "#6"
 				},
 				"south": {
 					"uv": [0, 8, 8, 16],
-					"texture": "#11"
+					"texture": "#6"
 				},
 				"west": {
 					"uv": [0, 0, 0, 8],
-					"texture": "#11"
+					"texture": "#6"
 				},
 				"up": {
 					"uv": [8, 0, 0, 0],
-					"texture": "#11"
+					"texture": "#6"
 				},
 				"down": {
 					"uv": [8, 0, 0, 0],
-					"texture": "#11"
+					"texture": "#6"
 				}
 			}
 		}

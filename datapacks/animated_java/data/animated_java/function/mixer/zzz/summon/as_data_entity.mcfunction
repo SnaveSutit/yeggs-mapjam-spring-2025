@@ -17,17 +17,31 @@ execute on vehicle on passengers if entity @s[tag=aj.mixer.node.flow] run functi
 data modify entity @s item.components."minecraft:custom_data".uuids.bone_flow set from storage aj:uuid main.out
 execute on vehicle on passengers if entity @s[tag=aj.mixer.node.valve] run function animated_java:global/internal/gu/convert_uuid_array_to_string
 data modify entity @s item.components."minecraft:custom_data".uuids.bone_valve set from storage aj:uuid main.out
-execute on vehicle on passengers if entity @s[tag=aj.mixer.node.batter_output_plaque] run function animated_java:global/internal/gu/convert_uuid_array_to_string
-data modify entity @s item.components."minecraft:custom_data".uuids.bone_batter_output_plaque set from storage aj:uuid main.out
 execute on vehicle on passengers if entity @s[tag=aj.mixer.node.basin] run function animated_java:global/internal/gu/convert_uuid_array_to_string
 data modify entity @s item.components."minecraft:custom_data".uuids.bone_basin set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.mixer.node.milk_check] run function animated_java:global/internal/gu/convert_uuid_array_to_string
+data modify entity @s item.components."minecraft:custom_data".uuids.text_display_milk_check set from storage aj:uuid main.out
 execute on vehicle on passengers if entity @s[tag=aj.mixer.node.milk] run function animated_java:global/internal/gu/convert_uuid_array_to_string
 data modify entity @s item.components."minecraft:custom_data".uuids.bone_milk set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.mixer.node.flour_check] run function animated_java:global/internal/gu/convert_uuid_array_to_string
+data modify entity @s item.components."minecraft:custom_data".uuids.text_display_flour_check set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.mixer.node.flour2] run function animated_java:global/internal/gu/convert_uuid_array_to_string
+data modify entity @s item.components."minecraft:custom_data".uuids.bone_flour2 set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.mixer.node.flour_item] run function animated_java:global/internal/gu/convert_uuid_array_to_string
+data modify entity @s item.components."minecraft:custom_data".uuids.bone_flour_item set from storage aj:uuid main.out
 execute on vehicle on passengers if entity @s[tag=aj.mixer.node.flour] run function animated_java:global/internal/gu/convert_uuid_array_to_string
 data modify entity @s item.components."minecraft:custom_data".uuids.bone_flour set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.mixer.node.sugar_check] run function animated_java:global/internal/gu/convert_uuid_array_to_string
+data modify entity @s item.components."minecraft:custom_data".uuids.text_display_sugar_check set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.mixer.node.sugar_item] run function animated_java:global/internal/gu/convert_uuid_array_to_string
+data modify entity @s item.components."minecraft:custom_data".uuids.bone_sugar_item set from storage aj:uuid main.out
 execute on vehicle on passengers if entity @s[tag=aj.mixer.node.sugar] run function animated_java:global/internal/gu/convert_uuid_array_to_string
 data modify entity @s item.components."minecraft:custom_data".uuids.bone_sugar set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.mixer.node.egg_check] run function animated_java:global/internal/gu/convert_uuid_array_to_string
+data modify entity @s item.components."minecraft:custom_data".uuids.text_display_egg_check set from storage aj:uuid main.out
 execute on vehicle on passengers if entity @s[tag=aj.mixer.node.eggs] run function animated_java:global/internal/gu/convert_uuid_array_to_string
 data modify entity @s item.components."minecraft:custom_data".uuids.bone_eggs set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.mixer.node.flavor_check] run function animated_java:global/internal/gu/convert_uuid_array_to_string
+data modify entity @s item.components."minecraft:custom_data".uuids.text_display_flavor_check set from storage aj:uuid main.out
 execute on vehicle on passengers if entity @s[tag=aj.mixer.node.flavor] run function animated_java:global/internal/gu/convert_uuid_array_to_string
 data modify entity @s item.components."minecraft:custom_data".uuids.bone_flavor set from storage aj:uuid main.out

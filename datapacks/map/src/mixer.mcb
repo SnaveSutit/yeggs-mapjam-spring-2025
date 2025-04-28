@@ -9,8 +9,8 @@ function on_load minecraft:load {
 }
 
 function summon {
-	execute rotated ~ 0 run function animated_java:mixer/summon {args:{variant:"hide_badges"}}
-	execute as @e[type=minecraft:item_display,tag=aj.mixer.bone.badges.decendant,distance=..1] run data modify entity @s billboard set value "vertical"
+	execute rotated ~ 0 run function animated_java:mixer/summon {args:{animation:"pos"}}
+	execute as @e[tag=aj.mixer.bone.badges.decendant,distance=..1] run data modify entity @s billboard set value "vertical"
 }
 
 dir debug {
@@ -85,7 +85,7 @@ function on_tick minecraft:tick {
 		execute if score @s mixer_state matches 2 run {
 			scoreboard players set #ingredient_type i -1
 			tag @s add this_mixer
-			execute positioned ~-5 ~ ~-5 as @e[type=minecraft:armor_stand,tag=ingredient,dx=10,dy=0,dz=10] run {
+			execute positioned ~-5 ~ ~-5 as @e[type=minecraft:armor_stand,tag=ingredient,dx=10,dy=0,dz=10,limit=1] run {
 				execute if entity @s[tag=ingredient_milk] run scoreboard players set #ingredient_type i 0
 				execute if entity @s[tag=ingredient_flour] run scoreboard players set #ingredient_type i 1
 				execute if entity @s[tag=ingredient_sugar] run scoreboard players set #ingredient_type i 2
@@ -99,34 +99,34 @@ function on_tick minecraft:tick {
 			execute if score #ingredient_type i matches 0.. run {
 				execute if score #ingredient_type i matches 0 run {
 					tag @s add contains_milk
-					function animated_java:mixer/variants/complete_milk/apply
+					function animated_java:mixer/animations/milk_check/play
 				}
 				execute if score #ingredient_type i matches 1 run {
 					tag @s add contains_flour
-					function animated_java:mixer/variants/complete_flour/apply
+					function animated_java:mixer/animations/flour_check/play
 				}
 				execute if score #ingredient_type i matches 2 run {
 					tag @s add contains_sugar
-					function animated_java:mixer/variants/complete_sugar/apply
+					function animated_java:mixer/animations/sugar_check/play
 				}
 				execute if score #ingredient_type i matches 3 run {
 					tag @s add contains_eggs
-					function animated_java:mixer/variants/complete_eggs/apply
+					function animated_java:mixer/animations/eggs_check/play
 				}
 				execute if score #ingredient_type i matches 4 run {
 					function *clear_flavor_tags
 					tag @s add contains_vanilla
-					function animated_java:mixer/variants/complete_flavor/apply
+					function animated_java:mixer/animations/flavor_check/play
 				}
 				execute if score #ingredient_type i matches 5 run {
 					function *clear_flavor_tags
 					tag @s add contains_chocolate
-					function animated_java:mixer/variants/complete_flavor/apply
+					function animated_java:mixer/animations/flavor_check/play
 				}
 				execute if score #ingredient_type i matches 6 run {
 					function *clear_flavor_tags
 					tag @s add contains_berries
-					function animated_java:mixer/variants/complete_flavor/apply
+					function animated_java:mixer/animations/flavor_check/play
 				}
 				function mixer:update_fill
 				# Check for complete recipe

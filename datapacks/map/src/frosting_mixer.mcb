@@ -63,7 +63,7 @@ function on_tick minecraft:tick {
 		# Waiting for ingredients
 		execute if score @s frosting_mixer_state matches 1 run {
 
-			execute positioned ~-2.5 ~9 ~-2.5 as @e[tag=ingredient,dx=4,dy=0,dz=4] run {
+			execute positioned ~-2.5 ~9 ~-2.5 as @e[tag=ingredient,dx=4,dy=0,dz=4,limit=1] run {
 				execute if entity @s[tag=ingredient_sugar] as @n[tag=this,distance=..20] run {
 					tag @s add contains_sugar
 					function animated_java:frosting_mixer/animations/show_sugar_ingredient_check/play

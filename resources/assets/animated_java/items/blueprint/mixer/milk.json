@@ -1,45 +1,9 @@
 {
 	"model": {
-		"type": "minecraft:select",
-		"property": "minecraft:custom_model_data",
-		"cases": [
-			{
-				"when": "hide_badges",
-				"model": {
-					"type": "minecraft:model",
-					"model": "animated_java:blueprint/mixer/hide_badges/milk",
-					"tints": [
-						{"type": "minecraft:dye", "default": [1, 1, 1]}
-					]
-				}
-			},
-			{
-				"when": "show_badges",
-				"model": {
-					"type": "minecraft:model",
-					"model": "animated_java:blueprint/mixer/show_badges/milk",
-					"tints": [
-						{"type": "minecraft:dye", "default": [1, 1, 1]}
-					]
-				}
-			},
-			{
-				"when": "complete_milk",
-				"model": {
-					"type": "minecraft:model",
-					"model": "animated_java:blueprint/mixer/complete_milk/milk",
-					"tints": [
-						{"type": "minecraft:dye", "default": [1, 1, 1]}
-					]
-				}
-			}
-		],
-		"fallback": {
-			"type": "minecraft:model",
-			"model": "animated_java:blueprint/mixer/milk",
-			"tints": [
-				{"type": "minecraft:dye", "default": [1, 1, 1]}
-			]
-		}
+		"type": "minecraft:model",
+		"model": "animated_java:blueprint/mixer/milk",
+		"tints": [
+			{"type": "minecraft:dye", "default": [1, 1, 1]}
+		]
 	}
 }

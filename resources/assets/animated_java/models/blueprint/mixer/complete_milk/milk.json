@@ -1,6 +1,0 @@
-{
-	"parent": "animated_java:blueprint/mixer/milk",
-	"textures": {
-		"5": "animated_java:blueprint/mixer/milk_badge_complete"
-	}
-}

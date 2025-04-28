@@ -1,6 +1,0 @@
-{
-	"parent": "animated_java:blueprint/mixer/sugar",
-	"textures": {
-		"9": "animated_java:blueprint/mixer/sugar_badge_complete"
-	}
-}

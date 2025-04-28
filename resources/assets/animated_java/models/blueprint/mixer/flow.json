@@ -1,6 +1,6 @@
 {
 	"textures": {
-		"1": "cooking:blueprint/pan/batter_generic",
+		"0": "cooking:blueprint/pan/batter_generic",
 		"particle": "minecraft:item/pufferfish"
 	},
 	"display": {
@@ -20,27 +20,27 @@
 			"faces": {
 				"north": {
 					"uv": [0, 5.25, 2, 15.25],
-					"texture": "#1"
+					"texture": "#0"
 				},
 				"east": {
 					"uv": [4, 5.25, 6, 15.25],
-					"texture": "#1"
+					"texture": "#0"
 				},
 				"south": {
 					"uv": [8, 5.25, 10, 15.25],
-					"texture": "#1"
+					"texture": "#0"
 				},
 				"west": {
 					"uv": [12, 5.25, 14, 15.25],
-					"texture": "#1"
+					"texture": "#0"
 				},
 				"up": {
 					"uv": [5.75, 8.25, 7.75, 10.25],
-					"texture": "#1"
+					"texture": "#0"
 				},
 				"down": {
 					"uv": [5.75, 8.25, 7.75, 10.25],
-					"texture": "#1"
+					"texture": "#0"
 				}
 			}
 		}

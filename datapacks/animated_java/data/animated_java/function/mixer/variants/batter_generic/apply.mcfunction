@@ -2,5 +2,7 @@
 execute unless entity @s[type=item_display,tag=aj.mixer.root] run return run function animated_java:global/errors/function_not_executed_as_root_entity {'export_namespace': 'mixer', 'function_path': 'animated_java:mixer/variants/batter_generic/apply'}
 execute on passengers if entity @s[tag=aj.mixer.bone.batter] run function animated_java:mixer/variants/batter_generic/zzz/apply_to_bone_batter
 execute on passengers if entity @s[tag=aj.mixer.bone.flow] run function animated_java:mixer/variants/batter_generic/zzz/apply_to_bone_flow
-execute on passengers if entity @s[tag=aj.mixer.bone.batter_output_plaque] run function animated_java:mixer/variants/batter_generic/zzz/apply_to_bone_batter_output_plaque
+execute on passengers if entity @s[tag=aj.mixer.bone.flour2] run function animated_java:mixer/variants/batter_generic/zzz/apply_to_bone_flour2
+execute on passengers if entity @s[tag=aj.mixer.bone.flour_item] run function animated_java:mixer/variants/batter_generic/zzz/apply_to_bone_flour_item
+execute on passengers if entity @s[tag=aj.mixer.bone.sugar_item] run function animated_java:mixer/variants/batter_generic/zzz/apply_to_bone_sugar_item
 return 1

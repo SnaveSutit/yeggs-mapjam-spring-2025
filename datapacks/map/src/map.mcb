@@ -144,7 +144,7 @@ function reset {
 		execute as @e[type=minecraft:item_display,nbt={item:{}}] run data modify entity @s view_range set value 2
 
 		function map:show_buttons
-		execute as @a run function map:teleport_to_spawn
+		execute as @a[tag=!dev] run function map:teleport_to_spawn
 
 		tellraw @a {text:'Map reset successfully!',color:green}
 	}

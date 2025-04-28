@@ -1,0 +1,6 @@
+{
+	"parent": "animated_java:blueprint/mixer/sugar_item",
+	"textures": {
+		"0": "cooking:blueprint/pan/batter_vanilla"
+	}
+}
