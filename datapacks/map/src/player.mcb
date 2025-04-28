@@ -1,10 +1,44 @@
 function on_load minecraft:load {
 	scoreboard objectives add leave_game minecraft.custom:minecraft.leave_game
+	team add players "Players"
+	team add spectators "Spectators"
 }
 
 function on_join {
 	attribute @s minecraft:movement_speed base set 0.18
+
+	execute if score #game_in_progress i matches 1 run {
+		execute if entity @s[team=players] run {
+			function player:join_players
+			function player:teleport_in
+		}
+		execute if entity @s[team=spectator] run {
+			function player:join_spectator
+			function player:teleport_in
+		}
+		execute if entity @s[team=] run {
+			function player:join_spectator
+			function player:teleport_in
+		}
+	}
+
 	scoreboard players set @s leave_game 0
+}
+
+function teleport_in {
+	tp @s 0 16 30 180 10
+}
+
+function join_players {
+	gamemode adventure @s
+	team leave @s
+	team join players @s
+}
+
+function join_spectator {
+	gamemode spectator @s
+	team leave @s
+	team join players @s
 }
 
 function on_tick minecraft:tick {

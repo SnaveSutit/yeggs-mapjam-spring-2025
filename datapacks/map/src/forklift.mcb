@@ -5,7 +5,7 @@ function on_load minecraft:load {
 }
 
 function debug {
-	function animated_java:forklift/remove/all
+	function animated_java:forklift/remove/entities
 	execute rotated 0 0 run function forklift:summon
 }
 
@@ -15,6 +15,19 @@ function summon {
 
 
 function on_tick minecraft:tick {
+	# Re-create the forklift if a player who was previously riding it logs off
+	execute unless entity @e[type=minecraft:item_display,tag=forklift] as @e[type=minecraft:item_display,tag=forklift_seat] at @s positioned ~ 1 ~ run {
+		execute on passengers run tag @s add player_on_forklift_seat_who_logged_off
+		function animated_java:forklift/remove/entities
+		function animated_java:forklift/summon {args:{animation:"fork_height_0"}}
+		ride @n[tag=player_on_forklift_seat_who_logged_off] mount @n[type=minecraft:item_display,tag=forklift_seat]
+		tag @a remove player_on_forklift_seat_who_logged_off
+	}
+	# Re-create the forklift if the seat disappears
+	execute unless entity @e[type=minecraft:item_display,tag=forklift_seat] as @e[type=minecraft:item_display,tag=forklift] at @s run {
+		function animated_java:forklift/remove/entities
+		function animated_java:forklift/summon {args:{animation:"fork_height_0"}}
+	}
 
 	execute as @n[type=item_display,tag=forklift] at @s run {
 		scoreboard players set #forward i 0

@@ -15,9 +15,15 @@ function on_load minecraft:load {
 
 	scoreboard objectives add spawn_timer dummy
 
+	setworldspawn 0 35 41 90
+
 	tellraw @a {"text":"Map reloaded!","color":"green"}
 
 	# schedule function map:reset 10t
+}
+
+function start {
+	scoreboard players set #game_in_progress i 1
 }
 
 
@@ -43,9 +49,14 @@ function set_scale {
 }
 
 function reset {
+	scoreboard players set #game_in_progress i 0
 	kill @e[type=!player]
 	function static_pipette:remove
 	schedule 1t {
+
+		# Lobby
+		summon minecraft:text_display -5.9375 37.25 43.9375 {Passengers: [{alignment: "center", background: 1073741824, default_background: 0b, fall_distance: 0.0d, id: "minecraft:text_display", line_width: 200, see_through: 0b, shadow: 0b, text: "Welcome to", text_opacity: -1b, transformation: {left_rotation: [0.0f, 1.0f, 0.0f, 0.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.6875f, 1.6874992f, 1.6874995f], translation: [0.0f, 1.0f, -0.0625f]}}], alignment: "center", background: 1073741824, default_background: 0b, fall_distance: 0.0d, line_width: 200, see_through: 0b, shadow: 1b, text: {color: "green", extra: [{bold: 1b, color: "white", text: "Pastry "}, {bold: 1b, color: "light_purple", italic: 1b, text: "Panic"}], text: "Pocket-sized "}, text_opacity: -1b, transformation: {left_rotation: [0.0f, 1.0f, 0.0f, 0.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [3.5625f, 3.5624998f, 3.5624995f], translation: [0.0f, 0.0f, 0.0f]}}
+
 		function troll:summon
 		function troll:reset
 		function orders:summon
@@ -128,14 +139,21 @@ dir fan {
 	}
 }
 
+function teleport_to_spawn {
+	tp @s 0 35 41 90 0
+}
+
 function game_over {
 	title @a times 10 80 10
 	title @a title ["",{text:"\ua000",font:"cooking:custom"},{translate:"space.-1"},{text:"\ua000",font:"cooking:custom"},{translate:offset.-256,with:[{text:"Game Over!",color:red}]}]
 	execute as @a at @s run {
 		playsound minecraft:entity.generic.eat block @s ~ ~ ~ 10 0.1
 	}
-	schedule 80t {
-		tp @a 2 7 46 180 0
+	schedule 50t replace {
+		function map:reset
+	}
+	schedule 80t replace {
+		function map:teleport_to_spawn
 		gamemode adventure @a
 	}
 }
