@@ -162,9 +162,10 @@ function on_tick minecraft:tick {
 					execute if entity @a[distance=..2] run scoreboard players set #check i 1
 				}
 			}
-			execute if score #check i matches 1 run {
+			execute if score #check i matches 1 positioned ~ ~8 ~ run {
 				function animated_java:mixer/animations/mix/resume
 				scoreboard players remove @s mixing_needed 1
+				playsound minecraft:block.grindstone.use block @a ~ ~ ~ 0.2 2
 				REPEAT(0, 100) as i {
 					execute if score @s mixing_needed matches <%i%> run return run playsound minecraft:block.wooden_button.click_on block @a ~ ~ ~ 1 <%0.8 + 1 * ((101 - i) / 100)%>
 				}

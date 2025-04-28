@@ -26,11 +26,12 @@ function while_tutorial {
 
 function start {
 	function map:reset
-	schedule 1t {
+	schedule 1s {
 		function animated_java:troll/remove/all
 		REPEAT(1, 10) as i {
 			schedule clear tutorial:steps/<%i%>
 		}
+		execute as @a run function map:teleport_to_game
 
 		sequence reset
 		function *msg {text:[ \
@@ -224,13 +225,17 @@ dir steps {
 				{text:'\n    - 1x Sugar',color:gold},{text:'\n    - 1x Flavor Ingredient (Vanilla, Chocolate, or Strawberry)',color:gold}, \
 				{text:'\nMake sure you check the order board above the ovens to see which flavor of frosting you need!',color:red,italic:true} \
 			]}
+			execute positioned 11 11 -32 run function tutorial:summon_marker
+			execute positioned -28 35 7 run function tutorial:summon_marker
+		}
+		sequence 80t {
+			function *msg {text:['Don\'t forget to insert milk into the ',{text:'milk slot',color:gold},' on the side of the frosting mixer, each milk ingredient is good for 3 whole batches of frosting!']}
 			execute as @e[tag=frosting_mixer] at @s positioned ~ ~17 ~ run function tutorial:summon_marker
 			function tutorial:steps/10
 		}
 	}
 
 	function 10 {
-		# TODO: Add the step for inserting milk!
 		# Any frosting mixer starts animating
 		execute unless entity @e[tag=frosting_mixer,scores={frosting_mixer_state=-1}] run return run schedule function ^0 1t
 

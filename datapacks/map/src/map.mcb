@@ -38,6 +38,7 @@ function on_tick minecraft:tick {
 	# Tutorial Button
 	execute if block -5 35 43 minecraft:birch_button[powered=true] run {
 		function map:hide_buttons
+		function tutorial:start
 	}
 	# Play Button
 	execute if block -8 35 43 minecraft:birch_button[powered=true] run {
@@ -137,6 +138,7 @@ function reset {
 		execute as @e[type=minecraft:item_display,nbt={item:{}}] run data modify entity @s view_range set value 2
 
 		function map:show_buttons
+		execute as @a run function map:teleport_to_spawn
 
 		tellraw @a {text:'Map reset successfully!',color:green}
 	}
@@ -164,6 +166,12 @@ function teleport_to_spawn {
 	tp @s 0 35 41 90 0
 }
 
+
+function teleport_to_game {
+	tp @s 0 1 25 180 -10
+}
+
+
 function game_over {
 	title @a times 10 80 10
 	title @a title ["",{text:"\ua000",font:"cooking:custom"},{translate:"space.-1"},{text:"\ua000",font:"cooking:custom"},{translate:offset.-256,with:[{text:"Game Over!",color:red}]}]
@@ -172,6 +180,7 @@ function game_over {
 
 	execute as @a at @s run {
 		playsound minecraft:entity.generic.eat block @s ~ ~ ~ 10 0.1
+		playsound minecraft:item.goat_horn.sound.6 block @a ~ ~ ~ 0.8 1
 	}
 	schedule 50t replace {
 		function map:reset

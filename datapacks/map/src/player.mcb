@@ -10,15 +10,15 @@ function on_join {
 	execute if score #game_in_progress i matches 1 run {
 		execute if entity @s[team=players] run {
 			function player:join_players
-			function player:teleport_in
+			function map:teleport_to_game
 		}
 		execute if entity @s[team=spectator] run {
 			function player:join_spectator
-			function player:teleport_in
+			function map:teleport_to_game
 		}
 		execute if entity @s[team=] run {
 			function player:join_spectator
-			function player:teleport_in
+			function map:teleport_to_game
 		}
 	}
 	execute if score #game_in_progress i matches 0 run {
@@ -29,9 +29,6 @@ function on_join {
 	scoreboard players set @s leave_game 0
 }
 
-function teleport_in {
-	tp @s 0 16 30 180 10
-}
 
 function join_players {
 	gamemode adventure @s

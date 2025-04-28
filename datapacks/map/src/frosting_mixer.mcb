@@ -59,6 +59,7 @@ function on_tick minecraft:tick {
 		# Waiting for ingredients
 		execute if score @s frosting_mixer_state matches 1 run {
 			tag @s add this
+
 			execute positioned ~-2.5 ~9 ~-2.5 as @e[tag=ingredient,dx=4,dy=0,dz=4] run {
 				execute if entity @s[tag=ingredient_sugar] as @n[tag=this,distance=..20] run {
 					tag @s add contains_sugar
@@ -89,9 +90,19 @@ function on_tick minecraft:tick {
 			tag @s remove this
 
 			execute if entity @s[tag=contains_sugar,tag=contains_flavor] run {
-				function animated_java:frosting_mixer/animations/start_mix/play
-				scoreboard players set @s mix_count 8
-				scoreboard players set @s frosting_mixer_state -1
+				# Check for milk
+				scoreboard players set #has_milk i 0
+				execute as @n[type=minecraft:item_display,tag=milk_lock_point,distance=..10] on passengers if entity @s[tag=ingredient_milk] run {
+					scoreboard players add @s mix_count 1
+					scoreboard players set #has_milk i 1
+					execute if score @s mix_count matches 3.. run function util:kill_stacked_entities
+				}
+
+				execute if score #has_milk i matches 1 run {
+					function animated_java:frosting_mixer/animations/start_mix/play
+					scoreboard players set @s mix_count 8
+					scoreboard players set @s frosting_mixer_state -1
+				}
 			}
 		}
 
@@ -116,11 +127,11 @@ function on_tick minecraft:tick {
 
 function spawn_frosting_pipette {
 	# Must be run as and at the frosting mixer
-	say "Spawning frosting pipette..."
 	execute positioned ~ ~1 ~ run {
 		execute if entity @s[tag=contains_vanilla] run return run function ingredient:summon {type:vanilla_frosting}
 		execute if entity @s[tag=contains_chocolate] run return run function ingredient:summon {type:chocolate_frosting}
 		execute if entity @s[tag=contains_berries] run return run function ingredient:summon {type:strawberry_frosting}
 	}
+	playsound minecraft:ui.stonecutter.take_result block @a ~ ~ ~ 1 0.1
 	function *clear_recipe_tags
 }
