@@ -4,6 +4,16 @@
 		"property": "minecraft:custom_model_data",
 		"cases": [
 			{
+				"when": "contents_generic",
+				"model": {
+					"type": "minecraft:model",
+					"model": "animated_java:blueprint/frosting_mixer/contents_generic/sugar",
+					"tints": [
+						{"type": "minecraft:dye", "default": [1, 1, 1]}
+					]
+				}
+			},
+			{
 				"when": "contents_vanilla",
 				"model": {
 					"type": "minecraft:model",
@@ -28,16 +38,6 @@
 				"model": {
 					"type": "minecraft:model",
 					"model": "animated_java:blueprint/frosting_mixer/contents_strawberry/sugar",
-					"tints": [
-						{"type": "minecraft:dye", "default": [1, 1, 1]}
-					]
-				}
-			},
-			{
-				"when": "contents_generic",
-				"model": {
-					"type": "minecraft:model",
-					"model": "animated_java:blueprint/frosting_mixer/contents_generic/sugar",
 					"tints": [
 						{"type": "minecraft:dye", "default": [1, 1, 1]}
 					]

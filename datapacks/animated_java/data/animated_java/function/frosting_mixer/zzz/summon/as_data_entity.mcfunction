@@ -19,14 +19,12 @@ execute on vehicle on passengers if entity @s[tag=aj.frosting_mixer.node.base] r
 data modify entity @s item.components."minecraft:custom_data".uuids.bone_base set from storage aj:uuid main.out
 execute on vehicle on passengers if entity @s[tag=aj.frosting_mixer.node.milk_badge] run function animated_java:global/internal/gu/convert_uuid_array_to_string
 data modify entity @s item.components."minecraft:custom_data".uuids.bone_milk_badge set from storage aj:uuid main.out
-execute on vehicle on passengers if entity @s[tag=aj.frosting_mixer.node.sugar_icon] run function animated_java:global/internal/gu/convert_uuid_array_to_string
-data modify entity @s item.components."minecraft:custom_data".uuids.item_display_sugar_icon set from storage aj:uuid main.out
 execute on vehicle on passengers if entity @s[tag=aj.frosting_mixer.node.sugar_check] run function animated_java:global/internal/gu/convert_uuid_array_to_string
 data modify entity @s item.components."minecraft:custom_data".uuids.text_display_sugar_check set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.frosting_mixer.node.sugar_item] run function animated_java:global/internal/gu/convert_uuid_array_to_string
+data modify entity @s item.components."minecraft:custom_data".uuids.bone_sugar_item set from storage aj:uuid main.out
 execute on vehicle on passengers if entity @s[tag=aj.frosting_mixer.node.sugar] run function animated_java:global/internal/gu/convert_uuid_array_to_string
 data modify entity @s item.components."minecraft:custom_data".uuids.bone_sugar set from storage aj:uuid main.out
-execute on vehicle on passengers if entity @s[tag=aj.frosting_mixer.node.flavor_icon] run function animated_java:global/internal/gu/convert_uuid_array_to_string
-data modify entity @s item.components."minecraft:custom_data".uuids.item_display_flavor_icon set from storage aj:uuid main.out
 execute on vehicle on passengers if entity @s[tag=aj.frosting_mixer.node.flavor_check] run function animated_java:global/internal/gu/convert_uuid_array_to_string
 data modify entity @s item.components."minecraft:custom_data".uuids.text_display_flavor_check set from storage aj:uuid main.out
 execute on vehicle on passengers if entity @s[tag=aj.frosting_mixer.node.flavor] run function animated_java:global/internal/gu/convert_uuid_array_to_string
