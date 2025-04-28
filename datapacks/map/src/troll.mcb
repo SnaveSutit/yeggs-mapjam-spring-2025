@@ -15,6 +15,10 @@ function reset {
 
 function summon {
 	execute positioned 0 1 -11 rotated 0 0 run function animated_java:troll/summon {args:{}}
+	execute positioned 0 7 2 rotated 180 -20 summon minecraft:item_display run {
+		tag @s add death_anim_player_lock
+		tp @s ~ ~ ~ ~ ~
+	}
 }
 
 
@@ -51,6 +55,7 @@ function get_mad {
 		execute if score #random i matches 0 run tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {"text":"You are taking too long!","color":"red"}]
 		execute if score #random i matches 1 run tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {text:"I ain't got nothin' to eat!",color:red}]
 		execute if score #random i matches 2 run tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {text:"I am starving!",color:red}]
+		playsound minecraft:entity.villager.ambient block @a ~ ~ ~ 10 0.1
 		schedule function troll:consume 30s
 	}
 	execute if score #troll_patience i matches ..0 run {
@@ -61,5 +66,9 @@ function get_mad {
 function game_over {
 	tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {"text":"That's it! If you can't make my cake fast enough, I'll just be eatin' you instead!","color":"red"}]
 	schedule clear troll:consume
+
+	gamemode spectator @a
+	execute as @a run spectate @n[type=item_display,tag=death_anim_player_lock] @s
+
 	function map:game_over
 }
