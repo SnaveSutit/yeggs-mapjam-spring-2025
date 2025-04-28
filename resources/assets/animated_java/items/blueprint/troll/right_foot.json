@@ -1,7 +1,7 @@
 {
 	"model": {
 		"type": "minecraft:model",
-		"model": "animated_java:blueprint/troll/arm_right_down",
+		"model": "animated_java:blueprint/troll/right_foot",
 		"tints": [
 			{"type": "minecraft:dye", "default": [1, 1, 1]}
 		]
