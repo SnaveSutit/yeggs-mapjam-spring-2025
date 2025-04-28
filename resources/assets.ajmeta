@@ -201,6 +201,7 @@
 				"assets/animated_java/models/blueprint/launcher/pan.json",
 				"assets/animated_java/models/blueprint/launcher/spring.json",
 				"assets/animated_java/models/empty.json",
+				"assets/animated_java/textures/blueprint/launcher/platform.png",
 				"assets/animated_java/textures/blueprint/launcher/spring.png"
 			]
 		},

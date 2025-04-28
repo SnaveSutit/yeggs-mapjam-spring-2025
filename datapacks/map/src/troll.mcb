@@ -22,7 +22,7 @@ function begin_consuming {
 	function troll:reset
 	bossbar set troll:patience players @a
 	scoreboard players set #troll_patience i 6
-	schedule function troll:consume 30s
+	schedule function troll:consume 60s
 }
 
 function consume {
@@ -36,7 +36,7 @@ function consume {
 		}
 	}
 	execute if score #satisfied i matches 1 run {
-		schedule function troll:consume 30s
+		schedule function troll:consume 60s
 	}
 	execute if score #satisfied i matches 0 run {
 		function *get_mad
@@ -51,6 +51,7 @@ function get_mad {
 		execute if score #random i matches 0 run tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {"text":"You are taking too long!","color":"red"}]
 		execute if score #random i matches 1 run tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {text:"I ain't got nothin' to eat!",color:red}]
 		execute if score #random i matches 2 run tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {text:"I am starving!",color:red}]
+		schedule function troll:consume 30s
 	}
 	execute if score #troll_patience i matches ..0 run {
 		function *game_over
@@ -60,4 +61,5 @@ function get_mad {
 function game_over {
 	tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {"text":"That's it! If you can't make my cake fast enough, I'll just be eatin' you instead!","color":"red"}]
 	schedule clear troll:consume
+	function map:game_over
 }
