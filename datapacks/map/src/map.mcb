@@ -44,6 +44,7 @@ function set_scale {
 
 function reset {
 	kill @e[type=!player]
+	function static_pipette:remove
 	schedule 1t {
 		function troll:summon
 		function troll:reset
@@ -63,7 +64,7 @@ function reset {
 		execute positioned 13 1 31 rotated 180 0 run function frosting_mixer:summon
 		execute positioned -13 1 31 rotated 180 0 run function frosting_mixer:summon
 		# Frosting Station
-		function static_pipette:summon
+		# function static_pipette:summon
 		execute positioned 34 3 10 run function static_pipette:create_lock_point
 		# Cake Launcher
 		execute positioned 0 1 13 rotated 0 0 run function launcher:summon

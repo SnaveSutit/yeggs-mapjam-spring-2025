@@ -10,6 +10,20 @@ function remove_all_markers {
 	function animated_java:tutorial_indicator/remove/entities
 }
 
+function while_tutorial {
+	scoreboard players add #there_is_splat i 0
+	execute if score #there_is_splat i matches 0 if entity @e[tag=splat] run {
+		sequence reset
+		function *msg {text:['Whoops! Looks like you ',{text:'destroyed',color:red},' a cake!']}
+		function *msg {text:['Ramming the cake into a wall, punching it, or otherwise miss-handling it will destroy it, so be careful!']}
+		function *msg {text:['You can always re-make the cake by picking up a new pan and starting over! But keep in mind that ',{text:'His Immenseness',color:green},' will get angry if he goes too long without cake!']}
+		scoreboard players set #there_is_splat i 1
+	}
+	execute if score #there_is_splat i matches 1 unless entity @e[tag=splat] run scoreboard players set #there_is_splat i 0
+
+	schedule function ^0 1t
+}
+
 function start {
 	function map:reset
 	schedule 1t {
@@ -18,9 +32,11 @@ function start {
 			schedule clear tutorial:steps/<%i%>
 		}
 
+		sequence reset
 		function *msg {text:[ \
 			'Welcome to ', \
-			{text:'Pocket-sized Pantry ',color:green}, \
+			{text:'Pocket-sized ',color:green}, \
+			{text:'Pastry ',color:white,bold:true}, \
 			{text:Panic,color:light_purple,italic:true,bold:true}, \
 			'!', \
 			{text:'\n\n           Created by ',color:gray}, \
@@ -33,10 +49,10 @@ function start {
 		]}
 
 		sequence 60t {
-			function *msg {text:['This short tutorial will show you how to use the cake-making machines to feed ',{text:'His Immenseness, William Cornelius Grumblethorn III',color:green},'!']}
+			function *msg {text:['Ah, so you think you have what it takes to satiate ',{text:'His Immenseness, William Cornelius Grumblethorn III\'s',color:green},' incredible appetite? We shall see about that!']}
 		}
 		sequence 60t {
-			function *msg {text:['Let\'s start by learning to drive the forklift!']}
+			function *msg {text:['First off, let\'s make sure you\'re forklift certified!']}
 		}
 		sequence 40t {
 			function *msg {text:['Head to the forklift, and right click it to get in the drivers seat!',{text:'\nLook for the big, yellow exclamation mark if you can\'t find it!',italic:true,color:gray}]}
@@ -100,17 +116,18 @@ dir steps {
 			function *msg {text:['First, we\'ll need to gather the necessary ingredients:',{text:'\n    - 1x Egg',color:gold},{text:'\n    - 1x Milk',color:gold},{text:'\n    - 1x Sugar',color:gold},{text:'\n    - 1x Flour',color:gold},{text:'\n    - 1x Flavor Ingredient (Vanilla, Chocolate, or Strawberry)',color:gold}]}
 		}
 		sequence 60t {
-			function *msg {text:['You can find these ingredients on the ', {text:'Storage Shelf',color:gold}, '.']}
+			function *msg {text:['You can find these ingredients on the ', {text:'Storage Shelf',color:gold}, '.', {text:'\nMake sure you check the order board above the ovens to see which flavor of batter you need!',color:red,italic:true},{text:'\nMaking the wrong flavor will make His Immenseness very angry!',color:red,italic:true}]}
 			execute positioned 11 11 -32 run function tutorial:summon_marker
+			execute positioned -28 35 7 run function tutorial:summon_marker
 		}
-		sequence 20t {
-			function *msg {text:['However, keep in mind you are very small, so you won\'t be able to pick up more than one ingredient at a time!']}
+		sequence 80t {
+			function *msg {text:['However, keep in mind you are very small, so you won\'t be able to pick up ',{text:"more than one",color:gold,italic:true},' ingredient at a time!']}
 		}
 		sequence 60t {
 			function *msg {text:['You can pick up the ingredients by right clicking them, or by punching them, and drop them by sneaking, or throw them by right clicking or punching the ingredient!']}
 		}
 		sequence 80t {
-			function *msg {text:['Transport the ingredients from the shelf to one of the highlighted ', {text:'Mixers',color:gold}, ' and chuck them into it\'s mixing bowl.',[{text:'\nYou can check the badges on top of the ',color:gray,italic:true},{text:'Mixers',color:gold}, ' to see which ingredients are missing!']]}
+			function *msg {text:['Transport the required ingredients from the shelf to one of the highlighted ', {text:'Mixers',color:gold}, ' and chuck them into it\'s mixing bowl.',[{text:'\nYou can check the badges on top of the ',color:gray,italic:true},{text:'Mixers',color:gold}, ' to see which ingredients are missing!']]}
 			execute as @e[tag=mixer] at @s positioned ~ ~14 ~ run function tutorial:summon_marker
 			function tutorial:steps/4
 		}
@@ -140,15 +157,167 @@ dir steps {
 		tellraw @a '\n\n\n'
 		function *msg {text:['Amazing! Now that the batter is mixed, we can pour it into the cake pan!']}
 		sequence 40t {
-			function *msg {text:['Head over to the valve on top of the ',{text:'Mixer',color:gold},' and right click it to pour the batter into the pan!']}
+			function *msg {text:['Interact with the valve on top of the ',{text:'Mixer',color:gold},' to pour the batter into the pan!']}
 			execute as @e[tag=mixer,scores={mixer_state=4}] at @s positioned ^ ^14 ^9 run function tutorial:summon_marker
 			function tutorial:steps/6
 		}
 	}
 
 	function 6 {
-		
+		# Any pan with batter in it exists
+		execute unless entity @e[tag=pan,tag=batter] run return run schedule function ^0 1t
+
+		function tutorial:remove_all_markers
+		function sequence:reset
+		tellraw @a '\n\n\n'
+		function *msg {text:['Fantastic! Now that the pan is filled with batter, we can bake it!']}
+		sequence 40t {
+			function *msg {text:['Drive the pan over to one of the ',{text:Ovens,color:gold},' and drop it off inside.']}
+			execute positioned -28 11 -16 run function tutorial:summon_marker
+			execute positioned -28 11 0 run function tutorial:summon_marker
+			execute positioned -28 11 16 run function tutorial:summon_marker
+			function tutorial:steps/7
+		}
 	}
+
+	function 7 {
+		# Any oven has a pan in it
+		scoreboard players set #check i 0
+		execute as @e[tag=aj.oven.node.cake_lock_point] on passengers if entity @s[tag=pan,tag=batter] run scoreboard players set #check i 1
+		execute if score #check i matches 0 run return run schedule function ^0 1t
+
+		function tutorial:remove_all_markers
+		sequence reset
+		tellraw @a '\n\n\n'
+		function *msg {text:['Now we just wait a moment for the cake to bake...']}
+		scoreboard players set @e[type=minecraft:armor_stand,tag=pan,tag=batter] cook_time 1100
+		function tutorial:steps/8
+	}
+
+	function 8 {
+		# Any pan has a baked layer in it
+		execute unless entity @e[tag=pan,tag=batter,tag=baked] run return run schedule function ^0 1t
+
+		function tutorial:remove_all_markers
+		sequence reset
+		tellraw @a '\n\n\n'
+		function *msg {text:['Great! Now that the cake is baked, we can frost it!']}
+
+		sequence 40t {
+			function *msg {text:['Drive the newly baked cake over to the ',{text:'Frosting Table',color:gold},' and drop it off.']}
+			execute positioned 34 12 10 run function tutorial:summon_marker
+			function tutorial:steps/9
+		}
+	}
+
+	function 9 {
+		# The frosting table has a pan on it
+		execute positioned 34 2 10 unless entity @e[tag=pan,tag=baked,distance=..1] run return run schedule function ^0 1t
+
+		function tutorial:remove_all_markers
+		sequence reset
+		tellraw @a '\n\n\n'
+		function *msg {text:['Awesome! Now that the cake is on the frosting table, we can go make some frosting!']}
+		sequence 40t {
+			function *msg {text:[ \
+				'Insert the following ingredients into one of the ',{text:'Frosting Mixer\'s',color:gold},' mixing bowls:', \
+				{text:'\n    - 1x Sugar',color:gold},{text:'\n    - 1x Flavor Ingredient (Vanilla, Chocolate, or Strawberry)',color:gold}, \
+				{text:'\nMake sure you check the order board above the ovens to see which flavor of frosting you need!',color:red,italic:true} \
+			]}
+			execute as @e[tag=frosting_mixer] at @s positioned ~ ~17 ~ run function tutorial:summon_marker
+			function tutorial:steps/10
+		}
+	}
+
+	function 10 {
+		# TODO: Add the step for inserting milk!
+		# Any frosting mixer starts animating
+		execute unless entity @e[tag=frosting_mixer,scores={frosting_mixer_state=-1}] run return run schedule function ^0 1t
+
+		function tutorial:remove_all_markers
+		sequence reset
+		tellraw @a '\n\n\n'
+		function *msg {text:['Fantastic! Let\'s let that mix for a moment...']}
+		scoreboard players set @e[type=minecraft:armor_stand,tag=frosting_mixer] mix_count 1
+		function tutorial:steps/11
+	}
+
+	function 11 {
+		# Any frosting ingredient exists
+		scoreboard players set #check i 0
+		execute if entity @e[type=minecraft:armor_stand,tag=ingredient_vanilla_frosting] run scoreboard players set #check i 1
+		execute if entity @e[type=minecraft:armor_stand,tag=ingredient_chocolate_frosting] run scoreboard players set #check i 1
+		execute if entity @e[type=minecraft:armor_stand,tag=ingredient_strawberry_frosting] run scoreboard players set #check i 1
+		execute if score #check i matches 0 run return run schedule function ^0 1t
+
+		function tutorial:remove_all_markers
+		sequence reset
+		tellraw @a '\n\n\n'
+		function *msg {text:['Great! Now that the frosting is mixed, we can take it over to the frosting table!']}
+		sequence 40t {
+			function *msg {text:['Pick up the freshly mixed frosting and drop it on the counter next to the frosting table.']}
+			execute positioned 34 12 19 run function tutorial:summon_marker
+			function tutorial:steps/12
+		}
+	}
+
+	function 12 {
+		# The frosting table has frosting on it
+		execute unless entity @e[tag=static_pipette] run return run schedule function ^0 1t
+
+		function tutorial:remove_all_markers
+		sequence reset
+		tellraw @a '\n\n\n'
+		function *msg {text:['Brilliant! Now that the frosting is on the table, we can frost the cake!']}
+		sequence 40t {
+			function *msg {text:['Jump on top of the frosting bag repeatedly to apply it to the cake!']}
+			execute positioned 34 12 19 run function tutorial:summon_marker
+			function tutorial:steps/13
+		}
+	}
+
+	function 13 {
+		# Any cake pan has a frosted cake in it
+		execute unless entity @e[tag=pan,tag=baked,tag=frosted] run return run schedule function ^0 1t
+
+		function tutorial:remove_all_markers
+		sequence reset
+		tellraw @a '\n\n\n'
+		function *msg {text:['Wow, that looks ',{text:delicious,color:gold,italic:true},'! Now we can take the cake over to the ',{text:'Cake Launcher',color:gold},' to see if ',{text:'His Immenseness, William Cornelius Grumblethorn III',color:green},' will accept our humble offering!']}
+
+		sequence 80t {
+			function *msg {text:['Drive the cake over to the ',{text:'Cake Launcher',color:gold},' and load it up!']}
+			execute as @e[tag=launcher] at @s positioned ~ ~10 ~ run function tutorial:summon_marker
+			function tutorial:steps/14
+		}
+	}
+
+	function 14 {
+		# The cake launcher has a cake in it
+		scoreboard players set #check i 0
+		execute as @e[tag=aj.launcher.entity,tag=pan_lock_point] on passengers if entity @s[tag=pan,tag=baked,tag=frosted] run scoreboard players set #check i 1
+		execute if score #check i matches 0 run return run schedule function ^0 1t
+
+		function tutorial:remove_all_markers
+		sequence reset
+		tellraw @a '\n\n\n'
+		function *msg {text:['Perfect! Look at that cake fly!']}
+		sequence 80t {
+			function *msg {text:['The launcher will automatically launch the cake when loaded with the correct flavor, and incinerate the cake if it\'s wrong!']}
+			execute positioned 0 1 13 run function tutorial:summon_marker
+			function tutorial:steps/15
+		}
+		sequence 60t {
+			function *msg {text:['That concludes the your training!', ' Don\'t get yourself eaten!']}
+		}
+		sequence 120t {
+			function tutorial:end
+		}
+	}
+}
+
+function end {
+	function map:reset
 }
 
 function msg {

@@ -183,6 +183,7 @@ function frost {
 			function animated_java:pan/animations/frost3/play
 			playsound minecraft:block.note_block.bell block @a ~ ~ ~ 2 1
 			particle minecraft:happy_villager ~ ~3 ~ 2.5 0.25 2.5 1 20 force
+			function static_pipette:remove
 			execute on vehicle on vehicle run tag @s add frosted
 		}
 		execute if score #this frosting_amount matches 3 run {

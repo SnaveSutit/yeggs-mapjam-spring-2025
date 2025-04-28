@@ -96,7 +96,6 @@ function on_tick minecraft:tick {
 			}
 			tag @s remove this_mixer
 			execute if score #ingredient_type i matches 0.. run {
-				say Adding ingredient
 				execute if score #ingredient_type i matches 0 run {
 					tag @s add contains_milk
 					function animated_java:mixer/variants/complete_milk/apply
@@ -131,9 +130,7 @@ function on_tick minecraft:tick {
 				function mixer:update_fill
 				# Check for complete recipe
 				execute if entity @s[tag=contains_milk,tag=contains_flour,tag=contains_sugar,tag=contains_eggs] run {
-					say Checking for complete recipe
 					execute if entity @s[tag=contains_vanilla] run {
-						say "Vanilla recipe!"
 						function animated_java:mixer/animations/close_lid/play
 						scoreboard players set @s mixing_needed 100
 						scoreboard players set @s mixer_state 1
@@ -141,7 +138,6 @@ function on_tick minecraft:tick {
 						tag @s add vanilla_batter
 					}
 					execute if entity @s[tag=contains_chocolate] run {
-						say "Chocolate recipe!"
 						function animated_java:mixer/animations/close_lid/play
 						scoreboard players set @s mixing_needed 100
 						scoreboard players set @s mixer_state 1
@@ -149,7 +145,6 @@ function on_tick minecraft:tick {
 						tag @s add chocolate_batter
 					}
 					execute if entity @s[tag=contains_berries] run {
-						say "Berry recipe!"
 						function animated_java:mixer/animations/close_lid/play
 						scoreboard players set @s mixing_needed 100
 						scoreboard players set @s mixer_state 1
@@ -220,11 +215,9 @@ dir valve {
 				execute on vehicle if entity @s[tag=berry_batter] as @n[tag=pan,distance=..6] run function pan:fill_batter {flavor:"strawberry"}
 				execute as @n[tag=pan,distance=..6] run {
 					scoreboard players set #check i 1
-					say "Fill pan success!"
 					function mixer:clear_batter_tags
 				}
 				execute if score #check i matches 0 run {
-					say "Fill pan failed!"
 					function mixer:clear_batter_tags
 				}
 			}

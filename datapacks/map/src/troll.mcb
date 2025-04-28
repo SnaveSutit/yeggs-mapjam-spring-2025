@@ -51,10 +51,13 @@ function get_mad {
 	scoreboard players remove #troll_patience i 1
 	execute store result bossbar troll:patience value run scoreboard players get #troll_patience i
 	execute if score #troll_patience i matches 1.. run {
-		execute store result score #random i run random value 0..2
-		execute if score #random i matches 0 run tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {"text":"You are taking too long!","color":"red"}]
+		execute store result score #random i run random value 0..5
+		execute if score #random i matches 0 run tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {text:"You are taking too long!",color:red}]
 		execute if score #random i matches 1 run tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {text:"I ain't got nothin' to eat!",color:red}]
 		execute if score #random i matches 2 run tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {text:"I am starving!",color:red}]
+		execute if score #random i matches 3 run tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {text:"Are you even trying?",color:red}]
+		execute if score #random i matches 4 run tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {text:"Stop slacking and get me my cake!",color:red}]
+		execute if score #random i matches 5 run tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {text:"Where's my cake?!",color:red}]
 		playsound minecraft:entity.villager.ambient block @a ~ ~ ~ 10 0.1
 		schedule function troll:consume 30s
 	}

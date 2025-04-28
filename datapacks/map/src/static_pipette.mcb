@@ -6,27 +6,39 @@ function on_load minecraft:load {
 }
 
 function summon {
+	function static_pipette:remove
+	data remove storage map:frosting data.frosting
 	execute positioned 34 6 20.0 rotated 180 0 run function animated_java:static_pipette/summon {args:{}}
-	data modify storage map:frosting data.frosting set value 'vanilla'
+	fill 33 6 16 35 6 21 barrier
+}
+
+function remove {
+	function animated_java:static_pipette/remove/entities
+	fill 33 6 16 35 6 21 air
 }
 
 function on_tick minecraft:tick {
-	execute as @e[type=minecraft:item_display,tag=static_pipette,limit=1] at @s run {
+	execute positioned 34 6 20.0 run {
 		execute align xyz positioned ~-1 ~1 ~-3 as @e[type=minecraft:armor_stand,tag=ingredient,dx=2,dy=0,dz=4] run {
 			execute if entity @s[tag=ingredient_vanilla_frosting] run return run {
-				function static_pipette:set_frosting {frosting:vanilla}
 				function util:kill_stacked_entities
+				function static_pipette:summon
+				function static_pipette:set_frosting {frosting:vanilla}
 			}
 			execute if entity @s[tag=ingredient_chocolate_frosting] run return run {
-				function static_pipette:set_frosting {frosting:chocolate}
 				function util:kill_stacked_entities
+				function static_pipette:summon
+				function static_pipette:set_frosting {frosting:chocolate}
 			}
 			execute if entity @s[tag=ingredient_strawberry_frosting] run return run {
-				function static_pipette:set_frosting {frosting:strawberry}
 				function util:kill_stacked_entities
+				function static_pipette:summon
+				function static_pipette:set_frosting {frosting:strawberry}
 			}
 		}
+	}
 
+	execute as @e[type=minecraft:item_display,tag=static_pipette,limit=1] at @s run {
 		execute align xyz positioned ~-1 ~1 ~-3 run {
 			execute if score #static_pipette i matches 0 if entity @a[dx=2,dy=0,dz=4] run return run {
 				function animated_java:static_pipette/animations/squish/play
