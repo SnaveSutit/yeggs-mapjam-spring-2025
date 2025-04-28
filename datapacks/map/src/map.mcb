@@ -17,6 +17,8 @@ function on_load minecraft:load {
 
 	setworldspawn 0 35 41 90
 
+	scoreboard players set #current_tick i 0
+
 	tellraw @a {"text":"Map reloaded!","color":"green"}
 
 	# schedule function map:reset 10t
@@ -35,6 +37,7 @@ function stop {
 
 
 function on_tick minecraft:tick {
+	scoreboard players add #current_tick i 1
 	# Tutorial Button
 	execute if block -5 35 43 minecraft:birch_button[powered=true] run {
 		function map:hide_buttons
@@ -87,6 +90,7 @@ function set_scale {
 	$attribute @s minecraft:safe_fall_distance modifier add scaled $(scale) add_multiplied_base
 }
 
+
 function reset {
 	tellraw @a {text:'Resetting Map...',color:yellow}
 	function map:hide_buttons
@@ -105,7 +109,7 @@ function reset {
 		# Forklift
 		execute positioned -20 1 -18 rotated 180 0 run function forklift:summon
 		# Pan Dispenser
-		execute positioned -19 2 -34 run function pan:create_dispenser
+		execute positioned -18 2 -34 run function pan:create_dispenser
 		# Ovens
 		execute positioned -35 1 -16 rotated -90 0 run function ovens:summon
 		execute positioned -35 1 0 rotated -90 0 run function ovens:summon

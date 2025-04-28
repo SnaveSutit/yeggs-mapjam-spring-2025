@@ -4,7 +4,7 @@ function on_load minecraft:load {
 
 function summon {
 	#ARGS: {type: string}
-	$execute align xyz positioned ~.5 ~ ~.5 rotated ~ 0 run function animated_java:ingredient_$(type)/summon {args:{}}
+	$execute align xyz positioned ~.5 ~ ~.5 rotated ~ 0 run function animated_java:ingredient_$(type)/summon {args:{animation:"spawn",start_animation:true}}
 	$execute align xyz positioned ~.5 ~ ~.5 summon minecraft:armor_stand run { {type:$(type)}
 		$tag @s add ingredient_$(type)
 		tag @s add ingredient

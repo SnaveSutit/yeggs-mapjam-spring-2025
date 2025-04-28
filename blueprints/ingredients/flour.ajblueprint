@@ -298,6 +298,65 @@
 		},
 		"list": []
 	},
-	"animations": [],
+	"animations": [
+		{
+			"uuid": "9f30dd18-0ff1-a523-73c6-ab6efc7c6dbd",
+			"name": "spawn",
+			"loop": "hold",
+			"override": false,
+			"length": 0.4,
+			"snapping": 20,
+			"selected": true,
+			"saved": false,
+			"path": "",
+			"anim_time_update": "",
+			"blend_weight": "",
+			"start_delay": "",
+			"loop_delay": "0",
+			"excluded_nodes": [],
+			"animators": {
+				"7d7c1d88-d5cf-c11a-df17-f487580c5099": {
+					"name": "flour",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "scale",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "0",
+									"z": "0"
+								}
+							],
+							"uuid": "3fcdbdd4-e9e3-d843-8f7c-dcdb1cc85d85",
+							"time": 0,
+							"color": -1,
+							"uniform": true,
+							"interpolation": "linear",
+							"easing": "linear",
+							"easingArgs": []
+						},
+						{
+							"channel": "scale",
+							"data_points": [
+								{
+									"x": "1",
+									"y": "1",
+									"z": "1"
+								}
+							],
+							"uuid": "676db3f4-ce1b-8849-e154-7be1d580958c",
+							"time": 0.4,
+							"color": -1,
+							"uniform": true,
+							"interpolation": "linear",
+							"easing": "easeOutBack",
+							"easingArgs": [1]
+						}
+					]
+				}
+			}
+		}
+	],
 	"animation_controllers": []
 }

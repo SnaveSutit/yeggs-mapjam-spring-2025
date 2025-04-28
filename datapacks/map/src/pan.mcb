@@ -17,7 +17,7 @@ function summon {
 			data merge entity @s {width:0, height:-1.95}
 			ride @s mount @n[type=minecraft:armor_stand,tag=new,distance=..0.01]
 
-			execute rotated 0 0 run function animated_java:pan/summon {args:{animation:"empty",variant:"empty"}}
+			execute rotated 0 0 run function animated_java:pan/summon {args:{animation:"empty",start_animation:true,variant:"empty"}}
 			execute as @n[type=minecraft:item_display,tag=aj.pan.root,distance=..1] run {
 				tag @s add pan_model
 				execute on passengers unless entity @s[tag=aj.global.data] run data modify entity @s view_range set value 2

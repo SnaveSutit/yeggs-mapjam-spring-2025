@@ -189,10 +189,12 @@ function on_interaction {
 
 function fill_lid {
 	fill ~5.5 ~7 ~5.5 ~-5.5 ~7 ~-5.5 minecraft:barrier
+	execute positioned ~6 ~7 ~-6 run fill ~ ~ ~ ~ ~11 ~11 minecraft:air
 }
 
 function clear_lid {
 	fill ~5.5 ~7 ~5.5 ~-5.5 ~7 ~-5.5 minecraft:air
+	execute positioned ~6 ~7 ~-6 run fill ~ ~ ~ ~ ~11 ~11 minecraft:barrier
 }
 
 dir valve {
