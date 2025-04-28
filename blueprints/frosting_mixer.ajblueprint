@@ -2869,13 +2869,18 @@
 			"excluded_nodes": [
 				{
 					"icon": "folder",
-					"name": "milk_badge",
-					"value": "ccb1d650-878a-f7eb-9c31-8f3662130ee2"
+					"name": "sugar_item",
+					"value": "c5e0a0af-81eb-2f7a-67a7-98944d862bef"
 				},
 				{
 					"icon": "folder",
 					"name": "base",
 					"value": "2619ee3c-cf65-0c5f-89e6-e1fe09dd9231"
+				},
+				{
+					"icon": "folder",
+					"name": "sugar_scaler",
+					"value": "18b062e2-5b98-5efb-9884-511b83782e71"
 				},
 				{
 					"icon": "folder",
@@ -2901,6 +2906,11 @@
 					"icon": "folder",
 					"name": "milk_sucker",
 					"value": "7935a3d4-f679-d3e5-3d73-d66dcce2d459"
+				},
+				{
+					"icon": "folder",
+					"name": "milk_badge",
+					"value": "ccb1d650-878a-f7eb-9c31-8f3662130ee2"
 				},
 				{
 					"icon": "folder",

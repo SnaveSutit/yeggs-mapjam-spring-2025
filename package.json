@@ -1,6 +1,6 @@
 {
-	"projectId": "world-template",
-	"projectName": "World Template",
+	"projectId": "Pocket-sized Pastry Panic",
+	"projectName": "Pocket-sized Pastry Panic",
 	"version": "1.0.0",
 	"scripts": {
 		"package": "ts-node ./.tools/package.ts",
