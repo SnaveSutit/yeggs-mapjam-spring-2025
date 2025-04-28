@@ -44,7 +44,7 @@ function set_scale {
 
 function reset {
 	kill @e[type=!player]
-	schedule 10t {
+	schedule 1t {
 		function troll:summon
 		function troll:reset
 		function orders:summon
@@ -128,6 +128,13 @@ dir fan {
 }
 
 function game_over {
-	title @a times 20 50 20
-	title @a title {text:"Game Over!",color:red}
+	title @a times 10 80 10
+	title @a title ["",{text:"\ua000",font:"cooking:custom"},{translate:"space.-1"},{text:"\ua000",font:"cooking:custom"},{translate:offset.-256,with:[{text:"Game Over!",color:red}]}]
+	execute as @a at @s run {
+		playsound minecraft:entity.generic.eat block @s ~ ~ ~ 10 0.1
+	}
+	schedule 80t {
+		tp @a 2 7 46 180 0
+		gamemode adventure @a
+	}
 }

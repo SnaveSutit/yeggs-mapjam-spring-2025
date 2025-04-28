@@ -3,7 +3,7 @@
 		"format": "animated_java_blueprint",
 		"format_version": "1.6.5",
 		"uuid": "586fa647-229a-6709-ae35-650464ea057c",
-		"save_location": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\blueprints\\ingredients\\sugar.ajblueprint",
+		"save_location": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\blueprints\\ingredients\\sugar.ajblueprint",
 		"last_used_export_namespace": "ingredient_sugar"
 	},
 	"blueprint_settings": {
@@ -191,10 +191,10 @@
 	"textures": [
 		{
 			"path": "",
-			"name": "sugar",
+			"name": "sugar.png",
 			"folder": "block",
 			"namespace": "",
-			"id": "1",
+			"id": "0",
 			"group": "",
 			"width": 64,
 			"height": 64,

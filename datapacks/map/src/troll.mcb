@@ -69,6 +69,6 @@ function game_over {
 
 	gamemode spectator @a
 	execute as @a run spectate @n[type=item_display,tag=death_anim_player_lock] @s
-
-	function map:game_over
+	# TODO: add a death animation
+	schedule function map:game_over 5s
 }

@@ -125,8 +125,10 @@
 		"ingredient_flour": {
 			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
 			"versionedFiles": [
+				"assets/animated_java/items/blueprint/ingredient_flour/bone.json",
 				"assets/animated_java/items/blueprint/ingredient_flour/flour.json",
 				"assets/animated_java/items/empty.json",
+				"assets/animated_java/models/blueprint/ingredient_flour/bone.json",
 				"assets/animated_java/models/blueprint/ingredient_flour/flour.json",
 				"assets/animated_java/models/empty.json",
 				"assets/animated_java/textures/blueprint/ingredient_flour/flour.png"
@@ -448,6 +450,18 @@
 				"assets/animated_java/models/blueprint/troll/waist.json",
 				"assets/animated_java/models/empty.json",
 				"assets/animated_java/textures/blueprint/troll/troll.png"
+			]
+		},
+		"tutorial_indicator": {
+			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
+			"versionedFiles": [
+				"assets/animated_java/items/blueprint/tutorial_indicator/top.json",
+				"assets/animated_java/items/blueprint/tutorial_indicator/tutorial_indicator.json",
+				"assets/animated_java/items/empty.json",
+				"assets/animated_java/models/blueprint/tutorial_indicator/top.json",
+				"assets/animated_java/models/blueprint/tutorial_indicator/tutorial_indicator.json",
+				"assets/animated_java/models/empty.json",
+				"assets/animated_java/textures/blueprint/tutorial_indicator/texture.png"
 			]
 		}
 	}
