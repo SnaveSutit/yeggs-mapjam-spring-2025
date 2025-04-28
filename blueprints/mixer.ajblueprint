@@ -853,8 +853,8 @@
 			"light_emission": 0,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
-			"from": [-88, 24, -88],
-			"to": [88, 112, 88],
+			"from": [-92, 20, -92],
+			"to": [92, 112, 92],
 			"autouv": 0,
 			"color": 6,
 			"origin": [1000, 0, 0],
@@ -876,12 +876,12 @@
 					"texture": 19
 				},
 				"up": {
-					"uv": [192, 96, 0, 288],
-					"texture": 19
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				},
 				"down": {
-					"uv": [192, 96, 0, 288],
-					"texture": 19
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				}
 			},
 			"type": "cube",
@@ -1184,6 +1184,48 @@
 			},
 			"type": "cube",
 			"uuid": "5afa435e-7447-18a2-45b6-19f611f06756"
+		},
+		{
+			"name": "cube",
+			"box_uv": false,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-92, 112, -92],
+			"to": [92, 20, 92],
+			"autouv": 0,
+			"color": 6,
+			"origin": [1000, 40, 0],
+			"faces": {
+				"north": {
+					"uv": [0, 96, 192, 0],
+					"texture": 19
+				},
+				"east": {
+					"uv": [0, 96, 192, 0],
+					"texture": 19
+				},
+				"south": {
+					"uv": [0, 96, 192, 0],
+					"texture": 19
+				},
+				"west": {
+					"uv": [0, 96, 192, 0],
+					"texture": 19
+				},
+				"up": {
+					"uv": [192, 288, 0, 96],
+					"texture": 19
+				},
+				"down": {
+					"uv": [192, 288, 0, 96],
+					"texture": 19
+				}
+			},
+			"type": "cube",
+			"uuid": "2348dd63-b0d1-5925-a2b1-44c32942541c"
 		}
 	],
 	"outliner": [
@@ -1205,6 +1247,9 @@
 			"children": [
 				"9f9d3d83-5e6d-108d-e13e-1a076d43aad6",
 				"ad7f31bd-8123-3493-4ab1-0b16a4241a30",
+				"2348dd63-b0d1-5925-a2b1-44c32942541c",
+				"c26f85ed-3632-44c0-d350-b28d69d8c3c5",
+				"3c55a9cd-9a4d-5f55-461d-ad7768a71fb4",
 				{
 					"name": "batter",
 					"origin": [0, 1, 0],
@@ -1241,8 +1286,6 @@
 						"60d578b4-2fbd-b9d0-3700-88c2ce7ed6f1",
 						"4227a248-c60e-cf4b-0cb8-9040ba9885f8",
 						"6587b4e7-3c10-1937-bfde-3313da4ee93f",
-						"3c55a9cd-9a4d-5f55-461d-ad7768a71fb4",
-						"c26f85ed-3632-44c0-d350-b28d69d8c3c5",
 						{
 							"name": "handle",
 							"origin": [0, 128, 0],
@@ -2318,7 +2361,7 @@
 			"override": false,
 			"length": 2,
 			"snapping": 20,
-			"selected": true,
+			"selected": false,
 			"saved": false,
 			"path": "",
 			"anim_time_update": "",
@@ -2679,7 +2722,7 @@
 			"override": false,
 			"length": 2,
 			"snapping": 20,
-			"selected": false,
+			"selected": true,
 			"saved": false,
 			"path": "",
 			"anim_time_update": "",
