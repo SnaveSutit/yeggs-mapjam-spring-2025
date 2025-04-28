@@ -45,6 +45,7 @@ function set_scale {
 function reset {
 	kill @e[type=!player]
 	schedule 10t {
+		function troll:reset
 		function orders:summon
 		# Forklift
 		execute positioned -20 1 -18 rotated 180 0 run function forklift:summon
@@ -58,8 +59,8 @@ function reset {
 		execute positioned 34.0 6 -19.0 rotated 90 0 run function mixer:summon
 		execute positioned 34.0 6 -2.0 rotated 90 0 run function mixer:summon
 		# Frosting Mixers
-		execute positioned 13 1 34 rotated 180 0 run function frosting_mixer:summon
-		# execute positioned -13 1 34 rotated 180 0 run function frosting_mixer:summon
+		execute positioned 13 1 31 rotated 180 0 run function frosting_mixer:summon
+		execute positioned -13 1 31 rotated 180 0 run function frosting_mixer:summon
 		# Frosting Station
 		function static_pipette:summon
 		execute positioned 34 3 10 run function static_pipette:create_lock_point
@@ -123,4 +124,9 @@ dir fan {
 			} 
 		}
 	}
+}
+
+function game_over {
+	title @a times 20 50 20
+	title @a title {text:"Game Over!",color:red}
 }

@@ -3,7 +3,7 @@ function on_load minecraft:load {
 }
 
 function on_join {
-	attribute @s minecraft:movement_speed base set 0.2
+	attribute @s minecraft:movement_speed base set 0.18
 	scoreboard players set @s leave_game 0
 }
 

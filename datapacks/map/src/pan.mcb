@@ -111,6 +111,10 @@ function on_tick minecraft:tick {
 		scoreboard players set #check i 0
 		execute on vehicle run scoreboard players set #check i 1
 		execute if score #check i matches 0 if entity @n[type=minecraft:item_display,tag=pan_lock_point,distance=..4] run {
+			scoreboard players set #has_passenger i 0
+			execute as @n[type=minecraft:item_display,tag=pan_lock_point,distance=..4] on passengers run scoreboard players set #has_passenger i 1
+			execute if score #has_passenger i matches 1 run return fail
+
 			execute on passengers on passengers if entity @s[tag=aj.pan.root] run function util:snap_rotation
 			ride @s mount @n[type=minecraft:item_display,tag=pan_lock_point,distance=..4]
 		}

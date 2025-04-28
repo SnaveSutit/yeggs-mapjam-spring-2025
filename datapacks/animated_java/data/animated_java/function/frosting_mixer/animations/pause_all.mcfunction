@@ -7,3 +7,7 @@ tag @s remove aj.frosting_mixer.animation.open.playing
 tag @s remove aj.frosting_mixer.animation.start_mix.playing
 tag @s remove aj.frosting_mixer.animation.mix.playing
 tag @s remove aj.frosting_mixer.animation.end_mix.playing
+tag @s remove aj.frosting_mixer.animation.hide_ingredient_badges.playing
+tag @s remove aj.frosting_mixer.animation.show_ingredient_badges.playing
+tag @s remove aj.frosting_mixer.animation.show_sugar_ingredient_check.playing
+tag @s remove aj.frosting_mixer.animation.show_flavor_ingredient_check.playing

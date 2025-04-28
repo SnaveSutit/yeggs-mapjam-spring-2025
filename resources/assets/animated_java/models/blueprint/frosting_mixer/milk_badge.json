@@ -1,0 +1,48 @@
+{
+	"textures": {
+		"5": "animated_java:blueprint/frosting_mixer/badge_background",
+		"particle": "minecraft:item/pufferfish"
+	},
+	"display": {
+		"head": {
+			"rotation": [0, 180, 0]
+		}
+	},
+	"elements": [
+		{
+			"from": [-4, -16, -4],
+			"to": [4, -8, -4],
+			"rotation": {
+				"angle": 0,
+				"axis": "y",
+				"origin": [-4, -16, -4]
+			},
+			"faces": {
+				"north": {
+					"uv": [0, 0, 8, 8],
+					"texture": "#5"
+				},
+				"east": {
+					"uv": [0, 0, 0, 16],
+					"texture": "#5"
+				},
+				"south": {
+					"uv": [0, 8, 8, 16],
+					"texture": "#5"
+				},
+				"west": {
+					"uv": [0, 0, 0, 16],
+					"texture": "#5"
+				},
+				"up": {
+					"uv": [0, 0, 16, 0],
+					"texture": "#5"
+				},
+				"down": {
+					"uv": [0, 0, 16, 0],
+					"texture": "#5"
+				}
+			}
+		}
+	]
+}

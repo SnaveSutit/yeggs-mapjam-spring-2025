@@ -8,4 +8,4 @@ $data merge entity $(bone_flour) {transformation: [-1f,0f,0f,-1.5f,0f,1f,0f,11.5
 $data merge entity $(bone_sugar) {transformation: [-1f,0f,0f,0f,0f,1f,0f,11.5f,0f,0f,-1f,0f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(bone_eggs) {transformation: [-1f,0f,0f,1.5f,0f,1f,0f,11.5f,0f,0f,-1f,0f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(bone_flavor) {transformation: [-1f,0f,0f,3f,0f,1f,0f,11.5f,0f,0f,-1f,0f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
-data modify entity @s item.components."minecraft:custom_data" merge value {"locators":{"handle_zone":{"posx":8.572527594031471e-16,"posy":9.5,"posz":-6.999999999999999,"roty":0,"rotx":-90},"spout_output":{"posx":-1.102182119232618e-15,"posy":-3,"posz":9,"roty":0,"rotx":0}},"cameras":{}}
+data modify entity @s item.components."minecraft:custom_data" merge value {"cameras":{},"locators":{"handle_zone":{"posx":8.572527594031471e-16,"posy":9.5,"posz":-6.999999999999999,"roty":0,"rotx":-90},"spout_output":{"posx":-1.102182119232618e-15,"posy":-3,"posz":9,"roty":0,"rotx":0}}}

@@ -6,4 +6,7 @@ execute on passengers if entity @s[tag=aj.frosting_mixer.bone.lid] run function 
 execute on passengers if entity @s[tag=aj.frosting_mixer.bone.basin] run function animated_java:frosting_mixer/variants/default/zzz/apply_to_bone_basin
 execute on passengers if entity @s[tag=aj.frosting_mixer.bone.milk_sucker] run function animated_java:frosting_mixer/variants/default/zzz/apply_to_bone_milk_sucker
 execute on passengers if entity @s[tag=aj.frosting_mixer.bone.base] run function animated_java:frosting_mixer/variants/default/zzz/apply_to_bone_base
+execute on passengers if entity @s[tag=aj.frosting_mixer.bone.milk_badge] run function animated_java:frosting_mixer/variants/default/zzz/apply_to_bone_milk_badge
+execute on passengers if entity @s[tag=aj.frosting_mixer.bone.sugar] run function animated_java:frosting_mixer/variants/default/zzz/apply_to_bone_sugar
+execute on passengers if entity @s[tag=aj.frosting_mixer.bone.flavor] run function animated_java:frosting_mixer/variants/default/zzz/apply_to_bone_flavor
 return 1

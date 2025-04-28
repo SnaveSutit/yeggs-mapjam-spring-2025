@@ -6,3 +6,7 @@ scoreboard objectives add aj.open.frame dummy
 scoreboard objectives add aj.start_mix.frame dummy
 scoreboard objectives add aj.mix.frame dummy
 scoreboard objectives add aj.end_mix.frame dummy
+scoreboard objectives add aj.hide_ingredient_badges.frame dummy
+scoreboard objectives add aj.show_ingredient_badges.frame dummy
+scoreboard objectives add aj.show_sugar_ingredient_check.frame dummy
+scoreboard objectives add aj.show_flavor_ingredient_check.frame dummy

@@ -56,7 +56,7 @@ function on_tick minecraft:tick {
 			scoreboard players operation #this ingredient_link_id = @s ingredient_link_id
 			execute store success score #sneaking i if predicate input:key_sneak
 			execute as @n[type=minecraft:armor_stand,tag=ingredient] if score @s ingredient_link_id = #this ingredient_link_id rotated ~ 0 run {
-				tp @s ~ ~2 ~ ~ ~
+				execute rotated ~ 0 run tp @s ^ ^2 ^1 ~ ~
 				execute if score #sneaking i matches 1 run {
 					scoreboard players reset @s ingredient_link_id
 				}
@@ -64,6 +64,20 @@ function on_tick minecraft:tick {
 			execute if score #sneaking i matches 1 run {
 				scoreboard players reset @s ingredient_link_id
 			}
+		}
+	}
+
+	execute as @e[type=minecraft:armor_stand,tag=ingredient_milk] at @s run {
+		# Attempt to attach to nearby lock points
+		scoreboard players set #check i 0
+		execute on vehicle run scoreboard players set #check i 1
+		execute if score #check i matches 0 if entity @n[type=minecraft:item_display,tag=milk_lock_point,distance=..1.5] run {
+			scoreboard players set #has_passenger i 0
+			execute as @n[type=minecraft:item_display,tag=milk_lock_point,distance=..4] on passengers run scoreboard players set #has_passenger i 1
+			execute if score #has_passenger i matches 1 run return fail
+
+			execute on passengers on passengers if entity @s[tag=aj.global.root] run function util:snap_rotation
+			ride @s mount @n[type=minecraft:item_display,tag=milk_lock_point,distance=..4]
 		}
 	}
 }

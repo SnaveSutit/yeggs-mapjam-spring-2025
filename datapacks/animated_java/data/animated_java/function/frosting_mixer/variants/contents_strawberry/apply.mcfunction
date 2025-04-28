@@ -2,4 +2,7 @@
 execute unless entity @s[type=item_display,tag=aj.frosting_mixer.root] run return run function animated_java:global/errors/function_not_executed_as_root_entity {'export_namespace': 'frosting_mixer', 'function_path': 'animated_java:frosting_mixer/variants/contents_strawberry/apply'}
 execute on passengers if entity @s[tag=aj.frosting_mixer.bone.contents] run function animated_java:frosting_mixer/variants/contents_strawberry/zzz/apply_to_bone_contents
 execute on passengers if entity @s[tag=aj.frosting_mixer.bone.basin] run function animated_java:frosting_mixer/variants/contents_strawberry/zzz/apply_to_bone_basin
+execute on passengers if entity @s[tag=aj.frosting_mixer.bone.milk_badge] run function animated_java:frosting_mixer/variants/contents_strawberry/zzz/apply_to_bone_milk_badge
+execute on passengers if entity @s[tag=aj.frosting_mixer.bone.sugar] run function animated_java:frosting_mixer/variants/contents_strawberry/zzz/apply_to_bone_sugar
+execute on passengers if entity @s[tag=aj.frosting_mixer.bone.flavor] run function animated_java:frosting_mixer/variants/contents_strawberry/zzz/apply_to_bone_flavor
 return 1

@@ -4,30 +4,50 @@
 		"property": "minecraft:custom_model_data",
 		"cases": [
 			{
-				"when": "pour_vanilla",
+				"when": "batter_generic",
 				"model": {
 					"type": "minecraft:model",
-					"model": "animated_java:blueprint/mixer/pour_vanilla/flow",
+					"model": "animated_java:blueprint/mixer/batter_generic/flow",
 					"tints": [
 						{"type": "minecraft:dye", "default": [1, 1, 1]}
 					]
 				}
 			},
 			{
-				"when": "pour_chocolate",
+				"when": "batter_vanilla",
 				"model": {
 					"type": "minecraft:model",
-					"model": "animated_java:blueprint/mixer/pour_chocolate/flow",
+					"model": "animated_java:blueprint/mixer/batter_vanilla/flow",
 					"tints": [
 						{"type": "minecraft:dye", "default": [1, 1, 1]}
 					]
 				}
 			},
 			{
-				"when": "pour_strawberry",
+				"when": "batter_chocolate",
 				"model": {
 					"type": "minecraft:model",
-					"model": "animated_java:blueprint/mixer/pour_strawberry/flow",
+					"model": "animated_java:blueprint/mixer/batter_chocolate/flow",
+					"tints": [
+						{"type": "minecraft:dye", "default": [1, 1, 1]}
+					]
+				}
+			},
+			{
+				"when": "batter_strawberry",
+				"model": {
+					"type": "minecraft:model",
+					"model": "animated_java:blueprint/mixer/batter_strawberry/flow",
+					"tints": [
+						{"type": "minecraft:dye", "default": [1, 1, 1]}
+					]
+				}
+			},
+			{
+				"when": "hide_flow",
+				"model": {
+					"type": "minecraft:model",
+					"model": "animated_java:blueprint/mixer/hide_flow/flow",
 					"tints": [
 						{"type": "minecraft:dye", "default": [1, 1, 1]}
 					]

@@ -1,0 +1,53 @@
+
+function on_load minecraft:load {
+	bossbar add troll:patience {text:"His Immenseness' Patience", color:red}
+}
+
+function reset {
+	bossbar set troll:patience players
+	bossbar set troll:patience style notched_6
+	bossbar set troll:patience max 6
+	bossbar set troll:patience value 6
+	bossbar set troll:patience color red
+	schedule clear troll:consume
+}
+
+function begin_consuming {
+	function troll:reset
+	bossbar set troll:patience players @a
+	scoreboard players set #troll_patience i 6
+	schedule function troll:consume 30s
+}
+
+function consume {
+	execute positioned 0 4 0 run {
+		scoreboard players set #satisfied i 0
+		execute as @n[tag=layer,distance=..3] on passengers on passengers if entity @s[tag=aj.layer.root] run {
+			function animated_java:layer/animations/monch/play
+			# TODO: move this to an animation to sync better
+			playsound minecraft:entity.generic.eat block @a 0 3 -11 10 0.1
+			scoreboard players set #satisfied i 1
+		}
+		execute if score #satisfied i matches 0 run function *get_mad
+	}
+	schedule function troll:consume 30s
+}
+
+function get_mad {
+	scoreboard players remove #troll_patience i 1
+	execute store result bossbar troll:patience value run scoreboard players get #troll_patience i
+	execute if score #troll_patience i matches 1.. run {
+		execute store result score #random i run random value 0..2
+		execute if score #random i matches 0 run tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {"text":"You are taking too long!","color":"red"}]
+		execute if score #random i matches 1 run tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {text:"I ain't got nothin' to eat!",color:red}]
+		execute if score #random i matches 2 run tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {text:"I am starving!",color:red}]
+	}
+	execute if score #troll_patience i matches ..0 run {
+		function *game_over
+	}
+}
+
+function game_over {
+	schedule clear troll:consume
+	tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {"text":"That's it! If you can't make my cake fast enough, I'll just be eatin' you instead!","color":"red"}]
+}

@@ -9,11 +9,13 @@ function on_load minecraft:load {
 }
 
 function summon {
-	function animated_java:frosting_mixer/summon {args:{}}
+	function animated_java:frosting_mixer/summon {args:{animation:"hide_ingredient_badges"}}
+	execute as @e[tag=aj.frosting_mixer.bone.ingredient_badges.decendant,distance=..1] run data modify entity @s billboard set value "vertical"
 }
 
 function clear_recipe_tags {
 	tag @s remove contains_sugar
+	tag @s remove contains_flavor
 	function *clear_flavor_tags
 }
 
@@ -57,24 +59,28 @@ function on_tick minecraft:tick {
 		# Waiting for ingredients
 		execute if score @s frosting_mixer_state matches 1 run {
 			tag @s add this
-			execute positioned ~-2.5 ~9 ~-5.5 as @e[tag=ingredient,dx=4,dy=0,dz=4] run {
+			execute positioned ~-2.5 ~9 ~-2.5 as @e[tag=ingredient,dx=4,dy=0,dz=4] run {
 				execute if entity @s[tag=ingredient_sugar] as @n[tag=this,distance=..20] run {
 					tag @s add contains_sugar
+					function animated_java:frosting_mixer/animations/show_sugar_ingredient_check/play
 					function *update_fill
 				}
 				execute if entity @s[tag=ingredient_vanilla] as @n[tag=this,distance=..20] run {
 					tag @s add contains_flavor
 					tag @s add contains_vanilla
+					function animated_java:frosting_mixer/animations/show_flavor_ingredient_check/play
 					function *update_fill
 				}
 				execute if entity @s[tag=ingredient_chocolate] as @n[tag=this,distance=..20] run {
 					tag @s add contains_flavor
 					tag @s add contains_chocolate
+					function animated_java:frosting_mixer/animations/show_flavor_ingredient_check/play
 					function *update_fill
 				}
 				execute if entity @s[tag=ingredient_berries] as @n[tag=this,distance=..20] run {
 					tag @s add contains_flavor
 					tag @s add contains_berries
+					function animated_java:frosting_mixer/animations/show_flavor_ingredient_check/play
 					function *update_fill
 				}
 				execute at @s run playsound minecraft:entity.generic.splash block @a ~ ~ ~ 2 1
@@ -113,9 +119,11 @@ function on_tick minecraft:tick {
 
 function spawn_frosting_pipette {
 	# Must be run as and at the frosting mixer
-	function *clear_recipe_tags
 	say "Spawning frosting pipette..."
-	execute if entity @s[tag=contains_vanilla] run return run
-	execute if entity @s[tag=contains_chocolate] run return run
-	execute if entity @s[tag=contains_berries] run return run
+	execute positioned ~ ~1 ~ run {
+		execute if entity @s[tag=contains_vanilla] run return run function ingredient:summon {type:vanilla_frosting}
+		execute if entity @s[tag=contains_chocolate] run return run function ingredient:summon {type:chocolate_frosting}
+		execute if entity @s[tag=contains_berries] run return run function ingredient:summon {type:strawberry_frosting}
+	}
+	function *clear_recipe_tags
 }

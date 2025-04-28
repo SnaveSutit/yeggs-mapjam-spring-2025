@@ -2,5 +2,6 @@
 execute unless entity @s[tag=aj.layer.root] run return 0
 function #animated_java:layer/as_root/pre_tick
 execute if entity @s[tag=aj.layer.animation.launched.playing] run function animated_java:layer/animations/launched/zzz/on_tick
+execute if entity @s[tag=aj.layer.animation.monch.playing] run function animated_java:layer/animations/monch/zzz/on_tick
 execute at @s on passengers run rotate @s ~ ~
 function #animated_java:layer/as_root/post_tick
