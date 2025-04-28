@@ -7,6 +7,7 @@ function on_load minecraft:load {
 
 function summon {
 	function static_pipette:remove
+	scoreboard players set #static_pipette i 0
 	data remove storage map:frosting data.frosting
 	execute positioned 34 6 20.0 rotated 180 0 run function animated_java:static_pipette/summon {args:{}}
 	fill 33 6 16 35 6 21 barrier

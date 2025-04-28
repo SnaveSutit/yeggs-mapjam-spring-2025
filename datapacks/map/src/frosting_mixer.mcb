@@ -51,6 +51,10 @@ function update_fill {
 
 function on_tick minecraft:tick {
 	execute as @e[type=minecraft:item_display,tag=frosting_mixer] at @s run {
+		tag @s add this
+		# Remove players who fall in
+		execute positioned ~-2.5 ~9 ~-2.5 as @a[dx=4,dy=0,dz=4] at @n[tag=this,distance=..10] run tp @s ~ ~2 ~
+
 		execute if score @s frosting_mixer_state matches 0 run {
 			function animated_java:frosting_mixer/animations/open/play
 			scoreboard players set @s frosting_mixer_state -1
@@ -58,7 +62,6 @@ function on_tick minecraft:tick {
 
 		# Waiting for ingredients
 		execute if score @s frosting_mixer_state matches 1 run {
-			tag @s add this
 
 			execute positioned ~-2.5 ~9 ~-2.5 as @e[tag=ingredient,dx=4,dy=0,dz=4] run {
 				execute if entity @s[tag=ingredient_sugar] as @n[tag=this,distance=..20] run {
@@ -87,7 +90,6 @@ function on_tick minecraft:tick {
 				execute at @s run playsound minecraft:entity.generic.splash block @a ~ ~ ~ 2 1
 				function util:kill_stacked_entities
 			}
-			tag @s remove this
 
 			execute if entity @s[tag=contains_sugar,tag=contains_flavor] run {
 				# Check for milk
@@ -122,6 +124,7 @@ function on_tick minecraft:tick {
 			function animated_java:frosting_mixer/animations/end_mix/play
 			scoreboard players set @s frosting_mixer_state -1
 		}
+		tag @s remove this
 	}
 }
 

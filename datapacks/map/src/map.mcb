@@ -27,6 +27,8 @@ function on_load minecraft:load {
 function start {
 	scoreboard players set #game_in_progress i 1
 	tellraw @a {text:'Starting Game...',color:green}
+	execute as @a run function map:teleport_to_game
+	function troll:begin_consuming
 }
 
 
@@ -156,12 +158,12 @@ dir fan {
 	function on_tick minecraft:tick {
 		execute as @e[type=minecraft:item_display,tag=fan] at @s positioned ~-1 ~ ~-1 run {
 			particle minecraft:white_smoke ~1 ~5 ~1 0.5 3 0.5 0 1
-			execute as @a[dx=2,dy=15,dz=2] run {
-				effect give @s minecraft:levitation 1 30 true
-			}
-			execute positioned ~-4 ~18 ~-4 as @a[dx=5,dy=2,dz=5] run {
-				effect clear @s minecraft:levitation
-			} 
+
+			execute as @a[dx=2,dy=15,dz=2] run effect give @s minecraft:levitation 1 30 true
+			execute positioned ~-4 ~18 ~-4 as @a[dx=5,dy=2,dz=5] run effect clear @s minecraft:levitation
+
+			execute as @e[type=minecraft:armor_stand,tag=ingredient,dx=2,dy=15,dz=2] run effect give @s minecraft:levitation 1 30 true
+			execute positioned ~-4 ~18 ~-4 as @e[type=minecraft:armor_stand,tag=ingredient,dx=5,dy=2,dz=5] run effect clear @s minecraft:levitation
 		}
 	}
 }

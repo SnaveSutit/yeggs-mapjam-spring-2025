@@ -73,6 +73,8 @@ function update_fill {
 
 function on_tick minecraft:tick {
 	execute as @e[type=minecraft:item_display,tag=aj.mixer.root] at @s run {
+		tag @s add this_mixer
+		execute positioned ~-5 ~ ~-5 as @a[dx=10,dy=0,dz=10] at @n[tag=this_mixer,distance=..10] positioned ^ ^-1 ^9 run tp @s ~ ~ ~
 
 		execute if score @s mixer_state matches 0 run {
 			function mixer:update_fill
@@ -94,7 +96,6 @@ function on_tick minecraft:tick {
 				execute at @s run playsound minecraft:entity.generic.splash block @a ~ ~ ~ 2 1
 				function util:kill_stacked_entities
 			}
-			tag @s remove this_mixer
 			execute if score #ingredient_type i matches 0.. run {
 				execute if score #ingredient_type i matches 0 run {
 					tag @s add contains_milk
@@ -180,6 +181,7 @@ function on_tick minecraft:tick {
 				scoreboard players set @s mixer_state 4
 			}
 		}
+		tag @s remove this_mixer
 	}
 }
 

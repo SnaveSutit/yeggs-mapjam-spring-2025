@@ -125,7 +125,7 @@ dir steps {
 			function *msg {text:['However, keep in mind you are very small, so you won\'t be able to pick up ',{text:"more than one",color:gold,italic:true},' ingredient at a time!']}
 		}
 		sequence 60t {
-			function *msg {text:['You can pick up the ingredients by right clicking them, or by punching them, and drop them by sneaking, or throw them by right clicking or punching the ingredient!']}
+			function *msg {text:['You can pick up the ingredients by right clicking them, or by punching them, and drop them by sneaking, or throw them by right clicking or punching the ingredient on your head.']}
 		}
 		sequence 80t {
 			function *msg {text:['Transport the required ingredients from the shelf to one of the highlighted ', {text:'Mixers',color:gold}, ' and chuck them into it\'s mixing bowl.',[{text:'\nYou can check the badges on top of the ',color:gray,italic:true},{text:'Mixers',color:gold}, ' to see which ingredients are missing!']]}
