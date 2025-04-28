@@ -21,6 +21,14 @@ function summon {
 				execute on passengers unless entity @s[tag=aj.global.data] run data modify entity @s view_range set value 2
 				ride @s mount @n[tag=mount2,distance=..4]
 			}
+			tag @s remove mount2
+		}
+		execute summon minecraft:interaction run {
+			tag @s add ingredient_offset2
+			data merge entity @s {width:0,height:-2}
+			ride @s mount @n[tag=mount,distance=..4]
+
+			tag @s add mount2
 			execute summon minecraft:interaction run {
 				tag @s add ingredient_interaction
 				data merge entity @s {width:3,height:3,response:true}
