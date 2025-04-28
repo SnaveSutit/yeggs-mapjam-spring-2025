@@ -3,8 +3,8 @@
 		"format": "animated_java_blueprint",
 		"format_version": "1.6.5",
 		"uuid": "7a8dcd9d-0edd-e820-1190-0b024235f67b",
-		"save_location": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\blueprints\\troll.ajblueprint",
-		"last_used_export_namespace": ""
+		"save_location": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\blueprints\\troll.ajblueprint",
+		"last_used_export_namespace": "troll"
 	},
 	"blueprint_settings": {
 		"export_namespace": "troll",
@@ -4451,7 +4451,7 @@
 	"textures": [
 		{
 			"path": "",
-			"name": "troll",
+			"name": "troll.png",
 			"folder": "block",
 			"namespace": "",
 			"id": "0",

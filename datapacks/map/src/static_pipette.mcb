@@ -12,7 +12,7 @@ function summon {
 
 function on_tick minecraft:tick {
 	execute as @e[type=minecraft:item_display,tag=static_pipette,limit=1] at @s run {
-		execute as @e[type=minecraft:armor_stand,distance=..5,tag=ingredient] run {
+		execute align xyz positioned ~-1 ~1 ~-3 as @e[type=minecraft:armor_stand,tag=ingredient,dx=2,dy=0,dz=4] run {
 			execute if entity @s[tag=ingredient_vanilla_frosting] run return run {
 				function static_pipette:set_frosting {frosting:vanilla}
 				function util:kill_stacked_entities

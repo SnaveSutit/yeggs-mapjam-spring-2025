@@ -180,8 +180,6 @@ function on_tick minecraft:tick {
 			execute if score @s mixing_needed matches ..0 run {
 				function animated_java:mixer/animations/mix/pause
 				scoreboard players set @s aj.mix.frame 0
-				title @a times 10 40 10
-				title @a title [{"text":"Mixing Complete!","color":"green"}]
 				playsound minecraft:block.note_block.bell block @a ~ ~ ~ 2
 				scoreboard players set @s mixer_state 4
 			}

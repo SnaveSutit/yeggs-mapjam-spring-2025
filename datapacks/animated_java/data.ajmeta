@@ -2340,6 +2340,39 @@
 				"data/animated_java/tags/function/static_pipette/as_root/post_tick.json",
 				"data/animated_java/tags/function/static_pipette/as_root/pre_tick.json"
 			]
+		},
+		"troll": {
+			"coreFiles": [
+				"data/animated_java/function/global/errors/function_not_executed_as_root_entity.mcfunction",
+				"data/animated_java/function/global/internal/gu/convert_uuid_array_to_string.mcfunction",
+				"data/animated_java/function/global/internal/gu/load.mcfunction",
+				"data/animated_java/function/global/internal/gu/zzz/0.mcfunction",
+				"data/animated_java/function/global/internal/gu/zzz/1.mcfunction",
+				"data/animated_java/function/global/on_load.mcfunction",
+				"data/animated_java/function/global/remove/everything.mcfunction",
+				"data/animated_java/function/troll/invalid_version_warning.mcfunction",
+				"data/animated_java/function/troll/on_load.mcfunction",
+				"data/animated_java/tags/function/global/on_load.json",
+				"data/animated_java/tags/function/global/root/on_tick.json",
+				"data/minecraft/tags/function/load.json",
+				"pack.mcmeta"
+			],
+			"versionedFiles": [
+				"data/animated_java/function/troll/invalid_version_warning.mcfunction",
+				"data/animated_java/function/troll/remove/all.mcfunction",
+				"data/animated_java/function/troll/remove/entities.mcfunction",
+				"data/animated_java/function/troll/remove/this.mcfunction",
+				"data/animated_java/function/troll/root/on_tick.mcfunction",
+				"data/animated_java/function/troll/set_default_pose.mcfunction",
+				"data/animated_java/function/troll/summon.mcfunction",
+				"data/animated_java/function/troll/zzz/0.mcfunction",
+				"data/animated_java/function/troll/zzz/1.mcfunction",
+				"data/animated_java/function/troll/zzz/2.mcfunction",
+				"data/animated_java/tags/function/troll/as_root/on_remove.json",
+				"data/animated_java/tags/function/troll/as_root/on_summon.json",
+				"data/animated_java/tags/function/troll/as_root/post_tick.json",
+				"data/animated_java/tags/function/troll/as_root/pre_tick.json"
+			]
 		}
 	}
 }

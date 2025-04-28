@@ -45,6 +45,7 @@ function set_scale {
 function reset {
 	kill @e[type=!player]
 	schedule 10t {
+		function troll:summon
 		function troll:reset
 		function orders:summon
 		# Forklift

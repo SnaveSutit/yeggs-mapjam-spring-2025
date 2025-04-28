@@ -15,12 +15,12 @@ function summon {
 
 
 function on_tick minecraft:tick {
-	scoreboard players set #forward i 0
-	scoreboard players set #backward i 0
-	scoreboard players set #left i 0
-	scoreboard players set #right i 0
 
 	execute as @n[type=item_display,tag=forklift] at @s run {
+		scoreboard players set #forward i 0
+		scoreboard players set #backward i 0
+		scoreboard players set #left i 0
+		scoreboard players set #right i 0
 
 		function animated_java:forklift/as_own_locator_entities {command:'function forklift:get_player_inputs'}
 

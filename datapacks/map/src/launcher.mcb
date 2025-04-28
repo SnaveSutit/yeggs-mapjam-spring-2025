@@ -47,9 +47,10 @@ function on_tick minecraft:tick {
 				playsound minecraft:entity.villager.no block @a ~ ~ ~ 2 0.1
 				particle minecraft:explosion_emitter ~ ~ ~
 				tellraw @a [ \
-					{"text":"That's not the correct layer!","color":"red"}, \
-					{"text":"\nThe next layer should be a "}, {"nbt": "queue[0].flavor","storage":"map:sequence","color":"yellow"}, {"text":" cake with "}, \
-					{"nbt": "queue[0].frosting","storage":"map:sequence","color":"yellow"}, {"text": " frosting!"} \
+					"<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", \
+					{"text":"That's not the correct recipe! The next cake layer should be a ","color":"red"}, \
+					{"nbt": "queue[0].flavor","storage":"map:sequence","color":"yellow"}, {"text":" cake with ","color":"red"}, \
+					{"nbt": "queue[0].frosting","storage":"map:sequence","color":"yellow"}, {"text": " frosting!","color":"red"} \
 				]
 			}
 		}
