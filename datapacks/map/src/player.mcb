@@ -21,6 +21,10 @@ function on_join {
 			function player:teleport_in
 		}
 	}
+	execute if score #game_in_progress i matches 0 run {
+		function map:teleport_to_spawn
+		gamemode adventure @s
+	}
 
 	scoreboard players set @s leave_game 0
 }

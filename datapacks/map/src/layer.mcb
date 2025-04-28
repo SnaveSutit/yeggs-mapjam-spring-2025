@@ -16,6 +16,7 @@ function summon {
 			$execute as @n[type=minecraft:item_display,tag=aj.layer.root] run { {flavor:$(flavor), frosting:$(frosting)}
 				$function animated_java:layer/variants/baked_$(flavor)/apply
 				$function animated_java:layer/variants/frosted_$(frosting)/apply
+				execute on passengers unless entity @s[tag=aj.global.data] run data modify entity @s view_range set value 2
 				ride @s mount @n[type=minecraft:interaction,tag=mount2,distance=..2]
 			}
 			execute summon minecraft:shulker run {

@@ -24,6 +24,44 @@ function on_load minecraft:load {
 
 function start {
 	scoreboard players set #game_in_progress i 1
+	tellraw @a {text:'Starting Game...',color:green}
+}
+
+
+function stop {
+	scoreboard players set #game_in_progress i 0
+	function map:reset
+}
+
+
+function on_tick minecraft:tick {
+	# Tutorial Button
+	execute if block -5 35 43 minecraft:birch_button[powered=true] run {
+		function map:hide_buttons
+	}
+	# Play Button
+	execute if block -8 35 43 minecraft:birch_button[powered=true] run {
+		function map:hide_buttons
+	}
+	# Reset Button
+	execute if block -21 36 43 minecraft:birch_button[powered=true] run {
+		function map:hide_buttons
+		function map:reset
+	}
+}
+
+
+function hide_buttons {
+	setblock -5 35 43 air
+	setblock -8 35 43 air
+	setblock -21 36 43 air
+}
+
+
+function show_buttons {
+	setblock -5 35 43 minecraft:birch_button[powered=false]
+	setblock -8 35 43 minecraft:birch_button[powered=false]
+	setblock -21 36 43 minecraft:birch_button[powered=false]
 }
 
 
@@ -49,13 +87,16 @@ function set_scale {
 }
 
 function reset {
+	tellraw @a {text:'Resetting Map...',color:yellow}
+	function map:hide_buttons
 	scoreboard players set #game_in_progress i 0
 	kill @e[type=!player]
 	function static_pipette:remove
-	schedule 1t {
+	schedule 1s {
 
 		# Lobby
-		summon minecraft:text_display -5.9375 37.25 43.9375 {Passengers: [{alignment: "center", background: 1073741824, default_background: 0b, fall_distance: 0.0d, id: "minecraft:text_display", line_width: 200, see_through: 0b, shadow: 0b, text: "Welcome to", text_opacity: -1b, transformation: {left_rotation: [0.0f, 1.0f, 0.0f, 0.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.6875f, 1.6874992f, 1.6874995f], translation: [0.0f, 1.0f, -0.0625f]}}], alignment: "center", background: 1073741824, default_background: 0b, fall_distance: 0.0d, line_width: 200, see_through: 0b, shadow: 1b, text: {color: "green", extra: [{bold: 1b, color: "white", text: "Pastry "}, {bold: 1b, color: "light_purple", italic: 1b, text: "Panic"}], text: "Pocket-sized "}, text_opacity: -1b, transformation: {left_rotation: [0.0f, 1.0f, 0.0f, 0.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [3.5625f, 3.5624998f, 3.5624995f], translation: [0.0f, 0.0f, 0.0f]}}
+		summon minecraft:text_display -5.9375 37.0625 43.9375 {Passengers: [{alignment: "center", background: 0, default_background: 0b, fall_distance: 0.0d, id: "minecraft:text_display", line_width: 200, see_through: 0b, shadow: 0b, text: {italic: 1b, text: "Welcome to"}, text_opacity: -1b, transformation: {left_rotation: [0.0f, 1.0f, 0.0f, 0.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.6875f, 1.6874992f, 1.6874995f], translation: [0.0f, 1.0f, -0.0625f]}}, {alignment: "center", background: 0, default_background: 0b, fall_distance: 0.0d, id: "minecraft:text_display", line_width: 200, see_through: 0b, shadow: 1b, text: {color: "green", text: "Play!"}, text_opacity: -1b, transformation: {left_rotation: [0.0f, 1.0f, 0.0f, 0.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.1875f, 1.1875f, 1.1875f], translation: [-1.5625f, -0.9375f, 0.0f]}}, {alignment: "center", background: 0, default_background: 0b, fall_distance: 0.0d, id: "minecraft:text_display", line_width: 200, see_through: 0b, shadow: 1b, text: {color: "aqua", text: "Tutorial"}, text_opacity: -1b, transformation: {left_rotation: [0.0f, 1.0f, 0.0f, 0.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.1875f, 1.1875f, 1.1875f], translation: [1.4375f, -0.9375f, 0.0f]}}], alignment: "center", background: 0, default_background: 0b, fall_distance: 0.0d, line_width: 200, see_through: 0b, shadow: 1b, text: {color: "green", extra: [{bold: 1b, color: "white", text: "Pastry "}, {bold: 1b, color: "light_purple", italic: 1b, text: "Panic!"}], text: "Pocket-sized "}, text_opacity: -1b, transformation: {left_rotation: [0.0f, 1.0f, 0.0f, 0.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [3.5625f, 3.5624998f, 3.5624995f], translation: [0.0f, 0.0f, 0.0f]}}
+		summon minecraft:text_display -20.5 37.125 43.9375 {alignment: "center", background: 0, default_background: 0b, fall_distance: 0.0d, line_width: 200, see_through: 0b, shadow: 1b, text: {color: "red", text: "Reset Map"}, text_opacity: -1b, transformation: {left_rotation: [0.0f, 1.0f, 0.0f, 0.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.0f, 1.0f, 1.0f], translation: [0.0f, 0.0f, 0.0f]}}
 
 		function troll:summon
 		function troll:reset
@@ -93,34 +134,14 @@ function reset {
 		execute positioned 37 -3 -11 run function map:fan/summon
 		# Misc
 		function sequence:reset_sequence
+		execute as @e[type=minecraft:item_display,nbt={item:{}}] run data modify entity @s view_range set value 2
+
+		function map:show_buttons
+
+		tellraw @a {text:'Map reset successfully!',color:green}
 	}
 }
 
-function setup_debug_environment {
-	execute unless entity @s[name=SnaveSutit] run return run tellraw @s {"text":"You are not SnaveSutit!","color":"red"}
-	kill @e[type=!player]
-	# Pan Dispenser
-	execute positioned -119 2 -34 run function pan:create_lock_point
-	execute positioned -119 4 -34 run function pan:summon
-	execute positioned -133 1 -15 rotated -90 0 run function ovens:summon
-	execute positioned -119 1 -18 run function forklift:debug
-	execute positioned -68.0 5 -16.0 rotated 90 0 run function animated_java:mixer/summon {args:{}}
-	execute positioned -68.0 5 1.0 rotated 90 0 run function animated_java:mixer/summon {args:{}}
-	# Frosting area
-	execute positioned -67 3 24 run function pan:create_lock_point
-	# Launcher
-	execute positioned -100 1 17 rotated 0 0 run function animated_java:launcher/summon {args:{}}
-
-	# Food items
-	execute positioned -108 2 -25 rotated 0 0 run function ingredient:summon {type:milk}
-	execute positioned -104 2 -25 rotated 0 0 run function ingredient:summon {type:eggs}
-	execute positioned -100 2 -25 rotated 0 0 run function ingredient:summon {type:flour}
-	execute positioned -96 2 -25 rotated 0 0 run function ingredient:summon {type:sugar}
-
-	execute positioned -92 2 -25 rotated 0 0 run function ingredient:summon {type:vanilla}
-	execute positioned -88 2 -25 rotated 0 0 run function ingredient:summon {type:chocolate}
-	execute positioned -84 2 -25 rotated 0 0 run function ingredient:summon {type:berries}
-}
 
 dir fan {
 	function summon {
@@ -146,6 +167,9 @@ function teleport_to_spawn {
 function game_over {
 	title @a times 10 80 10
 	title @a title ["",{text:"\ua000",font:"cooking:custom"},{translate:"space.-1"},{text:"\ua000",font:"cooking:custom"},{translate:offset.-256,with:[{text:"Game Over!",color:red}]}]
+
+	scoreboard players set #game_in_progress i 0
+
 	execute as @a at @s run {
 		playsound minecraft:entity.generic.eat block @s ~ ~ ~ 10 0.1
 	}
@@ -155,5 +179,6 @@ function game_over {
 	schedule 80t replace {
 		function map:teleport_to_spawn
 		gamemode adventure @a
+		function map:show_buttons
 	}
 }

@@ -20,6 +20,7 @@ function summon {
 			execute rotated 0 0 run function animated_java:pan/summon {args:{animation:"empty",variant:"empty"}}
 			execute as @n[type=minecraft:item_display,tag=aj.pan.root,distance=..1] run {
 				tag @s add pan_model
+				execute on passengers unless entity @s[tag=aj.global.data] run data modify entity @s view_range set value 2
 				ride @s mount @n[type=minecraft:interaction,tag=new,distance=..0.01]
 			}
 			tag @s remove new

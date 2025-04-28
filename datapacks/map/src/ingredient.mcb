@@ -18,6 +18,7 @@ function summon {
 
 			tag @s add mount2
 			execute as @n[type=minecraft:item_display,tag=aj.global.root,distance=..4] run {
+				execute on passengers unless entity @s[tag=aj.global.data] run data modify entity @s view_range set value 2
 				ride @s mount @n[tag=mount2,distance=..4]
 			}
 			execute summon minecraft:interaction run {
