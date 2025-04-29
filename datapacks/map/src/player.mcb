@@ -6,13 +6,18 @@ function on_load minecraft:load {
 
 function on_join {
 	attribute @s minecraft:movement_speed base set 0.18
+	execute if entity @s[tag=!has_joined_before] run {
+		function map:teleport_to_spawn
+		gamemode adventure @s
+	}
+	tag @s add has_joined_before
 
 	execute if score #game_in_progress i matches 1 run {
-		execute if entity @s[team=players] run {
+		execute if entity @s[team=players] run return run {
 			function player:join_players
 			function map:teleport_to_game
 		}
-		execute if entity @s[team=spectator] run {
+		execute if entity @s[team=spectator] run return run {
 			function player:join_spectator
 			function map:teleport_to_game
 		}
@@ -47,5 +52,6 @@ function on_tick minecraft:tick {
 	execute as @a run {
 		execute unless score @s leave_game matches 0.. run function player:on_join
 		execute if score @s leave_game matches 1.. run function player:on_join
+		execute if entity @s[tag=!has_joined_before] run function player:on_join
 	}
 }
