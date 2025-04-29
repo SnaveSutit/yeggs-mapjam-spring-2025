@@ -1,6 +1,6 @@
 {
 	"textures": {
-		"0": "animated_java:blueprint/orders/order_background",
+		"0": "cooking:blueprint/order_background",
 		"particle": "minecraft:item/pufferfish"
 	},
 	"display": {
@@ -19,11 +19,11 @@
 			},
 			"faces": {
 				"north": {
-					"uv": [0, 0, 5, 6],
+					"uv": [0, 0, 10, 12],
 					"texture": "#0"
 				},
 				"south": {
-					"uv": [5, 0, 10, 6],
+					"uv": [0, 0, 10, 12],
 					"texture": "#0"
 				}
 			}
