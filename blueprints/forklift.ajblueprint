@@ -3,7 +3,7 @@
 		"format": "animated_java_blueprint",
 		"format_version": "1.6.5",
 		"uuid": "5f6d3173-75d9-2e18-beba-7a2a8161878a",
-		"save_location": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\blueprints\\forklift.ajblueprint",
+		"save_location": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\blueprints\\forklift.ajblueprint",
 		"last_used_export_namespace": "forklift"
 	},
 	"blueprint_settings": {
@@ -424,7 +424,7 @@
 		},
 		{
 			"name": "seat",
-			"position": [0, 16, 0],
+			"position": [0, 30, 4],
 			"rotation": [0, 0, 0],
 			"ignore_inherited_scale": false,
 			"visibility": true,
