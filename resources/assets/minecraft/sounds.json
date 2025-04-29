@@ -1,0 +1,22 @@
+{
+	"music.1": {
+		"sounds": [
+			{
+				"name": "cooking:music1",
+				"stream": true,
+				"attenuation_distance": 200,
+				"preload": true
+			}
+		]
+	},
+	"music.2": {
+		"sounds": [
+			{
+				"name": "cooking:music2",
+				"stream": true,
+				"attenuation_distance": 200,
+				"preload": true
+			}
+		]
+	}
+}

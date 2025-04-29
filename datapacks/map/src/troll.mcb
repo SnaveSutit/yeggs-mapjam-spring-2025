@@ -17,7 +17,25 @@ function reset {
 	bossbar set troll:patience value 6
 	bossbar set troll:patience color red
 
+	stopsound @a record minecraft:music.1
+	stopsound @a record minecraft:music.2
+	scoreboard players set #music_mode i 0
+	scoreboard players set #music_timer i 0
+
 	schedule clear troll:consume
+}
+
+
+function on_tick minecraft:tick {
+	scoreboard players add #music_timer i 1
+	execute if score #music_mode i matches 0 if score #music_timer i matches 2400.. run {
+		playsound minecraft:music.2 record @a 0 0 0 10 1
+		scoreboard players set #music_timer i 0
+	}
+	execute if score #music_mode i matches 1 if score #music_timer i matches 1800.. run {
+		playsound minecraft:music.1 record @a 0 0 0 10 1
+		scoreboard players set #music_timer i 0
+	}
 }
 
 
@@ -32,6 +50,9 @@ function summon {
 
 function begin_consuming {
 	function troll:reset
+	playsound minecraft:music.2 record @a 0 0 0 10 1
+	scoreboard players set #music_mode i 0
+	scoreboard players set #music_timer i 0
 	bossbar set troll:satisfaction players @a
 	bossbar set troll:patience players @a
 	scoreboard players set #troll_patience i 6
@@ -80,6 +101,13 @@ function get_mad {
 		playsound minecraft:entity.villager.ambient block @a ~ ~ ~ 10 0.1
 		schedule function troll:consume 60s
 	}
+	execute if score #troll_patience i matches 2 run {
+		stopsound @a record minecraft:music.1
+		stopsound @a record minecraft:music.2
+		playsound minecraft:music.1 record @a 0 0 0 10 1
+		scoreboard players set #music_mode i 1
+		scoreboard players set #music_timer i 0
+	}
 	execute if score #troll_patience i matches ..0 run {
 		function *game_over
 	}
@@ -88,6 +116,9 @@ function get_mad {
 function game_over {
 	tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {"text":"That's it! If you can't make my cake fast enough, I'll just be eatin' you instead!","color":"red"}]
 	schedule clear troll:consume
+
+	stopsound @a record minecraft:music.1
+	stopsound @a record minecraft:music.2
 
 	gamemode spectator @a
 	execute as @a run spectate @n[type=item_display,tag=death_anim_player_lock] @s

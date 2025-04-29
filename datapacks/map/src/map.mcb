@@ -30,8 +30,8 @@ function start {
 	scoreboard players set #game_in_progress i 1
 	tellraw @a {text:'Starting Game...',color:green}
 	execute as @a run function map:teleport_to_game
-	function troll:begin_consuming
 	scoreboard players set #playtime i 0
+	function troll:begin_consuming
 }
 
 
