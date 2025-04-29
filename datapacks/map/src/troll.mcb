@@ -27,13 +27,13 @@ function reset {
 
 
 function on_tick minecraft:tick {
-	scoreboard players add #music_timer i 1
+	execute if score #game_in_progress i matches 1 run scoreboard players add #music_timer i 1
 	execute if score #music_mode i matches 0 if score #music_timer i matches 2400.. run {
-		playsound minecraft:music.2 record @a 0 0 0 10 1
+		playsound minecraft:music.2 record @a 0 0 0 100 1
 		scoreboard players set #music_timer i 0
 	}
 	execute if score #music_mode i matches 1 if score #music_timer i matches 1800.. run {
-		playsound minecraft:music.1 record @a 0 0 0 10 1
+		playsound minecraft:music.1 record @a 0 0 0 100 1
 		scoreboard players set #music_timer i 0
 	}
 }
@@ -50,7 +50,7 @@ function summon {
 
 function begin_consuming {
 	function troll:reset
-	playsound minecraft:music.2 record @a 0 0 0 10 1
+	playsound minecraft:music.2 record @a 0 0 0 100 1
 	scoreboard players set #music_mode i 0
 	scoreboard players set #music_timer i 0
 	bossbar set troll:satisfaction players @a
@@ -104,7 +104,7 @@ function get_mad {
 	execute if score #troll_patience i matches 2 run {
 		stopsound @a record minecraft:music.1
 		stopsound @a record minecraft:music.2
-		playsound minecraft:music.1 record @a 0 0 0 10 1
+		playsound minecraft:music.1 record @a 0 0 0 100 1
 		scoreboard players set #music_mode i 1
 		scoreboard players set #music_timer i 0
 	}

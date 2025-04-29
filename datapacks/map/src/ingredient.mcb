@@ -67,7 +67,7 @@ function on_tick minecraft:tick {
 		execute if score @s ingredient_link_id matches 0.. run {
 			scoreboard players operation #this ingredient_link_id = @s ingredient_link_id
 			execute store success score #sneaking i if predicate input:key_sneak
-			execute as @n[type=minecraft:armor_stand,tag=ingredient] if score @s ingredient_link_id = #this ingredient_link_id rotated ~ 0 run {
+			execute as @e[type=minecraft:armor_stand,tag=ingredient] if score @s ingredient_link_id = #this ingredient_link_id rotated ~ 0 run {
 				execute rotated ~ 0 run tp @s ^ ^2 ^1 ~ ~
 				execute if score #sneaking i matches 1 run {
 					scoreboard players reset @s ingredient_link_id

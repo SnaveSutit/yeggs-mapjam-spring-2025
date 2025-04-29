@@ -104,7 +104,6 @@ dir steps {
 		# Any cake pan under a mixer's spout
 		scoreboard players set #check i 0
 		execute as @e[type=minecraft:item_display,tag=aj.mixer.root] at @s positioned ^ ^-4 ^9 run {
-			particle end_rod ~ ~ ~
 			execute if entity @e[type=minecraft:armor_stand,tag=pan,distance=..6] run scoreboard players set #check i 1
 		}
 		execute if score #check i matches 0 run return run schedule function ^0 1t
