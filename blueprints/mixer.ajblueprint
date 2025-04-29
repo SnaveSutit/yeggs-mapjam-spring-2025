@@ -6587,7 +6587,7 @@
 			"override": false,
 			"length": 2,
 			"snapping": 20,
-			"selected": false,
+			"selected": true,
 			"saved": false,
 			"path": "",
 			"anim_time_update": "",
@@ -6604,11 +6604,6 @@
 					"icon": "folder",
 					"name": "batter",
 					"value": "906b5ba2-cbea-1a03-ee11-3c9129a57578"
-				},
-				{
-					"icon": "folder",
-					"name": "malk",
-					"value": "a8019933-e75b-cd16-1f0d-10752c3c1027"
 				},
 				{
 					"icon": "folder",
@@ -6639,6 +6634,11 @@
 					"icon": "folder",
 					"name": "milk_scaler",
 					"value": "52c8b0d1-452b-8cdc-e1a0-9276cf8822dd"
+				},
+				{
+					"icon": "folder",
+					"name": "malk",
+					"value": "a8019933-e75b-cd16-1f0d-10752c3c1027"
 				},
 				{
 					"icon": "folder",
@@ -6714,11 +6714,6 @@
 					"icon": "folder",
 					"name": "chocolate",
 					"value": "899acee0-0f41-977d-a89c-3b0d897175a4"
-				},
-				{
-					"icon": "anchor",
-					"name": "handle_zone",
-					"value": "f7f14090-cc84-948a-9965-55091ce4f122"
 				},
 				{
 					"icon": "anchor",
@@ -9367,7 +9362,7 @@
 			"override": false,
 			"length": 0.05,
 			"snapping": 20,
-			"selected": true,
+			"selected": false,
 			"saved": false,
 			"path": "",
 			"anim_time_update": "",

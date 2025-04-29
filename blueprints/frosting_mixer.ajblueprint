@@ -6158,7 +6158,7 @@
 			"override": false,
 			"length": 0.05,
 			"snapping": 20,
-			"selected": false,
+			"selected": true,
 			"saved": false,
 			"path": "",
 			"anim_time_update": "",
@@ -6203,18 +6203,8 @@
 				},
 				{
 					"icon": "text_fields",
-					"name": "sugar_check",
-					"value": "7c3914bf-a3a8-b0cb-dd95-9ba775e84199"
-				},
-				{
-					"icon": "text_fields",
 					"name": "milk_check",
 					"value": "ffcc51f3-d1ed-35d2-380c-c34bbbf3a281"
-				},
-				{
-					"icon": "text_fields",
-					"name": "flavor_check",
-					"value": "2d4a883c-1f06-45a3-9099-356ce6c7066f"
 				}
 			],
 			"animators": {
@@ -6304,6 +6294,52 @@
 							"time": 0,
 							"color": -1,
 							"uniform": false,
+							"interpolation": "linear",
+							"easing": "linear",
+							"easingArgs": []
+						}
+					]
+				},
+				"7c3914bf-a3a8-b0cb-dd95-9ba775e84199": {
+					"name": "sugar_check",
+					"type": "animated_java:text_display",
+					"keyframes": [
+						{
+							"channel": "scale",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "0",
+									"z": "0"
+								}
+							],
+							"uuid": "0e63a8cb-ca3d-7792-9760-de23aee3ed5d",
+							"time": 0,
+							"color": -1,
+							"uniform": true,
+							"interpolation": "linear",
+							"easing": "linear",
+							"easingArgs": []
+						}
+					]
+				},
+				"2d4a883c-1f06-45a3-9099-356ce6c7066f": {
+					"name": "flavor_check",
+					"type": "animated_java:text_display",
+					"keyframes": [
+						{
+							"channel": "scale",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "0",
+									"z": "0"
+								}
+							],
+							"uuid": "0076354b-5f72-1791-29c7-1ee4fffdd6e2",
+							"time": 0,
+							"color": -1,
+							"uniform": true,
 							"interpolation": "linear",
 							"easing": "linear",
 							"easingArgs": []
@@ -6760,7 +6796,7 @@
 			"override": false,
 			"length": 0.1,
 			"snapping": 20,
-			"selected": true,
+			"selected": false,
 			"saved": false,
 			"path": "",
 			"anim_time_update": "",

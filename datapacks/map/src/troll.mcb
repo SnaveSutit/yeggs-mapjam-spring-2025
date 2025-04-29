@@ -119,7 +119,7 @@ function game_over {
 
 	stopsound @a record minecraft:music.1
 	stopsound @a record minecraft:music.2
-
+	
 	gamemode spectator @a
 	execute as @a run spectate @n[type=item_display,tag=death_anim_player_lock] @s
 	# TODO: add a death animation

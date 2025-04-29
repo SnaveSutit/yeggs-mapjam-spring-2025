@@ -29,8 +29,8 @@ function on_load minecraft:load {
 function start {
 	scoreboard players set #game_in_progress i 1
 	tellraw @a {text:'Starting Game...',color:green}
-	execute as @a run function map:teleport_to_game
 	scoreboard players set #playtime i 0
+	execute as @a run function map:teleport_to_game
 	function troll:begin_consuming
 }
 
@@ -52,8 +52,7 @@ function on_tick minecraft:tick {
 	# Play Button
 	execute if block -8 35 43 minecraft:birch_button[powered=true] run {
 		function map:hide_buttons
-		execute as @a run function map:teleport_to_game
-		function troll:begin_consuming
+		function map:start
 	}
 	# Reset Button
 	execute if block -21 36 43 minecraft:birch_button[powered=true] run {
@@ -110,6 +109,7 @@ function reset {
 		# Lobby
 		summon minecraft:text_display -5.9375 37.0625 43.9375 {Passengers: [{alignment: "center", background: 0, default_background: 0b, fall_distance: 0.0d, id: "minecraft:text_display", line_width: 200, see_through: 0b, shadow: 0b, text: {italic: 1b, text: "Welcome to"}, text_opacity: -1b, transformation: {left_rotation: [0.0f, 1.0f, 0.0f, 0.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.6875f, 1.6874992f, 1.6874995f], translation: [0.0f, 1.0f, -0.0625f]}}, {alignment: "center", background: 0, default_background: 0b, fall_distance: 0.0d, id: "minecraft:text_display", line_width: 200, see_through: 0b, shadow: 1b, text: {color: "green", text: "Play!"}, text_opacity: -1b, transformation: {left_rotation: [0.0f, 1.0f, 0.0f, 0.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.1875f, 1.1875f, 1.1875f], translation: [-1.5625f, -0.9375f, 0.0f]}}, {alignment: "center", background: 0, default_background: 0b, fall_distance: 0.0d, id: "minecraft:text_display", line_width: 200, see_through: 0b, shadow: 1b, text: {color: "aqua", text: "Tutorial"}, text_opacity: -1b, transformation: {left_rotation: [0.0f, 1.0f, 0.0f, 0.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.1875f, 1.1875f, 1.1875f], translation: [1.4375f, -0.9375f, 0.0f]}}], alignment: "center", background: 0, default_background: 0b, fall_distance: 0.0d, line_width: 200, see_through: 0b, shadow: 1b, text: {color: "green", extra: [{bold: 1b, color: "white", text: "Pastry "}, {bold: 1b, color: "light_purple", italic: 1b, text: "Panic!"}], text: "Pocket-sized "}, text_opacity: -1b, transformation: {left_rotation: [0.0f, 1.0f, 0.0f, 0.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [3.5625f, 3.5624998f, 3.5624995f], translation: [0.0f, 0.0f, 0.0f]}}
 		summon minecraft:text_display -20.5 37.125 43.9375 {alignment: "center", background: 0, default_background: 0b, fall_distance: 0.0d, line_width: 200, see_through: 0b, shadow: 1b, text: {color: "red", text: "Reset Map"}, text_opacity: -1b, transformation: {left_rotation: [0.0f, 1.0f, 0.0f, 0.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.0f, 1.0f, 1.0f], translation: [0.0f, 0.0f, 0.0f]}}
+		summon minecraft:text_display -22.0 34.5 40.75 {alignment: "center", background: 0, default_background: 0b, fall_distance: 0.0d, line_width: 180, see_through: 0b, shadow: 1b, text: {color: "gray", extra: [{color: "red", text: "\nSnaveSutit"}, " & ", {color: "green", text: "XelaFella"}, {color: "gray", italic: 1b, text: "\nas "}, {bold: 1b, color: "blue", text: "Team ADHD"}, {color: "gray", italic: 1b, text: "\n\nCreated during the 96 hour Yeggs Spring MapJam of 2025!"}], text: "Created by "}, text_opacity: -1b, transformation: {left_rotation: [0.0f, 0.7071068f, 0.0f, 0.7071068f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [0.9999997f, 0.99999994f, 0.9999997f], translation: [0.0f, 0.0f, 0.0f]}}
 
 		function troll:summon
 		function troll:reset
