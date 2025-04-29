@@ -27,6 +27,7 @@ function clear_recipe_tags {
 	tag @s remove contains_sugar
 	tag @s remove contains_eggs
 	function *clear_flavor_tags
+	function *clear_batter_tags
 }
 
 function clear_flavor_tags {
