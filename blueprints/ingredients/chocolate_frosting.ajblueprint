@@ -3,7 +3,7 @@
 		"format": "animated_java_blueprint",
 		"format_version": "1.6.5",
 		"uuid": "edd81d3d-b963-1843-ee1b-0cf8da804095",
-		"save_location": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\blueprints\\ingredients\\chocolate_frosting.ajblueprint",
+		"save_location": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\blueprints\\ingredients\\chocolate_frosting.ajblueprint",
 		"last_used_export_namespace": "ingredient_chocolate_frosting"
 	},
 	"blueprint_settings": {
@@ -44,26 +44,26 @@
 			"light_emission": 0,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
-			"from": [-14, 12, 0],
-			"to": [0, 64, 14],
+			"from": [-14, 8, 0],
+			"to": [0, 60, 14],
 			"autouv": 0,
 			"color": 8,
-			"origin": [0, 24, 0],
+			"origin": [0, 48, 0],
 			"faces": {
 				"north": {
-					"uv": [0, 0, 56, 208],
+					"uv": [0, 208, 56, 0],
 					"texture": 0
 				},
 				"east": {
-					"uv": [0, 0, 56, 208],
+					"uv": [0, 208, 56, 0],
 					"texture": 0
 				},
 				"south": {
-					"uv": [0, 0, 56, 208],
+					"uv": [0, 208, 56, 0],
 					"texture": 0
 				},
 				"west": {
-					"uv": [56, 0, 0, 208],
+					"uv": [56, 208, 0, 0],
 					"texture": 0
 				},
 				"up": {
@@ -86,34 +86,34 @@
 			"light_emission": 0,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
-			"from": [-11, 2, 0],
-			"to": [0, 12, 11],
+			"from": [-11, 60, 0],
+			"to": [0, 70, 11],
 			"autouv": 0,
 			"color": 8,
-			"origin": [0, 14, 0],
+			"origin": [0, 58, 0],
 			"faces": {
 				"north": {
-					"uv": [216, 216, 256, 256],
+					"uv": [216, 256, 256, 216],
 					"texture": 0
 				},
 				"east": {
-					"uv": [216, 216, 256, 256],
+					"uv": [216, 256, 256, 216],
 					"texture": 0
 				},
 				"south": {
-					"uv": [256, 216, 216, 256],
+					"uv": [256, 256, 216, 216],
 					"texture": 0
 				},
 				"west": {
-					"uv": [216, 216, 256, 256],
+					"uv": [216, 256, 256, 216],
 					"texture": 0
 				},
 				"up": {
-					"uv": [216, 216, 256, 256],
+					"uv": [216, 216, 256, 176],
 					"texture": 0
 				},
 				"down": {
-					"uv": [216, 176, 256, 216],
+					"uv": [216, 256, 256, 216],
 					"texture": 0
 				}
 			},
@@ -128,26 +128,26 @@
 			"light_emission": 0,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
-			"from": [0, 12, 0],
-			"to": [14, 64, 14],
+			"from": [0, 8, 0],
+			"to": [14, 60, 14],
 			"autouv": 0,
 			"color": 8,
-			"origin": [0, 24, 0],
+			"origin": [0, 48, 0],
 			"faces": {
 				"north": {
-					"uv": [56, 0, 0, 208],
+					"uv": [56, 208, 0, 0],
 					"texture": 0
 				},
 				"east": {
-					"uv": [0, 0, 56, 208],
+					"uv": [0, 208, 56, 0],
 					"texture": 0
 				},
 				"south": {
-					"uv": [56, 0, 0, 208],
+					"uv": [56, 208, 0, 0],
 					"texture": 0
 				},
 				"west": {
-					"uv": [56, 0, 0, 208],
+					"uv": [56, 208, 0, 0],
 					"texture": 0
 				},
 				"up": {
@@ -170,34 +170,34 @@
 			"light_emission": 0,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
-			"from": [0, 2, 0],
-			"to": [11, 12, 11],
+			"from": [0, 60, 0],
+			"to": [11, 70, 11],
 			"autouv": 0,
 			"color": 8,
-			"origin": [0, 14, 0],
+			"origin": [0, 58, 0],
 			"faces": {
 				"north": {
-					"uv": [216, 216, 256, 256],
+					"uv": [216, 256, 256, 216],
 					"texture": 0
 				},
 				"east": {
-					"uv": [256, 216, 216, 256],
+					"uv": [256, 256, 216, 216],
 					"texture": 0
 				},
 				"south": {
-					"uv": [216, 216, 256, 256],
+					"uv": [216, 256, 256, 216],
 					"texture": 0
 				},
 				"west": {
-					"uv": [216, 216, 256, 256],
+					"uv": [216, 256, 256, 216],
 					"texture": 0
 				},
 				"up": {
-					"uv": [216, 216, 256, 256],
+					"uv": [216, 216, 256, 176],
 					"texture": 0
 				},
 				"down": {
-					"uv": [216, 176, 256, 216],
+					"uv": [216, 256, 256, 216],
 					"texture": 0
 				}
 			},
@@ -212,26 +212,26 @@
 			"light_emission": 0,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
-			"from": [0, 12, -14],
-			"to": [14, 64, 0],
+			"from": [0, 8, -14],
+			"to": [14, 60, 0],
 			"autouv": 0,
 			"color": 8,
-			"origin": [0, 24, 0],
+			"origin": [0, 48, 0],
 			"faces": {
 				"north": {
-					"uv": [0, 0, 56, 208],
+					"uv": [0, 208, 56, 0],
 					"texture": 0
 				},
 				"east": {
-					"uv": [56, 0, 0, 208],
+					"uv": [56, 208, 0, 0],
 					"texture": 0
 				},
 				"south": {
-					"uv": [0, 0, 56, 208],
+					"uv": [0, 208, 56, 0],
 					"texture": 0
 				},
 				"west": {
-					"uv": [0, 0, 56, 208],
+					"uv": [0, 208, 56, 0],
 					"texture": 0
 				},
 				"up": {
@@ -254,34 +254,34 @@
 			"light_emission": 0,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
-			"from": [0, 2, -11],
-			"to": [11, 12, -2],
+			"from": [0, 60, -11],
+			"to": [11, 70, -2],
 			"autouv": 0,
 			"color": 8,
-			"origin": [0, 14, 0],
+			"origin": [0, 58, 0],
 			"faces": {
 				"north": {
-					"uv": [256, 216, 216, 256],
+					"uv": [256, 256, 216, 216],
 					"texture": 0
 				},
 				"east": {
-					"uv": [216, 216, 256, 256],
+					"uv": [216, 256, 256, 216],
 					"texture": 0
 				},
 				"south": {
-					"uv": [216, 216, 256, 256],
+					"uv": [216, 256, 256, 216],
 					"texture": 0
 				},
 				"west": {
-					"uv": [216, 216, 256, 256],
+					"uv": [216, 256, 256, 216],
 					"texture": 0
 				},
 				"up": {
-					"uv": [216, 216, 256, 256],
+					"uv": [216, 216, 256, 176],
 					"texture": 0
 				},
 				"down": {
-					"uv": [216, 176, 256, 216],
+					"uv": [216, 256, 256, 216],
 					"texture": 0
 				}
 			},
@@ -296,26 +296,26 @@
 			"light_emission": 0,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
-			"from": [-14, 12, -14],
-			"to": [0, 64, 0],
+			"from": [-14, 8, -14],
+			"to": [0, 60, 0],
 			"autouv": 0,
 			"color": 8,
-			"origin": [0, 24, 0],
+			"origin": [0, 48, 0],
 			"faces": {
 				"north": {
-					"uv": [56, 0, 0, 208],
+					"uv": [56, 208, 0, 0],
 					"texture": 0
 				},
 				"east": {
-					"uv": [56, 0, 0, 208],
+					"uv": [56, 208, 0, 0],
 					"texture": 0
 				},
 				"south": {
-					"uv": [56, 0, 0, 208],
+					"uv": [56, 208, 0, 0],
 					"texture": 0
 				},
 				"west": {
-					"uv": [0, 0, 56, 208],
+					"uv": [0, 208, 56, 0],
 					"texture": 0
 				},
 				"up": {
@@ -338,34 +338,34 @@
 			"light_emission": 0,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
-			"from": [-11, 2, -11],
-			"to": [0, 12, -2],
+			"from": [-11, 60, -11],
+			"to": [0, 70, -2],
 			"autouv": 0,
 			"color": 8,
-			"origin": [0, 14, 0],
+			"origin": [0, 58, 0],
 			"faces": {
 				"north": {
-					"uv": [216, 216, 256, 256],
+					"uv": [216, 256, 256, 216],
 					"texture": 0
 				},
 				"east": {
-					"uv": [216, 216, 256, 256],
+					"uv": [216, 256, 256, 216],
 					"texture": 0
 				},
 				"south": {
-					"uv": [216, 216, 256, 256],
+					"uv": [216, 256, 256, 216],
 					"texture": 0
 				},
 				"west": {
-					"uv": [256, 216, 216, 256],
+					"uv": [256, 256, 216, 216],
 					"texture": 0
 				},
 				"up": {
-					"uv": [216, 216, 256, 256],
+					"uv": [216, 216, 256, 176],
 					"texture": 0
 				},
 				"down": {
-					"uv": [216, 176, 256, 216],
+					"uv": [216, 256, 256, 216],
 					"texture": 0
 				}
 			},
@@ -380,14 +380,14 @@
 			"light_emission": 0,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
-			"from": [-7.38183, 60.0403, -7.9597],
-			"to": [19.61817, 87.0403, 19.0403],
+			"from": [-7.38183, -15.0403, -7.9597],
+			"to": [19.61817, 11.9597, 19.0403],
 			"autouv": 0,
 			"color": 9,
-			"origin": [0, 68, 0],
+			"origin": [0, 4, 0],
 			"faces": {
 				"north": {
-					"uv": [148, 0, 256, 108],
+					"uv": [148, 108, 256, 0],
 					"texture": 0
 				},
 				"east": {
@@ -399,16 +399,16 @@
 					"texture": null
 				},
 				"west": {
-					"uv": [256, 0, 148, 108],
+					"uv": [256, 108, 148, 0],
 					"texture": 0
 				},
 				"up": {
-					"uv": [0, 0, 0, 0],
-					"texture": null
+					"uv": [256, 108, 148, 0],
+					"texture": 0
 				},
 				"down": {
-					"uv": [256, 0, 148, 108],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				}
 			},
 			"type": "cube",
@@ -422,14 +422,14 @@
 			"light_emission": 0,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
-			"from": [-7.38183, 60.0403, -7.9597],
-			"to": [19.61817, 87.0403, 19.0403],
+			"from": [-7.38183, -15.0403, -7.9597],
+			"to": [19.61817, 11.9597, 19.0403],
 			"autouv": 0,
 			"color": 9,
-			"origin": [0, 68, 0],
+			"origin": [0, 4, 0],
 			"faces": {
 				"north": {
-					"uv": [148, 0, 256, 108],
+					"uv": [148, 108, 256, 0],
 					"texture": 0
 				},
 				"east": {
@@ -441,16 +441,16 @@
 					"texture": null
 				},
 				"west": {
-					"uv": [256, 0, 148, 108],
+					"uv": [256, 108, 148, 0],
 					"texture": 0
 				},
 				"up": {
-					"uv": [0, 0, 0, 0],
-					"texture": null
+					"uv": [256, 108, 148, 0],
+					"texture": 0
 				},
 				"down": {
-					"uv": [256, 0, 148, 108],
-					"texture": 0
+					"uv": [0, 0, 0, 0],
+					"texture": null
 				}
 			},
 			"type": "cube",
@@ -460,7 +460,7 @@
 	"outliner": [
 		{
 			"name": "chocolate_frosting",
-			"origin": [0, 0, 0],
+			"origin": [0, 72, 0],
 			"color": 0,
 			"configs": {
 				"variants": {}
@@ -476,8 +476,8 @@
 			"children": [
 				{
 					"name": "1",
-					"origin": [0, 64, 0],
-					"rotation": [4.98815, -0.32663, 4.98815],
+					"origin": [0, 8, 0],
+					"rotation": [-4.98815, -0.32663, -4.98815],
 					"color": 0,
 					"configs": {
 						"variants": {}
@@ -494,8 +494,8 @@
 				},
 				{
 					"name": "2",
-					"origin": [0, 64, 0],
-					"rotation": [4.98815, 0.32663, -4.98815],
+					"origin": [0, 8, 0],
+					"rotation": [-4.98815, 0.32663, 4.98815],
 					"color": 0,
 					"configs": {
 						"variants": {}
@@ -512,8 +512,8 @@
 				},
 				{
 					"name": "3",
-					"origin": [0, 64, 0],
-					"rotation": [-4.98815, -0.32663, -4.98815],
+					"origin": [0, 8, 0],
+					"rotation": [4.98815, -0.32663, 4.98815],
 					"color": 0,
 					"configs": {
 						"variants": {}
@@ -530,8 +530,8 @@
 				},
 				{
 					"name": "4",
-					"origin": [0, 64, 0],
-					"rotation": [-4.98815, 0.32663, 4.98815],
+					"origin": [0, 8, 0],
+					"rotation": [4.98815, 0.32663, -4.98815],
 					"color": 0,
 					"configs": {
 						"variants": {}
@@ -539,7 +539,7 @@
 					"uuid": "68b5bfe0-a864-105c-7a39-bc710d4ccf74",
 					"export": true,
 					"mirror_uv": false,
-					"isOpen": true,
+					"isOpen": false,
 					"locked": false,
 					"visibility": true,
 					"autouv": 0,
@@ -548,8 +548,8 @@
 				},
 				{
 					"name": "5",
-					"origin": [0, 68, 0],
-					"rotation": [-45, 0, 35.26],
+					"origin": [0, 4, 0],
+					"rotation": [45, 0, -35.26],
 					"color": 0,
 					"configs": {
 						"variants": {}
@@ -566,8 +566,8 @@
 				},
 				{
 					"name": "6",
-					"origin": [0, 68, 0],
-					"rotation": [-15.00269, 35.26658, 44.99534],
+					"origin": [0, 4, 0],
+					"rotation": [15.00269, 35.26658, -44.99534],
 					"color": 0,
 					"configs": {
 						"variants": {}
@@ -587,8 +587,8 @@
 	],
 	"textures": [
 		{
-			"path": "",
-			"name": "chocolate_frosting",
+			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\ingredient\\chocolate_frosting.png",
+			"name": "chocolate_frosting.png",
 			"folder": "block",
 			"namespace": "",
 			"id": "0",
@@ -610,8 +610,9 @@
 			"frame_interpolate": false,
 			"visible": true,
 			"internal": true,
-			"saved": false,
+			"saved": true,
 			"uuid": "ccfe6c0f-1f94-b651-0e38-53c6ff5cfd82",
+			"relative_path": "../../resources/assets/cooking/textures/blueprint/ingredient/chocolate_frosting.png",
 			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAABQxJREFUeF7tms9u00AQxteU/G+TumAoQVUKgqoIiRNcOCEh8SZw4sIzcOGGxBHegCdASNyAO5UqEK2gqaAEIgikhKQN1OhbZ9zxdu04iKSOnb3EXq+Snd98MzvZtXFGFG3Ra22xR5fCTKXldaO7K6+b3a77DBcVqyBe1muGpzMiNzeWFu2nbzfcueEeU+N9NFWDAJDxZ61pkcsfcU1p/9oT1XrLvV+uzIg31e3IA+AGEwAdBAkAxk8JQ8A4NBhNbXfnj/jU7HieAUhUFaAzNhDAhdScDZlfrBS1xqOzZKY8z6IK4LQo2BeXLE8gQvbXyqfsVvu3MK2CfMZDwQAAczYtZa96Xmc8+sYFQKPeEoXcUWl0IAAMAIRiyRmM9vXrjvycLaVEq7UfEpQPohIC8Drm+VG0DLomFagApJ2KClwFcOMJQre7bzjlhsMEwGOZ5rj6tu6RPG44ANxDBVAANUCgMDAuFy37+InMgS9BhwoAfevVn3JsVTRHvgTqAGAuKgQVwFbjlzhfLmohDASAjD9XmRbPqluRAeAHASGABgBoZTN/wNG+APy8D+PRogZAhQAVAECnvSe+dTouANyjZXNOraMFoDNeRRdFABwCB4B+QJjLZl0zXAAohM72vJpKOVSiCEDN8Nwhuz93PPGtSp6rgCBoAeBLAaEfAIx5sv5hpDmAAPAsj2sYT03N9JQDSPYbnR9y6GK2JEPgTaMhZClMCvADQMrg1EcJgBtPc1DX+rWtpifRwWgYSWqA5wkAt0ML4ECq1HSMAgBf9vzWe/Iy1noOgbyOqcPwZdOUHlebcb1Stuv1HWFZTi2g87YOyDAB+K33PMnRnNSljXucxug8T8+MS/ljspQkAGEhHBaAIAjkdVr2eMLTeR/fZVy15u3G910nfsrOMhFGBcMEgDmoKiCpk+fI03TPlziSPSW8QAUAAAYCAgEIA2HYAMgw/JXFNc/w9Aw1Pc8NHEKQ0Z4kOC4AMGkkOR7zvKpTY5+WuX4JXYYAKYCHQT8VDFMBXP66LC/n2avredw3hVMT+GV8HYxIAlBzAI9/vtz5xX0/r/uGgKqAIBUMUwGDJkF4fhCvawFQGBRyU+4e4GECoEnqwkEn+0G87gsAD7ALTJugNPCwS2GuCPqLS3MLm+39ALk5gAYAABqHEAUAKgRukF+RE0YVBwCQCjiEqAAgg66Ylnuahb7/AgCbos0fzsYhqSCfnxKpjLNHoEIYdhIM473/McZVAAcQRgWxAwCjdRDSmSl5aBJ7BRAAfFIokMR0ZwaxVcAEQM/tXAX8uJxCIdYKULMr3ySdAOhtncdGATgeh8fV02GuglgrYAKgjwLUQ5LY5YAgBehOiCYAkpIE/c4HY6sAZP1KZf8FgkQC4EvhBIDygpS6PRa7QogMhArQeP2vGo/7qAO4feeBffLkfOCeyefPNWGUxbRd6r0YTRVhHADcvffYfvTwfiCAm7fuOADk/l8PQlwUMDAAgpB4ADwM1FDg22JRzwH/pAAKmEXLeRdwAkBZDRKpAN2G6Dgsg6FDIHCdGOOHiQcQuhAaYycHTh0K4APmrLJn/Lf6ltjcrIqRvu46StgcwMrKivzp7W3nbVJqCwsLyQYwM1NMBoAZc17Ye/svVb9efSVFUKt9SQaAFy+ea6MvnckmAwAU0GlvSwiZTFp82Hwv80HiFZCoHEAKeLf+WsBwtLW19WSEgF8OSIwC/OoP1Ad/AWmhb/idM+7hAAAAAElFTkSuQmCC"
 		}
 	],
@@ -626,6 +627,82 @@
 		},
 		"list": []
 	},
-	"animations": [],
+	"animations": [
+		{
+			"uuid": "13fc26af-7191-bed8-dcf6-ff291a263b1c",
+			"name": "spawn",
+			"loop": "hold",
+			"override": false,
+			"length": 0.4,
+			"snapping": 20,
+			"selected": true,
+			"saved": false,
+			"path": "",
+			"anim_time_update": "",
+			"blend_weight": "",
+			"start_delay": "",
+			"loop_delay": "0",
+			"excluded_nodes": [],
+			"animators": {
+				"7d7c1d88-d5cf-c11a-df17-f487580c5099": {
+					"name": "chocolate_frosting",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "scale",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "0",
+									"z": "0"
+								}
+							],
+							"uuid": "3fcdbdd4-e9e3-d843-8f7c-dcdb1cc85d85",
+							"time": 0,
+							"color": -1,
+							"uniform": true,
+							"interpolation": "linear",
+							"easing": "linear",
+							"easingArgs": []
+						},
+						{
+							"channel": "scale",
+							"data_points": [
+								{
+									"x": "1",
+									"y": "1",
+									"z": "1"
+								}
+							],
+							"uuid": "676db3f4-ce1b-8849-e154-7be1d580958c",
+							"time": 0.4,
+							"color": -1,
+							"uniform": true,
+							"interpolation": "linear",
+							"easing": "easeOutBack",
+							"easingArgs": [1]
+						},
+						{
+							"channel": "scale",
+							"data_points": [
+								{
+									"x": "0.5",
+									"y": "1",
+									"z": "0.5"
+								}
+							],
+							"uuid": "22d58cba-5f6b-8f2e-e5f0-b5f4b366bb02",
+							"time": 0.2,
+							"color": -1,
+							"uniform": false,
+							"interpolation": "linear",
+							"easing": "linear",
+							"easingArgs": [0.25]
+						}
+					]
+				}
+			}
+		}
+	],
 	"animation_controllers": []
 }

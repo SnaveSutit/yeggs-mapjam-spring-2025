@@ -133,11 +133,20 @@
 		"ingredient_chocolate_frosting": {
 			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
 			"versionedFiles": [
-				"assets/animated_java/items/blueprint/ingredient_chocolate_frosting/chocolate_frosting.json",
+				"assets/animated_java/items/blueprint/ingredient_chocolate_frosting/1.json",
+				"assets/animated_java/items/blueprint/ingredient_chocolate_frosting/2.json",
+				"assets/animated_java/items/blueprint/ingredient_chocolate_frosting/3.json",
+				"assets/animated_java/items/blueprint/ingredient_chocolate_frosting/4.json",
+				"assets/animated_java/items/blueprint/ingredient_chocolate_frosting/5.json",
+				"assets/animated_java/items/blueprint/ingredient_chocolate_frosting/6.json",
 				"assets/animated_java/items/empty.json",
-				"assets/animated_java/models/blueprint/ingredient_chocolate_frosting/chocolate_frosting.json",
-				"assets/animated_java/models/empty.json",
-				"assets/animated_java/textures/blueprint/ingredient_chocolate_frosting/chocolate_frosting.png"
+				"assets/animated_java/models/blueprint/ingredient_chocolate_frosting/1.json",
+				"assets/animated_java/models/blueprint/ingredient_chocolate_frosting/2.json",
+				"assets/animated_java/models/blueprint/ingredient_chocolate_frosting/3.json",
+				"assets/animated_java/models/blueprint/ingredient_chocolate_frosting/4.json",
+				"assets/animated_java/models/blueprint/ingredient_chocolate_frosting/5.json",
+				"assets/animated_java/models/blueprint/ingredient_chocolate_frosting/6.json",
+				"assets/animated_java/models/empty.json"
 			]
 		},
 		"ingredient_eggs": {
@@ -173,11 +182,20 @@
 		"ingredient_strawberry_frosting": {
 			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
 			"versionedFiles": [
-				"assets/animated_java/items/blueprint/ingredient_strawberry_frosting/strawberry_frosting.json",
+				"assets/animated_java/items/blueprint/ingredient_strawberry_frosting/1.json",
+				"assets/animated_java/items/blueprint/ingredient_strawberry_frosting/2.json",
+				"assets/animated_java/items/blueprint/ingredient_strawberry_frosting/3.json",
+				"assets/animated_java/items/blueprint/ingredient_strawberry_frosting/4.json",
+				"assets/animated_java/items/blueprint/ingredient_strawberry_frosting/5.json",
+				"assets/animated_java/items/blueprint/ingredient_strawberry_frosting/6.json",
 				"assets/animated_java/items/empty.json",
-				"assets/animated_java/models/blueprint/ingredient_strawberry_frosting/strawberry_frosting.json",
-				"assets/animated_java/models/empty.json",
-				"assets/animated_java/textures/blueprint/ingredient_strawberry_frosting/strawberry_frosting.png"
+				"assets/animated_java/models/blueprint/ingredient_strawberry_frosting/1.json",
+				"assets/animated_java/models/blueprint/ingredient_strawberry_frosting/2.json",
+				"assets/animated_java/models/blueprint/ingredient_strawberry_frosting/3.json",
+				"assets/animated_java/models/blueprint/ingredient_strawberry_frosting/4.json",
+				"assets/animated_java/models/blueprint/ingredient_strawberry_frosting/5.json",
+				"assets/animated_java/models/blueprint/ingredient_strawberry_frosting/6.json",
+				"assets/animated_java/models/empty.json"
 			]
 		},
 		"ingredient_sugar": {
@@ -202,11 +220,20 @@
 		"ingredient_vanilla_frosting": {
 			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
 			"versionedFiles": [
-				"assets/animated_java/items/blueprint/ingredient_vanilla_frosting/vanilla_frosting.json",
+				"assets/animated_java/items/blueprint/ingredient_vanilla_frosting/1.json",
+				"assets/animated_java/items/blueprint/ingredient_vanilla_frosting/2.json",
+				"assets/animated_java/items/blueprint/ingredient_vanilla_frosting/3.json",
+				"assets/animated_java/items/blueprint/ingredient_vanilla_frosting/4.json",
+				"assets/animated_java/items/blueprint/ingredient_vanilla_frosting/5.json",
+				"assets/animated_java/items/blueprint/ingredient_vanilla_frosting/6.json",
 				"assets/animated_java/items/empty.json",
-				"assets/animated_java/models/blueprint/ingredient_vanilla_frosting/vanilla_frosting.json",
-				"assets/animated_java/models/empty.json",
-				"assets/animated_java/textures/blueprint/ingredient_vanilla_frosting/vanilla_frosting.png"
+				"assets/animated_java/models/blueprint/ingredient_vanilla_frosting/1.json",
+				"assets/animated_java/models/blueprint/ingredient_vanilla_frosting/2.json",
+				"assets/animated_java/models/blueprint/ingredient_vanilla_frosting/3.json",
+				"assets/animated_java/models/blueprint/ingredient_vanilla_frosting/4.json",
+				"assets/animated_java/models/blueprint/ingredient_vanilla_frosting/5.json",
+				"assets/animated_java/models/blueprint/ingredient_vanilla_frosting/6.json",
+				"assets/animated_java/models/empty.json"
 			]
 		},
 		"item_milk": {
@@ -440,13 +467,58 @@
 		"static_pipette": {
 			"coreFiles": ["assets/minecraft/atlases/blocks.json", "pack.mcmeta"],
 			"versionedFiles": [
-				"assets/animated_java/items/blueprint/static_pipette/bag.json",
-				"assets/animated_java/items/blueprint/static_pipette/tip.json",
+				"assets/animated_java/items/blueprint/static_pipette/1.json",
+				"assets/animated_java/items/blueprint/static_pipette/10.json",
+				"assets/animated_java/items/blueprint/static_pipette/2.json",
+				"assets/animated_java/items/blueprint/static_pipette/3.json",
+				"assets/animated_java/items/blueprint/static_pipette/4.json",
+				"assets/animated_java/items/blueprint/static_pipette/5.json",
+				"assets/animated_java/items/blueprint/static_pipette/6.json",
+				"assets/animated_java/items/blueprint/static_pipette/7.json",
+				"assets/animated_java/items/blueprint/static_pipette/8.json",
+				"assets/animated_java/items/blueprint/static_pipette/9.json",
 				"assets/animated_java/items/empty.json",
-				"assets/animated_java/models/blueprint/static_pipette/bag.json",
-				"assets/animated_java/models/blueprint/static_pipette/tip.json",
-				"assets/animated_java/models/empty.json",
-				"assets/animated_java/textures/blueprint/static_pipette/static_pipette.png"
+				"assets/animated_java/models/blueprint/static_pipette/1.json",
+				"assets/animated_java/models/blueprint/static_pipette/10.json",
+				"assets/animated_java/models/blueprint/static_pipette/2.json",
+				"assets/animated_java/models/blueprint/static_pipette/3.json",
+				"assets/animated_java/models/blueprint/static_pipette/4.json",
+				"assets/animated_java/models/blueprint/static_pipette/5.json",
+				"assets/animated_java/models/blueprint/static_pipette/6.json",
+				"assets/animated_java/models/blueprint/static_pipette/7.json",
+				"assets/animated_java/models/blueprint/static_pipette/8.json",
+				"assets/animated_java/models/blueprint/static_pipette/9.json",
+				"assets/animated_java/models/blueprint/static_pipette/chocolate/1.json",
+				"assets/animated_java/models/blueprint/static_pipette/chocolate/10.json",
+				"assets/animated_java/models/blueprint/static_pipette/chocolate/2.json",
+				"assets/animated_java/models/blueprint/static_pipette/chocolate/3.json",
+				"assets/animated_java/models/blueprint/static_pipette/chocolate/4.json",
+				"assets/animated_java/models/blueprint/static_pipette/chocolate/5.json",
+				"assets/animated_java/models/blueprint/static_pipette/chocolate/6.json",
+				"assets/animated_java/models/blueprint/static_pipette/chocolate/7.json",
+				"assets/animated_java/models/blueprint/static_pipette/chocolate/8.json",
+				"assets/animated_java/models/blueprint/static_pipette/chocolate/9.json",
+				"assets/animated_java/models/blueprint/static_pipette/strawberry/1.json",
+				"assets/animated_java/models/blueprint/static_pipette/strawberry/10.json",
+				"assets/animated_java/models/blueprint/static_pipette/strawberry/2.json",
+				"assets/animated_java/models/blueprint/static_pipette/strawberry/3.json",
+				"assets/animated_java/models/blueprint/static_pipette/strawberry/4.json",
+				"assets/animated_java/models/blueprint/static_pipette/strawberry/5.json",
+				"assets/animated_java/models/blueprint/static_pipette/strawberry/6.json",
+				"assets/animated_java/models/blueprint/static_pipette/strawberry/7.json",
+				"assets/animated_java/models/blueprint/static_pipette/strawberry/8.json",
+				"assets/animated_java/models/blueprint/static_pipette/strawberry/9.json",
+				"assets/animated_java/models/blueprint/static_pipette/vanilla/1.json",
+				"assets/animated_java/models/blueprint/static_pipette/vanilla/10.json",
+				"assets/animated_java/models/blueprint/static_pipette/vanilla/2.json",
+				"assets/animated_java/models/blueprint/static_pipette/vanilla/3.json",
+				"assets/animated_java/models/blueprint/static_pipette/vanilla/4.json",
+				"assets/animated_java/models/blueprint/static_pipette/vanilla/5.json",
+				"assets/animated_java/models/blueprint/static_pipette/vanilla/6.json",
+				"assets/animated_java/models/blueprint/static_pipette/vanilla/7.json",
+				"assets/animated_java/models/blueprint/static_pipette/vanilla/8.json",
+				"assets/animated_java/models/blueprint/static_pipette/vanilla/9.json",
+				"assets/animated_java/models/empty.json"
 			]
 		},
 		"troll": {
