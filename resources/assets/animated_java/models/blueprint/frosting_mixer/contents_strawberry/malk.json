@@ -1,0 +1,6 @@
+{
+	"parent": "animated_java:blueprint/frosting_mixer/malk",
+	"textures": {
+		"1": "cooking:blueprint/pan/frosting_strawberry"
+	}
+}

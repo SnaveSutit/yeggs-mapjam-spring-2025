@@ -15,5 +15,5 @@ scoreboard objectives add aj.hide_badges.frame dummy
 scoreboard objectives add aj.milk_check.frame dummy
 scoreboard objectives add aj.flour_check.frame dummy
 scoreboard objectives add aj.sugar_check.frame dummy
-scoreboard objectives add aj.egg_check.frame dummy
+scoreboard objectives add aj.eggs_check.frame dummy
 scoreboard objectives add aj.flavor_check.frame dummy

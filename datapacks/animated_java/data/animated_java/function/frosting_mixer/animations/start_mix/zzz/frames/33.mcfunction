@@ -2,4 +2,3 @@
 $data merge entity $(bone_frosting_nozzle) {transformation: [-2.6747f,0f,0f,-0.0017f,0f,2.6587f,0f,8.009f,0f,0f,-2.6667f,0.0023f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(bone_lid) {transformation: [-4.6807f,0f,0f,-0.0017f,0f,4.6527f,0f,13.4925f,0f,0f,-4.6667f,-2.9977f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(bone_basin) {transformation: [-4.6807f,0f,0f,-0.0017f,0f,4.6527f,0f,11f,0f,0f,-4.6667f,0.0023f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
-data modify entity @s item.components."minecraft:custom_data" merge value {"cameras":{},"locators":{"milk_lock_point":{"posx":-2.999999999999999,"posy":1,"posz":-6,"roty":0,"rotx":0}}}

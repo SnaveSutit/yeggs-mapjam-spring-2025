@@ -12,6 +12,8 @@ execute if entity @s[tag=aj.frosting_mixer.animation.hide_ingredient_badges.play
 execute if entity @s[tag=aj.frosting_mixer.animation.show_ingredient_badges.playing] run function animated_java:frosting_mixer/animations/show_ingredient_badges/zzz/on_tick
 execute if entity @s[tag=aj.frosting_mixer.animation.show_sugar_ingredient_check.playing] run function animated_java:frosting_mixer/animations/show_sugar_ingredient_check/zzz/on_tick
 execute if entity @s[tag=aj.frosting_mixer.animation.show_flavor_ingredient_check.playing] run function animated_java:frosting_mixer/animations/show_flavor_ingredient_check/zzz/on_tick
+execute if entity @s[tag=aj.frosting_mixer.animation.show_milk_ingredient_check.playing] run function animated_java:frosting_mixer/animations/show_milk_ingredient_check/zzz/on_tick
+execute if entity @s[tag=aj.frosting_mixer.animation.hide_milk_ingredient_check.playing] run function animated_java:frosting_mixer/animations/hide_milk_ingredient_check/zzz/on_tick
 execute on passengers if entity @s[tag=aj.frosting_mixer.data] run function animated_java:frosting_mixer/root/zzz/on_tick/locators_and_cameras
 execute at @s on passengers run rotate @s ~ ~
 function #animated_java:frosting_mixer/as_root/post_tick

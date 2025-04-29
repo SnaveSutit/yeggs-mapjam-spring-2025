@@ -10,12 +10,12 @@
 	},
 	"elements": [
 		{
-			"from": [-4, -16, -4],
-			"to": [4, -8, -4],
+			"from": [-4, -4, 8],
+			"to": [20, 20, 8],
 			"rotation": {
 				"angle": 0,
 				"axis": "y",
-				"origin": [-4, -16, -4]
+				"origin": [-4, -4, 8]
 			},
 			"faces": {
 				"north": {

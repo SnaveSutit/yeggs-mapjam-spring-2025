@@ -10,6 +10,9 @@ function on_load minecraft:load {
 
 function summon {
 	function animated_java:frosting_mixer/summon {args:{animation:"hide_ingredient_badges",variant:"contents_generic"}}
+	execute as @n[tag=frosting_mixer,distance=..1] run {
+		function animated_java:frosting_mixer/animations/hide_milk_ingredient_check/play
+	}
 	execute as @e[tag=aj.frosting_mixer.bone.ingredient_badges.decendant,distance=..1] run data modify entity @s billboard set value "vertical"
 }
 
@@ -53,11 +56,23 @@ function on_tick minecraft:tick {
 	execute as @e[type=minecraft:item_display,tag=frosting_mixer] at @s run {
 		tag @s add this
 		# Remove players who fall in
-		execute positioned ~-2.5 ~9 ~-2.5 as @a[dx=4,dy=0,dz=4] at @n[tag=this,distance=..10] run tp @s ~ ~2 ~
+		execute positioned ~-2.5 ~9 ~-2.5 as @a[dx=4,dy=0,dz=4] at @n[tag=this,distance=..14] run tp @s ~ ~2 ~
 
 		execute if score @s frosting_mixer_state matches 0 run {
 			function animated_java:frosting_mixer/animations/open/play
 			scoreboard players set @s frosting_mixer_state -1
+		}
+
+		block {
+			# Check for milk
+			execute as @n[type=minecraft:item_display,tag=milk_lock_point,distance=..10] on passengers if entity @s[tag=ingredient_milk] run return run {
+				execute as @n[tag=this,tag=!has_milk,distance=..1] run {
+					tag @s add has_milk
+					function animated_java:frosting_mixer/animations/show_milk_ingredient_check/play
+				}
+			}
+			execute if entity @s[tag=has_milk] run function animated_java:frosting_mixer/animations/hide_milk_ingredient_check/play
+			tag @s remove has_milk
 		}
 
 		# Waiting for ingredients
@@ -95,12 +110,15 @@ function on_tick minecraft:tick {
 				# Check for milk
 				scoreboard players set #has_milk i 0
 				execute as @n[type=minecraft:item_display,tag=milk_lock_point,distance=..10] on passengers if entity @s[tag=ingredient_milk] run {
-					scoreboard players add @s mix_count 1
 					scoreboard players set #has_milk i 1
-					execute if score @s mix_count matches 3.. run function util:kill_stacked_entities
+					execute if score @s mix_count matches 3.. run {
+						function util:kill_stacked_entities
+						execute as @n[tag=this,distance=..10] run function animated_java:frosting_mixer/animations/hide_milk_ingredient_check/play
+					}
 				}
 
 				execute if score #has_milk i matches 1 run {
+					function animated_java:frosting_mixer/animations/show_milk_ingredient_check/play
 					function animated_java:frosting_mixer/animations/start_mix/play
 					scoreboard players set @s mix_count 8
 					scoreboard players set @s frosting_mixer_state -1

@@ -1,6 +1,6 @@
 {
 	"textures": {
-		"8": "cooking:blueprint/ingredient/sugar",
+		"12": "cooking:blueprint/ingredient/sugar",
 		"particle": "minecraft:item/pufferfish"
 	},
 	"display": {
@@ -20,27 +20,27 @@
 			"faces": {
 				"north": {
 					"uv": [0, 0, 8, 8],
-					"texture": "#8"
+					"texture": "#12"
 				},
 				"east": {
 					"uv": [0, 0, 8, 8],
-					"texture": "#8"
+					"texture": "#12"
 				},
 				"south": {
 					"uv": [0, 0, 8, 8],
-					"texture": "#8"
+					"texture": "#12"
 				},
 				"west": {
 					"uv": [0, 0, 8, 8],
-					"texture": "#8"
+					"texture": "#12"
 				},
 				"up": {
 					"uv": [0, 0, 8, 8],
-					"texture": "#8"
+					"texture": "#12"
 				},
 				"down": {
 					"uv": [0, 0, 8, 8],
-					"texture": "#8"
+					"texture": "#12"
 				}
 			}
 		},
@@ -55,27 +55,27 @@
 			"faces": {
 				"north": {
 					"uv": [8, 0, 16, 8],
-					"texture": "#8"
+					"texture": "#12"
 				},
 				"east": {
 					"uv": [8, 0, 16, 8],
-					"texture": "#8"
+					"texture": "#12"
 				},
 				"south": {
 					"uv": [8, 0, 16, 8],
-					"texture": "#8"
+					"texture": "#12"
 				},
 				"west": {
 					"uv": [8, 0, 16, 8],
-					"texture": "#8"
+					"texture": "#12"
 				},
 				"up": {
 					"uv": [8, 0, 16, 8],
-					"texture": "#8"
+					"texture": "#12"
 				},
 				"down": {
 					"uv": [8, 0, 16, 8],
-					"texture": "#8"
+					"texture": "#12"
 				}
 			}
 		},
@@ -91,32 +91,32 @@
 				"north": {
 					"uv": [8, 0, 16, 8],
 					"rotation": 90,
-					"texture": "#8"
+					"texture": "#12"
 				},
 				"east": {
 					"uv": [8, 0, 16, 8],
 					"rotation": 270,
-					"texture": "#8"
+					"texture": "#12"
 				},
 				"south": {
 					"uv": [8, 0, 16, 8],
 					"rotation": 270,
-					"texture": "#8"
+					"texture": "#12"
 				},
 				"west": {
 					"uv": [8, 0, 16, 8],
 					"rotation": 270,
-					"texture": "#8"
+					"texture": "#12"
 				},
 				"up": {
 					"uv": [8, 0, 16, 8],
 					"rotation": 270,
-					"texture": "#8"
+					"texture": "#12"
 				},
 				"down": {
 					"uv": [8, 0, 16, 8],
 					"rotation": 270,
-					"texture": "#8"
+					"texture": "#12"
 				}
 			}
 		}

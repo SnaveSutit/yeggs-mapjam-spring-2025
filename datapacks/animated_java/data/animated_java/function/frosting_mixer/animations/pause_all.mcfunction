@@ -11,3 +11,5 @@ tag @s remove aj.frosting_mixer.animation.hide_ingredient_badges.playing
 tag @s remove aj.frosting_mixer.animation.show_ingredient_badges.playing
 tag @s remove aj.frosting_mixer.animation.show_sugar_ingredient_check.playing
 tag @s remove aj.frosting_mixer.animation.show_flavor_ingredient_check.playing
+tag @s remove aj.frosting_mixer.animation.show_milk_ingredient_check.playing
+tag @s remove aj.frosting_mixer.animation.hide_milk_ingredient_check.playing

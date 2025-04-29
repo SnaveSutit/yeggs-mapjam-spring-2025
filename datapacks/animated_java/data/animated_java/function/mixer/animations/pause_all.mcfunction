@@ -16,5 +16,5 @@ tag @s remove aj.mixer.animation.hide_badges.playing
 tag @s remove aj.mixer.animation.milk_check.playing
 tag @s remove aj.mixer.animation.flour_check.playing
 tag @s remove aj.mixer.animation.sugar_check.playing
-tag @s remove aj.mixer.animation.egg_check.playing
+tag @s remove aj.mixer.animation.eggs_check.playing
 tag @s remove aj.mixer.animation.flavor_check.playing

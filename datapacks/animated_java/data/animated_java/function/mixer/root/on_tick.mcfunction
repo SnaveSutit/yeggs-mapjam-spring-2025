@@ -17,7 +17,7 @@ execute if entity @s[tag=aj.mixer.animation.hide_badges.playing] run function an
 execute if entity @s[tag=aj.mixer.animation.milk_check.playing] run function animated_java:mixer/animations/milk_check/zzz/on_tick
 execute if entity @s[tag=aj.mixer.animation.flour_check.playing] run function animated_java:mixer/animations/flour_check/zzz/on_tick
 execute if entity @s[tag=aj.mixer.animation.sugar_check.playing] run function animated_java:mixer/animations/sugar_check/zzz/on_tick
-execute if entity @s[tag=aj.mixer.animation.egg_check.playing] run function animated_java:mixer/animations/egg_check/zzz/on_tick
+execute if entity @s[tag=aj.mixer.animation.eggs_check.playing] run function animated_java:mixer/animations/eggs_check/zzz/on_tick
 execute if entity @s[tag=aj.mixer.animation.flavor_check.playing] run function animated_java:mixer/animations/flavor_check/zzz/on_tick
 execute on passengers if entity @s[tag=aj.mixer.data] run function animated_java:mixer/root/zzz/on_tick/locators_and_cameras
 execute at @s on passengers run rotate @s ~ ~

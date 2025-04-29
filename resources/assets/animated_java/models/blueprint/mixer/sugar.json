@@ -1,6 +1,6 @@
 {
 	"textures": {
-		"6": "animated_java:blueprint/mixer/ingredient_badge",
+		"6": "cooking:blueprint/ingredient/badge_background",
 		"particle": "minecraft:item/pufferfish"
 	},
 	"display": {
@@ -19,27 +19,11 @@
 			},
 			"faces": {
 				"north": {
-					"uv": [0, 0, 8, 8],
-					"texture": "#6"
-				},
-				"east": {
-					"uv": [0, 0, 0, 8],
+					"uv": [0, 0, 16, 16],
 					"texture": "#6"
 				},
 				"south": {
-					"uv": [0, 8, 8, 16],
-					"texture": "#6"
-				},
-				"west": {
-					"uv": [0, 0, 0, 8],
-					"texture": "#6"
-				},
-				"up": {
-					"uv": [8, 0, 0, 0],
-					"texture": "#6"
-				},
-				"down": {
-					"uv": [8, 0, 0, 0],
+					"uv": [0, 0, 16, 16],
 					"texture": "#6"
 				}
 			}
