@@ -3,7 +3,7 @@
 		"format": "animated_java_blueprint",
 		"format_version": "1.6.5",
 		"uuid": "743f6eed-520a-67b9-4868-003d0ddc01f0",
-		"save_location": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\blueprints\\ingredients\\chocolate.ajblueprint",
+		"save_location": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\blueprints\\ingredients\\chocolate.ajblueprint",
 		"last_used_export_namespace": "ingredient_chocolate"
 	},
 	"blueprint_settings": {
@@ -845,11 +845,11 @@
 	],
 	"textures": [
 		{
-			"path": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\resources\\assets\\animated_java\\textures\\blueprint\\ingredient_chocolate\\chocolate.png",
+			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\ingredient\\chocolate.png",
 			"name": "chocolate.png",
 			"folder": "",
 			"namespace": "",
-			"id": "1",
+			"id": "0",
 			"group": "",
 			"width": 64,
 			"height": 64,
@@ -868,10 +868,10 @@
 			"frame_interpolate": false,
 			"visible": true,
 			"internal": true,
-			"saved": false,
+			"saved": true,
 			"uuid": "1dd53f32-b8d6-466a-312f-cbb0a99858b6",
-			"source": "data:image/png;base64,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",
-			"relative_path": "../../resources/assets/animated_java/textures/blueprint/ingredient_chocolate/chocolate.png"
+			"relative_path": "../../resources/assets/cooking/textures/blueprint/ingredient/chocolate.png",
+			"source": "data:image/png;base64,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"
 		}
 	],
 	"variants": {
@@ -885,6 +885,65 @@
 		},
 		"list": []
 	},
-	"animations": [],
+	"animations": [
+		{
+			"uuid": "c5e2a387-87ff-fdb1-cab9-83287e3ae10f",
+			"name": "spawn",
+			"loop": "hold",
+			"override": false,
+			"length": 0.4,
+			"snapping": 20,
+			"selected": true,
+			"saved": false,
+			"path": "",
+			"anim_time_update": "",
+			"blend_weight": "",
+			"start_delay": "",
+			"loop_delay": "0",
+			"excluded_nodes": [],
+			"animators": {
+				"7d7c1d88-d5cf-c11a-df17-f487580c5099": {
+					"name": "chocolate",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "scale",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "0",
+									"z": "0"
+								}
+							],
+							"uuid": "3fcdbdd4-e9e3-d843-8f7c-dcdb1cc85d85",
+							"time": 0,
+							"color": -1,
+							"uniform": true,
+							"interpolation": "linear",
+							"easing": "linear",
+							"easingArgs": []
+						},
+						{
+							"channel": "scale",
+							"data_points": [
+								{
+									"x": "1",
+									"y": "1",
+									"z": "1"
+								}
+							],
+							"uuid": "676db3f4-ce1b-8849-e154-7be1d580958c",
+							"time": 0.4,
+							"color": -1,
+							"uniform": true,
+							"interpolation": "linear",
+							"easing": "easeOutBack",
+							"easingArgs": [1]
+						}
+					]
+				}
+			}
+		}
+	],
 	"animation_controllers": []
 }

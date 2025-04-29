@@ -3,7 +3,7 @@
 		"format": "animated_java_blueprint",
 		"format_version": "1.6.5",
 		"uuid": "64b0c5cb-3cf5-ec76-7cc1-791bbf689574",
-		"save_location": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\blueprints\\ingredients\\vanilla.ajblueprint",
+		"save_location": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\blueprints\\ingredients\\vanilla.ajblueprint",
 		"last_used_export_namespace": "ingredient_vanilla"
 	},
 	"blueprint_settings": {
@@ -1025,7 +1025,7 @@
 	],
 	"textures": [
 		{
-			"path": "",
+			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\ingredient\\vanilla.png",
 			"name": "vanilla.png",
 			"folder": "",
 			"namespace": "",
@@ -1048,7 +1048,7 @@
 			"frame_interpolate": false,
 			"visible": true,
 			"internal": true,
-			"saved": false,
+			"saved": true,
 			"uuid": "4e0ac953-c030-f4b5-6f5a-b44aa597ee51",
 			"layers": [
 				{
@@ -1063,6 +1063,7 @@
 					"data_url": "data:image/png;base64,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"
 				}
 			],
+			"relative_path": "../../resources/assets/cooking/textures/blueprint/ingredient/vanilla.png",
 			"source": "data:image/png;base64,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"
 		}
 	],
@@ -1077,6 +1078,65 @@
 		},
 		"list": []
 	},
-	"animations": [],
+	"animations": [
+		{
+			"uuid": "6def0c77-6952-5a1b-4921-a1a4a1a6602c",
+			"name": "spawn",
+			"loop": "hold",
+			"override": false,
+			"length": 0.4,
+			"snapping": 20,
+			"selected": true,
+			"saved": false,
+			"path": "",
+			"anim_time_update": "",
+			"blend_weight": "",
+			"start_delay": "",
+			"loop_delay": "0",
+			"excluded_nodes": [],
+			"animators": {
+				"7d7c1d88-d5cf-c11a-df17-f487580c5099": {
+					"name": "vanilla",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "scale",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "0",
+									"z": "0"
+								}
+							],
+							"uuid": "3fcdbdd4-e9e3-d843-8f7c-dcdb1cc85d85",
+							"time": 0,
+							"color": -1,
+							"uniform": true,
+							"interpolation": "linear",
+							"easing": "linear",
+							"easingArgs": []
+						},
+						{
+							"channel": "scale",
+							"data_points": [
+								{
+									"x": "1",
+									"y": "1",
+									"z": "1"
+								}
+							],
+							"uuid": "676db3f4-ce1b-8849-e154-7be1d580958c",
+							"time": 0.4,
+							"color": -1,
+							"uniform": true,
+							"interpolation": "linear",
+							"easing": "easeOutBack",
+							"easingArgs": [1]
+						}
+					]
+				}
+			}
+		}
+	],
 	"animation_controllers": []
 }

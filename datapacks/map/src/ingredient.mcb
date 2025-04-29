@@ -4,7 +4,10 @@ function on_load minecraft:load {
 
 function summon {
 	#ARGS: {type: string}
-	$execute align xyz positioned ~.5 ~ ~.5 rotated ~ 0 run function animated_java:ingredient_$(type)/summon {args:{animation:"spawn",start_animation:true}}
+	execute store result score #random i run random value 0..15
+	REPEAT(0, 15) as i {
+		$execute if score #random i matches <%i%> align xyz positioned ~.5 ~ ~.5 rotated <%i*(360/16)%> 0 run function animated_java:ingredient_$(type)/summon {args:{animation:"spawn",start_animation:true}}
+	}
 	$execute align xyz positioned ~.5 ~ ~.5 summon minecraft:armor_stand run { {type:$(type)}
 		$tag @s add ingredient_$(type)
 		tag @s add ingredient

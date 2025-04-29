@@ -10,6 +10,8 @@ function on_load minecraft:load {
 	scoreboard players set 7 i 7
 	scoreboard players set 8 i 8
 	scoreboard players set 10 i 10
+	scoreboard players set 20 i 20
+	scoreboard players set 60 i 60
 	scoreboard players set 100 i 100
 	scoreboard players set 360 i 360
 
@@ -29,6 +31,7 @@ function start {
 	tellraw @a {text:'Starting Game...',color:green}
 	execute as @a run function map:teleport_to_game
 	function troll:begin_consuming
+	scoreboard players set #playtime i 0
 }
 
 
@@ -40,6 +43,7 @@ function stop {
 
 function on_tick minecraft:tick {
 	scoreboard players add #current_tick i 1
+	scoreboard players add #playtime i 1
 	# Tutorial Button
 	execute if block -5 35 43 minecraft:birch_button[powered=true] run {
 		function map:hide_buttons
@@ -48,6 +52,8 @@ function on_tick minecraft:tick {
 	# Play Button
 	execute if block -8 35 43 minecraft:birch_button[powered=true] run {
 		function map:hide_buttons
+		execute as @a run function map:teleport_to_game
+		function troll:begin_consuming
 	}
 	# Reset Button
 	execute if block -21 36 43 minecraft:birch_button[powered=true] run {
@@ -195,5 +201,35 @@ function game_over {
 		function map:teleport_to_spawn
 		gamemode adventure @a
 		function map:show_buttons
+	}
+}
+
+function win {
+	title @a times 10 80 10
+	title @a title ["",{text:"\ua000",font:"cooking:custom"},{translate:"space.-1"},{text:"\ua000",font:"cooking:custom"},{translate:offset.-256,with:[{text:"You Win!",color:green}]}]
+	schedule 80t replace {
+		function map:display_score
+		execute as @a run function map:teleport_to_spawn
+		function map:reset
+	}
+}
+
+function display_score {
+	scoreboard players operation #seconds i = #playtime i
+	scoreboard players operation #seconds i /= 20 i
+	scoreboard players operation #minutes i = #seconds i
+	scoreboard players operation #seconds i %= 60 i
+	scoreboard players operation #seconds i %= 60 i
+	scoreboard players operation #minutes i /= 60 i
+
+	execute store result score #leftovers i if entity @e[tag=layer]
+
+	scoreboard players set #total_cakes i 20
+	scoreboard players operation #total_cakes i -= #leftovers i
+
+	title @a subtitle [{text:"You launched ",color:green}, {score:{name:'#total_cakes',objective:'i'},color:aqua}, {text:" cakes in "}, {score:{name:'#minutes',objective:'i'},color:aqua}, {text:" minutes and "}, {score:{name:'#seconds',objective:'i'},color:aqua}, {text:" seconds!"}]
+
+	schedule 100t replace {
+		tellraw @a [{text:'---- You Win! ----\n',color:green}, {text:"You launched "}, {score:{name:'#total_cakes',objective:'i'},color:aqua}, {text:" cakes in "}, {score:{name:'#minutes',objective:'i'},color:aqua}, {text:" minutes and "}, {score:{name:'#seconds',objective:'i'},color:aqua}, {text:" seconds!"},'\n----------------']
 	}
 }

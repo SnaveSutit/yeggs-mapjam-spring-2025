@@ -103,8 +103,7 @@
 				"assets/animated_java/items/blueprint/ingredient_chocolate/chocolate.json",
 				"assets/animated_java/items/empty.json",
 				"assets/animated_java/models/blueprint/ingredient_chocolate/chocolate.json",
-				"assets/animated_java/models/empty.json",
-				"assets/animated_java/textures/blueprint/ingredient_chocolate/chocolate.png"
+				"assets/animated_java/models/empty.json"
 			]
 		},
 		"ingredient_chocolate_frosting": {
@@ -123,8 +122,7 @@
 				"assets/animated_java/items/blueprint/ingredient_eggs/eggs.json",
 				"assets/animated_java/items/empty.json",
 				"assets/animated_java/models/blueprint/ingredient_eggs/eggs.json",
-				"assets/animated_java/models/empty.json",
-				"assets/animated_java/textures/blueprint/ingredient_eggs/eggs.png"
+				"assets/animated_java/models/empty.json"
 			]
 		},
 		"ingredient_flour": {
@@ -145,8 +143,7 @@
 				"assets/animated_java/items/blueprint/ingredient_milk/malk.json",
 				"assets/animated_java/items/empty.json",
 				"assets/animated_java/models/blueprint/ingredient_milk/malk.json",
-				"assets/animated_java/models/empty.json",
-				"assets/animated_java/textures/blueprint/ingredient_milk/milk.png"
+				"assets/animated_java/models/empty.json"
 			]
 		},
 		"ingredient_strawberry_frosting": {
@@ -175,8 +172,7 @@
 				"assets/animated_java/items/blueprint/ingredient_vanilla/vanilla.json",
 				"assets/animated_java/items/empty.json",
 				"assets/animated_java/models/blueprint/ingredient_vanilla/vanilla.json",
-				"assets/animated_java/models/empty.json",
-				"assets/animated_java/textures/blueprint/ingredient_vanilla/vanilla.png"
+				"assets/animated_java/models/empty.json"
 			]
 		},
 		"ingredient_vanilla_frosting": {
