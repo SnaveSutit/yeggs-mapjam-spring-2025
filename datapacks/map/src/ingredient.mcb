@@ -43,6 +43,20 @@ function summon {
 	}
 }
 
+
+function summon_random {
+	#ARGS: {type: string}
+	execute store result score #random_item i run random value 0..7
+	<%%
+		store.ingredients = ['milk', 'eggs', 'sugar', 'flour', 'vanilla', 'chocolate', 'berries']
+	%%>
+	REPEAT(store.ingredients) as type {
+		execute if score #random_item i matches <%store.ingredients.indexOf(type)%> run function ingredient:summon {type:<%type%>}
+	}
+}
+
+
+
 function create_dispenser {
 	#ARGS: {type: string}
 	$execute align xyz positioned ~.5 ~ ~.5 summon minecraft:marker run { {type:$(type)}

@@ -120,7 +120,7 @@ function on_tick minecraft:tick {
 				execute if score #has_milk i matches 1 run {
 					function animated_java:frosting_mixer/animations/show_milk_ingredient_check/play
 					function animated_java:frosting_mixer/animations/start_mix/play
-					scoreboard players set @s mix_count 8
+					scoreboard players set @s mix_count 10
 					scoreboard players set @s frosting_mixer_state -1
 				}
 			}

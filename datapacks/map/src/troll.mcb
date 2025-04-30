@@ -6,8 +6,8 @@ function on_load minecraft:load {
 
 function reset {
 	bossbar set troll:satisfaction players
-	bossbar set troll:satisfaction style notched_20
-	bossbar set troll:satisfaction max 20
+	bossbar set troll:satisfaction style progress
+	bossbar set troll:satisfaction max 4
 	bossbar set troll:satisfaction value 0
 	bossbar set troll:satisfaction color yellow
 
@@ -26,9 +26,17 @@ function reset {
 }
 
 
+function set_required_satiscation {
+	execute store result score #count i if entity @a[gamemode=adventure]
+	scoreboard players set #required_satisfaction i 4
+	scoreboard players operation #count i *= 2 i
+	execute store result bossbar troll:satisfaction max run scoreboard players operation #required_satisfaction i += #count i
+}
+
+
 function on_tick minecraft:tick {
 	execute if score #game_in_progress i matches 1 run scoreboard players add #music_timer i 1
-	execute if score #music_mode i matches 0 if score #music_timer i matches 2400.. run {
+	execute if score #music_mode i matches 0 if score #music_timer i matches 2600.. run {
 		playsound minecraft:music.2 record @a 0 0 0 100 1
 		scoreboard players set #music_timer i 0
 	}
@@ -57,6 +65,7 @@ function begin_consuming {
 	bossbar set troll:patience players @a
 	scoreboard players set #troll_patience i 6
 	scoreboard players set #satisfaction i 0
+	function troll:set_required_satiscation
 	schedule function troll:consume 60s
 }
 
@@ -73,13 +82,19 @@ function consume {
 			execute store result bossbar troll:satisfaction value run scoreboard players get #satisfaction i
 		}
 	}
-	execute if score #satisfaction i matches 20 run {
-		tellraw @a ["<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", {text:"Yum! That was delicious!","color":"yellow"}]
+	execute if score #satisfaction i >= #required_satisfaction i run {
+		tellraw @a ["<", {text:"His Immenseness, William Cornelius Grumblethorn III",color:green}, "> ", {text:"Yum! That was delicious!","color":"yellow"}]
 		playsound minecraft:entity.villager.yes block @a ~ ~ ~ 10 0.1
 		schedule clear troll:consume
 		function map:win
 	}
 	execute if score #satisfied i matches 1 run {
+		stopsound @a record minecraft:music.1
+		stopsound @a record minecraft:music.2
+		playsound minecraft:music.2 record @a 0 0 0 100 1
+		scoreboard players set #music_mode i 0
+		scoreboard players set #music_timer i 0
+
 		schedule function troll:consume 60s
 	}
 	execute if score #satisfied i matches 0 run {

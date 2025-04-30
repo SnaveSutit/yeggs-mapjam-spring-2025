@@ -24,6 +24,25 @@ function while_tutorial {
 	schedule function ^0 1t
 }
 
+function clear_schedules {
+	# Clear all schedules for the tutorial
+	schedule clear tutorial:steps/1
+	schedule clear tutorial:steps/2
+	schedule clear tutorial:steps/3
+	schedule clear tutorial:steps/4
+	schedule clear tutorial:steps/5
+	schedule clear tutorial:steps/6
+	schedule clear tutorial:steps/7
+	schedule clear tutorial:steps/8
+	schedule clear tutorial:steps/9
+	schedule clear tutorial:steps/10
+	schedule clear tutorial:steps/11
+	schedule clear tutorial:steps/12
+	schedule clear tutorial:steps/13
+	schedule clear tutorial:steps/14
+	schedule clear tutorial:steps/15
+}
+
 function start {
 	function map:reset
 	schedule 1s {
