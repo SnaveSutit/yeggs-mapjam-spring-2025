@@ -4,6 +4,10 @@ function on_load minecraft:load {
 	team add spectators "Spectators"
 }
 
+# TODO: Make a system that sets a unique game-ID on each player,
+# so if a player leaves and then the game ends, then another game starts,
+# and the player rejoins, they are put in specator instead of joined into the game again.
+
 function on_join {
 	attribute @s minecraft:movement_speed base set 0.18
 	execute if entity @s[tag=!has_joined_before] run {
@@ -12,17 +16,18 @@ function on_join {
 	}
 	tag @s add has_joined_before
 
+	# TODO: Add messages indicating when a player re-joins that they now are spectating / playing again
 	execute if score #game_in_progress i matches 1 run {
 		execute if entity @s[team=players] run return run {
 			function player:join_players
 			function map:teleport_to_game
 		}
 		execute if entity @s[team=spectator] run return run {
-			function player:join_spectator
+			function player:join_spectators
 			function map:teleport_to_game
 		}
 		execute if entity @s[team=] run {
-			function player:join_spectator
+			function player:join_spectators
 			function map:teleport_to_game
 		}
 	}
@@ -41,7 +46,7 @@ function join_players {
 	team join players @s
 }
 
-function join_spectator {
+function join_spectators {
 	gamemode spectator @s
 	team leave @s
 	team join players @s

@@ -30,7 +30,10 @@ function start {
 	scoreboard players set #game_in_progress i 1
 	tellraw @a {text:'Starting Game...',color:green}
 	scoreboard players set #playtime i 0
-	execute as @a run function map:teleport_to_game
+	execute as @a run {
+		function player:join_players
+		function map:teleport_to_game
+	}
 	function troll:begin_consuming
 }
 
@@ -160,7 +163,10 @@ function reset {
 		execute as @e[type=minecraft:item_display,nbt={item:{}}] run data modify entity @s view_range set value 2
 
 		function map:show_buttons
-		execute as @a[tag=!dev] run function map:teleport_to_spawn
+		execute as @a[tag=!dev] run {
+			function map:teleport_to_spawn
+			function player:join_players
+		}
 
 		tellraw @a {text:'Map reset successfully!',color:green}
 	}
