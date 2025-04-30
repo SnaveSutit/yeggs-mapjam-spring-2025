@@ -6,3 +6,29 @@ module.exports = {
 	ioThreadCount: 1, // default: 1, the number of threads to use for IO operations, 1 is syncronous.
 	setup: null, // default: null, a function that will be called to allow binding to mcb events.
 }
+
+// const fs = require('fs')
+// const path = require('path')
+
+// function getLineCountRecursive(dir, suffix) {
+// 	let lineCount = 0
+// 	const files = fs.readdirSync(dir)
+// 	for (const file of files) {
+// 		const filePath = path.join(dir, file)
+// 		if (fs.statSync(filePath).isDirectory()) {
+// 			lineCount += getLineCountRecursive(filePath, suffix)
+// 		} else if (file.endsWith(suffix)) {
+// 			const content = fs.readFileSync(filePath, 'utf-8')
+// 			lineCount += content.split('\n').length
+// 		}
+// 	}
+// 	return lineCount
+// }
+
+// console.log(`Source Line Count: ${getLineCountRecursive(path.join(process.cwd(), 'src'), '.mcb')}`)
+// console.log(
+// 	`Actual Line Count: ${getLineCountRecursive(
+// 		path.join(process.cwd(), '../animated_java/data'),
+// 		'.mcfunction'
+// 	)}`
+// )

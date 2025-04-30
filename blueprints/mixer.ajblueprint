@@ -1,7 +1,7 @@
 {
 	"meta": {
 		"format": "animated_java_blueprint",
-		"format_version": "1.6.5",
+		"format_version": "1.7.0-pre1",
 		"uuid": "b962be08-4905-2eed-ab4c-9eea911c2cc9",
 		"save_location": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\blueprints\\mixer.ajblueprint",
 		"last_used_export_namespace": "mixer"
@@ -22,6 +22,7 @@
 		"enable_advanced_data_pack_settings": false,
 		"data_pack": "../datapacks/animated_java",
 		"summon_commands": "tag @s add mixer\nscoreboard players set @s mixer_state 0\nfunction mixer:fill_lid",
+		"remove_commands": "",
 		"ticking_commands": "",
 		"interpolation_duration": 1,
 		"teleportation_duration": 1,
@@ -265,7 +266,7 @@
 		},
 		{
 			"name": "valve_interaction",
-			"position": [0, 144, -144],
+			"position": [0, 132, -144],
 			"rotation": [0, 0, 0],
 			"ignore_inherited_scale": false,
 			"visibility": true,
@@ -274,7 +275,7 @@
 				"use_entity": true,
 				"entity_type": "minecraft:interaction",
 				"sync_passenger_rotation": false,
-				"summon_commands": "scoreboard players operation @s <%OBJECTIVES.ID()%> = aj.last_id <%OBJECTIVES.ID()%>\ntag @s add mixer_valve\ndata merge entity @s {response:true,width:3,height:1}",
+				"summon_commands": "scoreboard players operation @s <%OBJECTIVES.ID()%> = aj.last_id <%OBJECTIVES.ID()%>\ntag @s add mixer_valve\ndata merge entity @s {response:true,width:4,height:1}",
 				"ticking_commands": ""
 			},
 			"uuid": "fbef553a-0bb8-dab7-aa92-0946517976f9",
@@ -5644,7 +5645,7 @@
 			"override": false,
 			"length": 2,
 			"snapping": 20,
-			"selected": false,
+			"selected": true,
 			"saved": false,
 			"path": "",
 			"anim_time_update": "",
@@ -6587,7 +6588,7 @@
 			"override": false,
 			"length": 2,
 			"snapping": 20,
-			"selected": true,
+			"selected": false,
 			"saved": false,
 			"path": "",
 			"anim_time_update": "",

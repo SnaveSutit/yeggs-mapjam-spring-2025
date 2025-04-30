@@ -159,7 +159,7 @@ function on_tick minecraft:tick {
 
 		execute if score @s mixer_state matches 3 run {
 			scoreboard players set #check i 0
-			execute on passengers if entity @s[tag=aj.global.data] run { with entity @s item.components."minecraft:custom_data".locators.handle_zone
+			execute on passengers if entity @s[tag=aj.global.data] run { with entity @s data.locators.handle_zone
 				$execute positioned ^$(posx) ^$(posy) ^$(posz) rotated ~$(roty) ~$(rotx) run {
 					execute if entity @a[distance=..2] run scoreboard players set #check i 1
 				}
@@ -212,7 +212,7 @@ dir valve {
 	}
 
 	function fill_pan {
-		execute on passengers if entity @s[tag=aj.global.data] run { with entity @s item.components."minecraft:custom_data".locators.spout_output
+		execute on passengers if entity @s[tag=aj.global.data] run { with entity @s data.locators.spout_output
 			$execute positioned ^$(posx) ^$(posy) ^$(posz) rotated ~$(roty) ~$(rotx) run {
 				scoreboard players set #check i 0
 				# Yeah, I'm lazy.

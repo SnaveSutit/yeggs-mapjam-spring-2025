@@ -13,4 +13,3 @@ scoreboard players set @s mixer_state 0
 function mixer:fill_lid
 tag @s remove aj.new
 execute on passengers run tag @s remove aj.new
-function #animated_java:mixer/as_root/on_summon
