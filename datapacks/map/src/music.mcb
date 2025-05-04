@@ -1,0 +1,71 @@
+function on_load minecraft:load {
+	scoreboard objectives add music_timer dummy
+	scoreboard players set #boss_music_length i 1826
+	scoreboard players set #gameplay_music_length i 2620
+	scoreboard players set #tutorial_music_length i 4228
+}
+
+
+function on_tick minecraft:tick {
+	execute if score #music_mode i matches 0.. if score #game_in_progress i matches 1 as @a run {
+		scoreboard players add @s music_timer 1
+		execute \
+			if score #music_mode i matches 0 \
+			if score @s music_timer >= #boss_music_length i \
+		run function music:boss/start
+		execute \
+			if score #music_mode i matches 1 \
+			if score @s music_timer >= #gameplay_music_length i \
+		run function music:gameplay/start
+		execute \
+			if score #music_mode i matches 2 \
+			if score @s music_timer >= #tutorial_music_length i \
+		run function music:tutorial/start
+	}
+	execute if score #game_in_progress i matches 0 run scoreboard players set @a music_timer 0
+}
+
+
+function stop_all {
+	scoreboard players set #music_mode i -1
+	scoreboard players reset * music_timer
+	stopsound @a record minecraft:music.boss
+	stopsound @a record minecraft:music.gameplay
+	stopsound @a record minecraft:music.tutorial
+}
+
+
+dir boss {
+	function start {
+		function music:stop_all
+		scoreboard players set #music_mode i 0
+		playsound minecraft:music.boss record @a 0 0 0 100 1
+	}
+	function resume {
+		execute unless score #music_mode i matches 0 run function music:boss/start
+	}
+}
+
+
+dir gameplay {
+	function start {
+		function music:stop_all
+		scoreboard players set #music_mode i 1
+		playsound minecraft:music.gameplay record @a 0 0 0 100 1
+	}
+	function resume {
+		execute unless score #music_mode i matches 1 run function music:gameplay/start
+	}
+}
+
+
+dir tutorial {
+	function start {
+		function music:stop_all
+		scoreboard players set #music_mode i 2
+		playsound minecraft:music.tutorial record @a 0 0 0 100 1
+	}
+	function resume {
+		execute unless score #music_mode i matches 2 run function music:tutorial/start
+	}
+}

@@ -1,18 +1,28 @@
 {
-	"music.1": {
+	"music.boss": {
 		"sounds": [
 			{
-				"name": "cooking:music1",
+				"name": "cooking:music_boss",
 				"stream": true,
 				"attenuation_distance": 200,
 				"preload": true
 			}
 		]
 	},
-	"music.2": {
+	"music.gameplay": {
 		"sounds": [
 			{
-				"name": "cooking:music2",
+				"name": "cooking:music_gameplay",
+				"stream": true,
+				"attenuation_distance": 200,
+				"preload": true
+			}
+		]
+	},
+	"music.tutorial": {
+		"sounds": [
+			{
+				"name": "cooking:music_tutorial",
 				"stream": true,
 				"attenuation_distance": 200,
 				"preload": true
