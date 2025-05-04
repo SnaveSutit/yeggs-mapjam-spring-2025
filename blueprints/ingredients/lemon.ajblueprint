@@ -280,7 +280,7 @@
 	],
 	"outliner": [
 		{
-			"name": "eggs",
+			"name": "lemon",
 			"origin": [0, 0, 0],
 			"color": 0,
 			"configs": {
@@ -293,7 +293,7 @@
 			"locked": false,
 			"visibility": true,
 			"autouv": 0,
-			"selected": false,
+			"selected": true,
 			"children": [
 				"85f98a17-5278-ab88-aaf0-50234ab07f41",
 				"d3cc4c7b-05ca-ac57-994b-6dff96777616",
@@ -306,7 +306,7 @@
 	"textures": [
 		{
 			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\ingredient\\eggs.png",
-			"name": "eggs.png",
+			"name": "lemon",
 			"folder": "block",
 			"namespace": "",
 			"id": "0",
@@ -387,7 +387,7 @@
 			"excluded_nodes": [],
 			"animators": {
 				"7d7c1d88-d5cf-c11a-df17-f487580c5099": {
-					"name": "eggs",
+					"name": "lemon",
 					"type": "bone",
 					"keyframes": [
 						{
