@@ -2,7 +2,8 @@
 scoreboard players remove @s aj.tween_duration 1
 execute if score @s aj.tween_duration matches 1.. run return 1
 execute if score @s aj.tween_duration matches 0 on passengers run data modify entity @s interpolation_duration set value 1
-execute store result storage aj:temp frame int 1 run scoreboard players get @s aj.fork_height_2.frame
-function animated_java:forklift/animations/fork_height_2/zzz/apply_frame with storage aj:temp
+data remove storage aj:temp args
+execute store result storage aj:temp args.frame int 1 run scoreboard players get @s aj.fork_height_2.frame
+function animated_java:forklift/animations/fork_height_2/zzz/apply_frame with storage aj:temp args
 execute if score @s aj.fork_height_2.frame matches 1.. run return run function animated_java:forklift/animations/fork_height_2/pause
 scoreboard players add @s aj.fork_height_2.frame 1

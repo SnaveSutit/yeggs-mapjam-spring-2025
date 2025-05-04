@@ -12,4 +12,3 @@ tag @s add forklift
 scoreboard players set @s forklift_lift_state 0
 tag @s remove aj.new
 execute on passengers run tag @s remove aj.new
-function #animated_java:forklift/as_root/on_summon
