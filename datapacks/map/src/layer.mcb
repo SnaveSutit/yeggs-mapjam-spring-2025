@@ -1,28 +1,29 @@
 function summon {
-	#ARGS: {flavor: string, frosting: string}
+	#ARGS: {batter: string, frosting: string, garnish: string}
 
-	$execute summon minecraft:armor_stand run { {flavor:$(flavor), frosting:$(frosting)}
+	$execute summon minecraft:armor_stand run { {batter:$(batter), frosting:$(frosting), garnish:$(garnish)}
 		tag @s add layer
-		data merge entity @s {Invulnerable:true,Invisible:true,Silent:true}
+		$data merge entity @s {Invulnerable:true,Invisible:true,Silent:true,data:{batter:"$(batter)", frosting:"$(frosting)", garnish:"$(garnish)"}}
 
 		tag @s add mount
-		$execute summon minecraft:interaction run { {flavor:$(flavor), frosting:$(frosting)}
+		$execute summon minecraft:interaction run { {batter:$(batter), frosting:$(frosting), garnish:$(garnish)}
 			tag @s add layer_offset
 			data merge entity @s {width:0,height:-1.95}
 			ride @s mount @n[type=minecraft:armor_stand,tag=mount,distance=..0.01]
 
 			tag @s add mount2
 			function animated_java:layer/summon {args:{}}
-			$execute as @n[type=minecraft:item_display,tag=aj.layer.root] run { {flavor:$(flavor), frosting:$(frosting)}
-				$function animated_java:layer/variants/baked_$(flavor)/apply
+			$execute as @n[type=minecraft:item_display,tag=aj.layer.root] run { {batter:$(batter), frosting:$(frosting), garnish:$(garnish)}
+				$function animated_java:layer/variants/baked_$(batter)/apply
 				$function animated_java:layer/variants/frosted_$(frosting)/apply
+				$function animated_java:layer/variants/garnished_$(garnish)/apply
 				execute on passengers unless entity @s[tag=aj.global.data] run data modify entity @s view_range set value 2
 				ride @s mount @n[type=minecraft:interaction,tag=mount2,distance=..2]
 			}
 			execute summon minecraft:shulker run {
 				tag @s add layer_hitbox
 				data merge entity @s {NoAI:true,Silent:true}
-				attribute @s minecraft:scale base set 1.7
+				attribute @s minecraft:scale base set 1.8
 				effect give @s minecraft:invisibility infinite 1 true
 				ride @s mount @n[type=minecraft:interaction,tag=mount2,distance=..2]
 			}
@@ -30,5 +31,4 @@ function summon {
 		}
 		tag @s remove mount
 	}
-
 }

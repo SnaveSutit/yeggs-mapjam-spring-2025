@@ -30,7 +30,7 @@ function set_required_satiscation {
 
 
 function summon {
-	execute positioned 0 1 -11 rotated 0 0 run function animated_java:troll/summon {args:{animation:idle,start_animation:true}}
+	execute positioned 0 1 13 rotated 180 0 run function animated_java:troll/summon {args:{animation:idle,start_animation:true}}
 	execute positioned 0 7 2 rotated 180 -20 summon minecraft:item_display run {
 		tag @s add death_anim_player_lock
 		tp @s ~ ~ ~ ~ ~

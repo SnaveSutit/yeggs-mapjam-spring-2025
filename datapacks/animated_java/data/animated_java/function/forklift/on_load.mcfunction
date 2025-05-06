@@ -3,3 +3,6 @@ scoreboard objectives add aj.fork_height_0.frame dummy
 scoreboard objectives add aj.fork_height_1.frame dummy
 scoreboard objectives add aj.fork_height_2.frame dummy
 scoreboard objectives add aj.fork_height_3.frame dummy
+scoreboard objectives add aj.steer_reset.frame dummy
+scoreboard objectives add aj.steer_left.frame dummy
+scoreboard objectives add aj.steer_right.frame dummy

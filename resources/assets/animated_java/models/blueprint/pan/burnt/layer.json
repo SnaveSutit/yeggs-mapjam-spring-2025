@@ -1,7 +1,0 @@
-{
-	"parent": "animated_java:blueprint/pan/layer",
-	"textures": {
-		"5": "cooking:blueprint/pan/burnt",
-		"9": "cooking:blueprint/transparent"
-	}
-}

@@ -23,7 +23,7 @@ function on_load minecraft:load {
 
 	tellraw @a {"text":"Map reloaded!","color":"green"}
 
-	# schedule function map:reset 10t
+	schedule function map:reset 10t
 }
 
 function start {
@@ -114,50 +114,45 @@ function reset {
 		summon minecraft:text_display -20.5 37.125 43.9375 {alignment: "center", background: 0, default_background: 0b, fall_distance: 0.0d, line_width: 200, see_through: 0b, shadow: 1b, text: {color: "red", text: "Reset Map"}, text_opacity: -1b, transformation: {left_rotation: [0.0f, 1.0f, 0.0f, 0.0f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [1.0f, 1.0f, 1.0f], translation: [0.0f, 0.0f, 0.0f]}}
 		summon minecraft:text_display -22.0 34.5 40.75 {alignment: "center", background: 0, default_background: 0b, fall_distance: 0.0d, line_width: 180, see_through: 0b, shadow: 1b, text: {color: "gray", extra: [{color: "red", text: "\nSnaveSutit"}, " & ", {color: "green", text: "XelaFella"}, {color: "gray", italic: 1b, text: "\nas "}, {bold: 1b, color: "blue", text: "Team ADHD"}, {color: "gray", italic: 1b, text: "\n\nCreated during the 96 hour Yeggs Spring MapJam of 2025!"}], text: "Created by "}, text_opacity: -1b, transformation: {left_rotation: [0.0f, 0.7071068f, 0.0f, 0.7071068f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [0.9999997f, 0.99999994f, 0.9999997f], translation: [0.0f, 0.0f, 0.0f]}}
 		# Decoration Ingredients
-		execute positioned 23 23 40 run function ingredient:summon_random
-		execute positioned 15 23 38 run function ingredient:summon_random
-		execute positioned 9 22 38 run function ingredient:summon_random
-		execute positioned 5 22 41 run function ingredient:summon_random
-		execute positioned 18 30 41 run function ingredient:summon_random
-		execute positioned 6 31 39 run function ingredient:summon_random
-		execute positioned -5 25 40 run function ingredient:summon_random
-		execute positioned -21 26 40 run function ingredient:summon_random
-		execute positioned 5 31 39 run function ingredient:summon_random
-
+		# execute positioned 0 0 0 run function ingredient:summon_random
+		# His Immenseness William Cornelius Grumblecrumb III
 		function troll:summon
 		function troll:reset
+		# Order Board
 		function orders:summon
 		# Forklift
 		execute positioned -20 1 -18 rotated 180 0 run function forklift:summon
-		# Pan Dispenser
-		execute positioned -18 2 -34 run function pan:create_dispenser
+		# Pan Dispensers
+		execute positioned -18 4 -51 run function pan:create_dispenser
 		# Ovens
-		execute positioned -35 1 -16 rotated -90 0 run function ovens:summon
-		execute positioned -35 1 0 rotated -90 0 run function ovens:summon
-		execute positioned -35 1 16 rotated -90 0 run function ovens:summon
-		# Mixing Stations
-		execute positioned 34.0 6 -19.0 rotated 90 0 run function mixer:summon
-		execute positioned 34.0 6 -2.0 rotated 90 0 run function mixer:summon
+		execute positioned 16 1 51 rotated 180 0 run function ovens:summon
+		execute positioned 0 1 51 rotated 180 0 run function ovens:summon
+		execute positioned -16 1 51 rotated 180 0 run function ovens:summon
+		# Batter Mixers
+		execute positioned 34.0 6 -17.0 rotated 90 0 run function mixer:summon
+		execute positioned 34.0 6 -34.0 rotated 90 0 run function mixer:summon
 		# Frosting Mixers
-		execute positioned 13 1 31 rotated 180 0 run function frosting_mixer:summon
-		execute positioned -13 1 31 rotated 180 0 run function frosting_mixer:summon
-		# Frosting Station
-		# function static_pipette:summon
-		execute positioned 34 3 10 run function static_pipette:create_lock_point
+		execute positioned -31 1 -35 rotated -90 0 run function frosting_mixer:summon
+		execute positioned -31 1 -13 rotated -90 0 run function frosting_mixer:summon
+		# Assembly Station
+		execute positioned 34 3 6 run function static_pipette:create_lock_point
 		# Cake Launcher
-		execute positioned 0 1 13 rotated 0 0 run function launcher:summon
-		# Ingredients
-		execute positioned 2 4 -37 rotated 0 0 run function ingredient:create_dispenser {type:milk}
-		execute positioned 8 4 -37 rotated 0 0 run function ingredient:create_dispenser {type:milk}
-		execute positioned 14 4 -37 rotated 0 0 run function ingredient:create_dispenser {type:eggs}
-		execute positioned 8 12 -37 rotated 0 0 run function ingredient:create_dispenser {type:flour}
-		execute positioned 14 12 -37 rotated 0 0 run function ingredient:create_dispenser {type:sugar}
-		execute positioned 20 12 -37 rotated 0 0 run function ingredient:create_dispenser {type:sugar}
-		execute positioned 2 20 -37 rotated 0 0 run function ingredient:create_dispenser {type:vanilla}
-		execute positioned 8 20 -37 rotated 0 0 run function ingredient:create_dispenser {type:chocolate}
-		execute positioned 20 20 -37 rotated 0 0 run function ingredient:create_dispenser {type:berries}
+		execute positioned 0 1 -20 rotated 0 0 run function launcher:summon
+		# Ingredient shelf
+		execute positioned -20 9 -51 rotated 0 0 run function ingredient:create_dispenser {type:milk}
+		execute positioned -14 9 -51 rotated 0 0 run function ingredient:create_dispenser {type:eggs}
+		execute positioned -8 9 -51 rotated 0 0 run function ingredient:create_dispenser {type:butter}
+		execute positioned -2 9 -51 rotated 0 0 run function ingredient:create_dispenser {type:sugar}
+		execute positioned 4 9 -51 rotated 0 0 run function ingredient:create_dispenser {type:flour}
+
+		execute positioned -20 17 -51 rotated 0 0 run function ingredient:create_dispenser {type:vanilla}
+		execute positioned -14 17 -51 rotated 0 0 run function ingredient:create_dispenser {type:chocolate}
+		execute positioned -8 17 -51 rotated 0 0 run function ingredient:create_dispenser {type:strawberry}
+		execute positioned -2 17 -51 rotated 0 0 run function ingredient:create_dispenser {type:lemon}
+		execute positioned 4 17 -51 rotated 0 0 run function ingredient:create_dispenser {type:carrot}
+
 		# Fan
-		execute positioned 37 -3 -11 run function map:fan/summon
+		execute positioned 37 -3 -26 run function map:fan/summon
 		# Misc
 		function sequence:reset_sequence
 		execute as @e[type=minecraft:item_display,nbt={item:{}}] run data modify entity @s view_range set value 2

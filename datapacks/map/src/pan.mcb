@@ -49,26 +49,26 @@ function summon {
 
 
 dir debug {
-	REPEAT(['vanilla','chocolate','strawberry']) as flavor {
-		function summon_pan_batter_<%flavor%> {
+	REPEAT(['vanilla','chocolate','strawberry','lemon','carrot']) as batter {
+		function summon_pan_batter_<%batter%> {
 			function pan:summon
 			execute as @n[tag=pan,distance=..1] run {
-				function pan:fill_batter {flavor:<%flavor%>}
+				function pan:fill_batter {batter:<%batter%>}
 			}
 		}
-		function summon_pan_baked_<%flavor%> {
+		function summon_pan_baked_<%batter%> {
 			function pan:summon
 			execute as @n[tag=pan,distance=..1] run {
-				function pan:fill_batter {flavor:<%flavor%>}
+				function pan:fill_batter {batter:<%batter%>}
 				execute on passengers on passengers if entity @s[tag=aj.pan.root] run function animated_java:pan/animations/fill_batter/pause
 				function pan:finish_baking
 			}
 		}
-		REPEAT(['vanilla','chocolate','strawberry']) as frosting {
-			function summon_pan_baked_<%flavor%>_frosted_<%frosting%> {
+		REPEAT(['vanilla','chocolate','strawberry','lemon','carrot']) as frosting {
+			function summon_pan_baked_<%batter%>_frosted_<%frosting%> {
 				function pan:summon
 				execute as @n[tag=pan,distance=..1] run {
-					function pan:fill_batter {flavor:<%flavor%>}
+					function pan:fill_batter {batter:<%batter%>}
 					execute on passengers on passengers if entity @s[tag=aj.pan.root] run function animated_java:pan/animations/fill_batter/pause
 					function pan:finish_baking
 					function pan:frost {frosting:<%frosting%>}
@@ -136,11 +136,11 @@ function kill_all {
 
 
 function fill_batter {
-	#ARGS: {flavor: string}
+	#ARGS: {batter: string}
 	tag @s add batter
-	$execute on passengers on passengers if entity @s[tag=aj.pan.root] run { {flavor:$(flavor)}
-		$data modify entity @s data.flavor set value $(flavor)
-		$function animated_java:pan/variants/batter_$(flavor)/apply
+	$execute on passengers on passengers if entity @s[tag=aj.pan.root] run { {batter:$(batter)}
+		$data modify entity @s data.batter set value $(batter)
+		$function animated_java:pan/variants/batter_$(batter)/apply
 		function animated_java:pan/animations/fill_batter/play
 	}
 }
@@ -150,7 +150,7 @@ function finish_baking {
 	execute if entity @s[tag=!batter] run return fail
 	tag @s add baked
 	execute on passengers on passengers if entity @s[tag=aj.pan.root] run { with entity @s data
-		$function animated_java:pan/variants/baked_$(flavor)/apply
+		$function animated_java:pan/variants/baked_$(batter)/apply
 		function animated_java:pan/animations/finish_baking/play
 	}
 }
@@ -210,7 +210,7 @@ function empty_batter {
 function extract_to_layer {
 	execute if entity @s[tag=!baked] run return run tellraw @p {"text":"You need to bake the batter first!","color":"red"}
 	execute if entity @s[tag=!frosted] run return run tellraw @p {"text":"You need to frost the layer first!","color":"red"}
-	data remove storage temp:temp data.flavor
+	data remove storage temp:temp data.batter
 	execute on passengers on passengers if entity @s[tag=aj.pan.root] run {
 		data remove storage temp:temp data
 		data modify storage temp:temp data set from entity @s data

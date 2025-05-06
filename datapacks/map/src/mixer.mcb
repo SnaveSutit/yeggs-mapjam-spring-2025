@@ -216,9 +216,9 @@ dir valve {
 			$execute positioned ^$(posx) ^$(posy) ^$(posz) rotated ~$(roty) ~$(rotx) run {
 				scoreboard players set #check i 0
 				# Yeah, I'm lazy.
-				execute on vehicle if entity @s[tag=vanilla_batter] as @n[tag=pan,distance=..6] run function pan:fill_batter {flavor:"vanilla"}
-				execute on vehicle if entity @s[tag=chocolate_batter] as @n[tag=pan,distance=..6] run function pan:fill_batter {flavor:"chocolate"}
-				execute on vehicle if entity @s[tag=berry_batter] as @n[tag=pan,distance=..6] run function pan:fill_batter {flavor:"strawberry"}
+				execute on vehicle if entity @s[tag=vanilla_batter] as @n[tag=pan,distance=..6] run function pan:fill_batter {batter:"vanilla"}
+				execute on vehicle if entity @s[tag=chocolate_batter] as @n[tag=pan,distance=..6] run function pan:fill_batter {batter:"chocolate"}
+				execute on vehicle if entity @s[tag=berry_batter] as @n[tag=pan,distance=..6] run function pan:fill_batter {batter:"strawberry"}
 				execute as @n[tag=pan,distance=..6] run {
 					scoreboard players set #check i 1
 					function mixer:clear_batter_tags

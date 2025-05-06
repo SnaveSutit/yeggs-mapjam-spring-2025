@@ -132,10 +132,10 @@ dir steps {
 		tellraw @a '\n\n\n'
 		function *msg {text:['Great! Go ahead and hop out of the forklift for now, because it\'s time to mix some batter!']}
 		sequence 60t {
-			function *msg {text:['First, we\'ll need to gather the necessary ingredients:',{text:'\n    - 1x Egg',color:gold},{text:'\n    - 1x Milk',color:gold},{text:'\n    - 1x Sugar',color:gold},{text:'\n    - 1x Flour',color:gold},{text:'\n    - 1x Flavor Ingredient (Vanilla, Chocolate, or Strawberry)',color:gold}]}
+			function *msg {text:['First, we\'ll need to gather the necessary ingredients:',{text:'\n    - 1x Egg',color:gold},{text:'\n    - 1x Milk',color:gold},{text:'\n    - 1x Sugar',color:gold},{text:'\n    - 1x Flour',color:gold},{text:'\n    - 1x batter Ingredient (Vanilla, Chocolate, or Strawberry)',color:gold}]}
 		}
 		sequence 60t {
-			function *msg {text:['You can find these ingredients on the ', {text:'Storage Shelf',color:gold}, '.', {text:'\nMake sure you check the order board above the ovens to see which flavor of batter you need!',color:red,italic:true},{text:'\nMaking the wrong flavor will make His Immenseness very angry!',color:red,italic:true}]}
+			function *msg {text:['You can find these ingredients on the ', {text:'Storage Shelf',color:gold}, '.', {text:'\nMake sure you check the order board above the ovens to see which batter of batter you need!',color:red,italic:true},{text:'\nMaking the wrong batter will make His Immenseness very angry!',color:red,italic:true}]}
 			execute positioned 11 11 -32 run function tutorial:summon_marker
 			execute positioned -28 35 7 run function tutorial:summon_marker
 		}
@@ -240,8 +240,8 @@ dir steps {
 		sequence 40t {
 			function *msg {text:[ \
 				'Insert the following ingredients into one of the ',{text:'Frosting Mixer\'s',color:gold},' mixing bowls:', \
-				{text:'\n    - 1x Sugar',color:gold},{text:'\n    - 1x Flavor Ingredient (Vanilla, Chocolate, or Strawberry)',color:gold}, \
-				{text:'\nMake sure you check the order board above the ovens to see which flavor of frosting you need!',color:red,italic:true} \
+				{text:'\n    - 1x Sugar',color:gold},{text:'\n    - 1x batter Ingredient (Vanilla, Chocolate, or Strawberry)',color:gold}, \
+				{text:'\nMake sure you check the order board above the ovens to see which batter of frosting you need!',color:red,italic:true} \
 			]}
 			execute positioned 11 11 -32 run function tutorial:summon_marker
 			execute positioned -28 35 7 run function tutorial:summon_marker
@@ -326,7 +326,7 @@ dir steps {
 		tellraw @a '\n\n\n'
 		function *msg {text:['Perfect! Look at that cake fly!']}
 		sequence 80t {
-			function *msg {text:['The launcher will automatically launch the cake when loaded with the correct flavor, and incinerate the cake if it\'s wrong!']}
+			function *msg {text:['The launcher will automatically launch the cake when loaded with the correct batter, and incinerate the cake if it\'s wrong!']}
 			execute positioned 0 1 13 run function tutorial:summon_marker
 			function tutorial:steps/15
 		}

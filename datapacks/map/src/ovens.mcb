@@ -1,6 +1,6 @@
 
 function summon {
-	execute rotated -90 0 run function animated_java:oven/summon {args:{}}
+	execute rotated ~ 0 run function animated_java:oven/summon {args:{}}
 }
 
 function on_tick minecraft:tick {

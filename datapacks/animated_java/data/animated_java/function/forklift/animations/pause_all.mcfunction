@@ -4,3 +4,6 @@ tag @s remove aj.forklift.animation.fork_height_0.playing
 tag @s remove aj.forklift.animation.fork_height_1.playing
 tag @s remove aj.forklift.animation.fork_height_2.playing
 tag @s remove aj.forklift.animation.fork_height_3.playing
+tag @s remove aj.forklift.animation.steer_reset.playing
+tag @s remove aj.forklift.animation.steer_left.playing
+tag @s remove aj.forklift.animation.steer_right.playing

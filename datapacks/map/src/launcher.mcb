@@ -49,7 +49,7 @@ function on_tick minecraft:tick {
 				tellraw @a [ \
 					"<", {text:"His Immenseness William Cornelius Grumblethorn III",color:green}, "> ", \
 					{"text":"That's not the correct recipe! The next cake layer should be a ","color":"red"}, \
-					{"nbt": "queue[0].flavor","storage":"map:sequence","color":"yellow"}, {"text":" cake with ","color":"red"}, \
+					{"nbt": "queue[0].batter","storage":"map:sequence","color":"yellow"}, {"text":" cake with ","color":"red"}, \
 					{"nbt": "queue[0].frosting","storage":"map:sequence","color":"yellow"}, {"text": " frosting!","color":"red"} \
 				]
 			}

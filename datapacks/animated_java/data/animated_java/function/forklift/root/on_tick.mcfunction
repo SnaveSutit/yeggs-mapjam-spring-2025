@@ -4,5 +4,8 @@ execute if entity @s[tag=aj.forklift.animation.fork_height_0.playing] run functi
 execute if entity @s[tag=aj.forklift.animation.fork_height_1.playing] run function animated_java:forklift/animations/fork_height_1/zzz/on_tick
 execute if entity @s[tag=aj.forklift.animation.fork_height_2.playing] run function animated_java:forklift/animations/fork_height_2/zzz/on_tick
 execute if entity @s[tag=aj.forklift.animation.fork_height_3.playing] run function animated_java:forklift/animations/fork_height_3/zzz/on_tick
+execute if entity @s[tag=aj.forklift.animation.steer_reset.playing] run function animated_java:forklift/animations/steer_reset/zzz/on_tick
+execute if entity @s[tag=aj.forklift.animation.steer_left.playing] run function animated_java:forklift/animations/steer_left/zzz/on_tick
+execute if entity @s[tag=aj.forklift.animation.steer_right.playing] run function animated_java:forklift/animations/steer_right/zzz/on_tick
 execute on passengers if entity @s[tag=aj.forklift.data] run function animated_java:forklift/root/zzz/on_tick/locators_and_cameras
 execute at @s on passengers run rotate @s ~ ~

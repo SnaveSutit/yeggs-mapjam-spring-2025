@@ -1,9 +1,9 @@
 {
 	"meta": {
 		"format": "animated_java_blueprint",
-		"format_version": "1.6.5",
+		"format_version": "1.7.1",
 		"uuid": "015524aa-adda-a8ba-4110-1447c02f0c83",
-		"save_location": "C:\\Users\\User\\Documents\\Projects\\Github Repo\\yeggs-mapjam-spring-2025\\blueprints\\ingredients\\flour.ajblueprint",
+		"save_location": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\blueprints\\ingredients\\flour.ajblueprint",
 		"last_used_export_namespace": "ingredient_flour"
 	},
 	"blueprint_settings": {
@@ -22,6 +22,7 @@
 		"enable_advanced_data_pack_settings": false,
 		"data_pack": "../../datapacks/animated_java",
 		"summon_commands": "",
+		"remove_commands": "",
 		"ticking_commands": "",
 		"interpolation_duration": 1,
 		"teleportation_duration": 1,
@@ -495,7 +496,7 @@
 	],
 	"textures": [
 		{
-			"path": "",
+			"path": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\resources\\assets\\cooking\\textures\\blueprint\\ingredient\\flour.png",
 			"name": "flour.png",
 			"folder": "block",
 			"namespace": "",
@@ -518,7 +519,7 @@
 			"frame_interpolate": false,
 			"visible": true,
 			"internal": true,
-			"saved": false,
+			"saved": true,
 			"uuid": "eac43976-75b4-f393-0bd6-80f5504fa836",
 			"layers": [
 				{
@@ -533,6 +534,7 @@
 					"data_url": "data:image/png;base64,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"
 				}
 			],
+			"relative_path": "../../resources/assets/cooking/textures/blueprint/ingredient/flour.png",
 			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAABf5JREFUeF7tmr9vHEUUx/dw7OQccyax8kNYAoEU0SG5CYgiDdCgFDQgBCmgQICEkKiQoAzpIlJFgh7BP5E0iAIiJCQk3ESIJgUkMsFnx3bOMUZvz9/Ld9++NzP3y7uXZJpkd2fezPu8H/NmfI2Lry7tZhW29y58Zs5+oPn4vqyq8SAAuLe5VoAl8Pidhjkzdyjv31nfymoDINXiUOxgazabOng427l7p6f83fZGJu/R5Fna7LFjeT88Y+xEANDWhXKsaChWdransqnpnbxLLQG8/9WXvfVbbusBkEEMQbzBa+wl0gd9a+EBGgCUkkXKAqVZMZ4rsmdZsTLiOjVzQnblOcADIIqwYrJgTl7yXT8zKIl7r0F5+V4rALA2ewGU6BeAVt5LsjmAxWcXTVizc/czqtXh+m/XUz2u1A9zvvbxR6VvcG3EK2LYi3MvVFgwAGivKXjAoCBCFDbWu1uR1ywAHN88zgKwcetWSbSuA6QDA8CWKO9KIWBBiHlCCgDI0EAAAPGrFwrZnvU9AFaOgCyey80Bp54/NbB7y8CVv1cK4xdOLOTPMQBsLQjgDM8JDDnDi3ft7n0BWN3qFOT+u9XJXjmzFIWiFceAfgBol5XnWJxbSQ4A2Es4PMwQkMm08vJOAOj2xKGZ/NXJhfn83+Zcs9QHiuOD5wGwJnYAq2rziiJWXpRGjKPk1WGCOWSbbXzz5pn8NLh2+/6BwrK+ZXoNAH0EhFY8BQAsxgpgHIBY6xAAHCa68mMZutDqAUCn1pFWYY7l5T9L1n/j7Gk3FG63t6NhIh2whXIhZFVzfIiBYFEYW6WVHD0AvDCxvrQSAHnJEBaf7Lp3qKUqDRlcPzAAfNdJzyqFvVqB16lPiwyrVwojBHggA9i8s1nQHa59pDXde58CwCuaLABsXSxUQ2EAnnE8AIVSWAOYnukq1jzczLTymMiLb15IapVoAbBqAq1kP24uY7VMyGt8/8HZwpWYp7QM8BS/8sOvuTwkRQif39slPAsJ5HPnvyh91i7vnf35AsRybxbs3RCVAMggQNhcL7q/fPtrZbUnV2+N4wLAiugbn9SbJPYCnBTz+wDtATyZlK83/rhRsFAIADrqXeLaj8slK4v1pbEHsJuG7vQ8j7Isbp0L+gLgTcZJMLYgDQDKhwDEZIa+h26RZFwBAG6Fhz0JekBCyjMAfdnJ538+vcXqewuMd3XmXokxDOskiHo/tBt4uwBb3wLA1tGVIazHxRFyAAOUflw5ehcs0i96I8QL1rW+B+CXa7/3DIGdQCuODsgBUCAGQJ8VtMW1tdmTuG/ynaC3cF3vYyuUSXg3eObpk5m1mzAAjlkcYLRiet+3zgb6TODlCVEeczYuv/7SLu/9R08cLY2DAtudcp2/sta98dFb4tJzTxXkeBDe+vyT7L97neyxA92TJSepkAL4pneLlNvhEgAIs46zehHtf9qFVxqAVtxSgmFYACxLWocika1zgFcXcPJkaLkH8CJTIHiWSXmvPcEDoGWF7gJCf1Cx6gCWXQLQjzekKMx9rDAQANJ0GLB15f+xvR3zxBTWa3YBDOsVocTHsgGA38XKW4HBrg+l9TsLnAbU+PnSh5X+PuCFT79u9OtJo+z/QADYvflTz4iN4y8mA5VxPQDffnd1lGCjss69/XLeZ788AJA0oIkGkFuwD4trqzxUHiDKW8Bq6QEhy3rfPBePxWItAYQWzQCGDQGZZ+IAxCxqfQ95zUMBIATtEQBUglXVAaffeTcbZisbJCQKh6GqAYQKoVEkuWhCnQQA4wRReQ4YZQgMAqpyAPt1FvBCYaIBxCweqw4n5iwwrKKwfi3PAqPMAbEtsZYAxp0DYmFQeQ4YtweEAExMDjAvMpyLEE9hL49U7gGDhEDsviA/5ibeFNUKQOisH9sJvBufkPfUIgTmj3d/Q4zWUs+xzD7o9/bN7m+ZK/eARwAci4/DE2D12hyHtfUtdw6BYIVSgE0kgEFjPAakFjmAPWB1LykNqjCPS8krtQAgi/bCoB8gKaGkd5kSgFGQnwQZGlblfx2uGtr/iPR7KBq6SLEAAAAASUVORK5CYII="
 		}
 	],
@@ -555,7 +557,7 @@
 			"override": false,
 			"length": 0.4,
 			"snapping": 20,
-			"selected": false,
+			"selected": true,
 			"saved": false,
 			"path": "",
 			"anim_time_update": "",

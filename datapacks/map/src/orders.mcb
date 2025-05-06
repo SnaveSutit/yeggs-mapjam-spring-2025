@@ -1,15 +1,16 @@
 
 function summon {
 	function animated_java:orders/remove/entities
-	execute positioned -28 27 0 rotated -90 0 run function animated_java:orders/summon {args:{animation:pos}}
+	execute positioned -17.5 30.5 34.5 rotated -135 0 run function animated_java:orders/summon {args:{animation:pos}}
 }
 
 
 function set_order {
-	#ARGS: {number: int, flavor: string, frosting: string}
-	$execute as @e[type=minecraft:item_display,tag=orders] run { {number:$(number), flavor:$(flavor), frosting:$(frosting)}
-		$function animated_java:orders/variants/order$(number)_flavor_$(flavor)/apply
+	#ARGS: {number: int, batter: string, frosting: string, garnish: string}
+	$execute as @e[type=minecraft:item_display,tag=orders] run { {number:$(number), batter:$(batter), frosting:$(frosting), garnish:$(garnish)}
+		$function animated_java:orders/variants/order$(number)_flavor_$(batter)/apply
 		$function animated_java:orders/variants/order$(number)_frosting_$(frosting)/apply
+		$function animated_java:orders/variants/order$(number)_garnish_$(garnish)/apply
 	}
 }
 

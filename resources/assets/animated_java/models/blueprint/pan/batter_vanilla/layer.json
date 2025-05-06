@@ -1,6 +1,0 @@
-{
-	"parent": "animated_java:blueprint/pan/layer",
-	"textures": {
-		"5": "cooking:blueprint/pan/batter_vanilla"
-	}
-}

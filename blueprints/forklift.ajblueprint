@@ -1,7 +1,7 @@
 {
 	"meta": {
 		"format": "animated_java_blueprint",
-		"format_version": "1.7.0-pre1",
+		"format_version": "1.7.1",
 		"uuid": "5f6d3173-75d9-2e18-beba-7a2a8161878a",
 		"save_location": "D:\\github-repos\\snavesutit\\yeggs-mapjam-spring-2025\\blueprints\\forklift.ajblueprint",
 		"last_used_export_namespace": "forklift"
@@ -1911,7 +1911,7 @@
 			"uuid": "138fb7de-8d00-93ff-67af-30de1c0171ad",
 			"export": true,
 			"mirror_uv": false,
-			"isOpen": false,
+			"isOpen": true,
 			"locked": false,
 			"visibility": true,
 			"autouv": 0,
@@ -1993,7 +1993,7 @@
 					"locked": false,
 					"visibility": true,
 					"autouv": 0,
-					"selected": false,
+					"selected": true,
 					"children": [
 						"3ef2b0cf-0f6f-5bf3-236e-f0976c5545fa",
 						"01ebc6ba-c406-e9e9-a3c3-d8cf127cdd91",
@@ -2342,7 +2342,7 @@
 			"override": false,
 			"length": 0.05,
 			"snapping": 20,
-			"selected": true,
+			"selected": false,
 			"saved": false,
 			"path": "",
 			"anim_time_update": "",
@@ -2406,6 +2406,315 @@
 								}
 							],
 							"uuid": "edae3356-930d-0b5e-ac34-775852a00128",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear",
+							"easing": "linear",
+							"easingArgs": []
+						}
+					]
+				}
+			}
+		},
+		{
+			"uuid": "e153d633-5fd2-d43f-6250-0e53619256d7",
+			"name": "steer_reset",
+			"loop": "hold",
+			"override": false,
+			"length": 0.05,
+			"snapping": 20,
+			"selected": true,
+			"saved": false,
+			"path": "",
+			"anim_time_update": "",
+			"blend_weight": "",
+			"start_delay": "",
+			"loop_delay": "0",
+			"excluded_nodes": [
+				{
+					"icon": "folder",
+					"name": "body",
+					"value": "138fb7de-8d00-93ff-67af-30de1c0171ad"
+				},
+				{
+					"icon": "folder",
+					"name": "front_right_wheel",
+					"value": "0c40351e-8547-16b0-fa29-099f8afe6a05"
+				},
+				{
+					"icon": "folder",
+					"name": "front_left_wheel",
+					"value": "92ed52fe-0843-5123-0785-f6c9917e3e1f"
+				},
+				{
+					"icon": "folder",
+					"name": "crane",
+					"value": "e3292077-9e0c-d209-5e2f-28cc4b758b6f"
+				},
+				{
+					"icon": "folder",
+					"name": "forks",
+					"value": "0fa32270-2a28-14c0-f45e-a92653552919"
+				},
+				{
+					"icon": "anchor",
+					"name": "seat",
+					"value": "ee16bf73-dadb-b87b-2799-4d801971c672"
+				},
+				{
+					"icon": "anchor",
+					"name": "seat_interaction",
+					"value": "05ef00e3-7c0d-7cc7-51cb-132f37ef8538"
+				},
+				{
+					"icon": "anchor",
+					"name": "cake_mount",
+					"value": "1c64fc5a-f4c4-27e6-e99d-f0af5446656a"
+				}
+			],
+			"animators": {
+				"7413f47b-ccdd-fb41-7fc3-33055fb10266": {
+					"name": "back_right_wheel",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "0",
+									"z": "0"
+								}
+							],
+							"uuid": "9e02951d-cb4d-733b-2b97-243060965989",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear",
+							"easing": "linear",
+							"easingArgs": []
+						}
+					]
+				},
+				"9f459f63-b8db-dbac-963d-4c348668ee2b": {
+					"name": "back_left_wheel",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "0",
+									"z": "0"
+								}
+							],
+							"uuid": "127568ac-c4ad-0a4c-f865-6308fc4487d4",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear",
+							"easing": "linear",
+							"easingArgs": []
+						}
+					]
+				}
+			}
+		},
+		{
+			"uuid": "2e2f6e05-5851-3169-8908-eeb939d529e1",
+			"name": "steer_left",
+			"loop": "hold",
+			"override": false,
+			"length": 0.05,
+			"snapping": 20,
+			"selected": false,
+			"saved": false,
+			"path": "",
+			"anim_time_update": "",
+			"blend_weight": "",
+			"start_delay": "",
+			"loop_delay": "0",
+			"excluded_nodes": [
+				{
+					"icon": "folder",
+					"name": "body",
+					"value": "138fb7de-8d00-93ff-67af-30de1c0171ad"
+				},
+				{
+					"icon": "folder",
+					"name": "front_right_wheel",
+					"value": "0c40351e-8547-16b0-fa29-099f8afe6a05"
+				},
+				{
+					"icon": "folder",
+					"name": "front_left_wheel",
+					"value": "92ed52fe-0843-5123-0785-f6c9917e3e1f"
+				},
+				{
+					"icon": "folder",
+					"name": "crane",
+					"value": "e3292077-9e0c-d209-5e2f-28cc4b758b6f"
+				},
+				{
+					"icon": "folder",
+					"name": "forks",
+					"value": "0fa32270-2a28-14c0-f45e-a92653552919"
+				},
+				{
+					"icon": "anchor",
+					"name": "seat",
+					"value": "ee16bf73-dadb-b87b-2799-4d801971c672"
+				},
+				{
+					"icon": "anchor",
+					"name": "seat_interaction",
+					"value": "05ef00e3-7c0d-7cc7-51cb-132f37ef8538"
+				},
+				{
+					"icon": "anchor",
+					"name": "cake_mount",
+					"value": "1c64fc5a-f4c4-27e6-e99d-f0af5446656a"
+				}
+			],
+			"animators": {
+				"7413f47b-ccdd-fb41-7fc3-33055fb10266": {
+					"name": "back_right_wheel",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "22.5",
+									"z": "0"
+								}
+							],
+							"uuid": "9e02951d-cb4d-733b-2b97-243060965989",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear",
+							"easing": "linear",
+							"easingArgs": []
+						}
+					]
+				},
+				"9f459f63-b8db-dbac-963d-4c348668ee2b": {
+					"name": "back_left_wheel",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "22.5",
+									"z": "0"
+								}
+							],
+							"uuid": "127568ac-c4ad-0a4c-f865-6308fc4487d4",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear",
+							"easing": "linear",
+							"easingArgs": []
+						}
+					]
+				}
+			}
+		},
+		{
+			"uuid": "cd1884f3-2e1d-2465-b471-f91599cd0264",
+			"name": "steer_right",
+			"loop": "hold",
+			"override": false,
+			"length": 0.05,
+			"snapping": 20,
+			"selected": false,
+			"saved": false,
+			"path": "",
+			"anim_time_update": "",
+			"blend_weight": "",
+			"start_delay": "",
+			"loop_delay": "0",
+			"excluded_nodes": [
+				{
+					"icon": "folder",
+					"name": "body",
+					"value": "138fb7de-8d00-93ff-67af-30de1c0171ad"
+				},
+				{
+					"icon": "folder",
+					"name": "front_right_wheel",
+					"value": "0c40351e-8547-16b0-fa29-099f8afe6a05"
+				},
+				{
+					"icon": "folder",
+					"name": "front_left_wheel",
+					"value": "92ed52fe-0843-5123-0785-f6c9917e3e1f"
+				},
+				{
+					"icon": "folder",
+					"name": "crane",
+					"value": "e3292077-9e0c-d209-5e2f-28cc4b758b6f"
+				},
+				{
+					"icon": "folder",
+					"name": "forks",
+					"value": "0fa32270-2a28-14c0-f45e-a92653552919"
+				},
+				{
+					"icon": "anchor",
+					"name": "seat",
+					"value": "ee16bf73-dadb-b87b-2799-4d801971c672"
+				},
+				{
+					"icon": "anchor",
+					"name": "seat_interaction",
+					"value": "05ef00e3-7c0d-7cc7-51cb-132f37ef8538"
+				},
+				{
+					"icon": "anchor",
+					"name": "cake_mount",
+					"value": "1c64fc5a-f4c4-27e6-e99d-f0af5446656a"
+				}
+			],
+			"animators": {
+				"7413f47b-ccdd-fb41-7fc3-33055fb10266": {
+					"name": "back_right_wheel",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "-22.5",
+									"z": "0"
+								}
+							],
+							"uuid": "9e02951d-cb4d-733b-2b97-243060965989",
+							"time": 0,
+							"color": -1,
+							"interpolation": "linear",
+							"easing": "linear",
+							"easingArgs": []
+						}
+					]
+				},
+				"9f459f63-b8db-dbac-963d-4c348668ee2b": {
+					"name": "back_left_wheel",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [
+								{
+									"x": "0",
+									"y": "-22.5",
+									"z": "0"
+								}
+							],
+							"uuid": "127568ac-c4ad-0a4c-f865-6308fc4487d4",
 							"time": 0,
 							"color": -1,
 							"interpolation": "linear",

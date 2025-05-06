@@ -6,6 +6,7 @@ function on_load minecraft:load {
 	scoreboard objectives add motion.yaw dummy
 
 	scoreboard objectives add forklift_lift_state dummy
+	scoreboard objectives add forklift_steer_state dummy
 
 	scoreboard objectives add motion.fb dummy
 	scoreboard objectives add motion.lr dummy
@@ -74,6 +75,19 @@ function on_tick minecraft:tick {
 			if score #left_right i matches -1 \
 		run scoreboard players add @s motion.lr 10
 
+		execute unless score @s forklift_steer_state matches 1 if score #left_right i matches 1 run {
+			function animated_java:forklift/animations/steer_right/play
+			scoreboard players set @s forklift_steer_state 1
+		}
+		execute unless score @s forklift_steer_state matches 2 if score #left_right i matches -1 run {
+			function animated_java:forklift/animations/steer_left/play
+			scoreboard players set @s forklift_steer_state 2
+		}
+		execute unless score @s forklift_steer_state matches 0 if score #left_right i matches 0 run {
+			function animated_java:forklift/animations/steer_reset/play
+			scoreboard players set @s forklift_steer_state 0
+		}
+
 		scoreboard players operation #loop i = @s motion.lr
 		execute if score #loop i matches 1.. at @s run {
 			scoreboard players remove #loop i 1
@@ -140,12 +154,11 @@ tag blocks drive_through {
 
 function activate_forks {
 	# Needs to be executed as the root entity
-	function animated_java:forklift/as_own_locator_entities {command:'function forklift:activate_forks/as_locators'}
+	function animated_java:forklift/as_locator {name:'cake_mount', command:'function forklift:activate_forks/as_cake_mount'}
 }
 
 dir activate_forks {
-	function as_locators {
-		execute unless entity @s[tag=cake_mount] run return fail
+	function as_cake_mount {
 		scoreboard players set #has_item i 0
 		execute on passengers run scoreboard players set #has_item i 1
 		execute if score #has_item i matches 1 at @s run {

@@ -10,4 +10,3 @@ data modify entity @s teleport_duration set value 1
 execute on passengers run data modify entity @s teleport_duration set value 1
 tag @s remove aj.new
 execute on passengers run tag @s remove aj.new
-function #animated_java:ingredient_flour/as_root/on_summon
