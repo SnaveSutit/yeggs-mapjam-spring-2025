@@ -1,0 +1,111 @@
+template vector2 {
+	with v1Name:word v1Objective:word set:literal value:literal x:int z:int {
+		<%%
+			emit(`# Set ${v1Name} ${v1Objective} to ${x} ${z}`)
+			const v1 = config.getVectorScoreNames(v1Name, v1Objective)
+			emit(`scoreboard players set ${v1.xName} ${v1.xObjective} ${x}`)
+			emit(`scoreboard players set ${v1.zName} ${v1.zObjective} ${z}`)
+		%%>
+	}
+	with v1Name:word v1Objective:word set:literal from:literal v2Name:word v2Objective:word {
+		<%%
+			const v1 = config.getVectorScoreNames(v1Name, v1Objective)
+			const v2 = config.getVectorScoreNames(v1Name, v1Objective)
+			emit(`# Set ${v1Name} ${v1Objective} to ${v2Name} ${v2Objective}`)
+			emit(`scoreboard players operation ${v1.xName} ${v1.xObjective} = ${v2.xName} ${v2.xObjective}`)
+			emit(`scoreboard players operation ${v1.zName} ${v1.zObjective} = ${v2.zName} ${v2.zObjective}`)
+		%%>
+	}
+
+	with v1Name:word v1Objective:word add:literal value:literal x:int z:int {
+		<%%
+			emit(`# Add ${x} ${z} to ${v1Name} ${v1Objective}`)
+			const v1 = config.getVectorScoreNames(v1Name, v1Objective)
+			emit(`scoreboard players add ${v1.xName} ${v1.xObjective} ${x}`)
+			emit(`scoreboard players add ${v1.zName} ${v1.zObjective} ${z}`)
+		%%>
+	}
+	with v1Name:word v1Objective:word add:literal from:literal v2Name:word v2Objective:word {
+		<%%
+			emit(`# Add ${v2Name} ${v2Objective} to ${v1Name} ${v1Objective}`)
+			const v1 = config.getVectorScoreNames(v1Name, v1Objective)
+			const v2 = config.getVectorScoreNames(v2Name, v2Objective)
+			emit(`scoreboard players operation ${v1.xName} ${v1.xObjective} += ${v2.xName} ${v2.xObjective}`)
+			emit(`scoreboard players operation ${v1.zName} ${v1.zObjective} += ${v2.zName} ${v2.zObjective}`)
+		%%>
+	}
+
+	with v1Name:word v1Objective:word multiply:literal scaler:literal value:int {
+		load {
+			scoreboard players set <%value%> <%config.internalScoreboardName%> <%value%>
+		}
+		<%%
+			emit(`# Multiply ${v1Name} ${v1Objective} by ${value}`)
+			const v1 = config.getVectorScoreNames(v1Name, v1Objective)
+			emit(`scoreboard players operation ${v1.xName} ${v1.xObjective} *= ${value} ${config.internalScoreboardName}`)
+			emit(`scoreboard players operation ${v1.zName} ${v1.zObjective} *= ${value} ${config.internalScoreboardName}`)
+		%%>
+	}
+
+	with v1Name:word v1Objective:word divide:literal scaler:literal value:int {
+		load {
+			scoreboard players set <%value%> <%config.internalScoreboardName%> <%value%>
+		}
+		<%%
+			emit(`# Divide ${v1Name} ${v1Objective} by ${value}`)
+			const v1 = config.getVectorScoreNames(v1Name, v1Objective)
+			emit(`scoreboard players operation ${v1.xName} ${v1.xObjective} /= ${value} ${config.internalScoreboardName}`)
+			emit(`scoreboard players operation ${v1.zName} ${v1.zObjective} /= ${value} ${config.internalScoreboardName}`)
+		%%>
+	}
+
+	with v1Name:word v1Objective:word length:literal outName:word outObjective:word {
+		<%%
+			emit(`# Store length of ${v1Name} ${v1Objective} into ${outName} ${outObjective}`)
+			store.v1 = config.getVectorScoreNames(v1Name, v1Objective)
+		%%>
+
+		scoreboard players operation #input i = <%store.v1.xName%> <%store.v1.xObjective%>
+		scoreboard players operation #input i *= <%store.v1.xName%> <%store.v1.xObjective%>
+		scoreboard players operation #temp <%config.internalScoreboardName%> = <%store.v1.zName%> <%store.v1.zObjective%>
+		scoreboard players operation #temp <%config.internalScoreboardName%> *= <%store.v1.zName%> <%store.v1.zObjective%>
+		scoreboard players operation #input i += #temp <%config.internalScoreboardName%>
+		function math:sqrt
+		scoreboard players operation <%outName%> <%outObjective%> = #output i
+	}
+
+	with v1Name:word v1Objective:word rotate:literal angleName:word angleObjective:word {
+		load {
+			scoreboard players set 10 <%config.internalScoreboardName%> 10
+			scoreboard players set 100 <%config.internalScoreboardName%> 100
+		}
+		<%%
+			emit(`# Rotate ${v1Name} ${v1Objective} by ${angleName} ${angleObjective}`)
+			store.v1 = config.getVectorScoreNames(v1Name, v1Objective)
+		%%>
+		scoreboard players operation #input i = <%angleName%> <%angleObjective%>
+		function math:sine
+		scoreboard players operation #sine <%config.internalScoreboardName%> = #output i
+
+		scoreboard players operation #input i = <%angleName%> <%angleObjective%>
+		function math:cosine
+		scoreboard players operation #cosine <%config.internalScoreboardName%> = #output i
+
+		scoreboard players operation #nx <%config.internalScoreboardName%> = <%store.v1.xName%> <%store.v1.xObjective%>
+		scoreboard players operation #nx <%config.internalScoreboardName%> *= #cosine <%config.internalScoreboardName%>
+		scoreboard players operation #nx2 <%config.internalScoreboardName%> = <%store.v1.zName%> <%store.v1.zObjective%>
+		scoreboard players operation #nx2 <%config.internalScoreboardName%> *= #sine <%config.internalScoreboardName%>
+		scoreboard players operation #nx <%config.internalScoreboardName%> -= #nx2 <%config.internalScoreboardName%>
+		scoreboard players operation #nx <%config.internalScoreboardName%> /= 100 <%config.internalScoreboardName%>
+
+		scoreboard players operation #nz <%config.internalScoreboardName%> = <%store.v1.xName%> <%store.v1.xObjective%>
+		scoreboard players operation #nz <%config.internalScoreboardName%> *= #sine <%config.internalScoreboardName%>
+		scoreboard players operation #nz2 <%config.internalScoreboardName%> = <%store.v1.zName%> <%store.v1.zObjective%>
+		scoreboard players operation #nz2 <%config.internalScoreboardName%> *= #cosine <%config.internalScoreboardName%>
+		scoreboard players operation #nz <%config.internalScoreboardName%> += #nz2 <%config.internalScoreboardName%>
+		scoreboard players operation #nz <%config.internalScoreboardName%> /= 100 <%config.internalScoreboardName%>
+
+		scoreboard players operation <%store.v1.xName%> <%store.v1.xObjective%> = #nx <%config.internalScoreboardName%>
+		scoreboard players operation <%store.v1.zName%> <%store.v1.zObjective%> = #nz <%config.internalScoreboardName%>
+	}
+}

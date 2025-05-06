@@ -1,0 +1,237 @@
+import ./math.mcbt
+
+function load minecraft:load {
+	scoreboard players set 100 i 100
+}
+
+function get_look_vector2d {
+	# Input: The rotation context of the function
+	# Outputs: #output.vector.x, #output.vector.z
+	execute positioned 0.0 0.0 0.0 rotated ~ 0 run {
+		execute anchored feet positioned ^ ^ ^1 summon minecraft:marker run {
+			data remove storage temp:temp vector
+			data modify storage temp:temp vector set from entity @s Pos
+			execute store result score #output.vector.x i run data get storage temp:temp vector[0] 1000
+			scoreboard players set #output.vector.y i 0
+			execute store result score #output.vector.z i run data get storage temp:temp vector[2] 1000
+			kill @s
+		}
+	}
+}
+
+function get_look_vector3d {
+	# The rotation context of the function
+	# Outputs: #output.vector.x, #output.vector.y, #output.vector.z
+	execute positioned 0.0 0.0 0.0 rotated ~ ~ run {
+		execute anchored feet positioned ^ ^ ^1 summon minecraft:marker run {
+			data remove storage temp:temp vector
+			data modify storage temp:temp vector set from entity @s Pos
+			execute store result score #output.vector.x i run data get storage temp:temp vector[0] 1000
+			execute store result score #output.vector.y i run data get storage temp:temp vector[1] 1000
+			execute store result score #output.vector.z i run data get storage temp:temp vector[2] 1000
+			kill @s
+		}
+	}
+}
+
+# function rotate_unit_vector2d {
+# 	# Inputs: #input.vector.x, #input.vector.z, #input.rotation
+# 	# Outputs: #output.vector.x, #output.vector.z
+# 	execute positioned 0.0 0.0 0.0 summon minecraft:marker run {
+# 		execute store result entity @s Rotation[0] float 0.001 run scoreboard players get #input.rotation i
+# 		execute at @s run {
+# 			execute store result entity @s Pos[0] double 0.001 run scoreboard players get #input.vector.x i
+# 			execute store result entity @s Pos[1] double 0.001 run scoreboard players get #input.vector.y i
+			
+# 		}
+# 	}
+# }
+
+function sqrt {
+	# Inputs: #input
+	# Outputs: #output
+	# This function calculates the square root of the input value using the Babylonian method.
+	load {
+		scoreboard players set 2 i 2
+	}
+
+	scoreboard players operation #output i = #input i
+	scoreboard players operation #output i /= 2 i
+	block {
+		scoreboard players operation #previous i = #output i
+		# x1 = (x0 + #input i / x0) / 2
+		scoreboard players operation #temp i = #input i
+		scoreboard players operation #temp i /= #output i
+		scoreboard players operation #temp i += #output i
+		scoreboard players operation #temp i /= 2 i
+		scoreboard players operation #output i = #temp i
+
+		execute if score #previous i > #output i run function ^0
+	}
+
+	# tellraw @a [{"text":"Square root of ","color":"gray"},{"score":{"name":"#input","objective":"i"},"color":"white"},{"text":" is ","color":"gray"},{"score":{"name":"#output","objective":"i"},"color":"white"}]
+}
+
+function sine {
+	# Inputs: #input
+	# Outputs: #output
+	# DOES NOT PRESERVE THE INPUT VALUE
+	load {
+		scoreboard players set 3600 i 3600
+		scoreboard players set 1800 i 1800
+	}
+	scoreboard players set #sign i -400
+
+	scoreboard players operation #input i %= 3600 i
+
+	execute if score #input i matches 1800.. run scoreboard players set #sign i 400
+	execute store result score #temp i run scoreboard players operation #input i %= 1800 i
+
+	scoreboard players remove #temp i 1800
+	execute store result score #output i run scoreboard players operation #temp i *= #input i
+	scoreboard players operation #output i *= #sign i
+	scoreboard players add #temp i 4050000
+	scoreboard players operation #output i /= #temp i
+
+	# you can remove this line if you dont want the extra 0.01 precision for 180.0-360.0 input range
+	execute if score #sign i matches 400 run scoreboard players add #output i 1
+
+	# title @a actionbar [{"text":"Sine of ","color":"gray"},{"score":{"name":"#input","objective":"i"},"color":"white"},{"text":" is ","color":"gray"},{"score":{"name":"#output","objective":"i"},"color":"white"}]
+}
+
+
+function cosine {
+	# Inputs: #input
+	# Outputs: #output
+	# DOES NOT PRESERVE THE INPUT VALUE
+	load {
+		scoreboard players set 3600 i 3600
+		scoreboard players set 1800 i 1800
+	}
+
+	scoreboard players set #sign i -400
+
+	scoreboard players add #input i 900
+	scoreboard players operation #input i %= 3600 i
+
+	execute if score #input i matches 1800.. run scoreboard players set #sign i 400
+	execute store result score #temp i run scoreboard players operation #input i %= 1800 i
+
+	scoreboard players remove #temp i 1800
+	execute store result score #output i run scoreboard players operation #temp i *= #input i
+	scoreboard players operation #output i *= #sign i
+	scoreboard players add #temp i 4050000
+	scoreboard players operation #output i /= #temp i
+
+	# you can remove this line if you dont want the extra 0.01 precision for 180.0-360.0 input range
+	execute if score #sign i matches 400 run scoreboard players add #output i 1
+
+	# title @a actionbar [{"text":"Cosine of ","color":"gray"},{"score":{"name":"#input","objective":"i"},"color":"white"},{"text":" is ","color":"gray"},{"score":{"name":"#output","objective":"i"},"color":"white"}]
+}
+
+# function test minecraft:tick {
+# 	scoreboard players set #vector.x i 0
+# 	scoreboard players set #vector.z i 1000
+
+# 	scoreboard players add #angle i 20
+# 	execute if score #angle i matches 3600.. run scoreboard players set #angle i 0
+# 	# scoreboard players remove #angle i 20
+# 	# execute if score #angle i matches ..-3600 run scoreboard players set #angle i 0
+
+# 	vector2 #vector i rotate #angle i
+
+# 	data remove storage temp:temp vector
+# 	execute store result storage temp:temp vector.x float 0.001 run scoreboard players get #vector.x i
+# 	execute store result storage temp:temp vector.z float 0.001 run scoreboard players get #vector.z i
+
+# 	execute at @a run { with storage temp:temp vector
+# 		$particle minecraft:bubble ~$(x) ~.1 ~$(z)
+# 	}
+
+# 	# title @a actionbar [{"text":"X: "},{"score":{"name":"#vector.x","objective":"i"}},{"text":" Z: "},{"score":{"name":"#vector.z","objective":"i"}}]
+
+# 	function math:atan2
+
+# 	title @a actionbar [{text:'Angle: '}, {score:{name:"#output", objective:"i"}}]
+
+# }
+
+
+function atan2 {
+	# Inputs: #vector.x, #vector.z
+	# Outputs: #output
+	load {
+		scoreboard players set -1 i -1
+		scoreboard players set 900 i 900
+		scoreboard players set 1000 i 1000
+		scoreboard players set 1570 i 1570
+		scoreboard players set 1800 i 1800
+		scoreboard players set 10000 i 10000
+	}
+
+	# Get quadrant of inputs
+
+	scoreboard players set #quadrant_x i 1
+	execute if score #vector.x i matches ..-1 run scoreboard players set #quadrant_x i -1
+	execute if score #vector.x i matches ..-1 run scoreboard players operation #vector.x i *= -1 i
+
+	scoreboard players set #quadrant_y i 1
+	execute if score #vector.z i matches ..-1 run scoreboard players set #quadrant_y i -1
+	execute if score #vector.z i matches ..-1 run scoreboard players operation #vector.z i *= -1 i
+
+	# Switch around inputs if ratio demands it
+
+	scoreboard players set #arctangent_swap_boolean i 0
+	execute if score #vector.x i < #vector.z i run scoreboard players set #arctangent_swap_boolean i 1
+	execute if score #vector.x i < #vector.z i run scoreboard players operation #vector.x i >< #vector.z i
+
+	# Compute function
+
+	scoreboard players operation #math_trigonometry_0 i = #vector.z i
+	scoreboard players operation #math_trigonometry_0 i *= 1000 i
+	scoreboard players operation #math_trigonometry_0 i /= #vector.x i
+	scoreboard players operation #math_trigonometry_1 i = #math_trigonometry_0 i
+	scoreboard players operation #math_trigonometry_0 i *= #math_trigonometry_0 i
+	scoreboard players operation #math_trigonometry_0 i /= 1000 i
+
+	scoreboard players set #math_trigonometry_2 i 776
+	scoreboard players set #math_trigonometry_3 i -2874
+	scoreboard players set #math_trigonometry_4 i 9951
+
+	scoreboard players operation #math_trigonometry_4 i *= #math_trigonometry_1 i
+	scoreboard players operation #math_trigonometry_4 i /= 10000 i
+
+	scoreboard players operation #math_trigonometry_1 i *= #math_trigonometry_0 i
+	scoreboard players operation #math_trigonometry_1 i /= 1000 i
+
+	scoreboard players operation #math_trigonometry_3 i *= #math_trigonometry_1 i
+	scoreboard players operation #math_trigonometry_3 i /= 10000 i
+
+	scoreboard players operation #math_trigonometry_1 i *= #math_trigonometry_0 i
+	scoreboard players operation #math_trigonometry_1 i /= 1000 i
+
+	scoreboard players operation #math_trigonometry_2 i *= #math_trigonometry_1 i
+	scoreboard players operation #math_trigonometry_2 i /= 10000 i
+
+	scoreboard players operation #output i = #math_trigonometry_2 i
+	scoreboard players operation #output i += #math_trigonometry_3 i
+	scoreboard players operation #output i += #math_trigonometry_4 i
+
+	scoreboard players operation #output i *= 900 i
+	scoreboard players operation #output i /= 1570 i
+
+	# Adjust for swap and quadrant
+
+	execute if score #arctangent_swap_boolean i matches 1 run scoreboard players operation #output i *= -1 i
+	execute if score #arctangent_swap_boolean i matches 1 run scoreboard players add #output i 900
+
+	execute if score #quadrant_x i matches -1 if score #quadrant_y i matches -1 run scoreboard players remove #output i 1800
+
+	execute if score #quadrant_x i matches -1 if score #quadrant_y i matches 01 run scoreboard players operation #output i *= -1 i
+	execute if score #quadrant_x i matches -1 if score #quadrant_y i matches 01 run scoreboard players add #output i 1800
+
+	execute if score #quadrant_x i matches 01 if score #quadrant_y i matches -1 run scoreboard players operation #output i *= -1 i
+
+	scoreboard players remove #output i 900
+	scoreboard players operation #output i %= 3600 i
+}
