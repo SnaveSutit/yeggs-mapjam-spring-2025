@@ -28,5 +28,13 @@
 				"preload": true
 			}
 		]
+	},
+	"block.sand.idle": {
+		"sounds": [],
+		"replace": true
+	},
+	"block.sand.wind": {
+		"sounds": [],
+		"replace": true
 	}
 }
