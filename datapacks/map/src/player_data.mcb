@@ -1,0 +1,80 @@
+import ./execute.mcbt
+import ./score.mcbt
+import ./debug.mcbt
+
+
+function load minecraft:load {
+	create v
+	create player_data.initialized
+}
+
+
+function initialize_database {
+	data modify storage player_data:main players set value {}
+	data modify storage player_data:main keys set value []
+	reset * player_data.initialized
+
+	debug message ['', {text: 'Initialized player data database', color: gold}]
+}
+
+
+function clear_database {
+	data remove storage player_data:main players
+	data remove storage player_data:main keys
+
+	debug message ['', {text: 'Cleared player data database', color: gold}]
+
+	function ./initialize_database
+}
+
+
+function second {
+	as @a unless score @s player_data.initialized matches 1 run function ./initialize_player
+}
+
+
+function initialize_player {
+	# Get player UUID
+	function gu:generate
+	data modify storage player_data:temp player.uuid set from storage gu:main out
+	# Get player Username
+	function player:get_username
+	data modify storage player_data:temp player.username set from storage player:temp username
+
+	{ with storage player_data:temp player
+		$data modify storage player_data:main players."$(uuid)" set value {uuid: '$(uuid)', username: '$(username)'}
+		$data modify storage player_data:main keys append value {uuid: '$(uuid)'}
+	}
+
+	set @s player_data.initialized 1
+
+	debug message ['', {text: 'Initialized player data for '}, {selector: '@s', color: aqua}]
+}
+
+
+function is_player_initialized {
+	function gu:generate
+	data modify storage player_data:temp player.uuid set from storage gu:main out
+	return run { with storage player_data:temp player
+		$if data storage player_data:main {keys:[{uuid: '$(uuid)'}]} run return 1
+		return 0
+	}
+}
+
+
+function get_player_data {
+	function gu:generate
+	data modify storage player_data:temp player.uuid set from storage gu:main out
+	{ with storage player_data:temp player
+		$data modify storage player_data:temp entry set from storage player_data:main players."$(uuid)"
+	}
+}
+
+
+function set_player_data {
+	function gu:generate
+	data modify storage player_data:temp player.uuid set from storage gu:main out
+	{ with storage player_data:temp player
+		$data modify storage player_data:main players."$(uuid)" set from storage player_data:temp entry
+	}
+}

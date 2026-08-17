@@ -1,0 +1,7 @@
+template debug {
+	with message:literal rest:raw {
+		IF (config.dev) {
+			tellraw @a ['', [{text:'ᴅᴇʙᴜɢ', color: gold}, {text: ' – ', color: dark_gray}], <%rest%>]
+		}
+	}
+}

@@ -37,6 +37,7 @@ module.exports = {
 	ioThreadCount: 1, // default: 1, the number of threads to use for IO operations, 1 is syncronous.
 	getVectorScoreNames,
 	musicLengths,
+	dev: false,
 	setup(mcb) {
 		mcb.events.onPreBuild.subscribe(async () => {
 			musicLengths.set('boss', 500)
@@ -44,6 +45,8 @@ module.exports = {
 			musicLengths.set('tutorial', 500)
 
 			this.driven = readJsonData()
+
+			this.dev = process.argv.includes('--dev')
 		})
 	},
 }

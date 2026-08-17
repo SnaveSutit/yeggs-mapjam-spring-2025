@@ -1,6 +1,8 @@
 import ./score.mcbt
 import ./sequence.mcbt
 import ./execute.mcbt
+import ./debug.mcbt
+
 
 function load minecraft:load {
 	gamerule max_command_sequence_length 1000000
@@ -11,15 +13,35 @@ function load minecraft:load {
 
 	setworldspawn 0 27 -75 41 90
 
-	# Auto teardown if map is setup and auto_teardown_on_reload is enabled
-	if score #map.auto_teardown_on_reload v matches 1 run function ./teardown
-	# Setup if map is not setup yet
-	if score #map.is_setup v matches 0 run function ./setup
+	schedule 1t replace {
+		unless function map:is_world_loaded run return run schedule function ^0 1t replace
 
-	tellraw @a {"text":"Map reloaded!","color":"green"}
+		# Auto teardown if map is setup and auto_teardown_on_reload is enabled
+		IF (config.dev) {
+			if score #map.auto_teardown_on_reload v matches 1 run debug message ['',{"text":"Auto teardown on reload is enabled.","color":"yellow"}]
+		}
+		if score #map.auto_teardown_on_reload v matches 1 run function ./teardown
+		# Setup if map is not setup yet
+		if score #map.is_setup v matches 0 run function ./setup
+	}
+
+	debug message ['',{"text":"Map reloaded!","color":"green"}]
 }
 
+
+function is_world_loaded {
+	REPEAT(-10, 10) as x {
+		REPEAT(-10, 10) as z {
+			unless loaded ~<%x%> ~ ~<%z%> run return 0
+		}
+	}
+	return 1
+}
+
+
 function setup {
+	if score #map.is_setup v matches 1 run return 0
+
 	## Fade Effects
 	# Rat Holes
 	summon minecraft:item_display 23.0 3.0 -13.0 {Tags:['pspp.fade'], view_range: 4, width: 1f, height: 20f, item: {components: {"minecraft:item_model": "pspp:fade"}, id: "minecraft:diamond"}, transformation: {left_rotation: [0.0f, 0.0f, -0.7071068f, 0.7071068f], right_rotation: [0.0f, 0.0f, 0.0f, 1.0f], scale: [3.9499993f, 3.9499993f, 3.9499996f], translation: [0.0f, 0.0f, 0.0f]}}
@@ -63,7 +85,10 @@ function setup {
 
 	# Run last
 	set #map.is_setup v 1
+
+	debug message ['',{"text":"Map setup complete!","color":"green"}]
 }
+
 
 function teardown {
 	function gameplay:tray_drop_point/teardown
@@ -74,30 +99,44 @@ function teardown {
 
 	# Run last
 	set #map.is_setup v 0
+
+	debug message ['',{"text":"Map teardown complete!","color":"green"}]
 }
+
 
 function reset {
-	tellraw @a {text:'Resetting Map...',color:yellow}
+	function ./teardown
+
 	function ./setup
 
-	schedule 1s replace {
-		function ./teardown
-		tellraw @a {text:'Map reset successfully!',color:green}
-	}
+	debug message ['',{"text":"Map reset complete!","color":"green"}]
 }
+
 
 function tick minecraft:tick {
+	scoreboard players add #map.tick v 1
+	if score #map.tick v matches 20.. run function ./second
 }
 
-dir debug {
-	dir auto_teardown_on_reload {
-		function enable {
-			set #map.auto_teardown_on_reload v 1
-			tellraw @a {text:'Auto teardown on reload enabled.',color:green}
-		}
-		function disable {
-			set #map.auto_teardown_on_reload v 0
-			tellraw @a {text:'Auto teardown on reload disabled.',color:green}
+
+function second {
+	set #map.tick v 0
+
+	function player_data:second
+}
+
+
+IF (config.dev) {
+	dir debug {
+		dir auto_teardown_on_reload {
+			function enable {
+				set #map.auto_teardown_on_reload v 1
+				tellraw @a [{text: 'Auto teardown on reload ', color: yellow},{text:'Enabled', color: green}]
+			}
+			function disable {
+				set #map.auto_teardown_on_reload v 0
+				tellraw @a [{text: 'Auto teardown on reload ', color: yellow},{text:'Disabled', color: red}]
+			}
 		}
 	}
 }
